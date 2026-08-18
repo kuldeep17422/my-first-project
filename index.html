@@ -20,23 +20,21 @@
         body {
             font-family: Arial, sans-serif;
             overflow-x: hidden;
-            color: white;
         }
 
-        /* ================= NAVBAR ================= */
-
+        /* NAVBAR */
         nav {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 70px;
-            background: rgba(35, 30, 90, 0.85);
+            background: rgba(45, 40, 100, 0.90);
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 45px;
-            z-index: 1000;
+            z-index: 999;
         }
 
         nav a {
@@ -44,15 +42,13 @@
             text-decoration: none;
             font-size: 22px;
             font-weight: bold;
-            transition: 0.3s;
         }
 
         nav a:hover {
             color: #dce1ff;
         }
 
-        /* ================= COMMON ================= */
-
+        /* ALL SECTIONS */
         section {
             min-height: 100vh;
             width: 100%;
@@ -66,24 +62,22 @@
         .container {
             width: 100%;
             max-width: 1000px;
-            margin: auto;
         }
 
-        /* ================= HOME ================= */
-
+        /* HOME */
         #home {
             background: linear-gradient(135deg, #6674df, #7650a9);
+            color: white;
         }
 
         .profile {
             width: 190px;
             height: 190px;
-            margin: 0 auto 35px;
+            margin: 0 auto 30px;
             border-radius: 50%;
             overflow: hidden;
             border: 7px solid white;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-            background: #222;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
         }
 
         .profile img {
@@ -98,37 +92,35 @@
             margin-bottom: 20px;
         }
 
-        #home .subtitle {
+        .subtitle {
             font-size: clamp(22px, 4vw, 32px);
             margin-bottom: 40px;
         }
 
-        .buttons {
+        .home-buttons {
             display: flex;
             justify-content: center;
             gap: 25px;
             flex-wrap: wrap;
         }
 
-        .button {
-            display: inline-block;
+        .home-button {
             background: white;
-            color: #6372df;
+            color: #6674df;
+            text-decoration: none;
             padding: 18px 35px;
             border-radius: 40px;
-            text-decoration: none;
             font-size: 20px;
             font-weight: bold;
             transition: 0.3s;
         }
 
-        .button:hover {
+        .home-button:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
         }
 
-        /* ================= ABOUT ================= */
-
+        /* ABOUT */
         #about {
             background: white;
             color: #222;
@@ -143,7 +135,7 @@
             max-width: 800px;
             margin: 0 auto 35px;
             font-size: clamp(20px, 3vw, 28px);
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
         .skills {
@@ -162,10 +154,10 @@
             font-weight: bold;
         }
 
-        /* ================= CONTACT ================= */
-
+        /* CONTACT */
         #contact {
             background: linear-gradient(135deg, #5a4797, #493878);
+            color: white;
         }
 
         #contact h2 {
@@ -186,12 +178,11 @@
         }
 
         .contact-button {
-            display: inline-block;
-            min-width: 200px;
             background: white;
             color: #6674df;
             text-decoration: none;
             padding: 18px 30px;
+            min-width: 200px;
             border-radius: 40px;
             font-size: 20px;
             font-weight: bold;
@@ -200,25 +191,19 @@
 
         .contact-button:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
         }
 
-        /* ================= MOBILE ================= */
-
+        /* MOBILE */
         @media (max-width: 600px) {
 
             nav {
                 height: 60px;
-                gap: 22px;
+                gap: 20px;
             }
 
             nav a {
                 font-size: 17px;
-            }
-
-            section {
-                padding-left: 15px;
-                padding-right: 15px;
             }
 
             .profile {
@@ -227,14 +212,14 @@
             }
 
             #home h1 {
-                font-size: 43px;
+                font-size: 42px;
             }
 
-            #home .subtitle {
+            .subtitle {
                 font-size: 21px;
             }
 
-            .button,
+            .home-button,
             .contact-button {
                 width: 100%;
                 max-width: 280px;
@@ -245,8 +230,7 @@
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
-
+    <!-- NAVIGATION -->
     <nav>
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -254,13 +238,11 @@
     </nav>
 
 
-    <!-- ================= HOME ================= -->
-
+    <!-- HOME -->
     <section id="home">
 
         <div class="container">
 
-            <!-- PROFILE IMAGE -->
             <div class="profile">
                 <img src="developer.png" alt="Kuldeep Borana">
             </div>
@@ -271,13 +253,13 @@
                 Web Developer | Creative Learner 🚀
             </p>
 
-            <div class="buttons">
+            <div class="home-buttons">
 
-                <a href="#about" class="button">
+                <a href="#about" class="home-button">
                     About Me
                 </a>
 
-                <a href="#contact" class="button">
+                <a href="#contact" class="home-button">
                     Contact Me
                 </a>
 
@@ -288,15 +270,12 @@
     </section>
 
 
-    <!-- ================= ABOUT ================= -->
-
+    <!-- ABOUT -->
     <section id="about">
 
         <div class="container">
 
-            <h2>
-                About Me 👨‍💻
-            </h2>
+            <h2>About Me 👨‍💻</h2>
 
             <p>
                 Hi, I'm Kuldeep Borana 👋
@@ -309,11 +288,8 @@
             <div class="skills">
 
                 <span class="skill">HTML</span>
-
                 <span class="skill">CSS</span>
-
                 <span class="skill">GitHub</span>
-
                 <span class="skill">Web Design</span>
 
             </div>
@@ -323,15 +299,12 @@
     </section>
 
 
-    <!-- ================= CONTACT ================= -->
-
+    <!-- CONTACT -->
     <section id="contact">
 
         <div class="container">
 
-            <h2>
-                Contact Me 📩
-            </h2>
+            <h2>Contact Me 📩</h2>
 
             <p>
                 Let's connect and build something awesome! 🚀
@@ -339,28 +312,23 @@
 
             <div class="contact-buttons">
 
-                <!-- EMAIL -->
                 <a
                     class="contact-button"
                     href="mailto:kuldip8718@gmail.com">
                     📧 Email
                 </a>
 
-                <!-- INSTAGRAM -->
                 <a
                     class="contact-button"
                     href="https://www.instagram.com/kuldeep_singh._9/"
-                    target="_blank"
-                    rel="noopener noreferrer">
+                    target="_blank">
                     📷 Instagram
                 </a>
 
-                <!-- GITHUB -->
                 <a
                     class="contact-button"
                     href="https://github.com/kuldeep17422"
-                    target="_blank"
-                    rel="noopener noreferrer">
+                    target="_blank">
                     💻 GitHub
                 </a>
 
