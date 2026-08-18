@@ -4,9 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kuldeep Borana | Web Developer</title>
+<title>Kuldeep Borana | Portfolio</title>
+
+<meta name="description"
+content="Kuldeep Borana - Web Developer and Desktop Support Engineer Portfolio">
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -14,11 +18,39 @@
     scroll-behavior:smooth;
 }
 
+:root{
+    --bg:#f7f8ff;
+    --card:#ffffff;
+    --text:#17182b;
+    --muted:#666a80;
+    --primary:#665cff;
+    --secondary:#8c5cff;
+    --border:#e6e7f2;
+    --nav:#ffffffd9;
+    --shadow:0 20px 50px rgba(25,25,70,.10);
+}
+
+body.dark{
+    --bg:#0b0d18;
+    --card:#141725;
+    --text:#f4f5ff;
+    --muted:#a9adc0;
+    --primary:#8278ff;
+    --secondary:#a875ff;
+    --border:#292d40;
+    --nav:#10121ee8;
+    --shadow:0 20px 50px rgba(0,0,0,.35);
+}
+
 body{
     font-family:Arial,Helvetica,sans-serif;
-    background:#f5f6ff;
-    color:#222;
+    background:var(--bg);
+    color:var(--text);
+    transition:.3s;
+    overflow-x:hidden;
 }
+
+/* NAVBAR */
 
 nav{
     position:fixed;
@@ -26,395 +58,531 @@ nav{
     left:0;
     width:100%;
     z-index:1000;
-    background:#191653;
-    padding:18px;
-    text-align:center;
-    box-shadow:0 4px 20px #0003;
+    padding:16px 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:var(--nav);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid var(--border);
 }
 
-nav a{
-    color:white;
+.logo{
+    font-size:25px;
+    font-weight:900;
+    color:var(--primary);
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:24px;
+}
+
+.nav-links a{
+    color:var(--text);
     text-decoration:none;
-    font-size:21px;
     font-weight:bold;
-    margin:0 16px;
     transition:.3s;
 }
 
-nav a:hover,
-.active{
-    color:#ffd45c !important;
+.nav-links a:hover,
+.nav-links a.active{
+    color:var(--primary);
 }
 
+.theme-btn{
+    border:1px solid var(--border);
+    background:var(--card);
+    color:var(--text);
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:19px;
+}
+
+/* GENERAL */
+
 section{
+    padding:120px 7% 90px;
     min-height:100vh;
-    padding:120px 7% 80px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
 }
 
 .section-title{
     text-align:center;
-    font-size:58px;
+    font-size:52px;
+    margin-bottom:15px;
+}
+
+.section-subtitle{
+    text-align:center;
+    color:var(--muted);
+    font-size:18px;
     margin-bottom:55px;
 }
 
-/* HOME */
+/* HERO */
 
 #home{
+    min-height:100vh;
     display:flex;
-    flex-direction:column;
     align-items:center;
     justify-content:center;
-    text-align:center;
+    background:
+    radial-gradient(circle at 15% 20%,#776cff44,transparent 30%),
+    radial-gradient(circle at 85% 80%,#a56aff33,transparent 30%),
+    var(--bg);
+}
+
+.hero{
+    max-width:1200px;
+    width:100%;
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:60px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-block;
+    padding:10px 18px;
+    border-radius:30px;
+    background:#6b61ff18;
+    color:var(--primary);
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(52px,7vw,88px);
+    line-height:1;
+    margin-bottom:20px;
+}
+
+.gradient-text{
+    background:linear-gradient(90deg,var(--primary),var(--secondary));
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero h2{
+    font-size:27px;
+    color:var(--muted);
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:650px;
+    font-size:19px;
+    line-height:1.8;
+    color:var(--muted);
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    padding:15px 25px;
+    border-radius:14px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-primary{
     color:white;
-    background:linear-gradient(135deg,#637ee8,#7163cb);
-    overflow:hidden;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    box-shadow:0 10px 30px #665cff35;
+}
+
+.btn-secondary{
+    color:var(--text);
+    background:var(--card);
+    border:1px solid var(--border);
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+}
+
+.hero-image{
+    display:flex;
+    justify-content:center;
+    position:relative;
 }
 
 .profile-img{
-    width:250px;
-    height:250px;
-    border-radius:50%;
+    width:310px;
+    height:310px;
     object-fit:cover;
-    border:10px solid white;
-    box-shadow:0 0 0 7px #111,0 15px 40px #0005;
-    margin-bottom:45px;
-    animation:float 3s ease-in-out infinite;
+    border-radius:50%;
+    border:8px solid var(--card);
+    box-shadow:0 0 0 5px var(--primary),var(--shadow);
+    animation:float 4s ease-in-out infinite;
 }
 
 @keyframes float{
     50%{
-        transform:translateY(-12px);
+        transform:translateY(-15px);
     }
 }
 
-#home h1{
-    font-size:clamp(52px,8vw,100px);
-    margin-bottom:15px;
+/* STATS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:50px;
 }
 
-#home p{
-    font-size:clamp(24px,3vw,42px);
-    margin-bottom:30px;
+.stat{
+    padding:25px;
+    text-align:center;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    box-shadow:var(--shadow);
 }
 
-.buttons,
-.project-buttons,
-.social-buttons,
-.hire-buttons{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:15px;
+.stat strong{
+    display:block;
+    font-size:30px;
+    color:var(--primary);
 }
 
-.btn,
-.project-btn,
-.social-btn,
-.hire-btn{
-    display:inline-block;
-    padding:15px 25px;
-    border-radius:35px;
-    text-decoration:none;
-    font-weight:bold;
-    transition:.3s;
-}
-
-.btn{
-    background:white;
-    color:#596ddd;
-    font-size:19px;
-}
-
-.btn:hover,
-.project-btn:hover,
-.social-btn:hover,
-.hire-btn:hover{
-    transform:translateY(-5px);
-    box-shadow:0 10px 25px #0003;
+.stat span{
+    color:var(--muted);
 }
 
 /* ABOUT */
 
-#about,
-#projects,
-#education{
-    background:white;
+#about{
+    background:var(--card);
 }
 
-.about-box{
-    max-width:950px;
-    margin:auto;
-    padding:50px;
-    border-radius:30px;
-    text-align:center;
-    background:#f0f1ff;
-    box-shadow:0 15px 40px #0002;
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:35px;
 }
 
-.about-box h3{
-    font-size:36px;
-    color:#555bd4;
-    margin-bottom:20px;
+.about-card{
+    padding:40px;
+    border-radius:25px;
+    background:var(--bg);
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
 }
 
-.about-box p{
-    font-size:21px;
+.about-card h3{
+    font-size:28px;
+    margin-bottom:18px;
+}
+
+.about-card p{
+    color:var(--muted);
     line-height:1.8;
-    color:#444;
+    font-size:18px;
+}
+
+.info-list{
+    list-style:none;
+}
+
+.info-list li{
+    padding:12px 0;
+    border-bottom:1px solid var(--border);
+    color:var(--muted);
+}
+
+.info-list strong{
+    color:var(--text);
 }
 
 /* SKILLS */
 
-#skills{
-    background:#f5f6ff;
-}
-
-.skills-container{
-    max-width:1200px;
-    margin:auto;
+.skills-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:28px;
+    gap:22px;
 }
 
 .skill-card{
-    background:white;
-    padding:38px 20px;
-    border-radius:25px;
-    text-align:center;
-    font-size:25px;
-    font-weight:bold;
-    box-shadow:0 12px 30px #0002;
+    padding:28px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:22px;
+    box-shadow:var(--shadow);
     transition:.3s;
 }
 
 .skill-card:hover{
-    transform:translateY(-10px) scale(1.02);
+    transform:translateY(-8px);
 }
 
-.skill-icon{
+.skill-top{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:15px;
+}
+
+.skill-name{
+    font-weight:bold;
+    font-size:18px;
+}
+
+.skill-percent{
+    color:var(--primary);
+    font-weight:bold;
+}
+
+.progress{
+    width:100%;
+    height:8px;
+    border-radius:20px;
+    background:var(--border);
+    overflow:hidden;
+}
+
+.progress span{
     display:block;
-    font-size:50px;
-    margin-bottom:12px;
+    height:100%;
+    border-radius:20px;
+    background:linear-gradient(90deg,var(--primary),var(--secondary));
 }
 
 /* EDUCATION */
 
-.education-container{
-    max-width:1000px;
+#education{
+    background:var(--card);
+}
+
+.timeline{
+    max-width:900px;
     margin:auto;
-    display:grid;
-    gap:25px;
 }
 
-.education-card{
-    background:#f3f4ff;
-    padding:32px;
-    border-radius:25px;
-    box-shadow:0 12px 30px #0002;
-    border-left:7px solid #6279e5;
-    transition:.3s;
+.timeline-item{
+    position:relative;
+    padding:30px;
+    margin-bottom:22px;
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-left:5px solid var(--primary);
+    border-radius:18px;
+    box-shadow:var(--shadow);
 }
 
-.education-card:hover{
-    transform:translateX(8px);
+.timeline-item h3{
+    font-size:23px;
+    margin-bottom:8px;
 }
 
-.education-card h3{
-    font-size:29px;
-    color:#555bd4;
-    margin-bottom:12px;
-}
-
-.education-card p{
-    font-size:19px;
-    line-height:1.7;
-    color:#555;
-}
-
-.learning{
-    margin-top:35px;
-    text-align:center;
-    padding:35px;
-    border-radius:25px;
-    background:#eef0ff;
-}
-
-.learning h3{
-    font-size:30px;
-    margin-bottom:15px;
-    color:#555bd4;
-}
-
-.learning p{
-    font-size:20px;
+.timeline-item p{
+    color:var(--muted);
     line-height:1.7;
 }
 
 /* PROJECTS */
 
-.projects-container{
-    max-width:1300px;
-    margin:auto;
+.projects-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:35px;
+    gap:30px;
 }
 
-.project-card{
-    background:#f3f4ff;
-    padding:40px;
-    border-radius:30px;
-    box-shadow:0 15px 35px #0002;
+.project{
+    overflow:hidden;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:25px;
+    box-shadow:var(--shadow);
     transition:.3s;
 }
 
-.project-card:hover{
-    transform:translateY(-8px);
+.project:hover{
+    transform:translateY(-10px);
+}
+
+.project-top{
+    padding:35px;
+    background:linear-gradient(135deg,#665cff18,#a875ff18);
 }
 
 .project-icon{
-    font-size:55px;
+    font-size:50px;
     margin-bottom:15px;
 }
 
-.project-card h3{
-    font-size:32px;
-    margin-bottom:15px;
+.project h3{
+    font-size:29px;
+    margin-bottom:12px;
 }
 
-.project-card p{
-    font-size:19px;
+.project-body{
+    padding:30px 35px;
+}
+
+.project-body p{
+    color:var(--muted);
     line-height:1.7;
-    color:#555;
-    margin-bottom:22px;
+    margin-bottom:20px;
 }
 
 .tags{
     display:flex;
     flex-wrap:wrap;
-    gap:10px;
+    gap:8px;
     margin-bottom:25px;
 }
 
 .tag{
-    background:#e0e5ff;
-    color:#5265d8;
-    padding:9px 16px;
-    border-radius:25px;
+    padding:7px 13px;
+    border-radius:20px;
+    background:#665cff18;
+    color:var(--primary);
+    font-size:13px;
     font-weight:bold;
 }
 
-.project-btn{
-    background:#6279e5;
-    color:white;
-    font-size:17px;
+.project-links{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
 }
 
-.project-btn.github{
-    background:#222;
-}
-
-/* HIRE ME */
+/* HIRE */
 
 #hire{
-    background:#f5f6ff;
-    text-align:center;
+    background:
+    radial-gradient(circle at 50% 0,#665cff22,transparent 40%),
+    var(--bg);
 }
 
 .hire-box{
     max-width:900px;
     margin:auto;
-    background:white;
-    padding:55px 35px;
+    text-align:center;
+    padding:70px 40px;
+    background:var(--card);
+    border:1px solid var(--border);
     border-radius:30px;
-    box-shadow:0 15px 40px #0002;
+    box-shadow:var(--shadow);
 }
 
 .hire-box h3{
-    font-size:40px;
-    color:#555bd4;
-    margin-bottom:20px;
+    font-size:42px;
+    margin-bottom:18px;
 }
 
 .hire-box p{
-    font-size:21px;
-    line-height:1.8;
-    color:#555;
-    margin-bottom:30px;
-}
-
-.hire-btn{
-    background:#6279e5;
-    color:white;
+    color:var(--muted);
     font-size:19px;
-}
-
-.resume{
-    background:#222;
+    line-height:1.8;
+    margin-bottom:30px;
 }
 
 /* CONTACT */
 
 #contact{
-    background:linear-gradient(135deg,#636fe2,#7060c8);
+    min-height:auto;
+    background:#101225;
     color:white;
-    text-align:center;
 }
 
 .contact-box{
-    max-width:950px;
+    max-width:850px;
     margin:auto;
-    padding:50px;
-    border-radius:30px;
     text-align:center;
-    background:#ffffff1f;
-    backdrop-filter:blur(10px);
 }
 
-.contact-box h3{
-    font-size:38px;
-    margin-bottom:18px;
+.contact-box h2{
+    font-size:50px;
+    margin-bottom:15px;
 }
 
 .contact-box p{
-    font-size:21px;
-    line-height:1.8;
-    color:white;
-}
-
-.social-buttons{
-    margin-top:25px;
-}
-
-.social-btn{
-    color:white;
+    color:#b9bdd0;
     font-size:18px;
+    line-height:1.7;
+}
+
+.socials{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:30px;
+}
+
+.social{
+    padding:13px 20px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.social:hover{
+    transform:translateY(-4px);
 }
 
 .instagram{
     background:#e1306c;
+    color:white;
 }
 
 .github{
-    background:#222;
+    background:#272a38;
+    color:white;
 }
 
 .email{
     background:white;
-    color:#5669d9;
+    color:#222;
 }
 
 /* FOOTER */
 
 footer{
-    background:#11103d;
-    color:white;
+    background:#080a12;
+    color:#8e93a8;
     text-align:center;
-    padding:24px;
+    padding:25px;
 }
 
-/* ANIMATION */
+/* SCROLL TOP */
+
+#topBtn{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:48px;
+    height:48px;
+    border:0;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    display:none;
+    z-index:900;
+    box-shadow:0 10px 30px #0004;
+}
+
+/* REVEAL */
 
 .reveal{
     opacity:0;
@@ -424,86 +592,126 @@ footer{
 
 .reveal.show{
     opacity:1;
-    transform:none;
-}
-
-/* TABLET */
-
-@media(max-width:900px){
-
-    nav a{
-        font-size:16px;
-        margin:0 8px;
-    }
-
-    .skills-container{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .projects-container{
-        grid-template-columns:1fr;
-    }
-
-    .section-title{
-        font-size:48px;
-    }
+    transform:translateY(0);
 }
 
 /* MOBILE */
 
-@media(max-width:600px){
+@media(max-width:900px){
 
-    nav{
-        padding:14px 3px;
+    .nav-links{
+        gap:12px;
     }
 
-    nav a{
+    .nav-links a{
         font-size:13px;
-        margin:0 4px;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero-image{
+        order:-1;
     }
 
     .profile-img{
-        width:185px;
-        height:185px;
+        width:230px;
+        height:230px;
     }
 
-    #home h1{
-        font-size:48px;
-    }
-
-    #home p{
-        font-size:22px;
-    }
-
-    section{
-        padding-left:20px;
-        padding-right:20px;
-    }
-
-    .skills-container{
+    .about-grid{
         grid-template-columns:1fr;
     }
 
-    .section-title{
-        font-size:40px;
+    .skills-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .about-box,
-    .hire-box,
-    .contact-box,
-    .project-card,
-    .education-card{
-        padding:28px 20px;
-    }
-
-    .about-box p,
-    .hire-box p,
-    .contact-box p,
-    .project-card p,
-    .education-card p{
-        font-size:18px;
+    .projects-grid{
+        grid-template-columns:1fr;
     }
 }
+
+@media(max-width:600px){
+
+    nav{
+        padding:12px 15px;
+    }
+
+    .logo{
+        font-size:19px;
+    }
+
+    .nav-links{
+        gap:8px;
+    }
+
+    .nav-links a:nth-child(n+4){
+        display:none;
+    }
+
+    section{
+        padding:100px 20px 70px;
+    }
+
+    .section-title{
+        font-size:38px;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero h2{
+        font-size:22px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .profile-img{
+        width:190px;
+        height:190px;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .skills-grid{
+        grid-template-columns:1fr;
+    }
+
+    .about-card{
+        padding:28px;
+    }
+
+    .hire-box{
+        padding:45px 22px;
+    }
+
+    .hire-box h3{
+        font-size:32px;
+    }
+
+    .contact-box h2{
+        font-size:38px;
+    }
+
+}
+
 </style>
 </head>
 
@@ -512,45 +720,120 @@ footer{
 <!-- NAVBAR -->
 
 <nav>
-    <a href="#home" class="active">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#education">Education</a>
-    <a href="#projects">Projects</a>
-    <a href="#hire">Hire Me</a>
-    <a href="#contact">Contact</a>
+
+    <div class="logo">
+        KB.
+    </div>
+
+    <div class="nav-links">
+
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+
+        <button
+            class="theme-btn"
+            id="themeBtn"
+            title="Change Theme"
+        >
+            🌙
+        </button>
+
+    </div>
+
 </nav>
 
 
-<!-- HOME -->
+<!-- HERO -->
 
 <section id="home">
 
-    <img
-        class="profile-img"
-        src="developer.png"
-        alt="Kuldeep Borana"
-    >
+    <div class="hero">
 
-    <h1>Kuldeep Borana</h1>
+        <div class="hero-content">
 
-    <p>
-        Web Developer | Creative | Learner 🚀
-    </p>
+            <span class="badge">
+                👋 Welcome to my portfolio
+            </span>
 
-    <div class="buttons">
+            <h1>
+                Hi, I'm
+                <span class="gradient-text">
+                    Kuldeep
+                </span>
+            </h1>
 
-        <a class="btn" href="#about">
-            👨‍💻 About Me
-        </a>
+            <h2>
+                Web Developer & Desktop Support Engineer
+            </h2>
 
-        <a class="btn" href="#projects">
-            📁 My Projects
-        </a>
+            <p>
+                I create clean, responsive and user-friendly
+                digital experiences while continuously
+                improving my technical skills.
+            </p>
 
-        <a class="btn" href="#hire">
-            💼 Hire Me
-        </a>
+            <div class="hero-buttons">
+
+                <a
+                    href="#projects"
+                    class="btn btn-primary"
+                >
+                    🚀 View My Work
+                </a>
+
+                <a
+                    href="resume.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-secondary"
+                >
+                    📄 View Resume
+                </a>
+
+                <a
+                    href="mailto:kuldip8718@gmail.com?subject=Project%20Opportunity"
+                    class="btn btn-secondary"
+                >
+                    📧 Contact Me
+                </a>
+
+            </div>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <strong>1+</strong>
+                    <span>Year Experience</span>
+                </div>
+
+                <div class="stat">
+                    <strong>2+</strong>
+                    <span>Projects</span>
+                </div>
+
+                <div class="stat">
+                    <strong>24/7</strong>
+                    <span>Learning Mindset</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-image">
+
+            <img
+                src="developer.png"
+                alt="Kuldeep Borana"
+                class="profile-img"
+            >
+
+        </div>
 
     </div>
 
@@ -561,29 +844,79 @@ footer{
 
 <section id="about" class="reveal">
 
-    <h2 class="section-title">
-        About Me
-    </h2>
+    <div class="container">
 
-    <div class="about-box">
+        <h2 class="section-title">
+            About Me
+        </h2>
 
-        <h3>
-            👋 Hello, I'm Kuldeep!
-        </h3>
-
-        <p>
-            I am a passionate Web Developer who enjoys
-            creating clean, responsive and user-friendly
-            websites.
+        <p class="section-subtitle">
+            A little about my journey
         </p>
 
-        <br>
+        <div class="about-grid">
 
-        <p>
-            I am continuously learning new technologies
-            and building practical projects to grow as
-            a developer. 🚀
-        </p>
+            <div class="about-card">
+
+                <h3>
+                    👨‍💻 Who I Am
+                </h3>
+
+                <p>
+                    I am Kuldeep Borana, a technology
+                    enthusiast interested in web development,
+                    computer systems and practical problem
+                    solving.
+                </p>
+
+                <br>
+
+                <p>
+                    I enjoy learning by building real projects
+                    and improving my skills step by step.
+                </p>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <h3>
+                    ⚡ Quick Info
+                </h3>
+
+                <ul class="info-list">
+
+                    <li>
+                        <strong>Role:</strong>
+                        Web Developer
+                    </li>
+
+                    <li>
+                        <strong>Experience:</strong>
+                        Desktop Support
+                    </li>
+
+                    <li>
+                        <strong>Focus:</strong>
+                        Web & Technology
+                    </li>
+
+                    <li>
+                        <strong>Learning:</strong>
+                        HTML, CSS, JavaScript
+                    </li>
+
+                    <li>
+                        <strong>GitHub:</strong>
+                        kuldeep17422
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
 
     </div>
 
@@ -594,40 +927,101 @@ footer{
 
 <section id="skills" class="reveal">
 
-    <h2 class="section-title">
-        My Skills
-    </h2>
+    <div class="container">
 
-    <div class="skills-container">
+        <h2 class="section-title">
+            My Skills
+        </h2>
 
-        <div class="skill-card">
-            <span class="skill-icon">🌐</span>
-            HTML
-        </div>
+        <p class="section-subtitle">
+            Technologies and tools I'm working with
+        </p>
 
-        <div class="skill-card">
-            <span class="skill-icon">🎨</span>
-            CSS
-        </div>
+        <div class="skills-grid">
 
-        <div class="skill-card">
-            <span class="skill-icon">⚡</span>
-            JavaScript
-        </div>
+            <div class="skill-card">
 
-        <div class="skill-card">
-            <span class="skill-icon">🐍</span>
-            Python
-        </div>
+                <div class="skill-top">
+                    <span class="skill-name">HTML</span>
+                    <span class="skill-percent">90%</span>
+                </div>
 
-        <div class="skill-card">
-            <span class="skill-icon">💻</span>
-            Git & GitHub
-        </div>
+                <div class="progress">
+                    <span style="width:90%"></span>
+                </div>
 
-        <div class="skill-card">
-            <span class="skill-icon">📱</span>
-            Responsive Design
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-top">
+                    <span class="skill-name">CSS</span>
+                    <span class="skill-percent">85%</span>
+                </div>
+
+                <div class="progress">
+                    <span style="width:85%"></span>
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-top">
+                    <span class="skill-name">JavaScript</span>
+                    <span class="skill-percent">75%</span>
+                </div>
+
+                <div class="progress">
+                    <span style="width:75%"></span>
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-top">
+                    <span class="skill-name">Python</span>
+                    <span class="skill-percent">65%</span>
+                </div>
+
+                <div class="progress">
+                    <span style="width:65%"></span>
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-top">
+                    <span class="skill-name">Git & GitHub</span>
+                    <span class="skill-percent">75%</span>
+                </div>
+
+                <div class="progress">
+                    <span style="width:75%"></span>
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-top">
+                    <span class="skill-name">Responsive Design</span>
+                    <span class="skill-percent">85%</span>
+                </div>
+
+                <div class="progress">
+                    <span style="width:85%"></span>
+                </div>
+
+            </div>
+
         </div>
 
     </div>
@@ -639,65 +1033,69 @@ footer{
 
 <section id="education" class="reveal">
 
-    <h2 class="section-title">
-        Education & Learning
-    </h2>
+    <div class="container">
 
-    <div class="education-container">
+        <h2 class="section-title">
+            Education & Learning
+        </h2>
 
-        <div class="education-card">
+        <p class="section-subtitle">
+            My education and continuous learning journey
+        </p>
 
-            <h3>
-                🎓 Education
-            </h3>
+        <div class="timeline">
 
-            <p>
-                Currently building my knowledge through
-                practical learning, coding practice and
-                web development projects.
-            </p>
+            <div class="timeline-item">
 
-        </div>
+                <h3>
+                    🎓 Bachelor of Commerce
+                </h3>
 
+                <p>
+                    Vikram University
+                </p>
 
-        <div class="education-card">
-
-            <h3>
-                💻 Web Development
-            </h3>
-
-            <p>
-                Learning HTML, CSS, JavaScript, responsive
-                design, Git and GitHub by creating real
-                projects.
-            </p>
-
-        </div>
+            </div>
 
 
-        <div class="education-card">
+            <div class="timeline-item">
 
-            <h3>
-                🚀 Continuous Learning
-            </h3>
+                <h3>
+                    📚 Higher Secondary — 12th
+                </h3>
 
-            <p>
-                Exploring new technologies and improving
-                my programming skills step by step.
-            </p>
+                <p>
+                    MP Board
+                </p>
 
-        </div>
+            </div>
 
 
-        <div class="learning">
+            <div class="timeline-item">
 
-            <h3>
-                📚 My Learning Goal
-            </h3>
+                <h3>
+                    📖 Secondary — 10th
+                </h3>
 
-            <p>
-                Learn → Build → Practice → Improve → Repeat 🔥
-            </p>
+                <p>
+                    MP Board
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <h3>
+                    💻 Advanced Diploma in Hardware
+                    & Network Engineering
+                </h3>
+
+                <p>
+                    ADCOM Computer Technologies
+                </p>
+
+            </div>
 
         </div>
 
@@ -710,97 +1108,132 @@ footer{
 
 <section id="projects" class="reveal">
 
-    <h2 class="section-title">
-        My Projects
-    </h2>
+    <div class="container">
 
-    <div class="projects-container">
+        <h2 class="section-title">
+            Featured Projects
+        </h2>
 
-        <div class="project-card">
+        <p class="section-subtitle">
+            Things I've built while learning
+        </p>
 
-            <div class="project-icon">
-                🧮
-            </div>
-
-            <h3>
-                Smart Calculator
-            </h3>
-
-            <p>
-                A clean and responsive calculator built
-                using HTML, CSS and JavaScript.
-            </p>
-
-            <div class="tags">
-
-                <span class="tag">HTML</span>
-                <span class="tag">CSS</span>
-                <span class="tag">JavaScript</span>
-
-            </div>
-
-            <div class="project-buttons">
-
-                <a
-                    class="project-btn"
-                    href="calculator.html"
-                >
-                    🚀 Live Demo
-                </a>
-
-                <a
-                    class="project-btn github"
-                    href="https://github.com/kuldeep17422/my-first-project"
-                    target="_blank"
-                >
-                    💻 GitHub
-                </a>
-
-            </div>
-
-        </div>
+        <div class="projects-grid">
 
 
-        <div class="project-card">
+            <!-- CALCULATOR -->
 
-            <div class="project-icon">
-                👨‍💻
-            </div>
+            <div class="project">
 
-            <h3>
-                Personal Portfolio
-            </h3>
+                <div class="project-top">
 
-            <p>
-                My personal portfolio website showcasing
-                my skills, projects and learning journey.
-            </p>
+                    <div class="project-icon">
+                        🧮
+                    </div>
 
-            <div class="tags">
+                    <h3>
+                        Smart Calculator
+                    </h3>
 
-                <span class="tag">HTML</span>
-                <span class="tag">CSS</span>
-                <span class="tag">JavaScript</span>
+                </div>
+
+                <div class="project-body">
+
+                    <p>
+                        A responsive calculator created using
+                        HTML, CSS and JavaScript with a clean
+                        and simple interface.
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+
+                    </div>
+
+                    <div class="project-links">
+
+                        <a
+                            href="calculator.html"
+                            class="btn btn-primary"
+                        >
+                            🚀 Live Demo
+                        </a>
+
+                        <a
+                            href="https://github.com/kuldeep17422/my-first-project"
+                            target="_blank"
+                            rel="noopener"
+                            class="btn btn-secondary"
+                        >
+                            💻 GitHub
+                        </a>
+
+                    </div>
+
+                </div>
 
             </div>
 
-            <div class="project-buttons">
 
-                <a
-                    class="project-btn"
-                    href="https://kuldeep17422.github.io/my-first-project/"
-                    target="_blank"
-                >
-                    🌐 Live Website
-                </a>
+            <!-- PORTFOLIO -->
 
-                <a
-                    class="project-btn github"
-                    href="https://github.com/kuldeep17422/my-first-project"
-                    target="_blank"
-                >
-                    💻 GitHub
-                </a>
+            <div class="project">
+
+                <div class="project-top">
+
+                    <div class="project-icon">
+                        👨‍💻
+                    </div>
+
+                    <h3>
+                        Personal Portfolio
+                    </h3>
+
+                </div>
+
+                <div class="project-body">
+
+                    <p>
+                        A modern responsive portfolio website
+                        showcasing my skills, projects,
+                        resume and contact information.
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">GitHub Pages</span>
+
+                    </div>
+
+                    <div class="project-links">
+
+                        <a
+                            href="https://kuldeep17422.github.io/my-first-project/"
+                            target="_blank"
+                            rel="noopener"
+                            class="btn btn-primary"
+                        >
+                            🌐 Live Website
+                        </a>
+
+                        <a
+                            href="https://github.com/kuldeep17422/my-first-project"
+                            target="_blank"
+                            rel="noopener"
+                            class="btn btn-secondary"
+                        >
+                            💻 GitHub
+                        </a>
+
+                    </div>
+
+                </div>
 
             </div>
 
@@ -815,42 +1248,40 @@ footer{
 
 <section id="hire" class="reveal">
 
-    <h2 class="section-title">
-        Hire Me
-    </h2>
+    <div class="container">
 
-    <div class="hire-box">
+        <div class="hire-box">
 
-        <h3>
-            🚀 Let's Build Something Great!
-        </h3>
+            <h3>
+                Ready to Work Together? 🚀
+            </h3>
 
-        <p>
-            I am interested in web development projects,
-            learning opportunities and collaborations.
-            If you have an idea, let's connect and build
-            something useful together.
-        </p>
+            <p>
+                I'm open to opportunities, projects,
+                collaborations and learning experiences.
+                Let's create something useful together.
+            </p>
 
-        <div class="hire-buttons">
+            <div class="hero-buttons"
+                 style="justify-content:center;">
 
-            <a
-                class="hire-btn"
-                href="mailto:kuldip8718@gmail.com?subject=Web Development Project"
-            >
-                📧 Hire Me
-            </a>
+                <a
+                    href="mailto:kuldip8718@gmail.com?subject=Web%20Development%20Opportunity"
+                    class="btn btn-primary"
+                >
+                    📧 Hire Me
+                </a>
 
-            <!-- RESUME PDF -->
+                <a
+                    href="resume.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-secondary"
+                >
+                    📄 Download Resume
+                </a>
 
-            <a
-                class="hire-btn resume"
-                href="resume.pdf"
-                target="_blank"
-                rel="noopener"
-            >
-                📄 Resume
-            </a>
+            </div>
 
         </div>
 
@@ -861,57 +1292,47 @@ footer{
 
 <!-- CONTACT -->
 
-<section id="contact" class="reveal">
-
-    <h2 class="section-title">
-        Contact Me
-    </h2>
+<section id="contact">
 
     <div class="contact-box">
 
-        <h3>
-            Let's Connect! 🤝
-        </h3>
+        <h2>
+            Let's Connect
+        </h2>
 
         <p>
-            Want to discuss a project, collaboration
-            or web development? Feel free to contact me.
+            Have a project, opportunity or idea?
+            Feel free to reach out.
         </p>
 
-        <div class="social-buttons">
+        <div class="socials">
 
             <a
-                class="social-btn instagram"
-                href="https://www.instagram.com/kuldeep_singh._9/"
-                target="_blank"
-                rel="noopener"
+                href="mailto:kuldip8718@gmail.com"
+                class="social email"
             >
-                📸 Instagram
+                📧 Email
             </a>
 
             <a
-                class="social-btn github"
                 href="https://github.com/kuldeep17422"
                 target="_blank"
                 rel="noopener"
+                class="social github"
             >
                 💻 GitHub
             </a>
 
             <a
-                class="social-btn email"
-                href="mailto:kuldip8718@gmail.com"
+                href="https://www.instagram.com/kuldeep_singh._9/"
+                target="_blank"
+                rel="noopener"
+                class="social instagram"
             >
-                📧 Email Me
+                📸 Instagram
             </a>
 
         </div>
-
-        <br>
-
-        <p>
-            🚀 Always Learning • Always Building
-        </p>
 
     </div>
 
@@ -922,15 +1343,56 @@ footer{
 
 <footer>
 
-    © 2026 Kuldeep Borana.
-    All Rights Reserved.
+    © 2026 Kuldeep Borana
+    • Built with HTML, CSS & JavaScript 🚀
 
 </footer>
 
 
-<!-- JAVASCRIPT -->
+<!-- SCROLL TOP -->
+
+<button id="topBtn" title="Go to top">
+    ↑
+</button>
+
 
 <script>
+
+/* DARK MODE */
+
+const themeBtn =
+    document.getElementById("themeBtn");
+
+const savedTheme =
+    localStorage.getItem("theme");
+
+if(savedTheme === "dark"){
+
+    document.body.classList.add("dark");
+
+    themeBtn.textContent = "☀️";
+
+}
+
+themeBtn.addEventListener("click",function(){
+
+    document.body.classList.toggle("dark");
+
+    const dark =
+        document.body.classList.contains("dark");
+
+    localStorage.setItem(
+        "theme",
+        dark ? "dark" : "light"
+    );
+
+    themeBtn.textContent =
+        dark ? "☀️" : "🌙";
+
+});
+
+
+/* SCROLL REVEAL */
 
 const revealItems =
     document.querySelectorAll(".reveal");
@@ -951,7 +1413,7 @@ const observer =
 
         },
         {
-            threshold:0.12
+            threshold:.12
         }
     );
 
@@ -962,20 +1424,24 @@ revealItems.forEach(item => {
 });
 
 
+/* ACTIVE NAVIGATION */
+
 const sections =
     document.querySelectorAll("section");
 
-const links =
-    document.querySelectorAll("nav a");
+const navLinks =
+    document.querySelectorAll(".nav-links a");
 
-
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll",function(){
 
     let current = "";
 
     sections.forEach(section => {
 
-        if(scrollY >= section.offsetTop - 180){
+        const top =
+            section.offsetTop - 180;
+
+        if(window.scrollY >= top){
 
             current =
                 section.getAttribute("id");
@@ -984,13 +1450,48 @@ window.addEventListener("scroll", () => {
 
     });
 
-    links.forEach(link => {
+    navLinks.forEach(link => {
 
-        link.classList.toggle(
-            "active",
-            link.getAttribute("href") === "#" + current
-        );
+        link.classList.remove("active");
 
+        if(
+            link.getAttribute("href")
+            === "#" + current
+        ){
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
+
+
+/* SCROLL TO TOP */
+
+const topBtn =
+    document.getElementById("topBtn");
+
+window.addEventListener("scroll",function(){
+
+    if(window.scrollY > 500){
+
+        topBtn.style.display = "block";
+
+    }else{
+
+        topBtn.style.display = "none";
+
+    }
+
+});
+
+topBtn.addEventListener("click",function(){
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
     });
 
 });
