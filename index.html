@@ -24,6 +24,7 @@ body{
 nav{
     position:fixed;
     top:0;
+    left:0;
     width:100%;
     z-index:1000;
     background:#191653;
@@ -43,7 +44,7 @@ nav a{
 
 nav a:hover,
 .active{
-    color:#ffd45c!important;
+    color:#ffd45c !important;
 }
 
 /* COMMON */
@@ -109,7 +110,8 @@ section{
 }
 
 .buttons,
-.project-buttons{
+.project-buttons,
+.social-buttons{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
@@ -118,7 +120,7 @@ section{
 
 .btn,
 .project-btn,
-.email{
+.social-btn{
     display:inline-block;
     padding:15px 25px;
     border-radius:35px;
@@ -134,7 +136,8 @@ section{
 }
 
 .btn:hover,
-.project-btn:hover{
+.project-btn:hover,
+.social-btn:hover{
     transform:translateY(-5px);
     box-shadow:0 10px 25px #0003;
 }
@@ -304,11 +307,27 @@ section{
     color:white;
 }
 
+/* SOCIAL BUTTONS */
+.social-buttons{
+    margin-top:25px;
+}
+
+.social-btn{
+    color:white;
+    font-size:18px;
+}
+
+.instagram{
+    background:#e1306c;
+}
+
+.github{
+    background:#222;
+}
+
 .email{
-    background:white;
+    background:#ffffff;
     color:#5669d9;
-    font-size:20px;
-    margin:25px 0;
 }
 
 /* FOOTER */
@@ -439,12 +458,12 @@ footer{
             👨‍💻 About Me
         </a>
 
-        <a class="btn" href="#contact">
-            📧 Contact Me
+        <a class="btn" href="#projects">
+            📁 My Projects
         </a>
 
-        <a class="btn" href="calculator.html">
-            🧮 Calculator
+        <a class="btn" href="#contact">
+            📧 Contact Me
         </a>
 
     </div>
@@ -559,17 +578,9 @@ footer{
 
             <div class="tags">
 
-                <span class="tag">
-                    HTML
-                </span>
-
-                <span class="tag">
-                    CSS
-                </span>
-
-                <span class="tag">
-                    JavaScript
-                </span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
 
             </div>
 
@@ -614,17 +625,9 @@ footer{
 
             <div class="tags">
 
-                <span class="tag">
-                    HTML
-                </span>
-
-                <span class="tag">
-                    CSS
-                </span>
-
-                <span class="tag">
-                    JavaScript
-                </span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
 
             </div>
 
@@ -674,12 +677,39 @@ footer{
             or web development? Feel free to contact me.
         </p>
 
-        <a
-            class="email"
-            href="mailto:kuldip8718@gmail.com"
-        >
-            📧 kuldip8718@gmail.com
-        </a>
+
+        <!-- SOCIAL BUTTONS -->
+
+        <div class="social-buttons">
+
+            <a
+                class="social-btn instagram"
+                href="https://www.instagram.com/kuldeep_singh._9/"
+                target="_blank"
+            >
+                📸 Instagram
+            </a>
+
+
+            <a
+                class="social-btn github"
+                href="https://github.com/kuldeep17422"
+                target="_blank"
+            >
+                💻 GitHub
+            </a>
+
+
+            <a
+                class="social-btn email"
+                href="mailto:kuldip8718@gmail.com"
+            >
+                📧 Email Me
+            </a>
+
+        </div>
+
+        <br>
 
         <p>
             🚀 Always Learning • Always Building
@@ -699,6 +729,8 @@ footer{
 
 </footer>
 
+
+<!-- JAVASCRIPT -->
 
 <script>
 
