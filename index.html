@@ -20,7 +20,6 @@ body{
     color:#222;
 }
 
-/* NAVBAR */
 nav{
     position:fixed;
     top:0;
@@ -36,9 +35,9 @@ nav{
 nav a{
     color:white;
     text-decoration:none;
-    font-size:22px;
+    font-size:21px;
     font-weight:bold;
-    margin:0 20px;
+    margin:0 16px;
     transition:.3s;
 }
 
@@ -47,7 +46,6 @@ nav a:hover,
     color:#ffd45c !important;
 }
 
-/* COMMON */
 section{
     min-height:100vh;
     padding:120px 7% 80px;
@@ -60,6 +58,7 @@ section{
 }
 
 /* HOME */
+
 #home{
     display:flex;
     flex-direction:column;
@@ -67,13 +66,7 @@ section{
     justify-content:center;
     text-align:center;
     color:white;
-
-    background:linear-gradient(
-        135deg,
-        #637ee8,
-        #7163cb
-    );
-
+    background:linear-gradient(135deg,#637ee8,#7163cb);
     overflow:hidden;
 }
 
@@ -83,13 +76,8 @@ section{
     border-radius:50%;
     object-fit:cover;
     border:10px solid white;
-
-    box-shadow:
-        0 0 0 7px #111,
-        0 15px 40px #0005;
-
+    box-shadow:0 0 0 7px #111,0 15px 40px #0005;
     margin-bottom:45px;
-
     animation:float 3s ease-in-out infinite;
 }
 
@@ -111,7 +99,8 @@ section{
 
 .buttons,
 .project-buttons,
-.social-buttons{
+.social-buttons,
+.hire-buttons{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
@@ -120,7 +109,8 @@ section{
 
 .btn,
 .project-btn,
-.social-btn{
+.social-btn,
+.hire-btn{
     display:inline-block;
     padding:15px 25px;
     border-radius:35px;
@@ -137,29 +127,28 @@ section{
 
 .btn:hover,
 .project-btn:hover,
-.social-btn:hover{
+.social-btn:hover,
+.hire-btn:hover{
     transform:translateY(-5px);
     box-shadow:0 10px 25px #0003;
 }
 
 /* ABOUT */
+
 #about,
-#projects{
-    background:#fff;
+#projects,
+#education{
+    background:white;
 }
 
-.about-box,
-.contact-box{
+.about-box{
     max-width:950px;
     margin:auto;
     padding:50px;
     border-radius:30px;
     text-align:center;
-    box-shadow:0 15px 40px #0002;
-}
-
-.about-box{
     background:#f0f1ff;
+    box-shadow:0 15px 40px #0002;
 }
 
 .about-box h3{
@@ -168,14 +157,14 @@ section{
     margin-bottom:20px;
 }
 
-.about-box p,
-.contact-box p{
+.about-box p{
     font-size:21px;
     line-height:1.8;
     color:#444;
 }
 
 /* SKILLS */
+
 #skills{
     background:#f5f6ff;
 }
@@ -183,10 +172,8 @@ section{
 .skills-container{
     max-width:1200px;
     margin:auto;
-
     display:grid;
     grid-template-columns:repeat(3,1fr);
-
     gap:28px;
 }
 
@@ -195,12 +182,9 @@ section{
     padding:38px 20px;
     border-radius:25px;
     text-align:center;
-
     font-size:25px;
     font-weight:bold;
-
     box-shadow:0 12px 30px #0002;
-
     transition:.3s;
 }
 
@@ -214,14 +198,66 @@ section{
     margin-bottom:12px;
 }
 
+/* EDUCATION */
+
+.education-container{
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    gap:25px;
+}
+
+.education-card{
+    background:#f3f4ff;
+    padding:32px;
+    border-radius:25px;
+    box-shadow:0 12px 30px #0002;
+    border-left:7px solid #6279e5;
+    transition:.3s;
+}
+
+.education-card:hover{
+    transform:translateX(8px);
+}
+
+.education-card h3{
+    font-size:29px;
+    color:#555bd4;
+    margin-bottom:12px;
+}
+
+.education-card p{
+    font-size:19px;
+    line-height:1.7;
+    color:#555;
+}
+
+.learning{
+    margin-top:35px;
+    text-align:center;
+    padding:35px;
+    border-radius:25px;
+    background:#eef0ff;
+}
+
+.learning h3{
+    font-size:30px;
+    margin-bottom:15px;
+    color:#555bd4;
+}
+
+.learning p{
+    font-size:20px;
+    line-height:1.7;
+}
+
 /* PROJECTS */
+
 .projects-container{
     max-width:1300px;
     margin:auto;
-
     display:grid;
     grid-template-columns:repeat(2,1fr);
-
     gap:35px;
 }
 
@@ -229,9 +265,7 @@ section{
     background:#f3f4ff;
     padding:40px;
     border-radius:30px;
-
     box-shadow:0 15px 35px #0002;
-
     transition:.3s;
 }
 
@@ -281,19 +315,59 @@ section{
     background:#222;
 }
 
-/* CONTACT */
-#contact{
-    background:linear-gradient(
-        135deg,
-        #636fe2,
-        #7060c8
-    );
+/* HIRE ME */
 
+#hire{
+    background:#f5f6ff;
+    text-align:center;
+}
+
+.hire-box{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:55px 35px;
+    border-radius:30px;
+    box-shadow:0 15px 40px #0002;
+}
+
+.hire-box h3{
+    font-size:40px;
+    color:#555bd4;
+    margin-bottom:20px;
+}
+
+.hire-box p{
+    font-size:21px;
+    line-height:1.8;
+    color:#555;
+    margin-bottom:30px;
+}
+
+.hire-btn{
+    background:#6279e5;
+    color:white;
+    font-size:19px;
+}
+
+.resume{
+    background:#222;
+}
+
+/* CONTACT */
+
+#contact{
+    background:linear-gradient(135deg,#636fe2,#7060c8);
     color:white;
     text-align:center;
 }
 
 .contact-box{
+    max-width:950px;
+    margin:auto;
+    padding:50px;
+    border-radius:30px;
+    text-align:center;
     background:#ffffff1f;
     backdrop-filter:blur(10px);
 }
@@ -304,10 +378,11 @@ section{
 }
 
 .contact-box p{
+    font-size:21px;
+    line-height:1.8;
     color:white;
 }
 
-/* SOCIAL BUTTONS */
 .social-buttons{
     margin-top:25px;
 }
@@ -326,11 +401,12 @@ section{
 }
 
 .email{
-    background:#ffffff;
+    background:white;
     color:#5669d9;
 }
 
 /* FOOTER */
+
 footer{
     background:#11103d;
     color:white;
@@ -339,6 +415,7 @@ footer{
 }
 
 /* ANIMATION */
+
 .reveal{
     opacity:0;
     transform:translateY(35px);
@@ -350,12 +427,13 @@ footer{
     transform:none;
 }
 
-/* MOBILE */
+/* TABLET */
+
 @media(max-width:900px){
 
     nav a{
-        font-size:17px;
-        margin:0 9px;
+        font-size:16px;
+        margin:0 8px;
     }
 
     .skills-container{
@@ -371,15 +449,17 @@ footer{
     }
 }
 
+/* MOBILE */
+
 @media(max-width:600px){
 
     nav{
-        padding:14px 4px;
+        padding:14px 3px;
     }
 
     nav a{
-        font-size:14px;
-        margin:0 5px;
+        font-size:13px;
+        margin:0 4px;
     }
 
     .profile-img{
@@ -409,14 +489,18 @@ footer{
     }
 
     .about-box,
+    .hire-box,
     .contact-box,
-    .project-card{
+    .project-card,
+    .education-card{
         padding:28px 20px;
     }
 
     .about-box p,
+    .hire-box p,
     .contact-box p,
-    .project-card p{
+    .project-card p,
+    .education-card p{
         font-size:18px;
     }
 }
@@ -431,7 +515,9 @@ footer{
     <a href="#home" class="active">Home</a>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
     <a href="#projects">Projects</a>
+    <a href="#hire">Hire Me</a>
     <a href="#contact">Contact</a>
 </nav>
 
@@ -462,8 +548,8 @@ footer{
             📁 My Projects
         </a>
 
-        <a class="btn" href="#contact">
-            📧 Contact Me
+        <a class="btn" href="#hire">
+            💼 Hire Me
         </a>
 
     </div>
@@ -549,6 +635,77 @@ footer{
 </section>
 
 
+<!-- EDUCATION -->
+
+<section id="education" class="reveal">
+
+    <h2 class="section-title">
+        Education & Learning
+    </h2>
+
+    <div class="education-container">
+
+        <div class="education-card">
+
+            <h3>
+                🎓 Education
+            </h3>
+
+            <p>
+                Currently building my knowledge through
+                practical learning, coding practice and
+                web development projects.
+            </p>
+
+        </div>
+
+
+        <div class="education-card">
+
+            <h3>
+                💻 Web Development
+            </h3>
+
+            <p>
+                Learning HTML, CSS, JavaScript, responsive
+                design, Git and GitHub by creating real
+                projects.
+            </p>
+
+        </div>
+
+
+        <div class="education-card">
+
+            <h3>
+                🚀 Continuous Learning
+            </h3>
+
+            <p>
+                Exploring new technologies and improving
+                my programming skills step by step.
+            </p>
+
+        </div>
+
+
+        <div class="learning">
+
+            <h3>
+                📚 My Learning Goal
+            </h3>
+
+            <p>
+                Learn → Build → Practice → Improve → Repeat 🔥
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
 <!-- PROJECTS -->
 
 <section id="projects" class="reveal">
@@ -558,8 +715,6 @@ footer{
     </h2>
 
     <div class="projects-container">
-
-        <!-- CALCULATOR -->
 
         <div class="project-card">
 
@@ -605,8 +760,6 @@ footer{
 
         </div>
 
-
-        <!-- PORTFOLIO -->
 
         <div class="project-card">
 
@@ -658,6 +811,50 @@ footer{
 </section>
 
 
+<!-- HIRE ME -->
+
+<section id="hire" class="reveal">
+
+    <h2 class="section-title">
+        Hire Me
+    </h2>
+
+    <div class="hire-box">
+
+        <h3>
+            🚀 Let's Build Something Great!
+        </h3>
+
+        <p>
+            I am interested in web development projects,
+            learning opportunities and collaborations.
+            If you have an idea, let's connect and build
+            something useful together.
+        </p>
+
+        <div class="hire-buttons">
+
+            <a
+                class="hire-btn"
+                href="mailto:kuldip8718@gmail.com?subject=Web Development Project"
+            >
+                📧 Hire Me
+            </a>
+
+            <a
+                class="hire-btn resume"
+                href="#contact"
+            >
+                📄 Resume
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
 <!-- CONTACT -->
 
 <section id="contact" class="reveal">
@@ -677,9 +874,6 @@ footer{
             or web development? Feel free to contact me.
         </p>
 
-
-        <!-- SOCIAL BUTTONS -->
-
         <div class="social-buttons">
 
             <a
@@ -690,7 +884,6 @@ footer{
                 📸 Instagram
             </a>
 
-
             <a
                 class="social-btn github"
                 href="https://github.com/kuldeep17422"
@@ -698,7 +891,6 @@ footer{
             >
                 💻 GitHub
             </a>
-
 
             <a
                 class="social-btn email"
