@@ -1,8 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>My First Website</title>
 
     <style>
@@ -10,42 +12,46 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: Arial, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
         }
 
-        .card {
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
+            padding: 20px;
+        }
+
+        .card {
             background: rgba(255, 255, 255, 0.15);
             padding: 50px;
             border-radius: 25px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
-            max-width: 600px;
-            margin: 20px;
+            max-width: 650px;
         }
 
         h1 {
-            font-size: 48px;
+            font-size: 55px;
             margin-bottom: 20px;
         }
 
-        p {
-            font-size: 20px;
-            margin-bottom: 30px;
+        .welcome {
+            font-size: 22px;
+            margin-bottom: 35px;
         }
 
         .btn {
             display: inline-block;
-            padding: 14px 30px;
+            padding: 15px 35px;
             background: white;
             color: #667eea;
             text-decoration: none;
@@ -57,16 +63,94 @@
         .btn:hover {
             transform: scale(1.08);
         }
+
+        .about {
+            min-height: 100vh;
+            background: white;
+            color: #333;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 42px;
+            color: #667eea;
+            margin-bottom: 25px;
+        }
+
+        .about p {
+            max-width: 650px;
+            margin: auto;
+            font-size: 20px;
+            line-height: 1.7;
+        }
+
+        .skills {
+            margin-top: 35px;
+        }
+
+        .skill {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            margin: 8px;
+            border-radius: 20px;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 40px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
     </style>
 </head>
 
 <body>
 
-    <div class="card">
-        <h1>Hello GitHub 👋</h1>
-        <p>Welcome to my first website 🚀</p>
-        <a href="#" class="btn">Explore My Website</a>
-    </div>
+    <!-- Home Section -->
+    <section class="hero" id="home">
+        <div class="card">
+
+            <h1>Hello GitHub 👋</h1>
+
+            <p class="welcome">
+                Welcome to my first website 🚀
+            </p>
+
+            <a href="#about" class="btn">
+                Explore My Website
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section class="about" id="about">
+
+        <h2>About Me 👨‍💻</h2>
+
+        <p>
+            Hello! Welcome to my website.
+            This is my first website created using HTML and CSS
+            and published with GitHub Pages. 🚀
+        </p>
+
+        <div class="skills">
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">GitHub</span>
+            <span class="skill">Web Design</span>
+        </div>
+
+        <a href="#home" class="back">
+            ↑ Back to Home
+        </a>
+
+    </section>
 
 </body>
 </html>
