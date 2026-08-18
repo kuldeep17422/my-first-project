@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,82 +16,97 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
+            background: #ffffff;
+            color: #333;
         }
 
+        /* Navigation */
         nav {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.25);
+            padding: 18px;
+            background: rgba(40, 35, 90, 0.85);
             backdrop-filter: blur(10px);
             text-align: center;
-            z-index: 10;
+            z-index: 1000;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
+            font-size: 24px;
             font-weight: bold;
+            margin: 0 25px;
         }
 
-        .hero {
+        nav a:hover {
+            color: #d8d9ff;
+        }
+
+        /* All Sections */
+        section {
             min-height: 100vh;
+            padding: 120px 20px 70px;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 80px 20px 20px;
         }
 
-        .hero-card {
-            max-width: 700px;
+        /* Home */
+        #home {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
         }
 
-        .profile {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            margin-bottom: 25px;
-            border: 5px solid white;
+        .profile-img {
+            width: 200px;
+            height: 200px;
             object-fit: cover;
+            border-radius: 50%;
+            border: 7px solid white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            margin-bottom: 35px;
         }
 
-        h1 {
-            font-size: 55px;
-            margin-bottom: 15px;
+        #home h1 {
+            font-size: 70px;
+            margin-bottom: 20px;
         }
 
-        .tagline {
-            font-size: 23px;
-            margin-bottom: 30px;
+        #home p {
+            font-size: 32px;
+            margin-bottom: 45px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .btn {
             display: inline-block;
-            padding: 14px 30px;
             background: white;
             color: #667eea;
             text-decoration: none;
-            border-radius: 30px;
+            padding: 18px 40px;
+            border-radius: 40px;
+            font-size: 22px;
             font-weight: bold;
-            margin: 8px;
             transition: 0.3s;
         }
 
         .btn:hover {
-            transform: scale(1.08);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
 
-        section {
-            min-height: 100vh;
-            padding: 100px 20px;
-            text-align: center;
-        }
-
+        /* About */
         #about {
             background: white;
             color: #333;
@@ -100,60 +114,122 @@
 
         #about h2,
         #contact h2 {
-            font-size: 42px;
-            margin-bottom: 25px;
+            font-size: 60px;
+            margin-bottom: 30px;
         }
 
-        .about-text {
-            max-width: 650px;
-            margin: auto;
-            font-size: 20px;
+        #about .intro {
+            font-size: 30px;
+            margin-bottom: 35px;
+        }
+
+        #about .description {
+            max-width: 900px;
+            font-size: 25px;
             line-height: 1.7;
+            margin-bottom: 45px;
         }
 
         .skills {
-            margin-top: 35px;
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .skill {
-            display: inline-block;
             background: #667eea;
             color: white;
-            padding: 10px 20px;
-            margin: 7px;
-            border-radius: 20px;
+            padding: 15px 30px;
+            border-radius: 35px;
+            font-size: 22px;
         }
 
+        /* Contact */
         #contact {
-            background: rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, #5b4b9a, #654ea3);
+            color: white;
         }
 
-        .contact-box {
-            max-width: 600px;
-            margin: auto;
+        #contact p {
+            font-size: 25px;
+            margin-bottom: 45px;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 35px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .social {
             display: inline-block;
-            margin: 10px;
-            padding: 13px 25px;
             background: white;
             color: #667eea;
             text-decoration: none;
-            border-radius: 25px;
+            padding: 20px 40px;
+            border-radius: 40px;
+            font-size: 23px;
             font-weight: bold;
+            transition: 0.3s;
         }
 
-        footer {
-            padding: 25px;
-            text-align: center;
-            background: rgba(0, 0, 0, 0.3);
+        .social:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+
+            nav a {
+                font-size: 18px;
+                margin: 0 8px;
+            }
+
+            .profile-img {
+                width: 160px;
+                height: 160px;
+            }
+
+            #home h1 {
+                font-size: 45px;
+            }
+
+            #home p {
+                font-size: 23px;
+            }
+
+            #about h2,
+            #contact h2 {
+                font-size: 42px;
+            }
+
+            #about .intro {
+                font-size: 24px;
+            }
+
+            #about .description {
+                font-size: 20px;
+            }
+
+            #contact p {
+                font-size: 20px;
+            }
+
+            .btn,
+            .social {
+                font-size: 19px;
+                padding: 15px 28px;
+            }
         }
     </style>
 </head>
 
 <body>
 
+    <!-- Navigation -->
     <nav>
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -161,49 +237,40 @@
     </nav>
 
 
-    <!-- Home -->
-    <section class="hero" id="home">
+    <!-- HOME -->
+    <section id="home">
 
-        <div class="hero-card">
+        <img
+            class="profile-img"
+            src="developer.png"
+            alt="Kuldeep Borana"
+        >
 
-            <!-- फिलहाल profile photo की जगह यह image इस्तेमाल होगी -->
-            <img
-                class="profile"
-                src=devloper.png
-                alt="Kuldeep Borana">
+        <h1>Kuldeep Borana</h1>
 
-            <h1>Kuldeep Borana</h1>
+        <p>Web Developer | Creative Learner 🚀</p>
 
-            <p class="tagline">
-                Web Developer | Creative Learner 🚀
-            </p>
-
-            <a href="#about" class="btn">
-                About Me
-            </a>
-
-            <a href="#contact" class="btn">
-                Contact Me
-            </a>
-<p>
-    Let's connect and build something awesome! 🚀
-</p>
+        <div class="buttons">
+            <a class="btn" href="#about">About Me</a>
+            <a class="btn" href="#contact">Contact Me</a>
         </div>
 
     </section>
 
 
-    <!-- About -->
+    <!-- ABOUT -->
     <section id="about">
 
         <h2>About Me 👨‍💻</h2>
 
-        <p class="about-text">
-            Hi, I'm Kuldeep Borana 👋<br><br>
+        <p class="intro">
+            Hi, I'm Kuldeep Borana 👋
+        </p>
 
+        <p class="description">
             Welcome to my personal portfolio website.
-            I'm learning web development and building
-            creative projects using HTML, CSS and GitHub.
+            I'm learning web development and building creative
+            projects using HTML, CSS and GitHub. 🚀
         </p>
 
         <div class="skills">
@@ -216,46 +283,45 @@
     </section>
 
 
-    <!-- Contact -->
+    <!-- CONTACT -->
     <section id="contact">
 
-        <div class="contact-box">
+        <h2>Contact Me 📩</h2>
 
-            <h2>Contact Me 📩</h2>
+        <p>
+            Let's connect and build something awesome! 🚀
+        </p>
 
-            <p>
-                Let's connect and build something awesome! 🚀
-            
+        <div class="contact-buttons">
 
-    Let's connect and build something awesome! 🚀
+            <a
+                class="social"
+                href="mailto:kuldip8718@gmail.com"
+            >
+                📧 Email
+            </a>
 
+            <a
+                class="social"
+                href="https://www.instagram.com/kuldeep_singh._9/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                📸 Instagram
+            </a>
 
-<br>
-
-<div class="contact-buttons">
-
-    <a class="social" href="mailto:kuldip8718@gmail.com">
-        📧 Email
-    </a>
-
-    <a class="social" href="https://www.instagram.com/kuldeep_singh._9/" target="_blank">
-        📸 Instagram
-    </a>
-
-    <a class="social" href="https://github.com/kuldeep17422" target="_blank">
-        💻 GitHub
-    </a>
-
-</div>
+            <a
+                class="social"
+                href="https://github.com/kuldeep17422"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                💻 GitHub
+            </a>
 
         </div>
 
     </section>
-
-
-    <footer>
-        © 2026 Kuldeep Borana. All Rights Reserved.
-    </footer>
 
 </body>
 </html>
