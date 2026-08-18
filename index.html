@@ -1,755 +1,771 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Kuldeep Borana | Web Developer</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f6ff;
-            color: #222;
-        }
-
-        /* ================= NAVBAR ================= */
-
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: #191653;
-            padding: 18px 20px;
-            text-align: center;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 25px;
-            font-weight: bold;
-            margin: 0 25px;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #ffd45c;
-        }
-
-        /* ================= HOME ================= */
-
-        #home {
-            min-height: 100vh;
-            padding-top: 100px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-
-            background: linear-gradient(
-                135deg,
-                #637ee8,
-                #7163cb
-            );
-
-            color: white;
-        }
-
-        .profile-img {
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 12px solid white;
-            box-shadow:
-                0 0 0 8px #111,
-                0 15px 35px rgba(0,0,0,0.35);
-
-            margin-bottom: 70px;
-        }
-
-        #home h1 {
-            font-size: clamp(55px, 9vw, 110px);
-            font-weight: 800;
-            margin-bottom: 20px;
-        }
-
-        #home p {
-            font-size: clamp(25px, 4vw, 48px);
-            margin-bottom: 35px;
-        }
-
-        .buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 18px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 18px 32px;
-            border-radius: 40px;
-            background: white;
-            color: #5e70dd;
-            text-decoration: none;
-            font-size: 21px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-        }
-
-        /* ================= COMMON ================= */
-
-        section {
-            min-height: 100vh;
-            padding: 120px 7% 80px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 65px;
-            margin-bottom: 60px;
-        }
-
-        /* ================= ABOUT ================= */
-
-        #about {
-            background: white;
-            text-align: center;
-        }
-
-        .about-box {
-            max-width: 950px;
-            margin: auto;
-            background: #f0f1ff;
-            padding: 50px;
-            border-radius: 30px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-        }
-
-        .about-box h3 {
-            font-size: 38px;
-            margin-bottom: 25px;
-            color: #555bd4;
-        }
-
-        .about-box p {
-            font-size: 23px;
-            line-height: 1.8;
-            color: #444;
-        }
-
-        /* ================= SKILLS ================= */
-
-        #skills {
-            background: #f5f6ff;
-        }
-
-        .skills-container {
-            max-width: 1200px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .skill-card {
-            background: white;
-            padding: 45px 25px;
-            border-radius: 25px;
-            text-align: center;
-            font-size: 27px;
-            font-weight: bold;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-            transition: 0.3s;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.18);
-        }
-
-        .skill-icon {
-            display: block;
-            font-size: 55px;
-            margin-bottom: 15px;
-        }
-
-        /* ================= PROJECTS ================= */
-
-        #projects {
-            background: white;
-        }
-
-        .projects-container {
-            max-width: 1300px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-        }
-
-        .project-card {
-            background: #f3f4ff;
-            padding: 45px;
-            border-radius: 30px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-            transition: 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .project-icon {
-            font-size: 60px;
-            margin-bottom: 20px;
-        }
-
-        .project-card h3 {
-            font-size: 35px;
-            margin-bottom: 20px;
-        }
-
-        .project-card p {
-            font-size: 20px;
-            line-height: 1.7;
-            color: #555;
-            margin-bottom: 25px;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 30px;
-        }
-
-        .tag {
-            background: #e0e5ff;
-            color: #5265d8;
-            padding: 10px 18px;
-            border-radius: 25px;
-            font-weight: bold;
-        }
-
-        .project-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .project-btn {
-            padding: 15px 25px;
-            border-radius: 15px;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            background: #6279e5;
-            color: white;
-            transition: 0.3s;
-        }
-
-        .project-btn.github {
-            background: #222;
-        }
-
-        .project-btn:hover {
-            transform: translateY(-4px);
-            opacity: 0.9;
-        }
-
-        /* ================= CONTACT ================= */
-
-        #contact {
-            background: linear-gradient(
-                135deg,
-                #636fe2,
-                #7060c8
-            );
-
-            color: white;
-            text-align: center;
-        }
-
-        .contact-box {
-            max-width: 850px;
-            margin: auto;
-            background: rgba(255,255,255,0.12);
-            padding: 55px;
-            border-radius: 30px;
-            backdrop-filter: blur(10px);
-        }
-
-        .contact-box h3 {
-            font-size: 40px;
-            margin-bottom: 20px;
-        }
-
-        .contact-box p {
-            font-size: 22px;
-            line-height: 1.7;
-            margin-bottom: 30px;
-        }
-
-        .email {
-            display: inline-block;
-            background: white;
-            color: #5669d9;
-            padding: 18px 30px;
-            border-radius: 40px;
-            text-decoration: none;
-            font-size: 21px;
-            font-weight: bold;
-            margin-bottom: 25px;
-        }
-
-        .email:hover {
-            transform: translateY(-4px);
-        }
-
-        /* ================= FOOTER ================= */
-
-        footer {
-            background: #11103d;
-            color: white;
-            text-align: center;
-            padding: 25px;
-            font-size: 17px;
-        }
-
-        /* ================= RESPONSIVE ================= */
-
-        @media (max-width: 900px) {
-
-            nav a {
-                font-size: 18px;
-                margin: 0 10px;
-            }
-
-            .profile-img {
-                width: 220px;
-                height: 220px;
-                margin-bottom: 40px;
-            }
-
-            .skills-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .projects-container {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title {
-                font-size: 50px;
-            }
-        }
-
-        @media (max-width: 600px) {
-
-            nav {
-                padding: 15px 5px;
-            }
-
-            nav a {
-                font-size: 15px;
-                margin: 0 6px;
-            }
-
-            #home {
-                padding-left: 20px;
-                padding-right: 20px;
-            }
-
-            .profile-img {
-                width: 180px;
-                height: 180px;
-            }
-
-            #home h1 {
-                font-size: 48px;
-            }
-
-            #home p {
-                font-size: 23px;
-            }
-
-            .btn {
-                font-size: 17px;
-                padding: 15px 22px;
-            }
-
-            section {
-                padding-left: 20px;
-                padding-right: 20px;
-            }
-
-            .section-title {
-                font-size: 42px;
-            }
-
-            .skills-container {
-                grid-template-columns: 1fr;
-            }
-
-            .skill-card {
-                font-size: 23px;
-            }
-
-            .project-card {
-                padding: 30px;
-            }
-
-            .project-card h3 {
-                font-size: 28px;
-            }
-
-            .about-box,
-            .contact-box {
-                padding: 30px 20px;
-            }
-
-            .about-box p,
-            .contact-box p {
-                font-size: 18px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kuldeep Borana | Web Developer</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f6ff;
+    color:#222;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    background:#191653;
+    padding:18px;
+    text-align:center;
+    box-shadow:0 4px 20px #0003;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:22px;
+    font-weight:bold;
+    margin:0 20px;
+    transition:.3s;
+}
+
+nav a:hover,
+.active{
+    color:#ffd45c!important;
+}
+
+/* COMMON */
+section{
+    min-height:100vh;
+    padding:120px 7% 80px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:58px;
+    margin-bottom:55px;
+}
+
+/* HOME */
+#home{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        #637ee8,
+        #7163cb
+    );
+
+    overflow:hidden;
+}
+
+.profile-img{
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    object-fit:cover;
+    border:10px solid white;
+
+    box-shadow:
+        0 0 0 7px #111,
+        0 15px 40px #0005;
+
+    margin-bottom:45px;
+
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+#home h1{
+    font-size:clamp(52px,8vw,100px);
+    margin-bottom:15px;
+}
+
+#home p{
+    font-size:clamp(24px,3vw,42px);
+    margin-bottom:30px;
+}
+
+.buttons,
+.project-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.btn,
+.project-btn,
+.email{
+    display:inline-block;
+    padding:15px 25px;
+    border-radius:35px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn{
+    background:white;
+    color:#596ddd;
+    font-size:19px;
+}
+
+.btn:hover,
+.project-btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px #0003;
+}
+
+/* ABOUT */
+#about,
+#projects{
+    background:#fff;
+}
+
+.about-box,
+.contact-box{
+    max-width:950px;
+    margin:auto;
+    padding:50px;
+    border-radius:30px;
+    text-align:center;
+    box-shadow:0 15px 40px #0002;
+}
+
+.about-box{
+    background:#f0f1ff;
+}
+
+.about-box h3{
+    font-size:36px;
+    color:#555bd4;
+    margin-bottom:20px;
+}
+
+.about-box p,
+.contact-box p{
+    font-size:21px;
+    line-height:1.8;
+    color:#444;
+}
+
+/* SKILLS */
+#skills{
+    background:#f5f6ff;
+}
+
+.skills-container{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    gap:28px;
+}
+
+.skill-card{
+    background:white;
+    padding:38px 20px;
+    border-radius:25px;
+    text-align:center;
+
+    font-size:25px;
+    font-weight:bold;
+
+    box-shadow:0 12px 30px #0002;
+
+    transition:.3s;
+}
+
+.skill-card:hover{
+    transform:translateY(-10px) scale(1.02);
+}
+
+.skill-icon{
+    display:block;
+    font-size:50px;
+    margin-bottom:12px;
+}
+
+/* PROJECTS */
+.projects-container{
+    max-width:1300px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
+}
+
+.project-card{
+    background:#f3f4ff;
+    padding:40px;
+    border-radius:30px;
+
+    box-shadow:0 15px 35px #0002;
+
+    transition:.3s;
+}
+
+.project-card:hover{
+    transform:translateY(-8px);
+}
+
+.project-icon{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.project-card h3{
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.project-card p{
+    font-size:19px;
+    line-height:1.7;
+    color:#555;
+    margin-bottom:22px;
+}
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:25px;
+}
+
+.tag{
+    background:#e0e5ff;
+    color:#5265d8;
+    padding:9px 16px;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+.project-btn{
+    background:#6279e5;
+    color:white;
+    font-size:17px;
+}
+
+.project-btn.github{
+    background:#222;
+}
+
+/* CONTACT */
+#contact{
+    background:linear-gradient(
+        135deg,
+        #636fe2,
+        #7060c8
+    );
+
+    color:white;
+    text-align:center;
+}
+
+.contact-box{
+    background:#ffffff1f;
+    backdrop-filter:blur(10px);
+}
+
+.contact-box h3{
+    font-size:38px;
+    margin-bottom:18px;
+}
+
+.contact-box p{
+    color:white;
+}
+
+.email{
+    background:white;
+    color:#5669d9;
+    font-size:20px;
+    margin:25px 0;
+}
+
+/* FOOTER */
+footer{
+    background:#11103d;
+    color:white;
+    text-align:center;
+    padding:24px;
+}
+
+/* ANIMATION */
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:opacity .8s,transform .8s;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:none;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+    nav a{
+        font-size:17px;
+        margin:0 9px;
+    }
+
+    .skills-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .projects-container{
+        grid-template-columns:1fr;
+    }
+
+    .section-title{
+        font-size:48px;
+    }
+}
+
+@media(max-width:600px){
+
+    nav{
+        padding:14px 4px;
+    }
+
+    nav a{
+        font-size:14px;
+        margin:0 5px;
+    }
+
+    .profile-img{
+        width:185px;
+        height:185px;
+    }
+
+    #home h1{
+        font-size:48px;
+    }
+
+    #home p{
+        font-size:22px;
+    }
+
+    section{
+        padding-left:20px;
+        padding-right:20px;
+    }
+
+    .skills-container{
+        grid-template-columns:1fr;
+    }
+
+    .section-title{
+        font-size:40px;
+    }
+
+    .about-box,
+    .contact-box,
+    .project-card{
+        padding:28px 20px;
+    }
+
+    .about-box p,
+    .contact-box p,
+    .project-card p{
+        font-size:18px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
+<!-- NAVBAR -->
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<nav>
+    <a href="#home" class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
 
 
-    <!-- ================= HOME ================= -->
+<!-- HOME -->
 
-    <section id="home">
+<section id="home">
 
-        <img
-            class="profile-img"
-            src="developer.png"
-            alt="Kuldeep Borana"
-        >
+    <img
+        class="profile-img"
+        src="developer.png"
+        alt="Kuldeep Borana"
+    >
 
-        <h1>Kuldeep Borana</h1>
+    <h1>Kuldeep Borana</h1>
 
-        <p>Web Developer | Creative | Learner 🚀</p>
+    <p>
+        Web Developer | Creative | Learner 🚀
+    </p>
 
-        <div class="buttons">
+    <div class="buttons">
 
-            <a class="btn" href="#about">
-                👨‍💻 About Me
-            </a>
+        <a class="btn" href="#about">
+            👨‍💻 About Me
+        </a>
 
-            <a class="btn" href="#contact">
-                📧 Contact Me
-            </a>
+        <a class="btn" href="#contact">
+            📧 Contact Me
+        </a>
 
-            <a class="btn" href="calculator.html">
-                🧮 Calculator
-            </a>
+        <a class="btn" href="calculator.html">
+            🧮 Calculator
+        </a>
 
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about" class="reveal">
+
+    <h2 class="section-title">
+        About Me
+    </h2>
+
+    <div class="about-box">
+
+        <h3>
+            👋 Hello, I'm Kuldeep!
+        </h3>
+
+        <p>
+            I am a passionate Web Developer who enjoys
+            creating clean, responsive and user-friendly
+            websites.
+        </p>
+
+        <br>
+
+        <p>
+            I am continuously learning new technologies
+            and building practical projects to grow as
+            a developer. 🚀
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills" class="reveal">
+
+    <h2 class="section-title">
+        My Skills
+    </h2>
+
+    <div class="skills-container">
+
+        <div class="skill-card">
+            <span class="skill-icon">🌐</span>
+            HTML
         </div>
 
-    </section>
-
-
-    <!-- ================= ABOUT ================= -->
-
-    <section id="about">
-
-        <h2 class="section-title">
-            About Me
-        </h2>
-
-        <div class="about-box">
-
-            <h3>👋 Hello, I'm Kuldeep!</h3>
-
-            <p>
-                I am a passionate Web Developer who enjoys creating
-                clean, responsive and user-friendly websites.
-                I am continuously learning new technologies and
-                improving my programming skills.
-            </p>
-
-            <br>
-
-            <p>
-                My goal is to build useful and creative web projects
-                while growing as a developer. 🚀
-            </p>
-
+        <div class="skill-card">
+            <span class="skill-icon">🎨</span>
+            CSS
         </div>
 
-    </section>
-
-
-    <!-- ================= SKILLS ================= -->
-
-    <section id="skills">
-
-        <h2 class="section-title">
-            My Skills
-        </h2>
-
-        <div class="skills-container">
-
-            <div class="skill-card">
-                <span class="skill-icon">🌐</span>
-                HTML
-            </div>
-
-            <div class="skill-card">
-                <span class="skill-icon">🎨</span>
-                CSS
-            </div>
-
-            <div class="skill-card">
-                <span class="skill-icon">⚡</span>
-                JavaScript
-            </div>
-
-            <div class="skill-card">
-                <span class="skill-icon">🐍</span>
-                Python
-            </div>
-
-            <div class="skill-card">
-                <span class="skill-icon">💻</span>
-                Git & GitHub
-            </div>
-
-            <div class="skill-card">
-                <span class="skill-icon">📱</span>
-                Responsive Design
-            </div>
-
+        <div class="skill-card">
+            <span class="skill-icon">⚡</span>
+            JavaScript
         </div>
 
-    </section>
-
-
-    <!-- ================= PROJECTS ================= -->
-
-    <section id="projects">
-
-        <h2 class="section-title">
-            My Projects
-        </h2>
-
-        <div class="projects-container">
-
-
-            <!-- Calculator -->
-
-            <div class="project-card">
-
-                <div class="project-icon">
-                    🧮
-                </div>
-
-                <h3>
-                    Smart Calculator
-                </h3>
-
-                <p>
-                    A clean and responsive calculator built using
-                    HTML, CSS and JavaScript. It supports basic
-                    arithmetic operations with a simple and
-                    user-friendly interface.
-                </p>
-
-                <div class="tags">
-                    <span class="tag">HTML</span>
-                    <span class="tag">CSS</span>
-                    <span class="tag">JavaScript</span>
-                </div>
-
-                <div class="project-buttons">
-
-                    <a
-                        class="project-btn"
-                        href="calculator.html"
-                    >
-                        🚀 Live Demo
-                    </a>
-
-                    <a
-                        class="project-btn github"
-                        href="https://github.com/kuldeep17422/my-first-project"
-                        target="_blank"
-                    >
-                        💻 GitHub
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- Portfolio -->
-
-            <div class="project-card">
-
-                <div class="project-icon">
-                    👨‍💻
-                </div>
-
-                <h3>
-                    Personal Portfolio
-                </h3>
-
-                <p>
-                    My personal portfolio website showcasing my
-                    skills, projects, learning journey and contact
-                    information.
-                </p>
-
-                <div class="tags">
-                    <span class="tag">HTML</span>
-                    <span class="tag">CSS</span>
-                    <span class="tag">JavaScript</span>
-                </div>
-
-                <div class="project-buttons">
-
-                    <a
-                        class="project-btn"
-                        href="https://kuldeep17422.github.io/my-first-project/"
-                        target="_blank"
-                    >
-                        🌐 Live Website
-                    </a>
-
-                    <a
-                        class="project-btn github"
-                        href="https://github.com/kuldeep17422/my-first-project"
-                        target="_blank"
-                    >
-                        💻 GitHub
-                    </a>
-
-                </div>
-
-            </div>
-
+        <div class="skill-card">
+            <span class="skill-icon">🐍</span>
+            Python
         </div>
 
-    </section>
+        <div class="skill-card">
+            <span class="skill-icon">💻</span>
+            Git & GitHub
+        </div>
+
+        <div class="skill-card">
+            <span class="skill-icon">📱</span>
+            Responsive Design
+        </div>
+
+    </div>
+
+</section>
 
 
-    <!-- ================= CONTACT ================= -->
+<!-- PROJECTS -->
 
-    <section id="contact">
+<section id="projects" class="reveal">
 
-        <h2 class="section-title">
-            Contact Me
-        </h2>
+    <h2 class="section-title">
+        My Projects
+    </h2>
 
-        <div class="contact-box">
+    <div class="projects-container">
+
+        <!-- CALCULATOR -->
+
+        <div class="project-card">
+
+            <div class="project-icon">
+                🧮
+            </div>
 
             <h3>
-                Let's Connect! 🤝
+                Smart Calculator
             </h3>
 
             <p>
-                If you want to discuss a project, collaboration,
-                learning or anything related to web development,
-                feel free to contact me.
+                A clean and responsive calculator built
+                using HTML, CSS and JavaScript.
             </p>
 
-            <a
-                class="email"
-                href="mailto:kuldip8718@gmail.com"
-            >
-                📧 kuldip8718@gmail.com
-            </a>
+            <div class="tags">
 
-            <p>
-                🚀 Always Learning • Always Building
-            </p>
+                <span class="tag">
+                    HTML
+                </span>
+
+                <span class="tag">
+                    CSS
+                </span>
+
+                <span class="tag">
+                    JavaScript
+                </span>
+
+            </div>
+
+            <div class="project-buttons">
+
+                <a
+                    class="project-btn"
+                    href="calculator.html"
+                >
+                    🚀 Live Demo
+                </a>
+
+                <a
+                    class="project-btn github"
+                    href="https://github.com/kuldeep17422/my-first-project"
+                    target="_blank"
+                >
+                    💻 GitHub
+                </a>
+
+            </div>
 
         </div>
 
-    </section>
+
+        <!-- PORTFOLIO -->
+
+        <div class="project-card">
+
+            <div class="project-icon">
+                👨‍💻
+            </div>
+
+            <h3>
+                Personal Portfolio
+            </h3>
+
+            <p>
+                My personal portfolio website showcasing
+                my skills, projects and learning journey.
+            </p>
+
+            <div class="tags">
+
+                <span class="tag">
+                    HTML
+                </span>
+
+                <span class="tag">
+                    CSS
+                </span>
+
+                <span class="tag">
+                    JavaScript
+                </span>
+
+            </div>
+
+            <div class="project-buttons">
+
+                <a
+                    class="project-btn"
+                    href="https://kuldeep17422.github.io/my-first-project/"
+                    target="_blank"
+                >
+                    🌐 Live Website
+                </a>
+
+                <a
+                    class="project-btn github"
+                    href="https://github.com/kuldeep17422/my-first-project"
+                    target="_blank"
+                >
+                    💻 GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-    <!-- ================= FOOTER ================= -->
+<!-- CONTACT -->
 
-    <footer>
+<section id="contact" class="reveal">
 
-        © 2026 Kuldeep Borana.
-        All Rights Reserved.
+    <h2 class="section-title">
+        Contact Me
+    </h2>
 
-    </footer>
+    <div class="contact-box">
+
+        <h3>
+            Let's Connect! 🤝
+        </h3>
+
+        <p>
+            Want to discuss a project, collaboration
+            or web development? Feel free to contact me.
+        </p>
+
+        <a
+            class="email"
+            href="mailto:kuldip8718@gmail.com"
+        >
+            📧 kuldip8718@gmail.com
+        </a>
+
+        <p>
+            🚀 Always Learning • Always Building
+        </p>
+
+    </div>
+
+</section>
 
 
-    <!-- ================= JAVASCRIPT ================= -->
+<!-- FOOTER -->
 
-    <script>
+<footer>
 
-        // Simple welcome message
-        console.log("Welcome to Kuldeep Borana's Portfolio 🚀");
+    © 2026 Kuldeep Borana.
+    All Rights Reserved.
 
-        // Highlight active navigation section
-        const sections = document.querySelectorAll("section");
-        const navLinks = document.querySelectorAll("nav a");
+</footer>
 
-        window.addEventListener("scroll", () => {
 
-            let current = "";
+<script>
 
-            sections.forEach(section => {
+const revealItems =
+    document.querySelectorAll(".reveal");
 
-                const sectionTop = section.offsetTop - 150;
+const observer =
+    new IntersectionObserver(
+        entries => {
 
-                if (scrollY >= sectionTop) {
-                    current = section.getAttribute("id");
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add("show");
+
                 }
 
             });
 
-            navLinks.forEach(link => {
+        },
+        {
+            threshold:0.12
+        }
+    );
 
-                link.style.color = "white";
+revealItems.forEach(item => {
 
-                if (link.getAttribute("href") === "#" + current) {
-                    link.style.color = "#ffd45c";
-                }
+    observer.observe(item);
 
-            });
+});
 
-        });
 
-    </script>
+const sections =
+    document.querySelectorAll("section");
+
+const links =
+    document.querySelectorAll("nav a");
+
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        if(scrollY >= section.offsetTop - 180){
+
+            current =
+                section.getAttribute("id");
+
+        }
+
+    });
+
+    links.forEach(link => {
+
+        link.classList.toggle(
+            "active",
+            link.getAttribute("href") === "#" + current
+        );
+
+    });
+
+});
+
+</script>
 
 </body>
 </html>
