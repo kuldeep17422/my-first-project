@@ -1,20 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Kuldeep Borana | Portfolio</title>
 
   <style>
-
-    /* =========================
-       BASIC RESET
-    ========================= */
-
     * {
       margin: 0;
       padding: 0;
@@ -27,471 +19,229 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: #6675df;
+      background: linear-gradient(135deg, #667eea, #764ba2);
       color: white;
       overflow-x: hidden;
     }
 
-    /* =========================
-       NAVIGATION
-    ========================= */
-
+    /* NAVBAR */
     nav {
-      position: fixed;
+      position: sticky;
       top: 0;
-      left: 0;
-      width: 100%;
-      height: 70px;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 45px;
-
-      background: rgba(25, 25, 80, 0.75);
-      backdrop-filter: blur(10px);
-
       z-index: 1000;
+      width: 100%;
+      background: rgba(20, 15, 60, 0.90);
+      padding: 18px 20px;
+      text-align: center;
+      backdrop-filter: blur(8px);
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      font-size: 22px;
+      font-size: 20px;
       font-weight: bold;
-
+      margin: 0 18px;
       transition: 0.3s;
     }
 
     nav a:hover {
-      color: #dfe3ff;
-      transform: translateY(-2px);
+      color: #ffd166;
     }
 
-    /* =========================
-       HOME
-    ========================= */
-
+    /* HOME */
     #home {
-      min-height: 100vh;
-
+      min-height: calc(100vh - 65px);
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-
+      justify-content: center;
       text-align: center;
-
-      padding: 110px 20px 70px;
-
-      background: linear-gradient(
-        135deg,
-        #6375df,
-        #7652b8
-      );
+      padding: 60px 20px;
     }
 
-    /* PROFILE IMAGE */
-
     .profile-pic {
-      width: 220px;
-      height: 220px;
-
+      width: 210px;
+      height: 210px;
       object-fit: cover;
-
       border-radius: 50%;
-
       border: 8px solid white;
-
-      box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.3);
-
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
       margin-bottom: 35px;
+      display: block;
     }
 
     #home h1 {
-      font-size: clamp(48px, 8vw, 85px);
+      font-size: clamp(42px, 8vw, 82px);
       line-height: 1.1;
-
-      margin-bottom: 25px;
+      margin-bottom: 20px;
+      font-weight: 800;
     }
 
-    .tagline {
-      font-size: clamp(22px, 3vw, 34px);
-
-      margin-bottom: 45px;
+    #home p {
+      font-size: clamp(22px, 4vw, 34px);
+      margin-bottom: 35px;
     }
 
-    .home-buttons {
+    .buttons {
       display: flex;
       justify-content: center;
-      gap: 25px;
       flex-wrap: wrap;
+      gap: 18px;
     }
 
     .button {
       display: inline-block;
-
-      padding: 18px 35px;
-
       background: white;
-      color: #6375df;
-
-      border-radius: 40px;
-
+      color: #667eea;
       text-decoration: none;
-
+      padding: 16px 30px;
+      border-radius: 35px;
       font-size: 20px;
       font-weight: bold;
-
       transition: 0.3s;
+      border: none;
+      cursor: pointer;
     }
 
     .button:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
     }
 
-    /* =========================
-       ABOUT
-    ========================= */
-
+    /* ABOUT */
     #about {
       min-height: 100vh;
-
       background: white;
       color: #333;
-
       text-align: center;
-
-      padding: 110px 20px 80px;
+      padding: 100px 20px;
     }
 
     #about h2,
-    #projects h2,
     #contact h2 {
       font-size: clamp(42px, 6vw, 65px);
-      margin-bottom: 30px;
-    }
-
-    #about h2 {
-      color: #6375df;
-    }
-
-    .about-intro {
-      font-size: clamp(22px, 3vw, 30px);
-
-      max-width: 850px;
-
-      margin: 0 auto 30px;
-
-      line-height: 1.7;
-    }
-
-    .about-text {
-      max-width: 850px;
-
-      margin: 0 auto 40px;
-
-      font-size: 19px;
-      line-height: 1.8;
-    }
-
-    /* SKILLS */
-
-    .skills {
-      display: flex;
-
-      justify-content: center;
-
-      flex-wrap: wrap;
-
-      gap: 18px;
-    }
-
-    .skill {
-      background: #6375df;
-      color: white;
-
-      padding: 14px 28px;
-
-      border-radius: 30px;
-
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    /* =========================
-       PROJECTS
-    ========================= */
-
-    #projects {
-      min-height: 100vh;
-
-      background: #f3f4ff;
-      color: #333;
-
-      text-align: center;
-
-      padding: 110px 20px 80px;
-    }
-
-    #projects h2 {
-      color: #6375df;
-    }
-
-    .projects-intro {
-      max-width: 700px;
-
-      margin: 0 auto 50px;
-
-      font-size: 21px;
-      line-height: 1.6;
-    }
-
-    .projects-container {
-      max-width: 1100px;
-
-      margin: auto;
-
-      display: flex;
-
-      justify-content: center;
-
-      flex-wrap: wrap;
-
-      gap: 25px;
-    }
-
-    .project-card {
-      width: 310px;
-
-      background: white;
-
-      padding: 35px 25px;
-
-      border-radius: 22px;
-
-      box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.12);
-
-      transition: 0.3s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-10px);
-
-      box-shadow:
-        0 18px 35px rgba(0, 0, 0, 0.18);
-    }
-
-    .project-icon {
-      font-size: 55px;
-
-      margin-bottom: 20px;
-    }
-
-    .project-card h3 {
-      color: #6375df;
-
-      font-size: 27px;
-
-      margin-bottom: 15px;
-    }
-
-    .project-card p {
-      font-size: 17px;
-
-      line-height: 1.6;
-
       margin-bottom: 25px;
     }
 
-    .project-link {
-      display: inline-block;
+    #about p {
+      max-width: 850px;
+      margin: 0 auto 35px;
+      font-size: 22px;
+      line-height: 1.7;
+    }
 
-      padding: 12px 22px;
+    .skills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 25px;
+    }
 
-      background: #6375df;
+    .skill {
+      background: #667eea;
       color: white;
-
-      border-radius: 30px;
-
-      text-decoration: none;
-
+      padding: 12px 20px;
+      border-radius: 25px;
       font-weight: bold;
-
-      transition: 0.3s;
     }
 
-    .project-link:hover {
-      background: #4f60d0;
-
-      transform: translateY(-2px);
-    }
-
-    /* =========================
-       CONTACT
-    ========================= */
-
+    /* CONTACT */
     #contact {
-      min-height: 80vh;
-
-      background: linear-gradient(
-        135deg,
-        #55458e,
-        #684ca2
-      );
-
-      color: white;
-
+      min-height: 100vh;
+      padding: 100px 20px;
       text-align: center;
-
-      padding: 110px 20px 80px;
+      background: linear-gradient(135deg, #764ba2, #667eea);
     }
 
     #contact p {
       font-size: 22px;
-
-      margin-bottom: 45px;
+      margin-bottom: 40px;
     }
 
     .contact-buttons {
       display: flex;
-
       justify-content: center;
-
       align-items: center;
-
       flex-wrap: wrap;
-
-      gap: 25px;
+      gap: 20px;
     }
 
     .contact-button {
       display: inline-block;
-
-      min-width: 190px;
-
-      padding: 18px 28px;
-
       background: white;
-
-      color: #6375df;
-
-      border-radius: 40px;
-
+      color: #667eea;
       text-decoration: none;
-
+      padding: 16px 28px;
+      border-radius: 35px;
       font-size: 20px;
-
       font-weight: bold;
-
       transition: 0.3s;
     }
 
     .contact-button:hover {
-      transform: translateY(-5px);
-
-      box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.25);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
     }
 
-    /* =========================
-       FOOTER
-    ========================= */
-
+    /* FOOTER */
     footer {
-      background: #29245a;
-
-      color: white;
-
+      background: #17133d;
       text-align: center;
-
-      padding: 25px 15px;
-
+      padding: 20px;
       font-size: 16px;
     }
 
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 700px) {
-
-      nav {
-        height: 60px;
-
-        gap: 20px;
-      }
-
+    /* MOBILE */
+    @media (max-width: 600px) {
       nav a {
-        font-size: 17px;
-      }
-
-      #home {
-        padding-top: 100px;
+        font-size: 16px;
+        margin: 0 7px;
       }
 
       .profile-pic {
-        width: 170px;
-        height: 170px;
-
-        border-width: 6px;
+        width: 160px;
+        height: 160px;
       }
 
-      #home h1 {
-        font-size: 48px;
+      #home {
+        padding-top: 45px;
       }
 
-      .tagline {
-        font-size: 22px;
+      #home p {
+        line-height: 1.4;
       }
 
-      .button {
-        padding: 15px 25px;
-
-        font-size: 17px;
-      }
-
-      .project-card {
-        width: 100%;
-        max-width: 350px;
-      }
-
+      .button,
       .contact-button {
-        width: 100%;
-        max-width: 300px;
+        font-size: 17px;
+        padding: 14px 22px;
+      }
+
+      #about,
+      #contact {
+        padding: 75px 18px;
+      }
+
+      #about p,
+      #contact p {
+        font-size: 18px;
       }
     }
-
   </style>
 </head>
 
-
 <body>
 
-  <!-- =========================
-       NAVIGATION
-  ========================= -->
-
+  <!-- NAVIGATION -->
   <nav>
-
     <a href="#home">Home</a>
-
     <a href="#about">About</a>
-
-    <a href="#projects">Projects</a>
-
     <a href="#contact">Contact</a>
-
   </nav>
 
-
-  <!-- =========================
-       HOME
-  ========================= -->
-
+  <!-- HOME -->
   <section id="home">
 
     <img
@@ -500,247 +250,88 @@
       class="profile-pic"
     >
 
-    <h1>
-      Kuldeep Borana
-    </h1>
+    <h1>Kuldeep Borana</h1>
 
-    <p class="tagline">
-      Web Developer | Creative Learner 🚀
-    </p>
+    <p>Web Developer | Creative | Learner 🚀</p>
 
-    <div class="home-buttons">
-
-      <a
-        href="#about"
-        class="button"
-      >
-        About Me
-      </a>
-
-      <a
-        href="#contact"
-        class="button"
-      >
-        Contact Me
-      </a>
-
+    <div class="buttons">
+      <a href="#about" class="button">About Me</a>
+      <a href="#contact" class="button">Contact Me</a>
+      <a href="calculator.html" class="button">🧮 Calculator</a>
     </div>
 
   </section>
 
-
-  <!-- =========================
-       ABOUT
-  ========================= -->
-
+  <!-- ABOUT -->
   <section id="about">
 
-    <h2>
-      About Me 👨‍💻
-    </h2>
+    <h2>About Me 👨‍💻</h2>
 
-    <p class="about-intro">
-      Hi, I'm Kuldeep Borana 👋
+    <p>
+      Hello! I'm Kuldeep Borana.
+      I am learning web development and building my skills
+      by creating new projects.
     </p>
 
-    <p class="about-text">
-      Welcome to my personal portfolio website.
-      I'm learning web development and building
-      creative projects using HTML, CSS and GitHub.
-      This website is also one of my first projects
-      published using GitHub Pages. 🚀
+    <p>
+      I enjoy creating websites, learning new technologies
+      and improving my coding skills every day. 🚀
     </p>
 
     <div class="skills">
-
       <span class="skill">HTML</span>
-
       <span class="skill">CSS</span>
-
+      <span class="skill">JavaScript</span>
       <span class="skill">GitHub</span>
-
-      <span class="skill">Web Design</span>
-
+      <span class="skill">Web Development</span>
     </div>
 
   </section>
 
-
-  <!-- =========================
-       PROJECTS
-  ========================= -->
-
-  <section id="projects">
-
-    <h2>
-      My Projects 🚀
-    </h2>
-
-    <p class="projects-intro">
-      Here are some projects I'm working on while
-      learning web development.
-    </p>
-
-
-    <div class="projects-container">
-
-
-      <!-- PROJECT 1 -->
-
-      <div class="project-card">
-
-        <div class="project-icon">
-          🌐
-        </div>
-
-        <h3>
-          My First Website
-        </h3>
-
-        <p>
-          My first personal website created using
-          HTML and CSS and published with GitHub Pages.
-        </p>
-
-        <a
-          href="#home"
-          class="project-link"
-        >
-          View Project →
-        </a>
-
-      </div>
-
-
-      <!-- PROJECT 2 -->
-
-      <div class="project-card">
-
-        <div class="project-icon">
-          💻
-        </div>
-
-        <h3>
-          Portfolio Website
-        </h3>
-
-        <p>
-          My personal portfolio where I showcase
-          my skills, projects and web development journey.
-        </p>
-
-        <a
-          href="#home"
-          class="project-link"
-        >
-          View Project →
-        </a>
-
-      </div>
-
-
-      <!-- PROJECT 3 -->
-
-      <div class="project-card">
-
-        <div class="project-icon">
-          🚀
-        </div>
-
-        <h3>
-          Future Projects
-        </h3>
-
-        <p>
-          More creative web development projects
-          will be added here as I continue learning.
-        </p>
-
-        <a
-          href="#projects"
-          class="project-link"
-        >
-          Coming Soon →
-        </a>
-
-      </div>
-
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       CONTACT
-  ========================= -->
-
+  <!-- CONTACT -->
   <section id="contact">
 
-    <h2>
-      Contact Me 📩
-    </h2>
+    <h2>Contact Me 📩</h2>
 
     <p>
       Let's connect and build something awesome! 🚀
     </p>
 
-
     <div class="contact-buttons">
 
-
-      <!-- EMAIL -->
-
       <a
-        href="mailto:kuldip8718@gmail.com"
         class="contact-button"
+        href="mailto:kuldip8718@gmail.com"
       >
         📧 Email
       </a>
 
-
-      <!-- INSTAGRAM -->
-
       <a
+        class="contact-button"
         href="https://www.instagram.com/kuldeep_singh._9/"
         target="_blank"
         rel="noopener noreferrer"
-        class="contact-button"
       >
         📸 Instagram
       </a>
 
-
-      <!-- GITHUB -->
-
       <a
+        class="contact-button"
         href="https://github.com/kuldeep17422"
         target="_blank"
         rel="noopener noreferrer"
-        class="contact-button"
       >
         💻 GitHub
       </a>
-
 
     </div>
 
   </section>
 
-
-  <!-- =========================
-       FOOTER
-  ========================= -->
-
+  <!-- FOOTER -->
   <footer>
-
-    <p>
-      © 2026 Kuldeep Borana | Built with HTML & CSS 🚀
-    </p>
-
+    © 2026 Kuldeep Borana | Made with ❤️ and code
   </footer>
 
-
 </body>
-
 </html>
