@@ -1,911 +1,755 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>Kuldeep Borana | Portfolio</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      color: #222;
-      background: #f4f5ff;
-    }
-
-    /* ================= NAVBAR ================= */
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-
-      width: 100%;
-      padding: 18px 20px;
-
-      background: #17164f;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    nav ul {
-      list-style: none;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      gap: 55px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-
-      font-size: 22px;
-      font-weight: bold;
-
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #ffd45c;
-    }
-
-
-    /* ================= HOME ================= */
-
-    #home {
-      min-height: 100vh;
-
-      background: linear-gradient(
-        135deg,
-        #667eea,
-        #764ba2
-      );
-
-      color: white;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      text-align: center;
-
-      padding: 80px 20px;
-    }
-
-    .profile-image {
-      width: 280px;
-      height: 280px;
-
-      object-fit: cover;
-
-      border-radius: 50%;
-
-      border: 12px solid white;
-
-      box-shadow:
-        0 0 0 6px #111,
-        0 15px 35px rgba(0, 0, 0, 0.3);
-
-      margin-bottom: 55px;
-    }
-
-    #home h1 {
-      font-size: 80px;
-      margin-bottom: 20px;
-      font-weight: 800;
-    }
-
-    #home .tagline {
-      font-size: 32px;
-      margin-bottom: 40px;
-    }
-
-    .home-buttons {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .home-btn {
-      display: inline-block;
-
-      padding: 18px 30px;
-
-      background: white;
-      color: #667eea;
-
-      border-radius: 40px;
-
-      text-decoration: none;
-
-      font-size: 20px;
-      font-weight: bold;
-
-      transition: 0.3s;
-    }
-
-    .home-btn:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-    }
-
-
-    /* ================= COMMON SECTION ================= */
-
-    section {
-      min-height: 100vh;
-      padding: 100px 20px;
-    }
-
-    .section-container {
-      max-width: 1100px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .section-title {
-      font-size: 55px;
-      margin-bottom: 20px;
-    }
-
-    .section-subtitle {
-      font-size: 20px;
-      color: #666;
-      margin-bottom: 55px;
-    }
-
-
-    /* ================= ABOUT ================= */
-
-    #about {
-      background: white;
-    }
-
-    .about-card {
-      max-width: 850px;
-
-      margin: auto;
-
-      background: #f4f5ff;
-
-      padding: 45px;
-
-      border-radius: 25px;
-
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    }
-
-    .about-card h3 {
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
-
-    .about-card p {
-      font-size: 19px;
-      line-height: 1.8;
-      color: #555;
-    }
-
-
-    /* ================= SKILLS ================= */
-
-    #skills {
-      background: #f4f5ff;
-    }
-
-    .skills-grid {
-      display: grid;
-
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 25px;
-    }
-
-    .skill-card {
-      background: white;
-
-      padding: 35px 20px;
-
-      border-radius: 22px;
-
-      font-size: 24px;
-      font-weight: bold;
-
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-
-      transition: 0.3s;
-    }
-
-    .skill-card:hover {
-      transform: translateY(-8px);
-    }
-
-    .skill-icon {
-      display: block;
-
-      font-size: 50px;
-
-      margin-bottom: 15px;
-    }
-
-
-    /* ================= PROJECTS ================= */
-
-    #projects {
-      background: white;
-    }
-
-    .projects-grid {
-      display: grid;
-
-      grid-template-columns: repeat(2, 1fr);
-
-      gap: 30px;
-
-      text-align: left;
-    }
-
-    .project-card {
-      background: #f4f5ff;
-
-      padding: 35px;
-
-      border-radius: 25px;
-
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-
-      transition: 0.3s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-10px);
-
-      box-shadow:
-        0 20px 45px rgba(0, 0, 0, 0.18);
-    }
-
-    .project-icon {
-      font-size: 55px;
-
-      margin-bottom: 15px;
-    }
-
-    .project-card h3 {
-      font-size: 30px;
-
-      margin-bottom: 15px;
-    }
-
-    .project-card p {
-      font-size: 17px;
-
-      line-height: 1.7;
-
-      color: #555;
-    }
-
-    .tech-stack {
-      display: flex;
-
-      gap: 10px;
-
-      flex-wrap: wrap;
-
-      margin: 25px 0;
-    }
-
-    .tech-stack span {
-      background: #e5e8ff;
-
-      color: #4d5bd5;
-
-      padding: 8px 15px;
-
-      border-radius: 20px;
-
-      font-weight: bold;
-    }
-
-    .project-buttons {
-      display: flex;
-
-      gap: 12px;
-
-      flex-wrap: wrap;
-    }
-
-    .project-btn {
-      display: inline-block;
-
-      text-decoration: none;
-
-      padding: 13px 22px;
-
-      border-radius: 12px;
-
-      font-weight: bold;
-
-      transition: 0.3s;
-    }
-
-    .live-btn {
-      background: #667eea;
-
-      color: white;
-    }
-
-    .github-btn {
-      background: #222;
-
-      color: white;
-    }
-
-    .project-btn:hover {
-      transform: translateY(-3px);
-
-      opacity: 0.9;
-    }
-
-
-    /* ================= CONTACT ================= */
-
-    #contact {
-      background: #f4f5ff;
-
-      min-height: 80vh;
-    }
-
-    .contact-card {
-      max-width: 750px;
-
-      margin: auto;
-
-      background: white;
-
-      padding: 50px 30px;
-
-      border-radius: 25px;
-
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-    }
-
-    .contact-card h3 {
-      font-size: 32px;
-
-      margin-bottom: 20px;
-    }
-
-    .contact-card p {
-      font-size: 19px;
-
-      color: #666;
-
-      margin-bottom: 30px;
-    }
-
-    .email-button {
-      display: inline-block;
-
-      background: #667eea;
-
-      color: white;
-
-      text-decoration: none;
-
-      padding: 16px 28px;
-
-      border-radius: 30px;
-
-      font-size: 18px;
-
-      font-weight: bold;
-
-      transition: 0.3s;
-    }
-
-    .email-button:hover {
-      transform: translateY(-4px);
-
-      background: #5568d9;
-    }
-
-    .github-main {
-      display: inline-block;
-
-      margin-top: 20px;
-
-      color: #222;
-
-      text-decoration: none;
-
-      font-weight: bold;
-
-      font-size: 18px;
-    }
-
-    .github-main:hover {
-      color: #667eea;
-    }
-
-
-    /* ================= FOOTER ================= */
-
-    footer {
-      background: #17164f;
-
-      color: white;
-
-      text-align: center;
-
-      padding: 25px 15px;
-
-      font-size: 16px;
-    }
-
-
-    /* ================= MOBILE ================= */
-
-    @media (max-width: 768px) {
-
-      nav ul {
-        gap: 18px;
-      }
-
-      nav a {
-        font-size: 16px;
-      }
-
-      #home {
-        padding-top: 60px;
-      }
-
-      .profile-image {
-        width: 210px;
-        height: 210px;
-
-        margin-bottom: 40px;
-      }
-
-      #home h1 {
-        font-size: 48px;
-      }
-
-      #home .tagline {
-        font-size: 22px;
-      }
-
-      .section-title {
-        font-size: 40px;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-card {
-        padding: 30px 20px;
-      }
-
-      .project-card {
-        padding: 25px;
-      }
-
-      .home-btn {
-        font-size: 17px;
-
-        padding: 15px 22px;
-      }
-    }
-
-    @media (max-width: 480px) {
-
-      nav {
-        padding: 15px 8px;
-      }
-
-      nav ul {
-        gap: 12px;
-      }
-
-      nav a {
-        font-size: 14px;
-      }
-
-      #home h1 {
-        font-size: 38px;
-      }
-
-      #home .tagline {
-        font-size: 19px;
-      }
-
-      .profile-image {
-        width: 180px;
-        height: 180px;
-      }
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kuldeep Borana | Web Developer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f6ff;
+            color: #222;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #191653;
+            padding: 18px 20px;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 25px;
+            font-weight: bold;
+            margin: 0 25px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd45c;
+        }
+
+        /* ================= HOME ================= */
+
+        #home {
+            min-height: 100vh;
+            padding-top: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            background: linear-gradient(
+                135deg,
+                #637ee8,
+                #7163cb
+            );
+
+            color: white;
+        }
+
+        .profile-img {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 12px solid white;
+            box-shadow:
+                0 0 0 8px #111,
+                0 15px 35px rgba(0,0,0,0.35);
+
+            margin-bottom: 70px;
+        }
+
+        #home h1 {
+            font-size: clamp(55px, 9vw, 110px);
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        #home p {
+            font-size: clamp(25px, 4vw, 48px);
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 32px;
+            border-radius: 40px;
+            background: white;
+            color: #5e70dd;
+            text-decoration: none;
+            font-size: 21px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+        }
+
+        /* ================= COMMON ================= */
+
+        section {
+            min-height: 100vh;
+            padding: 120px 7% 80px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 65px;
+            margin-bottom: 60px;
+        }
+
+        /* ================= ABOUT ================= */
+
+        #about {
+            background: white;
+            text-align: center;
+        }
+
+        .about-box {
+            max-width: 950px;
+            margin: auto;
+            background: #f0f1ff;
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .about-box h3 {
+            font-size: 38px;
+            margin-bottom: 25px;
+            color: #555bd4;
+        }
+
+        .about-box p {
+            font-size: 23px;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        /* ================= SKILLS ================= */
+
+        #skills {
+            background: #f5f6ff;
+        }
+
+        .skills-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 45px 25px;
+            border-radius: 25px;
+            text-align: center;
+            font-size: 27px;
+            font-weight: bold;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+        }
+
+        .skill-icon {
+            display: block;
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        /* ================= PROJECTS ================= */
+
+        #projects {
+            background: white;
+        }
+
+        .projects-container {
+            max-width: 1300px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .project-card {
+            background: #f3f4ff;
+            padding: 45px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .project-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .project-card h3 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .project-card p {
+            font-size: 20px;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .tag {
+            background: #e0e5ff;
+            color: #5265d8;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .project-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .project-btn {
+            padding: 15px 25px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            background: #6279e5;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .project-btn.github {
+            background: #222;
+        }
+
+        .project-btn:hover {
+            transform: translateY(-4px);
+            opacity: 0.9;
+        }
+
+        /* ================= CONTACT ================= */
+
+        #contact {
+            background: linear-gradient(
+                135deg,
+                #636fe2,
+                #7060c8
+            );
+
+            color: white;
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 850px;
+            margin: auto;
+            background: rgba(255,255,255,0.12);
+            padding: 55px;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-box h3 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .contact-box p {
+            font-size: 22px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .email {
+            display: inline-block;
+            background: white;
+            color: #5669d9;
+            padding: 18px 30px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-size: 21px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .email:hover {
+            transform: translateY(-4px);
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #11103d;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 17px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            nav a {
+                font-size: 18px;
+                margin: 0 10px;
+            }
+
+            .profile-img {
+                width: 220px;
+                height: 220px;
+                margin-bottom: 40px;
+            }
+
+            .skills-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 50px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 15px 5px;
+            }
+
+            nav a {
+                font-size: 15px;
+                margin: 0 6px;
+            }
+
+            #home {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .profile-img {
+                width: 180px;
+                height: 180px;
+            }
+
+            #home h1 {
+                font-size: 48px;
+            }
+
+            #home p {
+                font-size: 23px;
+            }
+
+            .btn {
+                font-size: 17px;
+                padding: 15px 22px;
+            }
+
+            section {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .section-title {
+                font-size: 42px;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-card {
+                font-size: 23px;
+            }
+
+            .project-card {
+                padding: 30px;
+            }
+
+            .project-card h3 {
+                font-size: 28px;
+            }
+
+            .about-box,
+            .contact-box {
+                padding: 30px 20px;
+            }
+
+            .about-box p,
+            .contact-box p {
+                font-size: 18px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
+    <!-- ================= NAVBAR ================= -->
 
-  <!-- ================= NAVBAR ================= -->
-
-  <nav>
-    <ul>
-      <li>
+    <nav>
         <a href="#home">Home</a>
-      </li>
-
-      <li>
         <a href="#about">About</a>
-      </li>
-
-      <li>
         <a href="#skills">Skills</a>
-      </li>
-
-      <li>
         <a href="#projects">Projects</a>
-      </li>
-
-      <li>
         <a href="#contact">Contact</a>
-      </li>
-    </ul>
-  </nav>
+    </nav>
 
 
-  <!-- ================= HOME ================= -->
+    <!-- ================= HOME ================= -->
 
-  <section id="home">
+    <section id="home">
 
-    <img
-      src="developer.png"
-      alt="Developer"
-      class="profile-image"
-    >
-
-    <h1>Kuldeep Borana</h1>
-
-    <p class="tagline">
-      Web Developer | Creative | Learner 🚀
-    </p>
-
-    <div class="home-buttons">
-
-      <a
-        href="#about"
-        class="home-btn"
-      >
-        👤 About Me
-      </a>
-
-      <a
-        href="#projects"
-        class="home-btn"
-      >
-        📁 My Projects
-      </a>
-
-      <a
-        href="#contact"
-        class="home-btn"
-      >
-        📧 Contact Me
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <!-- ================= ABOUT ================= -->
-
-  <section id="about">
-
-    <div class="section-container">
-
-      <h2 class="section-title">
-        About Me
-      </h2>
-
-      <p class="section-subtitle">
-        Get to know me
-      </p>
-
-      <div class="about-card">
-
-        <h3>
-          Hello! 👋
-        </h3>
-
-        <p>
-          I'm <strong>Kuldeep Borana</strong>, a passionate
-          web developer and creative learner. I enjoy creating
-          websites, learning new technologies and turning ideas
-          into working projects.
-        </p>
-
-        <br>
-
-        <p>
-          My goal is to continuously improve my coding skills
-          and build useful, beautiful and responsive websites.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ================= SKILLS ================= -->
-
-  <section id="skills">
-
-    <div class="section-container">
-
-      <h2 class="section-title">
-        My Skills
-      </h2>
-
-      <p class="section-subtitle">
-        Technologies and tools I'm learning
-      </p>
-
-      <div class="skills-grid">
-
-        <div class="skill-card">
-          <span class="skill-icon">🌐</span>
-          HTML
-        </div>
-
-        <div class="skill-card">
-          <span class="skill-icon">🎨</span>
-          CSS
-        </div>
-
-        <div class="skill-card">
-          <span class="skill-icon">⚡</span>
-          JavaScript
-        </div>
-
-        <div class="skill-card">
-          <span class="skill-icon">🐍</span>
-          Python
-        </div>
-
-        <div class="skill-card">
-          <span class="skill-icon">💻</span>
-          Git & GitHub
-        </div>
-
-        <div class="skill-card">
-          <span class="skill-icon">📱</span>
-          Responsive Design
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ================= PROJECTS ================= -->
-
-  <section id="projects">
-
-    <div class="section-container">
-
-      <h2 class="section-title">
-        My Projects
-      </h2>
-
-      <p class="section-subtitle">
-        Things I have built while learning
-      </p>
-
-
-      <div class="projects-grid">
-
-
-        <!-- CALCULATOR -->
-
-        <div class="project-card">
-
-          <div class="project-icon">
-            🧮
-          </div>
-
-          <h3>
-            Smart Calculator
-          </h3>
-
-          <p>
-            A clean and responsive calculator built using
-            HTML, CSS and JavaScript. It supports basic
-            arithmetic operations with a simple and
-            user-friendly interface.
-          </p>
-
-          <div class="tech-stack">
-
-            <span>HTML</span>
-
-            <span>CSS</span>
-
-            <span>JavaScript</span>
-
-          </div>
-
-          <div class="project-buttons">
-
-            <a
-              href="calculator.html"
-              class="project-btn live-btn"
-              target="_blank"
-            >
-              🚀 Live Demo
-            </a>
-
-            <a
-              href="https://github.com/kuldeep17422/my-first-project/blob/main/calculator.html"
-              class="project-btn github-btn"
-              target="_blank"
-            >
-              💻 GitHub
-            </a>
-
-          </div>
-
-        </div>
-
-
-        <!-- PORTFOLIO -->
-
-        <div class="project-card">
-
-          <div class="project-icon">
-            👨‍💻
-          </div>
-
-          <h3>
-            Personal Portfolio
-          </h3>
-
-          <p>
-            My personal portfolio website showcasing my
-            skills, projects, learning journey and contact
-            information.
-          </p>
-
-          <div class="tech-stack">
-
-            <span>HTML</span>
-
-            <span>CSS</span>
-
-            <span>JavaScript</span>
-
-          </div>
-
-          <div class="project-buttons">
-
-            <a
-              href="#home"
-              class="project-btn live-btn"
-            >
-              🌐 Live Website
-            </a>
-
-            <a
-              href="https://github.com/kuldeep17422/my-first-project"
-              class="project-btn github-btn"
-              target="_blank"
-            >
-              💻 GitHub
-            </a>
-
-          </div>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ================= CONTACT ================= -->
-
-  <section id="contact">
-
-    <div class="section-container">
-
-      <h2 class="section-title">
-        Contact Me
-      </h2>
-
-      <p class="section-subtitle">
-        Let's connect and build something together
-      </p>
-
-
-      <div class="contact-card">
-
-        <h3>
-          Get In Touch 📩
-        </h3>
-
-        <p>
-          If you want to contact me, send me an email.
-        </p>
-
-        <a
-          href="mailto:kuldip8718@gmail.com"
-          class="email-button"
+        <img
+            class="profile-img"
+            src="developer.png"
+            alt="Kuldeep Borana"
         >
-          📧 kuldip8718@gmail.com
-        </a>
 
-        <br>
+        <h1>Kuldeep Borana</h1>
 
-        <a
-          href="https://github.com/kuldeep17422"
-          class="github-main"
-          target="_blank"
-        >
-          💻 Visit My GitHub
-        </a>
+        <p>Web Developer | Creative | Learner 🚀</p>
 
-      </div>
+        <div class="buttons">
 
-    </div>
+            <a class="btn" href="#about">
+                👨‍💻 About Me
+            </a>
 
-  </section>
+            <a class="btn" href="#contact">
+                📧 Contact Me
+            </a>
+
+            <a class="btn" href="calculator.html">
+                🧮 Calculator
+            </a>
+
+        </div>
+
+    </section>
 
 
-  <!-- ================= FOOTER ================= -->
+    <!-- ================= ABOUT ================= -->
 
-  <footer>
+    <section id="about">
 
-    <p>
-      © 2026 Kuldeep Borana. All Rights Reserved.
-    </p>
+        <h2 class="section-title">
+            About Me
+        </h2>
 
-  </footer>
+        <div class="about-box">
 
+            <h3>👋 Hello, I'm Kuldeep!</h3>
+
+            <p>
+                I am a passionate Web Developer who enjoys creating
+                clean, responsive and user-friendly websites.
+                I am continuously learning new technologies and
+                improving my programming skills.
+            </p>
+
+            <br>
+
+            <p>
+                My goal is to build useful and creative web projects
+                while growing as a developer. 🚀
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SKILLS ================= -->
+
+    <section id="skills">
+
+        <h2 class="section-title">
+            My Skills
+        </h2>
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+                <span class="skill-icon">🌐</span>
+                HTML
+            </div>
+
+            <div class="skill-card">
+                <span class="skill-icon">🎨</span>
+                CSS
+            </div>
+
+            <div class="skill-card">
+                <span class="skill-icon">⚡</span>
+                JavaScript
+            </div>
+
+            <div class="skill-card">
+                <span class="skill-icon">🐍</span>
+                Python
+            </div>
+
+            <div class="skill-card">
+                <span class="skill-icon">💻</span>
+                Git & GitHub
+            </div>
+
+            <div class="skill-card">
+                <span class="skill-icon">📱</span>
+                Responsive Design
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section id="projects">
+
+        <h2 class="section-title">
+            My Projects
+        </h2>
+
+        <div class="projects-container">
+
+
+            <!-- Calculator -->
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    🧮
+                </div>
+
+                <h3>
+                    Smart Calculator
+                </h3>
+
+                <p>
+                    A clean and responsive calculator built using
+                    HTML, CSS and JavaScript. It supports basic
+                    arithmetic operations with a simple and
+                    user-friendly interface.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                </div>
+
+                <div class="project-buttons">
+
+                    <a
+                        class="project-btn"
+                        href="calculator.html"
+                    >
+                        🚀 Live Demo
+                    </a>
+
+                    <a
+                        class="project-btn github"
+                        href="https://github.com/kuldeep17422/my-first-project"
+                        target="_blank"
+                    >
+                        💻 GitHub
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Portfolio -->
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    👨‍💻
+                </div>
+
+                <h3>
+                    Personal Portfolio
+                </h3>
+
+                <p>
+                    My personal portfolio website showcasing my
+                    skills, projects, learning journey and contact
+                    information.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                </div>
+
+                <div class="project-buttons">
+
+                    <a
+                        class="project-btn"
+                        href="https://kuldeep17422.github.io/my-first-project/"
+                        target="_blank"
+                    >
+                        🌐 Live Website
+                    </a>
+
+                    <a
+                        class="project-btn github"
+                        href="https://github.com/kuldeep17422/my-first-project"
+                        target="_blank"
+                    >
+                        💻 GitHub
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact">
+
+        <h2 class="section-title">
+            Contact Me
+        </h2>
+
+        <div class="contact-box">
+
+            <h3>
+                Let's Connect! 🤝
+            </h3>
+
+            <p>
+                If you want to discuss a project, collaboration,
+                learning or anything related to web development,
+                feel free to contact me.
+            </p>
+
+            <a
+                class="email"
+                href="mailto:kuldip8718@gmail.com"
+            >
+                📧 kuldip8718@gmail.com
+            </a>
+
+            <p>
+                🚀 Always Learning • Always Building
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        © 2026 Kuldeep Borana.
+        All Rights Reserved.
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        // Simple welcome message
+        console.log("Welcome to Kuldeep Borana's Portfolio 🚀");
+
+        // Highlight active navigation section
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll("nav a");
+
+        window.addEventListener("scroll", () => {
+
+            let current = "";
+
+            sections.forEach(section => {
+
+                const sectionTop = section.offsetTop - 150;
+
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute("id");
+                }
+
+            });
+
+            navLinks.forEach(link => {
+
+                link.style.color = "white";
+
+                if (link.getAttribute("href") === "#" + current) {
+                    link.style.color = "#ffd45c";
+                }
+
+            });
+
+        });
+
+    </script>
 
 </body>
 </html>
