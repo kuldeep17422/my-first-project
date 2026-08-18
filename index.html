@@ -7,9 +7,10 @@
   <title>Kuldeep Borana | Web Developer</title>
 
   <meta name="description"
-        content="Kuldeep Borana - Web Developer, Creative Learner and aspiring software developer.">
+        content="Kuldeep Borana - Web Developer, Creative and Learner.">
 
   <style>
+
     /* =========================
        RESET
     ========================== */
@@ -18,10 +19,6 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    html {
       scroll-behavior: smooth;
     }
 
@@ -34,12 +31,6 @@
 
     a {
       text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
     }
 
     /* =========================
@@ -53,10 +44,10 @@
       width: 100%;
       z-index: 1000;
 
-      background: rgba(255, 255, 255, 0.96);
+      background: rgba(255,255,255,0.97);
       backdrop-filter: blur(12px);
 
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     }
 
     .navbar {
@@ -72,8 +63,8 @@
     }
 
     .logo {
-      font-size: 26px;
-      font-weight: 800;
+      font-size: 27px;
+      font-weight: 900;
       color: #273469;
     }
 
@@ -89,15 +80,17 @@
     }
 
     .nav-links a {
-      font-size: 17px;
-      font-weight: 700;
       color: #222;
+      font-size: 16px;
+      font-weight: 700;
+
       position: relative;
       transition: 0.3s;
     }
 
     .nav-links a::after {
       content: "";
+
       position: absolute;
       left: 0;
       bottom: -7px;
@@ -119,6 +112,18 @@
       width: 100%;
     }
 
+    .menu-btn {
+      display: none;
+
+      border: none;
+      background: transparent;
+
+      font-size: 30px;
+      color: #273469;
+
+      cursor: pointer;
+    }
+
     /* =========================
        HERO
     ========================== */
@@ -132,13 +137,20 @@
 
       text-align: center;
 
-      padding: 120px 20px 80px;
+      padding: 130px 20px 80px;
 
       background:
-        radial-gradient(circle at top left,
-        rgba(255,255,255,0.35),
-        transparent 35%),
-        linear-gradient(135deg, #667eea, #764ba2);
+        radial-gradient(
+          circle at 15% 20%,
+          rgba(255,255,255,0.25),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 85% 80%,
+          rgba(255,255,255,0.18),
+          transparent 30%
+        ),
+        linear-gradient(135deg,#667eea,#764ba2);
     }
 
     .hero {
@@ -146,35 +158,27 @@
       margin: auto;
     }
 
+    /* PROFILE IMAGE */
+
     .profile-container {
       width: 260px;
       height: 260px;
 
       margin: 0 auto 35px;
 
-      border-radius: 50%;
-      padding: 8px;
+      padding: 7px;
 
       background: white;
 
-      box-shadow:
-        0 15px 40px rgba(0,0,0,0.25);
-
-      position: relative;
-    }
-
-    .profile-container::before {
-      content: "";
-
-      position: absolute;
-      inset: -8px;
-
       border-radius: 50%;
 
-      border: 3px solid rgba(255,255,255,0.75);
+      box-shadow:
+        0 20px 50px rgba(0,0,0,0.25);
+
+      animation: floatImage 4s ease-in-out infinite;
     }
 
-    .profile {
+    .profile-container img {
       width: 100%;
       height: 100%;
 
@@ -185,17 +189,30 @@
       border: 6px solid #111;
     }
 
+    @keyframes floatImage {
+
+      0%,100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+
+    }
+
     .hero h1 {
-      font-size: clamp(55px, 9vw, 105px);
+      font-size: clamp(55px,9vw,100px);
+
       line-height: 1;
 
       color: white;
 
       font-weight: 900;
 
-      margin-bottom: 25px;
-
       letter-spacing: -4px;
+
+      margin-bottom: 25px;
     }
 
     .hero h1 span {
@@ -203,13 +220,11 @@
     }
 
     .hero-subtitle {
+      font-size: clamp(22px,3vw,35px);
+
       color: white;
 
-      font-size: clamp(22px, 3vw, 36px);
-
       margin-bottom: 35px;
-
-      font-weight: 500;
     }
 
     .hero-subtitle span {
@@ -220,12 +235,16 @@
     .hero-buttons {
       display: flex;
       justify-content: center;
+      align-items: center;
+
       flex-wrap: wrap;
+
       gap: 15px;
     }
 
     .btn {
       display: inline-flex;
+
       align-items: center;
       justify-content: center;
 
@@ -237,8 +256,6 @@
       font-weight: 800;
 
       transition: 0.3s;
-
-      cursor: pointer;
     }
 
     .btn-primary {
@@ -246,18 +263,20 @@
       color: #5d67d8;
     }
 
-    .btn-secondary {
-      background: #222;
+    .btn-dark {
+      background: #202020;
       color: white;
     }
 
     .btn:hover {
       transform: translateY(-5px);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+
+      box-shadow:
+        0 12px 28px rgba(0,0,0,0.25);
     }
 
     /* =========================
-       COMMON SECTION
+       COMMON
     ========================== */
 
     section {
@@ -275,8 +294,10 @@
     }
 
     .section-title h2 {
-      font-size: clamp(40px, 5vw, 58px);
+      font-size: clamp(40px,5vw,58px);
+
       color: #202124;
+
       margin-bottom: 10px;
     }
 
@@ -295,33 +316,46 @@
 
     .about-grid {
       display: grid;
+
       grid-template-columns: 1fr 1fr;
-      gap: 50px;
+
+      gap: 45px;
+
       align-items: center;
     }
 
     .about-text h3 {
       font-size: 34px;
+
       color: #273469;
+
       margin-bottom: 20px;
     }
 
     .about-text p {
-      font-size: 18px;
       color: #555;
+
+      font-size: 18px;
+
       margin-bottom: 18px;
     }
 
     .about-card {
-      background: linear-gradient(135deg, #667eea, #764ba2);
-
       padding: 40px;
 
       border-radius: 25px;
 
       color: white;
 
-      box-shadow: 0 20px 45px rgba(102,126,234,0.25);
+      background:
+        linear-gradient(
+          135deg,
+          #667eea,
+          #764ba2
+        );
+
+      box-shadow:
+        0 20px 45px rgba(102,126,234,0.25);
     }
 
     .about-card h3 {
@@ -330,7 +364,7 @@
     }
 
     .about-card p {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     /* =========================
@@ -338,14 +372,14 @@
     ========================== */
 
     #skills {
-      background: #f4f5ff;
+      background: #f2f4ff;
     }
 
     .skills-grid {
       display: grid;
 
       grid-template-columns:
-        repeat(3, 1fr);
+        repeat(3,1fr);
 
       gap: 25px;
     }
@@ -355,22 +389,23 @@
 
       padding: 35px 25px;
 
-      border-radius: 22px;
-
       text-align: center;
 
-      box-shadow: 0 10px 30px rgba(35,45,100,0.10);
+      border-radius: 22px;
+
+      border: 1px solid #e8eaff;
+
+      box-shadow:
+        0 10px 30px rgba(35,45,100,0.08);
 
       transition: 0.3s;
-
-      border: 1px solid #eeeeff;
     }
 
     .skill-card:hover {
       transform: translateY(-8px);
 
       box-shadow:
-        0 20px 40px rgba(35,45,100,0.18);
+        0 20px 45px rgba(35,45,100,0.16);
     }
 
     .skill-icon {
@@ -379,13 +414,13 @@
     }
 
     .skill-card h3 {
-      font-size: 22px;
       color: #273469;
+      font-size: 22px;
     }
 
     .skill-card p {
-      margin-top: 8px;
       color: #777;
+      margin-top: 8px;
     }
 
     /* =========================
@@ -398,33 +433,40 @@
 
     .education-box {
       max-width: 850px;
+
       margin: auto;
+
+      padding: 35px;
 
       background: #f7f8ff;
 
       border-left: 6px solid #667eea;
 
-      padding: 35px;
-
       border-radius: 18px;
 
-      box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.07);
     }
 
     .education-box h3 {
       color: #273469;
+
       font-size: 27px;
+
       margin-bottom: 8px;
     }
 
     .education-box .year {
       color: #667eea;
+
       font-weight: 800;
+
       margin-bottom: 15px;
     }
 
     .education-box p {
       color: #666;
+
       font-size: 17px;
     }
 
@@ -433,14 +475,14 @@
     ========================== */
 
     #projects {
-      background: #f4f5ff;
+      background: #f2f4ff;
     }
 
     .projects-grid {
       display: grid;
 
       grid-template-columns:
-        repeat(2, 1fr);
+        repeat(2,1fr);
 
       gap: 30px;
     }
@@ -452,7 +494,8 @@
 
       border-radius: 25px;
 
-      box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+      box-shadow:
+        0 12px 35px rgba(0,0,0,0.08);
 
       transition: 0.3s;
     }
@@ -466,45 +509,56 @@
 
     .project-icon {
       font-size: 45px;
+
       margin-bottom: 15px;
     }
 
     .project-card h3 {
-      font-size: 28px;
       color: #273469;
+
+      font-size: 28px;
+
       margin-bottom: 12px;
     }
 
     .project-card p {
       color: #666;
+
       font-size: 17px;
+
       margin-bottom: 20px;
     }
 
     .tags {
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 8px;
 
       margin-bottom: 25px;
     }
 
     .tag {
-      background: #e9ebff;
-      color: #5664d8;
-
       padding: 7px 14px;
+
+      background: #e9ebff;
+
+      color: #5664d8;
 
       border-radius: 30px;
 
-      font-weight: 700;
       font-size: 14px;
+
+      font-weight: 700;
     }
 
     .project-buttons {
       display: flex;
-      gap: 12px;
+
       flex-wrap: wrap;
+
+      gap: 12px;
     }
 
     .project-btn {
@@ -512,10 +566,11 @@
 
       border-radius: 12px;
 
-      font-weight: 800;
+      color: white;
 
       background: #667eea;
-      color: white;
+
+      font-weight: 800;
 
       transition: 0.3s;
     }
@@ -529,12 +584,16 @@
     }
 
     /* =========================
-       HIRE ME
+       HIRE
     ========================== */
 
     #hire {
       background:
-        linear-gradient(135deg, #667eea, #764ba2);
+        linear-gradient(
+          135deg,
+          #667eea,
+          #764ba2
+        );
 
       color: white;
 
@@ -547,18 +606,22 @@
     }
 
     .hire-content h2 {
-      font-size: clamp(38px, 5vw, 58px);
+      font-size: clamp(38px,5vw,58px);
+
       margin-bottom: 20px;
     }
 
     .hire-content p {
       font-size: 19px;
+
       margin-bottom: 30px;
+
       opacity: 0.95;
     }
 
     .hire-btn {
       background: white;
+
       color: #5d67d8;
     }
 
@@ -573,7 +636,8 @@
     .contact-grid {
       display: grid;
 
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns:
+        1fr 1fr;
 
       gap: 35px;
     }
@@ -585,23 +649,44 @@
 
       border-radius: 22px;
 
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.06);
     }
 
     .contact-card h3 {
-      font-size: 28px;
       color: #273469;
+
+      font-size: 28px;
+
       margin-bottom: 20px;
     }
 
     .contact-item {
-      margin: 18px 0;
-
       display: flex;
+
       align-items: center;
+
       gap: 15px;
 
+      margin: 20px 0;
+
       font-size: 17px;
+    }
+
+    .contact-item-icon {
+      width: 48px;
+      height: 48px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 14px;
+
+      background: #e9ebff;
+
+      font-size: 23px;
     }
 
     .contact-item strong {
@@ -610,6 +695,7 @@
 
     .contact-item a {
       color: #667eea;
+
       font-weight: 700;
     }
 
@@ -628,12 +714,13 @@
 
       text-align: center;
 
-      padding: 30px 20px;
+      padding: 32px 20px;
     }
 
     footer h3 {
       font-size: 24px;
-      margin-bottom: 8px;
+
+      margin-bottom: 7px;
     }
 
     footer p {
@@ -641,29 +728,14 @@
     }
 
     /* =========================
-       MOBILE MENU
-    ========================== */
-
-    .menu-btn {
-      display: none;
-
-      border: none;
-      background: transparent;
-
-      font-size: 30px;
-      cursor: pointer;
-
-      color: #273469;
-    }
-
-    /* =========================
        RESPONSIVE
     ========================== */
 
-    @media (max-width: 900px) {
+    @media (max-width:900px) {
 
       .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+          repeat(2,1fr);
       }
 
       .about-grid,
@@ -674,16 +746,13 @@
       .projects-grid {
         grid-template-columns: 1fr;
       }
+
     }
 
-    @media (max-width: 700px) {
+    @media (max-width:700px) {
 
       .navbar {
         min-height: 65px;
-      }
-
-      .logo {
-        font-size: 22px;
       }
 
       .menu-btn {
@@ -700,15 +769,16 @@
 
         background: white;
 
+        display: none;
+
         flex-direction: column;
 
         padding: 25px;
 
         gap: 20px;
 
-        display: none;
-
-        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        box-shadow:
+          0 10px 20px rgba(0,0,0,0.08);
       }
 
       .nav-links.active {
@@ -737,6 +807,7 @@
       .project-card {
         padding: 25px;
       }
+
     }
 
   </style>
@@ -744,8 +815,9 @@
 
 <body>
 
+
   <!-- =========================
-       NAVIGATION
+       NAVBAR
   ========================== -->
 
   <header>
@@ -756,25 +828,42 @@
         Kuldeep<span>.</span>
       </a>
 
-      <button class="menu-btn" onclick="toggleMenu()">
+      <button
+        class="menu-btn"
+        onclick="toggleMenu()"
+        aria-label="Open menu">
         ☰
       </button>
 
       <ul class="nav-links" id="navLinks">
 
-        <li><a href="#home">Home</a></li>
+        <li>
+          <a href="#home">Home</a>
+        </li>
 
-        <li><a href="#about">About</a></li>
+        <li>
+          <a href="#about">About</a>
+        </li>
 
-        <li><a href="#skills">Skills</a></li>
+        <li>
+          <a href="#skills">Skills</a>
+        </li>
 
-        <li><a href="#education">Education</a></li>
+        <li>
+          <a href="#education">Education</a>
+        </li>
 
-        <li><a href="#projects">Projects</a></li>
+        <li>
+          <a href="#projects">Projects</a>
+        </li>
 
-        <li><a href="#hire">Hire Me</a></li>
+        <li>
+          <a href="#hire">Hire Me</a>
+        </li>
 
-        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
 
       </ul>
 
@@ -784,7 +873,7 @@
 
 
   <!-- =========================
-       HOME
+       HERO
   ========================== -->
 
   <section id="home">
@@ -793,40 +882,48 @@
 
       <div class="profile-container">
 
-        <!-- Your existing profile image -->
+        <!-- PROFILE IMAGE -->
         <img
-          src="profile.jpg"
+          src="developer.png"
           alt="Kuldeep Borana"
-          class="profile"
-          onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;width:100%;height:100%;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:80px;background:linear-gradient(135deg,#667eea,#764ba2);&quot;>👨‍💻</div>';"
         >
 
       </div>
+
 
       <h1>
         Kuldeep <span>Borana</span>
       </h1>
 
+
       <p class="hero-subtitle">
-        <span>Web Developer</span> |
-        Creative |
+
+        <span>Web Developer</span>
+        |
+        Creative
+        |
         Learner 🚀
+
       </p>
+
 
       <div class="hero-buttons">
 
-        <a href="#about" class="btn btn-primary">
+        <a
+          href="#about"
+          class="btn btn-primary">
           👨‍💻 About Me
         </a>
 
-        <a href="#projects" class="btn btn-primary">
+        <a
+          href="#projects"
+          class="btn btn-primary">
           🚀 My Projects
         </a>
 
         <a
           href="mailto:kuldip8718@gmail.com"
-          class="btn btn-secondary"
-        >
+          class="btn btn-dark">
           ✉️ Contact Me
         </a>
 
@@ -849,36 +946,47 @@
 
         <h2>About Me</h2>
 
-        <p>Get to know me and my journey</p>
+        <p>
+          Get to know me and my journey
+        </p>
 
       </div>
 
+
       <div class="about-grid">
+
 
         <div class="about-text">
 
-          <h3>Hello, I'm Kuldeep 👋</h3>
+          <h3>
+            Hello, I'm Kuldeep 👋
+          </h3>
 
           <p>
-            I am a passionate and creative web developer who enjoys
-            building modern, responsive and user-friendly websites.
+            I am a passionate and creative web developer
+            who enjoys building modern, responsive and
+            user-friendly websites.
           </p>
 
           <p>
-            I am continuously learning new technologies and improving
-            my development skills by creating practical projects.
+            I am continuously learning new technologies
+            and improving my development skills by creating
+            practical projects.
           </p>
 
           <p>
-            My goal is to grow as a professional developer and build
-            useful digital experiences.
+            My goal is to grow as a professional developer
+            and build useful digital experiences.
           </p>
 
         </div>
 
+
         <div class="about-card">
 
-          <h3>What I Do 🚀</h3>
+          <h3>
+            What I Do 🚀
+          </h3>
 
           <p>🌐 Build responsive websites</p>
 
@@ -913,71 +1021,105 @@
 
         <h2>My Skills</h2>
 
-        <p>Technologies and tools I'm learning</p>
+        <p>
+          Technologies and tools I'm learning
+        </p>
 
       </div>
 
+
       <div class="skills-grid">
+
 
         <div class="skill-card">
 
-          <div class="skill-icon">🌐</div>
+          <div class="skill-icon">
+            🌐
+          </div>
 
           <h3>HTML</h3>
 
-          <p>Semantic & structured web pages</p>
+          <p>
+            Semantic & structured web pages
+          </p>
 
         </div>
 
+
         <div class="skill-card">
 
-          <div class="skill-icon">🎨</div>
+          <div class="skill-icon">
+            🎨
+          </div>
 
           <h3>CSS</h3>
 
-          <p>Modern styling & responsive layouts</p>
+          <p>
+            Modern styling & responsive layouts
+          </p>
 
         </div>
 
+
         <div class="skill-card">
 
-          <div class="skill-icon">⚡</div>
+          <div class="skill-icon">
+            ⚡
+          </div>
 
           <h3>JavaScript</h3>
 
-          <p>Interactive web experiences</p>
+          <p>
+            Interactive web experiences
+          </p>
 
         </div>
 
+
         <div class="skill-card">
 
-          <div class="skill-icon">🐍</div>
+          <div class="skill-icon">
+            🐍
+          </div>
 
           <h3>Python</h3>
 
-          <p>Programming & problem solving</p>
+          <p>
+            Programming & problem solving
+          </p>
 
         </div>
 
+
         <div class="skill-card">
 
-          <div class="skill-icon">💻</div>
+          <div class="skill-icon">
+            💻
+          </div>
 
           <h3>Git & GitHub</h3>
 
-          <p>Version control & deployment</p>
+          <p>
+            Version control & project hosting
+          </p>
 
         </div>
+
 
         <div class="skill-card">
 
-          <div class="skill-icon">📱</div>
+          <div class="skill-icon">
+            📱
+          </div>
 
           <h3>Responsive Design</h3>
 
-          <p>Mobile, tablet & desktop websites</p>
+          <p>
+            Mobile, tablet & desktop websites
+          </p>
 
         </div>
+
 
       </div>
 
@@ -998,21 +1140,27 @@
 
         <h2>Education</h2>
 
-        <p>My academic journey</p>
+        <p>
+          My learning journey
+        </p>
 
       </div>
 
+
       <div class="education-box">
 
-        <h3>🎓 Education & Learning</h3>
+        <h3>
+          🎓 Education & Learning
+        </h3>
 
         <div class="year">
-          Currently Learning & Developing
+          Web Development & Programming
         </div>
 
         <p>
-          Focused on web development, programming, practical projects
-          and continuously improving technical skills.
+          Focused on web development, programming,
+          practical projects and continuously improving
+          technical skills.
         </p>
 
       </div>
@@ -1034,14 +1182,17 @@
 
         <h2>My Projects</h2>
 
-        <p>Things I have built while learning</p>
+        <p>
+          Things I have built while learning
+        </p>
 
       </div>
+
 
       <div class="projects-grid">
 
 
-        <!-- Calculator -->
+        <!-- CALCULATOR -->
 
         <div class="project-card">
 
@@ -1049,35 +1200,45 @@
             🧮
           </div>
 
-          <h3>Smart Calculator</h3>
+          <h3>
+            Smart Calculator
+          </h3>
 
           <p>
-            A clean and responsive calculator built using HTML,
-            CSS and JavaScript. It supports basic arithmetic
-            operations with a simple and user-friendly interface.
+            A clean and responsive calculator built using
+            HTML, CSS and JavaScript. It provides a simple
+            and user-friendly interface.
           </p>
 
           <div class="tags">
 
-            <span class="tag">HTML</span>
+            <span class="tag">
+              HTML
+            </span>
 
-            <span class="tag">CSS</span>
+            <span class="tag">
+              CSS
+            </span>
 
-            <span class="tag">JavaScript</span>
+            <span class="tag">
+              JavaScript
+            </span>
 
           </div>
 
           <div class="project-buttons">
 
-            <a href="#contact" class="project-btn">
+            <a
+              href="calculator.html"
+              target="_blank"
+              class="project-btn">
               🚀 Live Demo
             </a>
 
             <a
               href="https://github.com/kuldeep17422"
               target="_blank"
-              class="project-btn github"
-            >
+              class="project-btn github">
               💻 GitHub
             </a>
 
@@ -1086,7 +1247,7 @@
         </div>
 
 
-        <!-- Portfolio -->
+        <!-- PORTFOLIO -->
 
         <div class="project-card">
 
@@ -1094,20 +1255,29 @@
             👨‍💻
           </div>
 
-          <h3>Personal Portfolio</h3>
+          <h3>
+            Personal Portfolio
+          </h3>
 
           <p>
-            My personal portfolio website showcasing my skills,
-            projects, learning journey and contact information.
+            A professional portfolio website showcasing
+            my skills, projects, learning journey and
+            contact information.
           </p>
 
           <div class="tags">
 
-            <span class="tag">HTML</span>
+            <span class="tag">
+              HTML
+            </span>
 
-            <span class="tag">CSS</span>
+            <span class="tag">
+              CSS
+            </span>
 
-            <span class="tag">JavaScript</span>
+            <span class="tag">
+              JavaScript
+            </span>
 
           </div>
 
@@ -1115,16 +1285,14 @@
 
             <a
               href="#home"
-              class="project-btn"
-            >
+              class="project-btn">
               🌐 Live Website
             </a>
 
             <a
               href="https://github.com/kuldeep17422"
               target="_blank"
-              class="project-btn github"
-            >
+              class="project-btn github">
               💻 GitHub
             </a>
 
@@ -1133,7 +1301,7 @@
         </div>
 
 
-        <!-- Third project -->
+        <!-- PRACTICE PROJECT -->
 
         <div class="project-card">
 
@@ -1141,21 +1309,29 @@
             🌟
           </div>
 
-          <h3>Web Development Practice</h3>
+          <h3>
+            Web Development Practice
+          </h3>
 
           <p>
-            A collection of practical web development experiments
-            created while learning frontend development and
+            Practical web development projects created
+            while learning frontend development and
             improving design skills.
           </p>
 
           <div class="tags">
 
-            <span class="tag">HTML</span>
+            <span class="tag">
+              HTML
+            </span>
 
-            <span class="tag">CSS</span>
+            <span class="tag">
+              CSS
+            </span>
 
-            <span class="tag">JavaScript</span>
+            <span class="tag">
+              JavaScript
+            </span>
 
           </div>
 
@@ -1164,8 +1340,7 @@
             <a
               href="https://github.com/kuldeep17422"
               target="_blank"
-              class="project-btn github"
-            >
+              class="project-btn github">
               💻 View GitHub
             </a>
 
@@ -1174,7 +1349,7 @@
         </div>
 
 
-        <!-- Future project -->
+        <!-- FUTURE -->
 
         <div class="project-card">
 
@@ -1182,25 +1357,34 @@
             🚀
           </div>
 
-          <h3>More Projects Coming</h3>
+          <h3>
+            More Projects Coming
+          </h3>
 
           <p>
-            I am continuously learning and building new projects.
-            More exciting projects will be added here as I grow
-            my development skills.
+            I am continuously learning and building new
+            projects. More exciting projects will be
+            added here as I grow.
           </p>
 
           <div class="tags">
 
-            <span class="tag">Learning</span>
+            <span class="tag">
+              Learning
+            </span>
 
-            <span class="tag">Building</span>
+            <span class="tag">
+              Building
+            </span>
 
-            <span class="tag">Growing</span>
+            <span class="tag">
+              Growing
+            </span>
 
           </div>
 
         </div>
+
 
       </div>
 
@@ -1217,7 +1401,9 @@
 
     <div class="hire-content">
 
-      <h2>Let's Build Something Great 🚀</h2>
+      <h2>
+        Let's Build Something Great 🚀
+      </h2>
 
       <p>
         Have a project idea or want to work together?
@@ -1226,8 +1412,7 @@
 
       <a
         href="mailto:kuldip8718@gmail.com?subject=Project%20Opportunity"
-        class="btn hire-btn"
-      >
+        class="btn hire-btn">
         ✉️ Hire Me
       </a>
 
@@ -1246,29 +1431,45 @@
 
       <div class="section-title">
 
-        <h2>Contact Me</h2>
+        <h2>
+          Contact Me
+        </h2>
 
-        <p>Let's connect and build something together</p>
+        <p>
+          Let's connect and build something together
+        </p>
 
       </div>
+
 
       <div class="contact-grid">
 
 
         <div class="contact-card">
 
-          <h3>Get In Touch 📩</h3>
+          <h3>
+            Get In Touch 📩
+          </h3>
+
 
           <div class="contact-item">
 
-            <span>📧</span>
+            <div class="contact-item-icon">
+              📧
+            </div>
 
             <div>
-              <strong>Email</strong><br>
+
+              <strong>
+                Email
+              </strong>
+
+              <br>
 
               <a href="mailto:kuldip8718@gmail.com">
                 kuldip8718@gmail.com
               </a>
+
             </div>
 
           </div>
@@ -1276,17 +1477,24 @@
 
           <div class="contact-item">
 
-            <span>💻</span>
+            <div class="contact-item-icon">
+              💻
+            </div>
 
             <div>
 
-              <strong>GitHub</strong><br>
+              <strong>
+                GitHub
+              </strong>
+
+              <br>
 
               <a
                 href="https://github.com/kuldeep17422"
-                target="_blank"
-              >
+                target="_blank">
+
                 github.com/kuldeep17422
+
               </a>
 
             </div>
@@ -1296,11 +1504,17 @@
 
           <div class="contact-item">
 
-            <span>🌐</span>
+            <div class="contact-item-icon">
+              🌐
+            </div>
 
             <div>
 
-              <strong>Portfolio</strong><br>
+              <strong>
+                Portfolio
+              </strong>
+
+              <br>
 
               <a href="#home">
                 My Portfolio Website
@@ -1315,7 +1529,9 @@
 
         <div class="contact-card">
 
-          <h3>Why Work With Me? 💡</h3>
+          <h3>
+            Why Work With Me? 💡
+          </h3>
 
           <p>
             ✔️ Passionate about learning
@@ -1326,11 +1542,11 @@
           </p>
 
           <p>
-            ✔️ Focused on clean and responsive design
+            ✔️ Clean and responsive design
           </p>
 
           <p>
-            ✔️ Always improving my technical skills
+            ✔️ Always improving technical skills
           </p>
 
           <p>
@@ -1338,6 +1554,7 @@
           </p>
 
         </div>
+
 
       </div>
 
@@ -1352,7 +1569,9 @@
 
   <footer>
 
-    <h3>Kuldeep Borana</h3>
+    <h3>
+      Kuldeep Borana
+    </h3>
 
     <p>
       Web Developer | Creative | Learner 🚀
@@ -1373,24 +1592,27 @@
 
     function toggleMenu() {
 
-      const nav = document.getElementById("navLinks");
+      const menu =
+        document.getElementById("navLinks");
 
-      nav.classList.toggle("active");
+      menu.classList.toggle("active");
 
     }
 
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(function(link) {
 
-      link.addEventListener("click", () => {
+        link.addEventListener("click", function() {
 
-        document
-          .getElementById("navLinks")
-          .classList.remove("active");
+          document
+            .getElementById("navLinks")
+            .classList.remove("active");
+
+        });
 
       });
-
-    });
 
   </script>
 
