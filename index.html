@@ -7,47 +7,23 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
 
-  <title>Kuldeep Borana | Desktop Support Engineer</title>
+  <meta name="theme-color" content="#111827">
 
   <meta name="description"
-        content="Kuldeep Borana - Desktop Support Engineer, IT Support, Hardware Troubleshooting, Windows, Networking and Technical Support.">
+        content="Kuldeep Borana — Desktop Support Engineer, IT Support and Networking professional.">
 
   <meta name="keywords"
-        content="Kuldeep Borana, Desktop Support Engineer, IT Support, Technical Support, Networking, Windows, Hardware Troubleshooting">
+        content="Kuldeep Borana, IT Support, Desktop Support Engineer, Networking, Hardware Support">
 
-  <meta name="author"
-        content="Kuldeep Borana">
+  <meta name="author" content="Kuldeep Borana">
 
-  <!-- =========================
-       PWA SETTINGS
-  ========================== -->
+  <link rel="manifest" href="manifest.json">
 
-  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" type="image/png" href="developer.png">
 
-  <meta name="theme-color"
-        content="#667eea">
-
-  <meta name="mobile-web-app-capable"
-        content="yes">
-
-  <meta name="apple-mobile-web-app-capable"
-        content="yes">
-
-  <meta name="apple-mobile-web-app-status-bar-style"
-        content="default">
-
-  <meta name="apple-mobile-web-app-title"
-        content="Kuldeep Portfolio">
-
-  <link rel="icon"
-        href="developer.png">
+  <title>Kuldeep Borana | IT Support Professional</title>
 
   <style>
-
-    /* =========================
-       RESET
-    ========================== */
-
     * {
       margin: 0;
       padding: 0;
@@ -56,1590 +32,914 @@
     }
 
     :root {
-      --primary: #667eea;
-      --secondary: #764ba2;
-      --accent: #ffd86b;
-
-      --dark: #111827;
-      --dark2: #1f2937;
-
-      --light: #f8fafc;
-      --white: #ffffff;
-
-      --text: #1f2937;
+      --primary: #6366f1;
+      --secondary: #8b5cf6;
+      --accent: #facc15;
+      --dark: #0f172a;
+      --dark2: #111827;
+      --text: #1e293b;
       --muted: #64748b;
-
-      --border: rgba(100, 116, 139, 0.18);
-
-      --card: rgba(255, 255, 255, 0.94);
-
-      --shadow:
-        0 20px 50px rgba(15, 23, 42, 0.12);
-    }
-
-    body.dark {
-
-      --light: #0b1120;
-      --white: #111827;
-
-      --text: #f8fafc;
-      --muted: #cbd5e1;
-
-      --border:
-        rgba(255,255,255,0.1);
-
-      --card:
-        rgba(17, 24, 39, 0.94);
-
-      --shadow:
-        0 20px 50px rgba(0,0,0,0.35);
+      --white: #ffffff;
+      --card: rgba(255,255,255,0.82);
+      --border: rgba(100,116,139,0.18);
+      --shadow: 0 20px 60px rgba(15,23,42,0.12);
     }
 
     body {
-
       font-family:
-        Arial,
-        Helvetica,
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
         sans-serif;
 
-      background: var(--light);
-
       color: var(--text);
-
-      line-height: 1.6;
-
-      transition:
-        background 0.3s ease,
-        color 0.3s ease;
+      background: #f8fafc;
+      overflow-x: hidden;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
+    button {
+      font-family: inherit;
     }
-
-    section {
-
-      padding: 100px 7%;
-
-      scroll-margin-top: 80px;
-    }
-
-    .container {
-
-      max-width: 1200px;
-
-      margin: auto;
-    }
-
 
     /* =========================
        NAVBAR
-    ========================== */
+    ========================= */
 
     header {
-
       position: fixed;
-
       top: 0;
       left: 0;
-
       width: 100%;
-
-      z-index: 9999;
-
-      background:
-        rgba(255,255,255,0.94);
-
-      backdrop-filter:
-        blur(18px);
-
-      border-bottom:
-        1px solid
-        rgba(100,116,139,0.12);
-
-      transition: 0.3s;
+      z-index: 1000;
+      padding: 18px 5%;
+      transition: 0.3s ease;
     }
 
-    body.dark header {
-
-      background:
-        rgba(11,17,32,0.94);
+    header.scrolled {
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 8px 30px rgba(15,23,42,0.08);
+      padding-top: 12px;
+      padding-bottom: 12px;
     }
 
     nav {
-
       max-width: 1250px;
-
       margin: auto;
-
-      height: 78px;
-
-      padding: 0 25px;
-
       display: flex;
-
       align-items: center;
-
       justify-content: space-between;
     }
 
     .logo {
-
-      font-size: 30px;
-
+      font-size: 1.7rem;
       font-weight: 900;
-
-      color: #27356f;
-
       letter-spacing: -1px;
-    }
-
-    body.dark .logo {
-
       color: white;
     }
 
-    .logo span {
+    header.scrolled .logo {
+      color: #243b72;
+    }
 
+    .logo span {
       color: var(--primary);
     }
 
     .nav-links {
-
       display: flex;
-
       align-items: center;
-
-      gap: 28px;
-
+      gap: 30px;
       list-style: none;
     }
 
     .nav-links a {
-
-      font-size: 16px;
-
+      color: white;
       font-weight: 700;
-
-      transition: 0.3s;
+      font-size: 0.98rem;
+      transition: 0.25s;
+      position: relative;
     }
 
-    .nav-links a:hover {
-
-      color: var(--primary);
+    header.scrolled .nav-links a {
+      color: #1e293b;
     }
 
-    .nav-buttons {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 10px;
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary) !important;
     }
 
-    .theme-btn,
-    .menu-btn {
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: 0.25s;
+    }
 
-      border: 0;
-
-      width: 42px;
-      height: 42px;
-
-      border-radius: 50%;
-
-      cursor: pointer;
-
-      background: var(--light);
-
-      color: var(--text);
-
-      font-size: 18px;
-
-      border:
-        1px solid
-        var(--border);
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
     }
 
     .menu-btn {
-
       display: none;
+      border: 0;
+      background: transparent;
+      font-size: 1.7rem;
+      cursor: pointer;
+      color: white;
     }
 
+    header.scrolled .menu-btn {
+      color: var(--dark);
+    }
 
     /* =========================
        HERO
-    ========================== */
+    ========================= */
 
     .hero {
-
       min-height: 100vh;
-
-      padding-top: 120px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      text-align: center;
-
-      color: white;
-
+      position: relative;
       overflow: hidden;
 
-      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 120px 5% 80px;
 
       background:
-
-        radial-gradient(
-          circle at 15% 20%,
-          rgba(255,255,255,0.16),
-          transparent 25%
-        ),
-
-        radial-gradient(
-          circle at 85% 70%,
-          rgba(255,255,255,0.12),
-          transparent 25%
-        ),
-
-        linear-gradient(
-          135deg,
-          #667eea,
-          #764ba2
-        );
+        radial-gradient(circle at 10% 20%, rgba(255,255,255,0.16), transparent 30%),
+        radial-gradient(circle at 90% 30%, rgba(255,255,255,0.13), transparent 28%),
+        linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     }
 
     .hero::before,
     .hero::after {
-
       content: "";
-
       position: absolute;
-
       border-radius: 50%;
-
-      background:
-        rgba(255,255,255,0.08);
-
-      animation:
-        float 6s ease-in-out infinite;
+      background: rgba(255,255,255,0.07);
+      pointer-events: none;
     }
 
     .hero::before {
-
-      width: 350px;
-      height: 350px;
-
-      left: -160px;
-      bottom: -150px;
+      width: 500px;
+      height: 500px;
+      right: -180px;
+      top: 80px;
     }
 
     .hero::after {
-
-      width: 280px;
-      height: 280px;
-
-      right: -100px;
-      top: 100px;
-
-      animation-delay: 1s;
+      width: 380px;
+      height: 380px;
+      left: -180px;
+      bottom: -180px;
     }
 
     .hero-content {
-
       position: relative;
-
       z-index: 2;
-
-      max-width: 1000px;
-
-      animation:
-        fadeUp 1s ease;
+      text-align: center;
+      max-width: 1050px;
+      width: 100%;
     }
 
     .profile-wrapper {
-
-      width: 220px;
-      height: 220px;
-
-      margin:
-        0 auto 30px;
-
-      padding: 8px;
-
+      width: 210px;
+      height: 210px;
+      margin: 0 auto 30px;
+      padding: 9px;
       border-radius: 50%;
-
       background: white;
-
       box-shadow:
-        0 20px 60px
-        rgba(0,0,0,0.3);
+        0 0 0 7px rgba(255,255,255,0.13),
+        0 25px 70px rgba(0,0,0,0.25);
 
-      animation:
-        float 5s ease-in-out infinite;
+      animation: float 4s ease-in-out infinite;
     }
 
     .profile-wrapper img {
-
       width: 100%;
       height: 100%;
-
-      object-fit: cover;
-
       border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #0f172a;
+    }
 
-      border:
-        7px solid #111;
+    @keyframes float {
+      0%,100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-12px);
+      }
     }
 
     .availability {
-
       display: inline-flex;
-
       align-items: center;
-
-      gap: 10px;
-
-      padding: 10px 20px;
-
-      border:
-        1px solid
-        rgba(255,255,255,0.35);
-
+      gap: 9px;
+      padding: 10px 19px;
+      border: 1px solid rgba(255,255,255,0.35);
       border-radius: 50px;
-
-      background:
-        rgba(255,255,255,0.08);
-
-      backdrop-filter:
-        blur(10px);
-
-      font-weight: 700;
-
-      margin-bottom: 25px;
+      background: rgba(255,255,255,0.08);
+      color: white;
+      font-weight: 800;
+      margin-bottom: 22px;
+      backdrop-filter: blur(10px);
     }
 
-    .availability-dot {
-
-      width: 12px;
-      height: 12px;
-
-      background: #45ff77;
-
+    .dot {
+      width: 11px;
+      height: 11px;
       border-radius: 50%;
-
-      box-shadow:
-        0 0 15px #45ff77;
+      background: #4ade80;
+      box-shadow: 0 0 15px #4ade80;
     }
 
     .hero h1 {
-
-      font-size:
-        clamp(48px, 8vw, 92px);
-
-      line-height: 1;
-
-      font-weight: 900;
-
+      color: white;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      line-height: 0.95;
+      letter-spacing: -5px;
+      font-weight: 950;
       margin-bottom: 25px;
-
-      letter-spacing: -3px;
     }
 
     .hero h1 span {
-
-      color: var(--accent);
+      color: #fde68a;
     }
 
-    .hero h2 {
-
-      font-size:
-        clamp(22px, 3vw, 34px);
-
-      margin-bottom: 20px;
+    .hero-subtitle {
+      color: white;
+      font-size: clamp(1.2rem, 2.4vw, 2rem);
+      font-weight: 800;
+      margin-bottom: 22px;
     }
 
-    .hero p {
-
-      max-width: 850px;
-
-      margin: auto;
-
-      font-size: 18px;
-
-      opacity: 0.95;
+    .hero-description {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.08rem;
+      line-height: 1.8;
+      max-width: 820px;
+      margin: 0 auto 32px;
     }
 
     .hero-buttons {
-
-      margin-top: 35px;
-
       display: flex;
-
       justify-content: center;
-
       flex-wrap: wrap;
-
       gap: 15px;
     }
 
     .btn {
-
       display: inline-flex;
-
       align-items: center;
-
       justify-content: center;
-
       gap: 9px;
-
-      padding: 15px 27px;
-
+      min-width: 175px;
+      padding: 15px 25px;
       border-radius: 14px;
-
-      font-weight: 800;
-
-      font-size: 16px;
-
-      border:
-        1px solid
-        rgba(255,255,255,0.35);
-
-      transition: 0.3s;
-
+      font-weight: 850;
+      transition: 0.3s ease;
       cursor: pointer;
     }
 
     .btn-primary {
-
       background: white;
+      color: var(--primary);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+    }
 
-      color: #5b5fe8;
+    .btn-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.2);
     }
 
     .btn-outline {
-
+      border: 1px solid rgba(255,255,255,0.55);
       color: white;
-
-      background:
-        rgba(255,255,255,0.05);
+      background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(8px);
     }
 
-    .btn:hover {
-
-      transform:
-        translateY(-4px);
-
-      box-shadow:
-        0 15px 30px
-        rgba(0,0,0,0.2);
+    .btn-outline:hover {
+      background: white;
+      color: var(--primary);
+      transform: translateY(-4px);
     }
-
 
     /* =========================
-       SECTION TITLE
-    ========================== */
+       GENERAL
+    ========================= */
 
-    .section-title {
+    section {
+      padding: 100px 5%;
+    }
 
+    .section-inner {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .section-heading {
       text-align: center;
-
       margin-bottom: 55px;
     }
 
-    .section-title .small {
-
+    .section-heading .small {
       color: var(--primary);
-
-      font-weight: 800;
-
-      text-transform: uppercase;
-
-      letter-spacing: 2px;
-
-      font-size: 14px;
-    }
-
-    .section-title h2 {
-
-      font-size:
-        clamp(35px, 5vw, 52px);
-
-      margin:
-        8px 0 12px;
-
       font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      margin-bottom: 10px;
     }
 
-    .section-title p {
+    .section-heading h2 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      color: var(--dark);
+      letter-spacing: -2px;
+      margin-bottom: 12px;
+    }
 
-      max-width: 700px;
-
-      margin: auto;
-
+    .section-heading p {
       color: var(--muted);
+      max-width: 650px;
+      margin: auto;
+      line-height: 1.7;
     }
-
 
     /* =========================
        ABOUT
-    ========================== */
+    ========================= */
 
     .about {
-
-      background: var(--light);
+      background: white;
     }
 
     .about-grid {
-
       display: grid;
-
-      grid-template-columns:
-        1fr 1fr;
-
-      gap: 50px;
-
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 45px;
       align-items: center;
     }
 
     .about-text h3 {
-
-      font-size: 32px;
-
-      margin-bottom: 20px;
+      font-size: 2rem;
+      margin-bottom: 18px;
     }
 
     .about-text p {
-
       color: var(--muted);
-
+      line-height: 1.9;
       margin-bottom: 18px;
-
-      font-size: 17px;
     }
 
-    .about-card {
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 18px;
+    }
 
-      background: var(--card);
+    .stat {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: #f8fafc;
+      transition: 0.3s;
+    }
 
-      border:
-        1px solid
-        var(--border);
-
-      border-radius: 25px;
-
-      padding: 35px;
-
+    .stat:hover {
+      transform: translateY(-6px);
       box-shadow: var(--shadow);
     }
 
-    .info-row {
-
-      display: flex;
-
-      justify-content:
-        space-between;
-
-      gap: 20px;
-
-      padding: 16px 0;
-
-      border-bottom:
-        1px solid
-        var(--border);
-    }
-
-    .info-row:last-child {
-
-      border-bottom: 0;
-    }
-
-    .info-row strong {
-
+    .stat strong {
+      display: block;
+      font-size: 2.3rem;
       color: var(--primary);
+      margin-bottom: 5px;
     }
 
+    .stat span {
+      color: var(--muted);
+      font-weight: 650;
+    }
 
     /* =========================
        EXPERIENCE
-    ========================== */
+    ========================= */
 
     .experience {
-
-      background: #f1f5f9;
-    }
-
-    body.dark .experience {
-
-      background: #0f172a;
+      background: #f8fafc;
     }
 
     .timeline {
-
-      max-width: 900px;
-
-      margin: auto;
-
       position: relative;
+      max-width: 900px;
+      margin: auto;
     }
 
     .timeline::before {
-
       content: "";
-
       position: absolute;
-
-      left: 18px;
-
+      left: 20px;
       top: 0;
-
+      bottom: 0;
       width: 3px;
-
-      height: 100%;
-
-      background:
-        linear-gradient(
-          var(--primary),
-          var(--secondary)
-        );
+      background: linear-gradient(var(--primary), var(--secondary));
+      border-radius: 10px;
     }
 
     .timeline-item {
-
       position: relative;
-
       padding-left: 65px;
-
       margin-bottom: 35px;
     }
 
     .timeline-dot {
-
       position: absolute;
-
-      left: 5px;
-
-      top: 5px;
-
-      width: 30px;
-      height: 30px;
-
+      left: 9px;
+      top: 25px;
+      width: 25px;
+      height: 25px;
       border-radius: 50%;
-
-      background:
-        var(--primary);
-
-      border:
-        6px solid
-        var(--light);
-
-      box-shadow:
-        0 0 0 4px
-        rgba(102,126,234,0.2);
+      background: white;
+      border: 6px solid var(--primary);
+      z-index: 2;
     }
 
     .timeline-card {
-
-      background: var(--card);
-
       padding: 30px;
+      background: white;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 35px rgba(15,23,42,0.06);
+      transition: 0.3s;
+    }
 
-      border-radius: 20px;
-
-      border:
-        1px solid
-        var(--border);
-
-      box-shadow:
-        var(--shadow);
+    .timeline-card:hover {
+      transform: translateX(7px);
+      box-shadow: var(--shadow);
     }
 
     .timeline-card h3 {
-
-      font-size: 24px;
-
-      margin-bottom: 5px;
+      font-size: 1.45rem;
+      margin-bottom: 7px;
     }
 
     .timeline-card .company {
-
-      color:
-        var(--primary);
-
+      color: var(--primary);
       font-weight: 800;
+      margin-bottom: 12px;
     }
 
     .timeline-card .date {
-
-      color: var(--muted);
-
-      font-size: 14px;
-
-      margin:
-        8px 0 15px;
+      display: inline-block;
+      background: #eef2ff;
+      color: var(--primary);
+      padding: 6px 11px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      margin-bottom: 15px;
     }
 
-    .timeline-card ul {
-
-      padding-left: 20px;
-
+    .timeline-card p {
       color: var(--muted);
+      line-height: 1.8;
     }
-
 
     /* =========================
        SKILLS
-    ========================== */
+    ========================= */
+
+    .skills {
+      background: white;
+    }
 
     .skills-grid {
-
       display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap: 22px;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
     }
 
     .skill-card {
-
-      padding: 28px;
-
+      padding: 27px;
+      border: 1px solid var(--border);
       border-radius: 20px;
-
-      background: var(--card);
-
-      border:
-        1px solid
-        var(--border);
-
-      box-shadow: var(--shadow);
-
+      background: white;
+      box-shadow: 0 8px 30px rgba(15,23,42,0.05);
       transition: 0.3s;
     }
 
     .skill-card:hover {
-
-      transform:
-        translateY(-8px);
+      transform: translateY(-8px);
+      border-color: rgba(99,102,241,0.35);
+      box-shadow: var(--shadow);
     }
 
     .skill-icon {
-
-      font-size: 35px;
-
+      font-size: 2rem;
       margin-bottom: 15px;
     }
 
     .skill-card h3 {
-
       margin-bottom: 8px;
     }
 
     .skill-card p {
-
       color: var(--muted);
-
-      font-size: 15px;
+      line-height: 1.6;
+      font-size: 0.94rem;
     }
-
 
     /* =========================
        EDUCATION
-    ========================== */
+    ========================= */
 
     .education {
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(102,126,234,0.08),
-          rgba(118,75,162,0.08)
-        );
-    }
-
-    .education-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(2, 1fr);
-
-      gap: 25px;
+      background: #f8fafc;
     }
 
     .education-card {
-
-      background: var(--card);
-
-      border:
-        1px solid
-        var(--border);
-
-      border-radius: 22px;
-
-      padding: 30px;
-
+      max-width: 850px;
+      margin: auto;
+      padding: 35px;
+      background: white;
+      border-radius: 25px;
+      border: 1px solid var(--border);
       box-shadow: var(--shadow);
-    }
-
-    .education-card h3 {
-
-      font-size: 23px;
-
-      margin-bottom: 8px;
-    }
-
-    .education-card .year {
-
-      color: var(--primary);
-
-      font-weight: 800;
-    }
-
-    .education-card p {
-
-      color: var(--muted);
-
-      margin-top: 10px;
-    }
-
-
-    /* =========================
-       PROJECTS
-    ========================== */
-
-    .projects {
-
-      background: var(--light);
-    }
-
-    .project-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
+      display: flex;
+      align-items: center;
       gap: 25px;
     }
 
+    .education-icon {
+      min-width: 70px;
+      height: 70px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: linear-gradient(135deg,var(--primary),var(--secondary));
+      color: white;
+      font-size: 2rem;
+    }
+
+    .education-card h3 {
+      margin-bottom: 7px;
+    }
+
+    .education-card p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* =========================
+       PROJECTS
+    ========================= */
+
+    .projects {
+      background: white;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 22px;
+    }
+
     .project-card {
-
       overflow: hidden;
-
-      border-radius: 24px;
-
-      background: var(--card);
-
-      border:
-        1px solid
-        var(--border);
-
-      box-shadow:
-        var(--shadow);
-
+      border-radius: 23px;
+      border: 1px solid var(--border);
+      background: white;
+      box-shadow: 0 10px 35px rgba(15,23,42,0.06);
       transition: 0.35s;
     }
 
     .project-card:hover {
-
-      transform:
-        translateY(-10px);
+      transform: translateY(-9px);
+      box-shadow: var(--shadow);
     }
 
     .project-top {
-
-      height: 170px;
-
+      min-height: 155px;
+      padding: 28px;
       display: flex;
-
       align-items: center;
-
       justify-content: center;
-
-      font-size: 65px;
-
       background:
-        linear-gradient(
-          135deg,
-          var(--primary),
-          var(--secondary)
-        );
-
+        radial-gradient(circle at top right, rgba(255,255,255,0.2), transparent 35%),
+        linear-gradient(135deg,#6366f1,#8b5cf6);
       color: white;
+      font-size: 3.2rem;
     }
 
     .project-content {
-
       padding: 25px;
     }
 
     .project-content h3 {
-
-      font-size: 23px;
-
       margin-bottom: 10px;
     }
 
     .project-content p {
-
       color: var(--muted);
-
+      line-height: 1.65;
       margin-bottom: 18px;
     }
 
-    .tags {
-
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 8px;
-
-      margin-bottom: 20px;
-    }
-
-    .tag {
-
-      padding: 5px 10px;
-
-      border-radius: 20px;
-
-      font-size: 12px;
-
-      font-weight: 700;
-
-      color: var(--primary);
-
-      background:
-        rgba(102,126,234,0.1);
-    }
-
     .project-link {
-
       color: var(--primary);
-
-      font-weight: 800;
+      font-weight: 850;
     }
-
-
-    /* =========================
-       CTA
-    ========================== */
-
-    .cta {
-
-      color: white;
-
-      text-align: center;
-
-      background:
-        linear-gradient(
-          135deg,
-          #667eea,
-          #764ba2
-        );
-    }
-
-    .cta h2 {
-
-      font-size:
-        clamp(35px, 5vw, 55px);
-
-      margin-bottom: 15px;
-    }
-
-    .cta p {
-
-      max-width: 700px;
-
-      margin: auto;
-
-      opacity: 0.9;
-    }
-
 
     /* =========================
        CONTACT
-    ========================== */
+    ========================= */
+
+    .contact {
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255,255,255,0.08), transparent 30%),
+        linear-gradient(135deg,#111827,#1e1b4b);
+      color: white;
+    }
+
+    .contact .section-heading h2 {
+      color: white;
+    }
+
+    .contact .section-heading p {
+      color: #cbd5e1;
+    }
 
     .contact-grid {
-
       display: grid;
-
-      grid-template-columns:
-        1fr 1fr;
-
-      gap: 30px;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
     }
 
     .contact-card {
-
-      padding: 35px;
-
-      background: var(--card);
-
-      border:
-        1px solid
-        var(--border);
-
-      border-radius: 24px;
-
-      box-shadow:
-        var(--shadow);
+      padding: 30px;
+      text-align: center;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(10px);
+      transition: 0.3s;
     }
 
-    .contact-item {
-
-      display: flex;
-
-      gap: 18px;
-
-      align-items: center;
-
-      padding: 18px 0;
-
-      border-bottom:
-        1px solid
-        var(--border);
+    .contact-card:hover {
+      transform: translateY(-7px);
+      background: rgba(255,255,255,0.1);
     }
 
-    .contact-item:last-child {
-
-      border-bottom: 0;
+    .contact-card .icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
     }
 
-    .contact-icon {
-
-      width: 50px;
-      height: 50px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      background:
-        rgba(102,126,234,0.12);
-
-      border-radius: 14px;
-
-      font-size: 22px;
+    .contact-card h3 {
+      margin-bottom: 8px;
     }
 
-    .contact-item small {
-
-      display: block;
-
-      color: var(--muted);
+    .contact-card p {
+      color: #cbd5e1;
+      font-size: 0.92rem;
+      word-break: break-word;
     }
-
-    .contact-item strong {
-
-      color: var(--text);
-    }
-
 
     /* =========================
        FOOTER
-    ========================== */
+    ========================= */
 
     footer {
-
-      padding:
-        35px 7%;
-
-      background:
-        #0f172a;
-
-      color: white;
-
-      text-align: center;
-    }
-
-    footer .footer-logo {
-
-      font-size: 28px;
-
-      font-weight: 900;
-    }
-
-    footer .footer-logo span {
-
-      color: #667eea;
-    }
-
-    footer p {
-
-      margin:
-        8px 0 20px;
-
+      padding: 25px 5%;
+      background: #080c16;
       color: #94a3b8;
+      text-align: center;
+      font-size: 0.9rem;
     }
 
-    .socials {
-
-      display: flex;
-
-      justify-content: center;
-
-      gap: 12px;
-    }
-
-    .socials a {
-
-      width: 42px;
-      height: 42px;
-
-      border-radius: 50%;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      background:
-        rgba(255,255,255,0.08);
-
-      transition: 0.3s;
-
-      font-size: 18px;
-    }
-
-    .socials a:hover {
-
-      background:
-        var(--primary);
-
-      transform:
-        translateY(-4px);
-    }
-
-
-    /* =========================
-       SCROLL TOP
-    ========================== */
-
-    #topBtn {
-
-      position: fixed;
-
-      right: 25px;
-
-      bottom: 25px;
-
-      width: 48px;
-      height: 48px;
-
-      border: 0;
-
-      border-radius: 50%;
-
-      background:
-        linear-gradient(
-          135deg,
-          var(--primary),
-          var(--secondary)
-        );
-
+    footer strong {
       color: white;
-
-      font-size: 20px;
-
-      cursor: pointer;
-
-      opacity: 0;
-
-      pointer-events: none;
-
-      transition: 0.3s;
-
-      z-index: 999;
     }
-
-    #topBtn.show {
-
-      opacity: 1;
-
-      pointer-events: auto;
-    }
-
 
     /* =========================
-       PWA INSTALL BUTTON
-    ========================== */
-
-    #installBtn {
-
-      display: none;
-
-      position: fixed;
-
-      left: 50%;
-
-      bottom: 20px;
-
-      transform:
-        translateX(-50%);
-
-      z-index: 9998;
-
-      border: none;
-
-      padding:
-        13px 22px;
-
-      border-radius: 50px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #667eea,
-          #764ba2
-        );
-
-      color: white;
-
-      font-size: 15px;
-
-      font-weight: 800;
-
-      box-shadow:
-        0 15px 35px
-        rgba(0,0,0,0.25);
-
-      cursor: pointer;
-    }
-
-    #installBtn:hover {
-
-      transform:
-        translateX(-50%)
-        translateY(-3px);
-    }
-
-
-    /* =========================
-       ANIMATIONS
-    ========================== */
-
-    @keyframes fadeUp {
-
-      from {
-
-        opacity: 0;
-
-        transform:
-          translateY(35px);
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform:
-          translateY(0);
-      }
-    }
-
-    @keyframes float {
-
-      0%,
-      100% {
-
-        transform:
-          translateY(0);
-      }
-
-      50% {
-
-        transform:
-          translateY(-12px);
-      }
-    }
+       SCROLL REVEAL
+    ========================= */
 
     .reveal {
-
       opacity: 0;
-
-      transform:
-        translateY(35px);
-
-      transition:
-        0.8s ease;
+      transform: translateY(35px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
     }
 
-    .reveal.active {
-
+    .reveal.show {
       opacity: 1;
-
-      transform:
-        translateY(0);
+      transform: translateY(0);
     }
 
+    /* =========================
+       TOP BUTTON
+    ========================= */
+
+    .top-btn {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 0;
+      background: var(--primary);
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s;
+      z-index: 999;
+      box-shadow: 0 10px 25px rgba(99,102,241,0.35);
+    }
+
+    .top-btn.show {
+      opacity: 1;
+      visibility: visible;
+    }
 
     /* =========================
        RESPONSIVE
-    ========================== */
+    ========================= */
 
-    @media (max-width: 950px) {
+    @media (max-width: 900px) {
 
       .nav-links {
-
         position: absolute;
-
-        top: 78px;
-
-        left: 0;
-
-        width: 100%;
-
+        top: 75px;
+        right: 5%;
+        width: 250px;
         padding: 20px;
-
-        background:
-          var(--white);
-
-        display: none;
-
         flex-direction: column;
-
+        align-items: stretch;
         gap: 18px;
-
-        border-bottom:
-          1px solid
-          var(--border);
+        background: rgba(255,255,255,0.97);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+        transform: translateY(-15px);
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.3s;
       }
 
-      body.dark .nav-links {
-
-        background:
-          #111827;
+      .nav-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
       }
 
-      .nav-links.active {
-
-        display: flex;
-      }
-
-      .menu-btn {
-
+      .nav-links a {
+        color: var(--dark) !important;
         display: block;
       }
 
-      .about-grid,
-      .contact-grid {
-
-        grid-template-columns:
-          1fr;
+      .menu-btn {
+        display: block;
       }
 
-      .skills-grid {
-
-        grid-template-columns:
-          repeat(2, 1fr);
-      }
-
-      .project-grid {
-
-        grid-template-columns:
-          repeat(2, 1fr);
-      }
-    }
-
-
-    @media (max-width: 650px) {
-
-      section {
-
-        padding:
-          75px 5%;
-      }
-
-      nav {
-
-        padding:
-          0 18px;
-      }
-
-      .logo {
-
-        font-size: 25px;
-      }
-
-      .profile-wrapper {
-
-        width: 175px;
-        height: 175px;
-      }
-
-      .hero {
-
-        padding-top: 110px;
-      }
-
-      .hero h1 {
-
-        letter-spacing: -2px;
-      }
-
-      .hero p {
-
-        font-size: 16px;
-      }
-
-      .hero-buttons {
-
-        flex-direction: column;
-
-        padding:
-          0 25px;
-      }
-
-      .btn {
-
-        width: 100%;
+      .about-grid {
+        grid-template-columns: 1fr;
       }
 
       .skills-grid,
-      .project-grid,
-      .education-grid {
-
-        grid-template-columns:
-          1fr;
+      .project-grid {
+        grid-template-columns: repeat(2,1fr);
       }
 
-      .timeline::before {
-
-        left: 13px;
-      }
-
-      .timeline-item {
-
-        padding-left: 48px;
-      }
-
-      .timeline-dot {
-
-        left: 0;
-      }
-
-      .info-row {
-
-        flex-direction: column;
-
-        gap: 3px;
-      }
-
-      #topBtn {
-
-        right: 15px;
-
-        bottom: 15px;
-      }
-
-      #installBtn {
-
-        width:
-          calc(100% - 30px);
-
-        text-align: center;
+      .contact-grid {
+        grid-template-columns: 1fr;
       }
     }
 
+    @media (max-width: 600px) {
+
+      header {
+        padding: 15px 5%;
+      }
+
+      .logo {
+        font-size: 1.45rem;
+      }
+
+      .hero {
+        padding-top: 105px;
+      }
+
+      .profile-wrapper {
+        width: 165px;
+        height: 165px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 16vw, 5rem);
+        letter-spacing: -3px;
+      }
+
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .hero-description {
+        font-size: 0.96rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      section {
+        padding: 75px 5%;
+      }
+
+      .stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .skills-grid,
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .education-card {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .timeline::before {
+        left: 10px;
+      }
+
+      .timeline-item {
+        padding-left: 38px;
+      }
+
+      .timeline-dot {
+        left: -1px;
+      }
+    }
   </style>
 </head>
 
-
 <body>
-
 
   <!-- =========================
        NAVBAR
   ========================== -->
 
-  <header>
-
+  <header id="header">
     <nav>
 
-      <a href="#home"
-         class="logo">
-
+      <a href="#home" class="logo">
         Kuldeep<span>.</span>
-
       </a>
 
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+        ☰
+      </button>
 
-      <ul class="nav-links"
-          id="navLinks">
-
-        <li>
-          <a href="#home">Home</a>
-        </li>
-
-        <li>
-          <a href="#about">About</a>
-        </li>
-
-        <li>
-          <a href="#experience">Experience</a>
-        </li>
-
-        <li>
-          <a href="#skills">Skills</a>
-        </li>
-
-        <li>
-          <a href="#education">Education</a>
-        </li>
-
-        <li>
-          <a href="#projects">Projects</a>
-        </li>
-
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
-
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
 
-
-      <div class="nav-buttons">
-
-        <button
-          class="theme-btn"
-          id="themeBtn"
-          aria-label="Toggle theme">
-
-          🌙
-
-        </button>
-
-
-        <button
-          class="menu-btn"
-          id="menuBtn"
-          aria-label="Open menu">
-
-          ☰
-
-        </button>
-
-      </div>
-
     </nav>
-
   </header>
 
 
@@ -1647,88 +947,49 @@
        HERO
   ========================== -->
 
-  <section
-    class="hero"
-    id="home">
+  <section class="hero" id="home">
 
     <div class="hero-content">
 
-
       <div class="profile-wrapper">
-
         <img
           src="developer.png"
-          alt="Kuldeep Borana Profile Photo">
-
+          alt="Kuldeep Borana profile"
+          loading="eager"
+        >
       </div>
-
 
       <div class="availability">
-
-        <span
-          class="availability-dot">
-        </span>
-
+        <span class="dot"></span>
         Open to Opportunities
-
       </div>
 
-
       <h1>
-
-        Kuldeep
-        <span>Borana</span>
-
+        Kuldeep <span>Borana</span>
       </h1>
 
+      <div class="hero-subtitle">
+        Desktop Support Engineer | IT Support | Networking
+      </div>
 
-      <h2>
-
-        Desktop Support Engineer |
-        IT Support |
-        Networking
-
-      </h2>
-
-
-      <p>
-
-        Results-driven IT professional with hands-on
-        experience in hardware troubleshooting,
-        Windows installation and configuration,
-        software deployment, Outlook support,
-        printers and network services.
-
+      <p class="hero-description">
+        Results-driven IT professional with hands-on experience in
+        hardware troubleshooting, Windows installation and configuration,
+        software deployment, Outlook support, printers and network services.
       </p>
-
 
       <div class="hero-buttons">
 
-        <a
-          href="#experience"
-          class="btn btn-primary">
-
+        <a href="#experience" class="btn btn-primary">
           💼 My Experience
-
         </a>
 
-
-        <a
-          href="resume.pdf"
-          target="_blank"
-          class="btn btn-outline">
-
+        <a href="resume.pdf" class="btn btn-outline" target="_blank">
           📄 View Resume
-
         </a>
 
-
-        <a
-          href="#contact"
-          class="btn btn-outline">
-
-          📩 Contact Me
-
+        <a href="#contact" class="btn btn-outline">
+          ✉️ Contact Me
         </a>
 
       </div>
@@ -1742,129 +1003,65 @@
        ABOUT
   ========================== -->
 
-  <section
-    class="about"
-    id="about">
+  <section class="about" id="about">
 
-    <div class="container">
+    <div class="section-inner">
 
-
-      <div class="section-title reveal">
-
-        <div class="small">
-          About Me
-        </div>
-
-        <h2>
-          Professional Profile
-        </h2>
-
+      <div class="section-heading reveal">
+        <div class="small">About Me</div>
+        <h2>Professional IT Support</h2>
         <p>
-          A passionate IT professional focused
-          on solving technical problems and
-          delivering reliable support.
+          Reliable technical support with a practical approach to solving
+          hardware, software and networking problems.
         </p>
-
       </div>
-
 
       <div class="about-grid">
 
-
         <div class="about-text reveal">
 
-          <h3>
-            Building reliable IT experiences.
-          </h3>
-
+          <h3>Technology. Troubleshooting. Results.</h3>
 
           <p>
-
-            I am an IT professional with practical
-            experience in desktop support, hardware
-            troubleshooting, Windows systems,
-            software installation, networking and
-            technical assistance.
-
+            I am an IT professional focused on desktop support,
+            hardware troubleshooting, Windows systems, software
+            installation and network-related support.
           </p>
-
 
           <p>
-
-            I enjoy troubleshooting problems,
-            learning new technologies and helping
-            users get their systems working efficiently.
-
+            My approach is simple: understand the problem,
+            troubleshoot systematically and provide a reliable solution.
           </p>
 
-
-          <a
-            href="resume.pdf"
-            target="_blank"
-            class="btn btn-primary"
-            style="margin-top:15px;">
-
-            📄 Download / View Resume
-
-          </a>
+          <p>
+            I continuously improve my technical knowledge and enjoy
+            learning new technologies that make IT support faster,
+            smarter and more efficient.
+          </p>
 
         </div>
 
+        <div class="stats reveal">
 
-        <div class="about-card reveal">
-
-
-          <div class="info-row">
-
-            <span>
-              Role
-            </span>
-
-            <strong>
-              Desktop Support Engineer
-            </strong>
-
+          <div class="stat">
+            <strong>IT</strong>
+            <span>Technical Support</span>
           </div>
 
-
-          <div class="info-row">
-
-            <span>
-              Specialization
-            </span>
-
-            <strong>
-              IT Support & Networking
-            </strong>
-
+          <div class="stat">
+            <strong>PC</strong>
+            <span>Hardware Troubleshooting</span>
           </div>
 
-
-          <div class="info-row">
-
-            <span>
-              Core Area
-            </span>
-
-            <strong>
-              Hardware & Software
-            </strong>
-
+          <div class="stat">
+            <strong>OS</strong>
+            <span>Windows Support</span>
           </div>
 
-
-          <div class="info-row">
-
-            <span>
-              Availability
-            </span>
-
-            <strong>
-              Open to Opportunities
-            </strong>
-
+          <div class="stat">
+            <strong>NET</strong>
+            <span>Networking</span>
           </div>
-
 
         </div>
 
@@ -1879,134 +1076,67 @@
        EXPERIENCE
   ========================== -->
 
-  <section
-    class="experience"
-    id="experience">
+  <section class="experience" id="experience">
 
-    <div class="container">
+    <div class="section-inner">
 
-
-      <div class="section-title reveal">
-
-        <div class="small">
-          Career
-        </div>
-
-        <h2>
-          Experience
-        </h2>
-
+      <div class="section-heading reveal">
+        <div class="small">Career</div>
+        <h2>Experience</h2>
         <p>
-          Practical technical support and
-          IT operations experience.
+          Professional experience and technical responsibilities.
         </p>
-
       </div>
-
 
       <div class="timeline">
 
-
         <div class="timeline-item reveal">
 
-          <div class="timeline-dot">
-          </div>
-
+          <div class="timeline-dot"></div>
 
           <div class="timeline-card">
 
-            <h3>
-              Desktop Support Engineer
-            </h3>
+            <span class="date">
+              IT SUPPORT
+            </span>
+
+            <h3>Desktop Support Engineer</h3>
 
             <div class="company">
-              IT Support / Technical Operations
+              IT Support & Infrastructure
             </div>
 
-            <div class="date">
-              Professional Experience
-            </div>
-
-            <ul>
-
-              <li>
-                Desktop and laptop hardware
-                troubleshooting.
-              </li>
-
-              <li>
-                Windows installation and
-                configuration.
-              </li>
-
-              <li>
-                Software installation and
-                deployment.
-              </li>
-
-              <li>
-                Microsoft Outlook and
-                email support.
-              </li>
-
-              <li>
-                Printer installation and
-                troubleshooting.
-              </li>
-
-              <li>
-                Basic network troubleshooting
-                and connectivity support.
-              </li>
-
-            </ul>
+            <p>
+              Desktop and hardware troubleshooting, Windows installation
+              and configuration, software deployment, Outlook support,
+              printer troubleshooting and basic network support.
+            </p>
 
           </div>
 
         </div>
 
-
         <div class="timeline-item reveal">
 
-          <div class="timeline-dot">
-          </div>
-
+          <div class="timeline-dot"></div>
 
           <div class="timeline-card">
 
-            <h3>
-              IT Support Operations
-            </h3>
+            <span class="date">
+              TECHNICAL SUPPORT
+            </span>
+
+            <h3>IT Support Operations</h3>
 
             <div class="company">
-              Technical Support
+              Technical Support Environment
             </div>
 
-            <div class="date">
-              Hands-on Technical Experience
-            </div>
-
-            <ul>
-
-              <li>
-                Diagnosing software and
-                operating system issues.
-              </li>
-
-              <li>
-                Supporting users with
-                day-to-day IT problems.
-              </li>
-
-              <li>
-                System setup and configuration.
-              </li>
-
-              <li>
-                Peripheral and printer support.
-              </li>
-
-            </ul>
+            <p>
+              Diagnosing technical issues, assisting users with system
+              problems, configuring devices and maintaining reliable
+              desktop environments.
+            </p>
 
           </div>
 
@@ -2023,139 +1153,67 @@
        SKILLS
   ========================== -->
 
-  <section
-    id="skills">
+  <section class="skills" id="skills">
 
-    <div class="container">
+    <div class="section-inner">
 
-
-      <div class="section-title reveal">
-
-        <div class="small">
-          Expertise
-        </div>
-
-        <h2>
-          Technical Skills
-        </h2>
-
+      <div class="section-heading reveal">
+        <div class="small">What I Do</div>
+        <h2>Technical Skills</h2>
         <p>
-          Technologies and areas I work with.
+          Core areas of my IT support and technical expertise.
         </p>
-
       </div>
-
 
       <div class="skills-grid">
 
-
         <div class="skill-card reveal">
-
-          <div class="skill-icon">
-            🖥️
-          </div>
-
-          <h3>
-            Desktop Support
-          </h3>
-
+          <div class="skill-icon">🖥️</div>
+          <h3>Desktop Support</h3>
           <p>
-            Desktop and laptop troubleshooting,
-            system setup and technical support.
+            Desktop troubleshooting, system configuration and user support.
           </p>
-
         </div>
 
-
         <div class="skill-card reveal">
-
-          <div class="skill-icon">
-            ⚙️
-          </div>
-
-          <h3>
-            Hardware Troubleshooting
-          </h3>
-
+          <div class="skill-icon">🔧</div>
+          <h3>Hardware</h3>
           <p>
-            Diagnosing hardware problems and
-            supporting computer peripherals.
+            PC hardware diagnosis, component troubleshooting and maintenance.
           </p>
-
         </div>
 
-
         <div class="skill-card reveal">
-
-          <div class="skill-icon">
-            🪟
-          </div>
-
-          <h3>
-            Windows
-          </h3>
-
+          <div class="skill-icon">🪟</div>
+          <h3>Windows</h3>
           <p>
-            Windows installation, configuration,
-            troubleshooting and maintenance.
+            Windows installation, configuration, updates and troubleshooting.
           </p>
-
         </div>
 
-
         <div class="skill-card reveal">
-
-          <div class="skill-icon">
-            🌐
-          </div>
-
-          <h3>
-            Networking
-          </h3>
-
+          <div class="skill-icon">🌐</div>
+          <h3>Networking</h3>
           <p>
-            Basic network troubleshooting,
-            connectivity and network services.
+            Basic network troubleshooting, connectivity and device support.
           </p>
-
         </div>
 
-
         <div class="skill-card reveal">
-
-          <div class="skill-icon">
-            📧
-          </div>
-
-          <h3>
-            Microsoft Outlook
-          </h3>
-
+          <div class="skill-icon">📧</div>
+          <h3>Outlook</h3>
           <p>
-            Email configuration and
-            Outlook-related technical support.
+            Email configuration, troubleshooting and user assistance.
           </p>
-
         </div>
 
-
         <div class="skill-card reveal">
-
-          <div class="skill-icon">
-            🖨️
-          </div>
-
-          <h3>
-            Printer Support
-          </h3>
-
+          <div class="skill-icon">🖨️</div>
+          <h3>Printers</h3>
           <p>
-            Printer installation,
-            configuration and troubleshooting.
+            Printer installation, configuration and troubleshooting.
           </p>
-
         </div>
-
 
       </div>
 
@@ -2168,70 +1226,32 @@
        EDUCATION
   ========================== -->
 
-  <section
-    class="education"
-    id="education">
+  <section class="education" id="education">
 
-    <div class="container">
+    <div class="section-inner">
 
-
-      <div class="section-title reveal">
-
-        <div class="small">
-          Academic Background
-        </div>
-
-        <h2>
-          Education
-        </h2>
-
+      <div class="section-heading reveal">
+        <div class="small">Qualification</div>
+        <h2>Education</h2>
         <p>
-          Academic qualifications and
-          learning journey.
+          Academic background and continuous technical learning.
         </p>
-
       </div>
 
+      <div class="education-card reveal">
 
-      <div class="education-grid">
-
-
-        <div class="education-card reveal">
-
-          <div class="year">
-            EDUCATION
-          </div>
-
-          <h3>
-            Academic Qualification
-          </h3>
-
-          <p>
-            Details of educational qualifications
-            are available in my resume.
-          </p>
-
+        <div class="education-icon">
+          🎓
         </div>
 
-
-        <div class="education-card reveal">
-
-          <div class="year">
-            CONTINUOUS LEARNING
-          </div>
-
-          <h3>
-            Technical Learning
-          </h3>
+        <div>
+          <h3>Education & Technical Learning</h3>
 
           <p>
-            Continuously improving knowledge
-            in IT support, troubleshooting,
-            networking and modern technologies.
+            Academic qualification supported by practical IT knowledge,
+            hands-on troubleshooting and continuous technical learning.
           </p>
-
         </div>
-
 
       </div>
 
@@ -2244,33 +1264,19 @@
        PROJECTS
   ========================== -->
 
-  <section
-    class="projects"
-    id="projects">
+  <section class="projects" id="projects">
 
-    <div class="container">
+    <div class="section-inner">
 
-
-      <div class="section-title reveal">
-
-        <div class="small">
-          My Work
-        </div>
-
-        <h2>
-          Projects
-        </h2>
-
+      <div class="section-heading reveal">
+        <div class="small">My Work</div>
+        <h2>Projects</h2>
         <p>
-          Practical projects built while learning
-          and improving technical skills.
+          Practical projects demonstrating technical and development skills.
         </p>
-
       </div>
 
-
       <div class="project-grid">
-
 
         <div class="project-card reveal">
 
@@ -2278,42 +1284,21 @@
             🧮
           </div>
 
-
           <div class="project-content">
 
-            <h3>
-              Smart Calculator
-            </h3>
+            <h3>Web Calculator</h3>
 
             <p>
-              A clean browser-based calculator
-              with interactive functionality.
+              A browser-based calculator project created with
+              HTML, CSS and JavaScript.
             </p>
-
-
-            <div class="tags">
-
-              <span class="tag">
-                HTML
-              </span>
-
-              <span class="tag">
-                CSS
-              </span>
-
-              <span class="tag">
-                JavaScript
-              </span>
-
-            </div>
-
 
             <a
               href="calculator.html"
-              class="project-link">
-
-              Live Demo →
-
+              class="project-link"
+              target="_blank"
+            >
+              View Project →
             </a>
 
           </div>
@@ -2324,46 +1309,20 @@
         <div class="project-card reveal">
 
           <div class="project-top">
-            💻
+            💼
           </div>
-
 
           <div class="project-content">
 
-            <h3>
-              Professional Portfolio
-            </h3>
+            <h3>Professional Portfolio</h3>
 
             <p>
-              Responsive personal portfolio website
-              showcasing professional skills,
-              experience and projects.
+              Responsive personal portfolio with modern design,
+              PWA support and mobile-friendly interface.
             </p>
 
-
-            <div class="tags">
-
-              <span class="tag">
-                HTML
-              </span>
-
-              <span class="tag">
-                CSS
-              </span>
-
-              <span class="tag">
-                Responsive
-              </span>
-
-            </div>
-
-
-            <a
-              href="#home"
-              class="project-link">
-
-              View Website →
-
+            <a href="#home" class="project-link">
+              Current Project →
             </a>
 
           </div>
@@ -2374,99 +1333,25 @@
         <div class="project-card reveal">
 
           <div class="project-top">
-            🛠️
+            ⚙️
           </div>
-
 
           <div class="project-content">
 
-            <h3>
-              IT Support Toolkit
-            </h3>
+            <h3>IT Support Toolkit</h3>
 
             <p>
-              A collection of useful troubleshooting
-              concepts and technical support resources.
+              Practical collection of troubleshooting knowledge,
+              system support techniques and technical resources.
             </p>
 
-
-            <div class="tags">
-
-              <span class="tag">
-                IT Support
-              </span>
-
-              <span class="tag">
-                Windows
-              </span>
-
-              <span class="tag">
-                Networking
-              </span>
-
-            </div>
-
-
-            <a
-              href="#skills"
-              class="project-link">
-
-              Explore Skills →
-
+            <a href="#contact" class="project-link">
+              Discuss Project →
             </a>
 
           </div>
 
         </div>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       CTA
-  ========================== -->
-
-  <section class="cta">
-
-    <div class="container reveal">
-
-      <h2>
-        Let's Work Together
-      </h2>
-
-      <p>
-        Looking for a reliable IT professional?
-        Feel free to connect with me for opportunities,
-        technical work or professional collaboration.
-      </p>
-
-
-      <div class="hero-buttons">
-
-
-        <a
-          href="mailto:kuldip8718@gmail.com"
-          class="btn btn-primary">
-
-          📧 Email Me
-
-        </a>
-
-
-        <a
-          href="resume.pdf"
-          target="_blank"
-          class="btn btn-outline">
-
-          📄 View Resume
-
-        </a>
-
 
       </div>
 
@@ -2479,163 +1364,74 @@
        CONTACT
   ========================== -->
 
-  <section id="contact">
+  <section class="contact" id="contact">
 
-    <div class="container">
+    <div class="section-inner">
 
-
-      <div class="section-title reveal">
+      <div class="section-heading reveal">
 
         <div class="small">
-          Get In Touch
+          Let's Connect
         </div>
 
         <h2>
-          Contact Me
+          Have a Project or Opportunity?
         </h2>
 
         <p>
-          Have an opportunity or want to connect?
-          Send me a message.
+          Feel free to connect with me regarding IT support,
+          technical opportunities or professional collaboration.
         </p>
 
       </div>
 
-
       <div class="contact-grid">
-
 
         <div class="contact-card reveal">
 
+          <div class="icon">💼</div>
 
-          <div class="contact-item">
+          <h3>Opportunities</h3>
 
-            <div class="contact-icon">
-              📧
-            </div>
-
-            <div>
-
-              <small>
-                Email
-              </small>
-
-              <strong>
-                kuldip8718@gmail.com
-              </strong>
-
-            </div>
-
-          </div>
-
-
-          <div class="contact-item">
-
-            <div class="contact-icon">
-              💼
-            </div>
-
-            <div>
-
-              <small>
-                Professional Role
-              </small>
-
-              <strong>
-                Desktop Support Engineer
-              </strong>
-
-            </div>
-
-          </div>
-
-
-          <div class="contact-item">
-
-            <div class="contact-icon">
-              🌐
-            </div>
-
-            <div>
-
-              <small>
-                Specialization
-              </small>
-
-              <strong>
-                IT Support & Networking
-              </strong>
-
-            </div>
-
-          </div>
-
+          <p>
+            Open to suitable IT and technical opportunities.
+          </p>
 
         </div>
 
 
         <div class="contact-card reveal">
 
+          <div class="icon">📄</div>
 
-          <h3
-            style="
-              font-size:28px;
-              margin-bottom:15px;
-            ">
+          <h3>Resume</h3>
 
-            Let's Connect
-
-          </h3>
-
-
-          <p
-            style="
-              color:var(--muted);
-              margin-bottom:25px;
-            ">
-
-            You can contact me directly through
-            email or visit my GitHub profile.
-
+          <p>
+            <a href="resume.pdf" target="_blank">
+              View / Download Resume
+            </a>
           </p>
 
-
-          <div
-            style="
-              display:flex;
-              flex-wrap:wrap;
-              gap:12px;
-            ">
+        </div>
 
 
-            <a
-              href="mailto:kuldip8718@gmail.com"
-              class="btn btn-primary">
+        <div class="contact-card reveal">
 
-              📧 Send Email
+          <div class="icon">🌐</div>
 
-            </a>
+          <h3>GitHub</h3>
 
-
+          <p>
             <a
               href="https://github.com/kuldeep17422"
               target="_blank"
               rel="noopener"
-              class="btn"
-              style="
-                background:#111827;
-                color:white;
-              ">
-
-              🐙 GitHub
-
+            >
+              github.com/kuldeep17422
             </a>
-
-
-          </div>
+          </p>
 
         </div>
-
 
       </div>
 
@@ -2650,321 +1446,69 @@
 
   <footer>
 
-
-    <div class="footer-logo">
-
-      Kuldeep<span>.</span>
-
-    </div>
-
-
-    <p>
-      Desktop Support Engineer |
-      IT Support |
-      Networking
-    </p>
-
-
-    <div class="socials">
-
-
-      <a
-        href="https://github.com/kuldeep17422"
-        target="_blank"
-        rel="noopener"
-        aria-label="GitHub">
-
-        🐙
-
-      </a>
-
-
-      <a
-        href="mailto:kuldip8718@gmail.com"
-        aria-label="Email">
-
-        ✉️
-
-      </a>
-
-
-      <a
-        href="#home"
-        aria-label="Home">
-
-        🏠
-
-      </a>
-
-
-    </div>
-
-
-    <p style="margin-top:25px;">
-
-      ©
-      <span id="year"></span>
-      Kuldeep Borana.
-      All Rights Reserved.
-
-    </p>
-
+    © <span id="year"></span>
+    <strong>Kuldeep Borana</strong>.
+    All rights reserved.
 
   </footer>
 
 
-  <!-- =========================
-       SCROLL TOP
-  ========================== -->
+  <!-- BACK TO TOP -->
 
   <button
+    class="top-btn"
     id="topBtn"
-    aria-label="Scroll to top">
-
+    aria-label="Back to top"
+  >
     ↑
-
   </button>
 
-
-  <!-- =========================
-       PWA INSTALL BUTTON
-  ========================== -->
-
-  <button
-    id="installBtn">
-
-    📱 Install Portfolio App
-
-  </button>
-
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================== -->
 
   <script>
-
 
     /* =========================
        MOBILE MENU
     ========================== */
 
-    const menuBtn =
-      document.getElementById("menuBtn");
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
 
-    const navLinks =
-      document.getElementById("navLinks");
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
 
+      menuBtn.textContent =
+        navLinks.classList.contains("open")
+          ? "✕"
+          : "☰";
+    });
 
-    menuBtn.addEventListener(
-      "click",
-      () => {
+    document.querySelectorAll(".nav-links a").forEach(link => {
 
-        navLinks.classList.toggle(
-          "active"
-        );
+      link.addEventListener("click", () => {
 
-
-        menuBtn.textContent =
-          navLinks.classList.contains(
-            "active"
-          )
-            ? "✕"
-            : "☰";
-
-      }
-    );
-
-
-    document
-      .querySelectorAll(".nav-links a")
-      .forEach(link => {
-
-        link.addEventListener(
-          "click",
-          () => {
-
-            navLinks.classList.remove(
-              "active"
-            );
-
-            menuBtn.textContent = "☰";
-
-          }
-        );
+        navLinks.classList.remove("open");
+        menuBtn.textContent = "☰";
 
       });
 
-
-    /* =========================
-       DARK MODE
-    ========================== */
-
-    const themeBtn =
-      document.getElementById("themeBtn");
-
-
-    const savedTheme =
-      localStorage.getItem("theme");
-
-
-    if (savedTheme === "dark") {
-
-      document.body.classList.add(
-        "dark"
-      );
-
-      themeBtn.textContent = "☀️";
-
-    }
-
-
-    themeBtn.addEventListener(
-      "click",
-      () => {
-
-        document.body.classList.toggle(
-          "dark"
-        );
-
-
-        if (
-          document.body.classList.contains(
-            "dark"
-          )
-        ) {
-
-          localStorage.setItem(
-            "theme",
-            "dark"
-          );
-
-          themeBtn.textContent = "☀️";
-
-        } else {
-
-          localStorage.setItem(
-            "theme",
-            "light"
-          );
-
-          themeBtn.textContent = "🌙";
-
-        }
-
-      }
-    );
+    });
 
 
     /* =========================
-       REVEAL ANIMATION
+       HEADER SCROLL
     ========================== */
 
-    const revealElements =
-      document.querySelectorAll(
-        ".reveal"
-      );
+    const header = document.getElementById("header");
 
+    window.addEventListener("scroll", () => {
 
-    const revealObserver =
-      new IntersectionObserver(
-
-        entries => {
-
-          entries.forEach(
-            entry => {
-
-              if (
-                entry.isIntersecting
-              ) {
-
-                entry.target.classList.add(
-                  "active"
-                );
-
-              }
-
-            }
-          );
-
-        },
-
-        {
-          threshold: 0.12
-        }
-
-      );
-
-
-    revealElements.forEach(
-      element => {
-
-        revealObserver.observe(
-          element
-        );
-
+      if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
       }
-    );
 
-
-    /* =========================
-       SCROLL TOP
-    ========================== */
-
-    const topBtn =
-      document.getElementById(
-        "topBtn"
-      );
-
-
-    window.addEventListener(
-      "scroll",
-      () => {
-
-        if (
-          window.scrollY > 500
-        ) {
-
-          topBtn.classList.add(
-            "show"
-          );
-
-        } else {
-
-          topBtn.classList.remove(
-            "show"
-          );
-
-        }
-
-      }
-    );
-
-
-    topBtn.addEventListener(
-      "click",
-      () => {
-
-        window.scrollTo({
-
-          top: 0,
-
-          behavior: "smooth"
-
-        });
-
-      }
-    );
-
-
-    /* =========================
-       CURRENT YEAR
-    ========================== */
-
-    document.getElementById(
-      "year"
-    ).textContent =
-      new Date().getFullYear();
+    });
 
 
     /* =========================
@@ -2972,189 +1516,130 @@
     ========================== */
 
     const sections =
-      document.querySelectorAll(
-        "section[id]"
-      );
-
+      document.querySelectorAll("section[id]");
 
     const navItems =
-      document.querySelectorAll(
-        ".nav-links a"
+      document.querySelectorAll(".nav-links a");
+
+    window.addEventListener("scroll", () => {
+
+      let current = "";
+
+      sections.forEach(section => {
+
+        const sectionTop =
+          section.offsetTop - 180;
+
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+
+      });
+
+      navItems.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (
+          link.getAttribute("href") === "#" + current
+        ) {
+          link.classList.add("active");
+        }
+
+      });
+
+    });
+
+
+    /* =========================
+       SCROLL REVEAL
+    ========================== */
+
+    const observer =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("show");
+
+              observer.unobserve(entry.target);
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12
+        }
       );
 
-
-    window.addEventListener(
-      "scroll",
-      () => {
-
-        let current = "";
+    document
+      .querySelectorAll(".reveal")
+      .forEach(element => observer.observe(element));
 
 
-        sections.forEach(
-          section => {
+    /* =========================
+       BACK TO TOP
+    ========================== */
 
-            const sectionTop =
-              section.offsetTop - 150;
+    const topBtn =
+      document.getElementById("topBtn");
 
+    window.addEventListener("scroll", () => {
 
-            if (
-              window.scrollY >=
-              sectionTop
-            ) {
-
-              current =
-                section.getAttribute(
-                  "id"
-                );
-
-            }
-
-          }
-        );
-
-
-        navItems.forEach(
-          link => {
-
-            link.style.color = "";
-
-
-            if (
-              link.getAttribute(
-                "href"
-              ) === "#" + current
-            ) {
-
-              link.style.color =
-                "var(--primary)";
-
-            }
-
-          }
-        );
-
+      if (window.scrollY > 500) {
+        topBtn.classList.add("show");
+      } else {
+        topBtn.classList.remove("show");
       }
-    );
+
+    });
+
+    topBtn.addEventListener("click", () => {
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    });
+
+
+    /* =========================
+       YEAR
+    ========================== */
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
 
 
     /* =========================
        SERVICE WORKER
     ========================== */
 
-    if (
-      "serviceWorker" in navigator
-    ) {
+    if ("serviceWorker" in navigator) {
 
-      window.addEventListener(
-        "load",
-        () => {
+      window.addEventListener("load", () => {
 
-          navigator.serviceWorker
-            .register(
-              "./service-worker.js"
-            )
-
-            .then(
-              registration => {
-
-                console.log(
-                  "PWA Service Worker registered:",
-                  registration.scope
-                );
-
-              }
-            )
-
-            .catch(
-              error => {
-
-                console.log(
-                  "Service Worker registration failed:",
-                  error
-                );
-
-              }
+        navigator.serviceWorker
+          .register("./service-worker.js")
+          .then(() => {
+            console.log("PWA service worker registered.");
+          })
+          .catch(error => {
+            console.log(
+              "Service worker registration failed:",
+              error
             );
+          });
 
-        }
-      );
+      });
 
     }
-
-
-    /* =========================
-       PWA INSTALL PROMPT
-    ========================== */
-
-    let deferredPrompt = null;
-
-
-    const installBtn =
-      document.getElementById(
-        "installBtn"
-      );
-
-
-    window.addEventListener(
-      "beforeinstallprompt",
-      event => {
-
-        event.preventDefault();
-
-        deferredPrompt = event;
-
-        installBtn.style.display =
-          "block";
-
-      }
-    );
-
-
-    installBtn.addEventListener(
-      "click",
-      async () => {
-
-        if (!deferredPrompt) {
-          return;
-        }
-
-
-        deferredPrompt.prompt();
-
-
-        const result =
-          await deferredPrompt.userChoice;
-
-
-        console.log(
-          "PWA install result:",
-          result.outcome
-        );
-
-
-        deferredPrompt = null;
-
-        installBtn.style.display =
-          "none";
-
-      }
-    );
-
-
-    window.addEventListener(
-      "appinstalled",
-      () => {
-
-        console.log(
-          "Kuldeep Portfolio installed."
-        );
-
-        installBtn.style.display =
-          "none";
-
-      }
-    );
-
 
   </script>
 
