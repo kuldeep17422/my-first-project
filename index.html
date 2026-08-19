@@ -1,2552 +1,1797 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kuldeep Singh Borana | Desktop Support Engineer</title>
+  <title>Kuldeep Borana | Desktop Support Engineer</title>
 
-<meta name="description"
-content="Kuldeep Singh Borana - Desktop Support Engineer with experience in hardware troubleshooting, Windows, networking and IT support.">
+  <meta name="description"
+    content="Kuldeep Borana - Desktop Support Engineer, IT Support, Hardware Troubleshooting, Windows, Networking and Technical Support.">
 
-<meta name="theme-color" content="#6257ee">
+  <meta name="keywords"
+    content="Kuldeep Borana, Desktop Support Engineer, IT Support, Technical Support, Networking, Windows, Hardware Troubleshooting">
 
-<style>
+  <meta name="author" content="Kuldeep Borana">
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
-}
+  <meta name="theme-color" content="#667eea">
 
-:root{
-    --primary:#6257ee;
-    --primary-dark:#5046d8;
-    --secondary:#8b5cf6;
-    --dark:#111827;
-    --text:#374151;
-    --muted:#6b7280;
-    --light:#f7f8fc;
-    --white:#ffffff;
-    --border:#e5e7eb;
-}
+  <link rel="icon" href="developer.png">
 
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:var(--light);
-    color:var(--text);
-    line-height:1.6;
-}
+  <style>
+    /* =========================
+       RESET
+    ========================= */
 
-a{
-    text-decoration:none;
-}
-
-html{
-    scroll-padding-top:80px;
-}
-
-.container{
-    width:min(1120px,92%);
-    margin:auto;
-}
-
-section{
-    padding:90px 0;
-}
-
-/* ================= NAVBAR ================= */
-
-nav{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    height:76px;
-    background:rgba(255,255,255,.96);
-    backdrop-filter:blur(15px);
-    border-bottom:1px solid rgba(0,0,0,.07);
-}
-
-.nav-inner{
-    width:min(1120px,92%);
-    height:100%;
-    margin:auto;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    color:#26336b;
-    font-size:28px;
-    font-weight:900;
-}
-
-.logo span{
-    color:var(--primary);
-}
-
-nav ul{
-    display:flex;
-    list-style:none;
-    gap:28px;
-}
-
-nav ul a{
-    color:#222;
-    font-size:15px;
-    font-weight:800;
-    transition:.25s;
-}
-
-nav ul a:hover,
-nav ul a.active{
-    color:var(--primary);
-}
-
-.menu{
-    display:none;
-    font-size:28px;
-    cursor:pointer;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-    min-height:720px;
-
-    display:flex;
-    align-items:center;
-    text-align:center;
-
-    color:white;
-
-    position:relative;
-    overflow:hidden;
-
-    background:
-    radial-gradient(
-        circle at 10% 15%,
-        rgba(255,255,255,.18),
-        transparent 25%
-    ),
-    radial-gradient(
-        circle at 90% 80%,
-        rgba(255,255,255,.15),
-        transparent 28%
-    ),
-    linear-gradient(
-        135deg,
-        #5964e9,
-        #7750c8
-    );
-}
-
-.hero::before{
-    content:"";
-    position:absolute;
-
-    width:400px;
-    height:400px;
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,.06);
-
-    top:-170px;
-    right:-120px;
-}
-
-.hero::after{
-    content:"";
-    position:absolute;
-
-    width:300px;
-    height:300px;
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,.05);
-
-    bottom:-150px;
-    left:-100px;
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-    width:100%;
-}
-
-.available{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-
-    padding:8px 16px;
-
-    border:1px solid rgba(255,255,255,.35);
-    background:rgba(255,255,255,.10);
-
-    border-radius:50px;
-
-    font-size:14px;
-    font-weight:800;
-
-    margin-bottom:27px;
-}
-
-.dot{
-    width:9px;
-    height:9px;
-
-    background:#64ff8a;
-
-    border-radius:50%;
-}
-
-.profile-img{
-    width:220px;
-    height:220px;
-
-    object-fit:cover;
-
-    border-radius:50%;
-
-    border:8px solid white;
-
-    box-shadow:
-        0 0 0 6px #111,
-        0 25px 60px rgba(0,0,0,.30);
-
-    margin-bottom:30px;
-
-    animation:float 4s ease-in-out infinite;
-}
-
-@keyframes float{
-
-    50%{
-        transform:translateY(-8px);
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
-}
-
-.hero h1{
-    font-size:clamp(48px,8vw,82px);
-
-    line-height:1;
-
-    letter-spacing:-3px;
-
-    margin-bottom:18px;
-}
-
-.hero h1 span{
-    color:#ffe17a;
-}
-
-.hero h2{
-    font-size:clamp(20px,3vw,29px);
-
-    margin-bottom:15px;
-}
-
-.hero-description{
-    max-width:760px;
-
-    margin:0 auto 30px;
-
-    color:rgba(255,255,255,.92);
-
-    font-size:17px;
-}
-
-.hero-buttons{
-    display:flex;
-
-    justify-content:center;
-
-    flex-wrap:wrap;
-
-    gap:12px;
-}
-
-.btn{
-    display:inline-flex;
-
-    justify-content:center;
-    align-items:center;
-
-    gap:8px;
-
-    padding:14px 23px;
-
-    border-radius:12px;
-
-    font-weight:900;
-
-    transition:.25s;
-}
-
-.btn:hover{
-    transform:translateY(-3px);
-
-    box-shadow:
-        0 12px 30px rgba(0,0,0,.20);
-}
-
-.btn-white{
-    background:white;
-    color:var(--primary);
-}
-
-.btn-outline{
-    color:white;
-
-    border:1px solid rgba(255,255,255,.65);
-
-    background:rgba(255,255,255,.08);
-}
-
-/* ================= SECTION HEADING ================= */
-
-.section-heading{
-    text-align:center;
-
-    margin-bottom:55px;
-}
-
-.section-label{
-    color:var(--primary);
-
-    text-transform:uppercase;
-
-    letter-spacing:2px;
-
-    font-size:13px;
-
-    font-weight:900;
-}
-
-.section-heading h2{
-    color:var(--dark);
-
-    font-size:clamp(35px,5vw,48px);
-
-    line-height:1.15;
-
-    margin:9px 0;
-}
-
-.section-heading p{
-    color:var(--muted);
-}
-
-/* ================= ABOUT ================= */
-
-.about{
-    background:white;
-}
-
-.about-grid{
-    display:grid;
-
-    grid-template-columns:1.15fr .85fr;
-
-    gap:55px;
-
-    align-items:center;
-}
-
-.about-text h3{
-    color:var(--dark);
-
-    font-size:31px;
-
-    margin-bottom:16px;
-}
-
-.about-text p{
-    color:var(--muted);
-
-    font-size:17px;
-
-    margin-bottom:15px;
-}
-
-.about-card{
-    padding:30px;
-
-    border-radius:23px;
-
-    border:1px solid var(--border);
-
-    background:
-        linear-gradient(
-            145deg,
-            #f6f5ff,
-            #ffffff
-        );
-
-    box-shadow:
-        0 18px 50px rgba(40,40,100,.08);
-}
-
-.about-card h3{
-    color:var(--dark);
-
-    margin-bottom:15px;
-}
-
-.info-row{
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    padding:13px 0;
-
-    border-bottom:1px solid var(--border);
-}
-
-.info-row:last-child{
-    border-bottom:0;
-}
-
-/* ================= EXPERIENCE ================= */
-
-.experience{
-    background:#f7f8fc;
-}
-
-.experience-card{
-    max-width:950px;
-
-    margin:auto;
-
-    background:white;
-
-    border:1px solid var(--border);
-
-    border-radius:25px;
-
-    padding:35px;
-
-    box-shadow:
-        0 18px 45px rgba(20,20,60,.07);
-
-    position:relative;
-}
-
-.experience-top{
-    display:flex;
-
-    justify-content:space-between;
-
-    gap:20px;
-
-    flex-wrap:wrap;
-
-    margin-bottom:22px;
-}
-
-.experience-top h3{
-    color:var(--dark);
-
-    font-size:25px;
-}
-
-.company{
-    color:var(--primary);
-
-    font-weight:900;
-
-    margin-top:4px;
-}
-
-.date{
-    color:white;
-
-    background:var(--primary);
-
-    padding:7px 13px;
-
-    border-radius:20px;
-
-    font-size:13px;
-
-    font-weight:800;
-
-    height:max-content;
-}
-
-.experience-card ul{
-    padding-left:20px;
-}
-
-.experience-card li{
-    margin:10px 0;
-
-    color:var(--muted);
-}
-
-/* ================= SKILLS ================= */
-
-.skills{
-    background:white;
-}
-
-.skills-grid{
-    display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:18px;
-}
-
-.skill{
-    background:#fafaff;
-
-    border:1px solid var(--border);
-
-    border-radius:18px;
-
-    padding:24px 15px;
-
-    text-align:center;
-
-    transition:.3s;
-}
-
-.skill:hover{
-    transform:translateY(-7px);
-
-    border-color:#c9c6ff;
-
-    box-shadow:
-        0 18px 40px rgba(98,87,238,.12);
-}
-
-.skill-icon{
-    font-size:37px;
-
-    margin-bottom:8px;
-}
-
-.skill h3{
-    color:var(--dark);
-
-    font-size:16px;
-}
-
-/* ================= CERTIFICATION ================= */
-
-.certification{
-    background:#f7f8fc;
-}
-
-.cert-card{
-    max-width:850px;
-
-    margin:auto;
-
-    padding:35px;
-
-    background:white;
-
-    border-radius:23px;
-
-    border:1px solid var(--border);
-
-    box-shadow:
-        0 15px 40px rgba(0,0,0,.06);
-
-    display:flex;
-
-    align-items:center;
-
-    gap:25px;
-}
-
-.cert-icon{
-    width:75px;
-    height:75px;
-
-    flex-shrink:0;
-
-    display:grid;
-    place-items:center;
-
-    border-radius:18px;
-
-    background:#eeedff;
-
-    font-size:38px;
-}
-
-.cert-card h3{
-    color:var(--dark);
-
-    font-size:23px;
-}
-
-.cert-card p{
-    color:var(--muted);
-
-    margin-top:5px;
-}
-
-/* ================= EDUCATION ================= */
-
-.education{
-    background:white;
-}
-
-.education-grid{
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:20px;
-}
-
-.education-card{
-    padding:28px;
-
-    background:#fafaff;
-
-    border:1px solid var(--border);
-
-    border-radius:20px;
-
-    transition:.3s;
-}
-
-.education-card:hover{
-    transform:translateY(-6px);
-
-    box-shadow:
-        0 15px 35px rgba(0,0,0,.07);
-}
-
-.education-card h3{
-    color:var(--dark);
-
-    margin-bottom:8px;
-}
-
-.education-card p{
-    color:var(--muted);
-}
-
-/* ================= STATS ================= */
-
-.stats{
-    background:white;
-
-    padding:55px 0;
-}
-
-.stats-grid{
-    display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:15px;
-}
-
-.stat{
-    text-align:center;
-}
-
-.stat h3{
-    color:var(--primary);
-
-    font-size:35px;
-}
-
-.stat p{
-    color:var(--muted);
-
-    font-size:14px;
-}
-
-/* ================= PROJECTS ================= */
-
-.projects{
-    background:#f7f8fc;
-}
-
-.projects-grid{
-    display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap:25px;
-}
-
-.project{
-    background:white;
-
-    border:1px solid var(--border);
-
-    border-radius:23px;
-
-    padding:30px;
-
-    transition:.3s;
-}
-
-.project:hover{
-    transform:translateY(-8px);
-
-    box-shadow:
-        0 22px 50px rgba(20,20,80,.10);
-}
-
-.project-icon{
-    font-size:43px;
-
-    margin-bottom:10px;
-}
-
-.project h3{
-    color:var(--dark);
-
-    font-size:25px;
-
-    margin-bottom:10px;
-}
-
-.project p{
-    color:var(--muted);
-
-    margin-bottom:18px;
-}
-
-.tags{
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:8px;
-
-    margin-bottom:20px;
-}
-
-.tag{
-    background:#eeedff;
-
-    color:#564ed4;
-
-    padding:6px 11px;
-
-    border-radius:20px;
-
-    font-size:13px;
-
-    font-weight:900;
-}
-
-.project-links{
-    display:flex;
-
-    gap:10px;
-
-    flex-wrap:wrap;
-}
-
-.project-btn{
-    background:var(--primary);
-
-    color:white;
-
-    padding:10px 15px;
-
-    border-radius:9px;
-
-    font-size:14px;
-
-    font-weight:900;
-
-    transition:.25s;
-}
-
-.project-btn:hover{
-    background:var(--primary-dark);
-
-    transform:translateY(-2px);
-}
-
-.project-btn.dark{
-    background:#171717;
-}
-
-/* ================= HIRE ================= */
-
-.hire{
-    background:
-        linear-gradient(
-            135deg,
-            #5659e9,
-            #7c3aed
-        );
-
-    color:white;
-
-    text-align:center;
-}
-
-.hire h2{
-    font-size:
-        clamp(35px,5vw,52px);
-
-    margin-bottom:12px;
-}
-
-.hire p{
-    max-width:700px;
-
-    margin:
-        0 auto 25px;
-
-    color:
-        rgba(255,255,255,.88);
-}
-
-/* ================= CONTACT ================= */
-
-.contact{
-    background:white;
-}
-
-.contact-grid{
-    display:grid;
-
-    grid-template-columns:
-        .9fr 1.1fr;
-
-    gap:40px;
-}
-
-.contact-info h3{
-    color:var(--dark);
-
-    font-size:31px;
-
-    margin-bottom:12px;
-}
-
-.contact-info>p{
-    color:var(--muted);
-
-    margin-bottom:25px;
-}
-
-.contact-item{
-    display:flex;
-
-    align-items:center;
-
-    gap:13px;
-
-    padding:15px;
-
-    margin-bottom:12px;
-
-    border:1px solid var(--border);
-
-    border-radius:13px;
-
-    transition:.25s;
-}
-
-.contact-item:hover{
-    transform:translateX(4px);
-
-    border-color:#c8c5ff;
-}
-
-.contact-icon{
-    width:42px;
-    height:42px;
-
-    display:grid;
-    place-items:center;
-
-    background:#eeedff;
-
-    border-radius:10px;
-}
-
-.contact-item small{
-    display:block;
-
-    color:var(--muted);
-}
-
-.contact-item a{
-    color:var(--dark);
-
-    font-weight:800;
-}
-
-.contact-form{
-    background:#f7f8fc;
-
-    border:1px solid var(--border);
-
-    border-radius:22px;
-
-    padding:30px;
-}
-
-.form-group{
-    margin-bottom:15px;
-}
-
-.form-group label{
-    display:block;
-
-    color:var(--dark);
-
-    font-size:14px;
-
-    font-weight:800;
-
-    margin-bottom:6px;
-}
-
-.form-group input,
-.form-group textarea{
-    width:100%;
-
-    padding:13px;
-
-    border:1px solid #ddd;
-
-    border-radius:10px;
-
-    outline:none;
-
-    font:inherit;
-
-    background:white;
-}
-
-.form-group input:focus,
-.form-group textarea:focus{
-    border-color:var(--primary);
-
-    box-shadow:
-        0 0 0 3px rgba(98,87,238,.10);
-}
-
-.form-group textarea{
-    min-height:130px;
-
-    resize:vertical;
-}
-
-.send{
-    width:100%;
-
-    border:0;
-
-    padding:14px;
-
-    border-radius:10px;
-
-    background:var(--primary);
-
-    color:white;
-
-    font-size:16px;
-
-    font-weight:900;
-
-    cursor:pointer;
-
-    transition:.25s;
-}
-
-.send:hover{
-    background:var(--primary-dark);
-
-    transform:translateY(-2px);
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-    background:#111827;
-
-    color:white;
-
-    text-align:center;
-
-    padding:35px 20px;
-}
-
-.socials{
-    display:flex;
-
-    justify-content:center;
-
-    gap:10px;
-
-    margin-bottom:15px;
-}
-
-.socials a{
-    color:white;
-
-    padding:9px 15px;
-
-    background:
-        rgba(255,255,255,.08);
-
-    border-radius:9px;
-
-    font-size:14px;
-
-    transition:.25s;
-}
-
-.socials a:hover{
-    background:var(--primary);
-}
-
-footer p{
-    color:#9ca3af;
-
-    font-size:14px;
-
-    margin:4px;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:900px){
-
-    nav ul{
-        position:absolute;
-
-        top:76px;
-
-        left:0;
-        right:0;
-
-        display:none;
-
-        flex-direction:column;
-
-        gap:0;
-
-        background:white;
-
-        border-bottom:
-            1px solid var(--border);
-
-        box-shadow:
-            0 15px 30px rgba(0,0,0,.08);
+    :root {
+      --primary: #667eea;
+      --secondary: #764ba2;
+      --accent: #ffd86b;
+      --dark: #111827;
+      --dark2: #1f2937;
+      --light: #f8fafc;
+      --white: #ffffff;
+      --text: #1f2937;
+      --muted: #64748b;
+      --border: rgba(100, 116, 139, 0.18);
+      --card: rgba(255, 255, 255, 0.92);
+      --shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
     }
 
-    nav ul.active{
-        display:flex;
+    body.dark {
+      --light: #0b1120;
+      --white: #111827;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --border: rgba(255,255,255,0.1);
+      --card: rgba(17, 24, 39, 0.92);
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
     }
 
-    nav li{
-        padding:14px;
-
-        text-align:center;
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
-    .menu{
-        display:block;
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
-    .about-grid,
-    .contact-grid{
-        grid-template-columns:1fr;
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    .skills-grid{
-        grid-template-columns:
-            repeat(2,1fr);
+    section {
+      padding: 100px 7%;
+      scroll-margin-top: 80px;
     }
 
-    .education-grid{
-        grid-template-columns:1fr;
+    .container {
+      max-width: 1200px;
+      margin: auto;
     }
 
-    .projects-grid{
-        grid-template-columns:1fr;
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9999;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(100,116,139,0.12);
+      transition: 0.3s;
     }
 
-    .stats-grid{
-        grid-template-columns:
-            repeat(2,1fr);
+    body.dark header {
+      background: rgba(11,17,32,0.94);
     }
 
-}
-
-@media(max-width:600px){
-
-    section{
-        padding:70px 0;
+    nav {
+      max-width: 1250px;
+      margin: auto;
+      height: 78px;
+      padding: 0 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    .hero{
-        min-height:auto;
-
-        padding:
-            70px 0 85px;
+    .logo {
+      font-size: 30px;
+      font-weight: 900;
+      color: #27356f;
+      letter-spacing: -1px;
     }
 
-    .profile-img{
-        width:185px;
-        height:185px;
+    body.dark .logo {
+      color: white;
     }
 
-    .hero h1{
-        font-size:50px;
-
-        letter-spacing:-2px;
+    .logo span {
+      color: var(--primary);
     }
 
-    .hero h2{
-        font-size:21px;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
     }
 
-    .hero-description{
-        font-size:16px;
+    .nav-links a {
+      font-size: 16px;
+      font-weight: 700;
+      transition: 0.3s;
     }
 
-    .hero-buttons{
-        flex-direction:column;
+    .nav-links a:hover {
+      color: var(--primary);
     }
 
-    .hero-buttons .btn{
-        width:100%;
+    .nav-buttons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    .skills-grid{
-        grid-template-columns:
-            1fr 1fr;
+    .theme-btn,
+    .menu-btn {
+      border: 0;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      cursor: pointer;
+      background: var(--light);
+      color: var(--text);
+      font-size: 18px;
+      border: 1px solid var(--border);
     }
 
-    .stats-grid{
-        grid-template-columns:
-            1fr 1fr;
+    .menu-btn {
+      display: none;
     }
 
-    .experience-card,
-    .cert-card,
-    .contact-form{
-        padding:24px 20px;
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      padding-top: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+      position: relative;
+
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,0.16), transparent 25%),
+        radial-gradient(circle at 85% 70%, rgba(255,255,255,0.12), transparent 25%),
+        linear-gradient(135deg, #667eea, #764ba2);
     }
 
-    .cert-card{
-        align-items:flex-start;
-
-        flex-direction:column;
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      animation: float 6s ease-in-out infinite;
     }
 
-    .project-links{
-        flex-direction:column;
+    .hero::before {
+      width: 350px;
+      height: 350px;
+      left: -160px;
+      bottom: -150px;
     }
 
-    .project-btn{
-        text-align:center;
+    .hero::after {
+      width: 280px;
+      height: 280px;
+      right: -100px;
+      top: 100px;
+      animation-delay: 1s;
     }
 
-    .logo{
-        font-size:24px;
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1000px;
+      animation: fadeUp 1s ease;
     }
 
-}
-
-/* ================= VERY SMALL PHONES ================= */
-
-@media(max-width:380px){
-
-    .skills-grid{
-        grid-template-columns:1fr;
+    .profile-wrapper {
+      width: 220px;
+      height: 220px;
+      margin: 0 auto 30px;
+      padding: 8px;
+      border-radius: 50%;
+      background: white;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      animation: float 5s ease-in-out infinite;
     }
 
-    .stats-grid{
-        grid-template-columns:1fr;
+    .profile-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 7px solid #111;
     }
 
-    .hero h1{
-        font-size:42px;
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 50px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      font-weight: 700;
+      margin-bottom: 25px;
     }
 
-}
+    .availability-dot {
+      width: 12px;
+      height: 12px;
+      background: #45ff77;
+      border-radius: 50%;
+      box-shadow: 0 0 15px #45ff77;
+    }
 
-</style>
+    .hero h1 {
+      font-size: clamp(48px, 8vw, 92px);
+      line-height: 1;
+      font-weight: 900;
+      margin-bottom: 25px;
+      letter-spacing: -3px;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero h2 {
+      font-size: clamp(22px, 3vw, 34px);
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 850px;
+      margin: auto;
+      font-size: 18px;
+      opacity: 0.95;
+    }
+
+    .hero-buttons {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 15px 27px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 16px;
+      border: 1px solid rgba(255,255,255,0.35);
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: white;
+      color: #5b5fe8;
+    }
+
+    .btn-outline {
+      color: white;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+
+    /* =========================
+       SECTION TITLE
+    ========================= */
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-title .small {
+      color: var(--primary);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 14px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(35px, 5vw, 52px);
+      margin: 8px 0 12px;
+      font-weight: 900;
+    }
+
+    .section-title p {
+      max-width: 700px;
+      margin: auto;
+      color: var(--muted);
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about {
+      background: var(--light);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 17px;
+    }
+
+    .about-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 25px;
+      padding: 35px;
+      box-shadow: var(--shadow);
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .info-row:last-child {
+      border-bottom: 0;
+    }
+
+    .info-row strong {
+      color: var(--primary);
+    }
+
+    /* =========================
+       EXPERIENCE
+    ========================= */
+
+    .experience {
+      background: #f1f5f9;
+    }
+
+    body.dark .experience {
+      background: #0f172a;
+    }
+
+    .timeline {
+      max-width: 900px;
+      margin: auto;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 18px;
+      top: 0;
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(var(--primary), var(--secondary));
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 65px;
+      margin-bottom: 35px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 6px solid var(--light);
+      box-shadow: 0 0 0 4px rgba(102,126,234,0.2);
+    }
+
+    .timeline-card {
+      background: var(--card);
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .timeline-card h3 {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    .timeline-card .company {
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .timeline-card .date {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 8px 0 15px;
+    }
+
+    .timeline-card ul {
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    /* =========================
+       SKILLS
+    ========================= */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .skill-card {
+      padding: 28px;
+      border-radius: 20px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .skill-icon {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* =========================
+       EDUCATION
+    ========================= */
+
+    .education {
+      background: linear-gradient(135deg, rgba(102,126,234,0.08), rgba(118,75,162,0.08));
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .education-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .education-card h3 {
+      font-size: 23px;
+      margin-bottom: 8px;
+    }
+
+    .education-card .year {
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .education-card p {
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    /* =========================
+       PROJECTS
+    ========================= */
+
+    .projects {
+      background: var(--light);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .project-card {
+      overflow: hidden;
+      border-radius: 24px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: 0.35s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .project-top {
+      height: 170px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 65px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+    }
+
+    .project-content {
+      padding: 25px;
+    }
+
+    .project-content h3 {
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .project-content p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+      background: rgba(102,126,234,0.1);
+    }
+
+    .project-link {
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+      color: white;
+      text-align: center;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+    }
+
+    .cta h2 {
+      font-size: clamp(35px, 5vw, 55px);
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      max-width: 700px;
+      margin: auto;
+      opacity: 0.9;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .contact-card {
+      padding: 35px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-item:last-child {
+      border-bottom: 0;
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(102,126,234,0.12);
+      border-radius: 14px;
+      font-size: 22px;
+    }
+
+    .contact-item small {
+      display: block;
+      color: var(--muted);
+    }
+
+    .contact-item strong {
+      color: var(--text);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 35px 7%;
+      background: #0f172a;
+      color: white;
+      text-align: center;
+    }
+
+    footer .footer-logo {
+      font-size: 28px;
+      font-weight: 900;
+    }
+
+    footer .footer-logo span {
+      color: #667eea;
+    }
+
+    footer p {
+      margin: 8px 0 20px;
+      color: #94a3b8;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .socials a {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.08);
+      transition: 0.3s;
+      font-size: 18px;
+    }
+
+    .socials a:hover {
+      background: var(--primary);
+      transform: translateY(-4px);
+    }
+
+    /* =========================
+       SCROLL TOP
+    ========================= */
+
+    #topBtn {
+      position: fixed;
+      right: 25px;
+      bottom: 25px;
+      width: 48px;
+      height: 48px;
+      border: 0;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s;
+      z-index: 999;
+    }
+
+    #topBtn.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* =========================
+       ANIMATIONS
+    ========================= */
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(35px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 950px) {
+
+      .nav-links {
+        position: absolute;
+        top: 78px;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background: var(--white);
+        display: none;
+        flex-direction: column;
+        gap: 18px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      body.dark .nav-links {
+        background: #111827;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+
+      section {
+        padding: 75px 5%;
+      }
+
+      nav {
+        padding: 0 18px;
+      }
+
+      .logo {
+        font-size: 25px;
+      }
+
+      .profile-wrapper {
+        width: 175px;
+        height: 175px;
+      }
+
+      .hero {
+        padding-top: 110px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        padding: 0 25px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .skills-grid,
+      .project-grid,
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline::before {
+        left: 13px;
+      }
+
+      .timeline-item {
+        padding-left: 48px;
+      }
+
+      .timeline-dot {
+        left: 0;
+      }
+
+      .info-row {
+        flex-direction: column;
+        gap: 3px;
+      }
+
+      #topBtn {
+        right: 15px;
+        bottom: 15px;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
+  <!-- =========================
+       NAVBAR
+  ========================== -->
 
-<!-- ================= NAVBAR ================= -->
+  <header>
+    <nav>
 
-<nav>
+      <a href="#home" class="logo">
+        Kuldeep<span>.</span>
+      </a>
 
-<div class="nav-inner">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
 
-<a class="logo" href="#home">
-Kuldeep<span>.</span>
-</a>
+      <div class="nav-buttons">
+        <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+          🌙
+        </button>
 
-<div
-class="menu"
-onclick="toggleMenu()">
-☰
-</div>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+          ☰
+        </button>
+      </div>
 
-<ul id="navMenu">
+    </nav>
+  </header>
 
-<li>
-<a href="#home">
-Home
-</a>
-</li>
 
-<li>
-<a href="#about">
-About
-</a>
-</li>
+  <!-- =========================
+       HERO
+  ========================== -->
 
-<li>
-<a href="#experience">
-Experience
-</a>
-</li>
+  <section class="hero" id="home">
 
-<li>
-<a href="#skills">
-Skills
-</a>
-</li>
+    <div class="hero-content">
 
-<li>
-<a href="#education">
-Education
-</a>
-</li>
+      <div class="profile-wrapper">
+        <img src="developer.png"
+             alt="Kuldeep Borana Profile Photo">
+      </div>
 
-<li>
-<a href="#projects">
-Projects
-</a>
-</li>
+      <div class="availability">
+        <span class="availability-dot"></span>
+        Open to Opportunities
+      </div>
 
-<li>
-<a href="#contact">
-Contact
-</a>
-</li>
+      <h1>
+        Kuldeep <span>Borana</span>
+      </h1>
 
-</ul>
+      <h2>
+        Desktop Support Engineer | IT Support | Networking
+      </h2>
 
-</div>
+      <p>
+        Results-driven IT professional with hands-on experience in
+        hardware troubleshooting, Windows installation and configuration,
+        software deployment, Outlook support, printers and network services.
+      </p>
 
-</nav>
+      <div class="hero-buttons">
 
+        <a href="#experience" class="btn btn-primary">
+          💼 My Experience
+        </a>
 
-<!-- ================= HERO ================= -->
+        <a href="resume.pdf" target="_blank" class="btn btn-outline">
+          📄 View Resume
+        </a>
 
-<section
-class="hero"
-id="home">
+        <a href="#contact" class="btn btn-outline">
+          📩 Contact Me
+        </a>
 
-<div
-class="container hero-content">
+      </div>
 
+    </div>
 
-<div class="available">
+  </section>
 
-<span class="dot"></span>
 
-Open to Opportunities
+  <!-- =========================
+       ABOUT
+  ========================== -->
 
-</div>
+  <section class="about" id="about">
 
+    <div class="container">
 
-<!-- IMPORTANT:
-     Keep developer.png in GitHub repository -->
+      <div class="section-title reveal">
+        <div class="small">About Me</div>
+        <h2>Professional Profile</h2>
+        <p>
+          A passionate IT professional focused on solving technical
+          problems and delivering reliable support.
+        </p>
+      </div>
 
-<img
-class="profile-img"
-src="developer.png"
-alt="Kuldeep Singh Borana">
+      <div class="about-grid">
 
+        <div class="about-text reveal">
 
-<h1>
+          <h3>Building reliable IT experiences.</h3>
 
-Kuldeep
-<span>
-Borana
-</span>
+          <p>
+            I am an IT professional with practical experience in
+            desktop support, hardware troubleshooting, Windows systems,
+            software installation, networking and technical assistance.
+          </p>
 
-</h1>
+          <p>
+            I enjoy troubleshooting problems, learning new technologies
+            and helping users get their systems working efficiently.
+          </p>
 
+          <a href="resume.pdf" target="_blank"
+             class="btn btn-primary"
+             style="margin-top:15px;">
+            📄 Download / View Resume
+          </a>
 
-<h2>
+        </div>
 
-Desktop Support Engineer
-|
-IT Support
-|
-Networking
+        <div class="about-card reveal">
 
-</h2>
+          <div class="info-row">
+            <span>Role</span>
+            <strong>Desktop Support Engineer</strong>
+          </div>
 
+          <div class="info-row">
+            <span>Specialization</span>
+            <strong>IT Support & Networking</strong>
+          </div>
 
-<p class="hero-description">
+          <div class="info-row">
+            <span>Core Area</span>
+            <strong>Hardware & Software</strong>
+          </div>
 
-Results-driven IT professional with hands-on experience
-in hardware troubleshooting, Windows installation and
-configuration, software deployment, Outlook support,
-printers and network services.
+          <div class="info-row">
+            <span>Availability</span>
+            <strong>Open to Opportunities</strong>
+          </div>
 
-</p>
+        </div>
 
+      </div>
 
-<div class="hero-buttons">
+    </div>
 
+  </section>
 
-<a
-href="#experience"
-class="btn btn-white">
 
-💼 My Experience
+  <!-- =========================
+       EXPERIENCE
+  ========================== -->
 
-</a>
+  <section class="experience" id="experience">
 
+    <div class="container">
 
-<a
-href="resume.pdf"
-target="_blank"
-class="btn btn-outline">
+      <div class="section-title reveal">
+        <div class="small">Career</div>
+        <h2>Experience</h2>
+        <p>
+          Practical technical support and IT operations experience.
+        </p>
+      </div>
 
-📄 View Resume
+      <div class="timeline">
 
-</a>
+        <div class="timeline-item reveal">
 
+          <div class="timeline-dot"></div>
 
-<a
-href="#contact"
-class="btn btn-outline">
+          <div class="timeline-card">
 
-📩 Contact Me
+            <h3>Desktop Support Engineer</h3>
 
-</a>
+            <div class="company">
+              IT Support / Technical Operations
+            </div>
 
+            <div class="date">
+              Professional Experience
+            </div>
 
-</div>
+            <ul>
+              <li>Desktop and laptop hardware troubleshooting.</li>
+              <li>Windows installation and configuration.</li>
+              <li>Software installation and deployment.</li>
+              <li>Microsoft Outlook and email support.</li>
+              <li>Printer installation and troubleshooting.</li>
+              <li>Basic network troubleshooting and connectivity support.</li>
+            </ul>
 
-</div>
+          </div>
 
-</section>
+        </div>
 
+        <div class="timeline-item reveal">
 
-<!-- ================= ABOUT ================= -->
+          <div class="timeline-dot"></div>
 
-<section
-class="about"
-id="about">
+          <div class="timeline-card">
 
-<div class="container">
+            <h3>IT Support Operations</h3>
 
+            <div class="company">
+              Technical Support
+            </div>
 
-<div class="section-heading">
+            <div class="date">
+              Hands-on Technical Experience
+            </div>
 
-<div class="section-label">
-About Me
-</div>
+            <ul>
+              <li>Diagnosing software and operating system issues.</li>
+              <li>Supporting users with day-to-day IT problems.</li>
+              <li>System setup and configuration.</li>
+              <li>Peripheral and printer support.</li>
+            </ul>
 
-<h2>
-Professional IT Support Profile
-</h2>
+          </div>
 
-<p>
-A quick overview of my background and technical focus.
-</p>
+        </div>
 
-</div>
+      </div>
 
+    </div>
 
-<div class="about-grid">
+  </section>
 
 
-<div class="about-text">
+  <!-- =========================
+       SKILLS
+  ========================== -->
 
-<h3>
-Hello, I'm Kuldeep 👋
-</h3>
+  <section id="skills">
 
+    <div class="container">
 
-<p>
+      <div class="section-title reveal">
+        <div class="small">Expertise</div>
+        <h2>Technical Skills</h2>
+        <p>
+          Technologies and areas I work with.
+        </p>
+      </div>
 
-I'm a Desktop Support Engineer with 1 year of
-hands-on experience in hardware troubleshooting,
-operating system installation and network configuration.
+      <div class="skills-grid">
 
-</p>
+        <div class="skill-card reveal">
+          <div class="skill-icon">🖥️</div>
+          <h3>Desktop Support</h3>
+          <p>
+            Desktop and laptop troubleshooting,
+            system setup and technical support.
+          </p>
+        </div>
 
+        <div class="skill-card reveal">
+          <div class="skill-icon">⚙️</div>
+          <h3>Hardware Troubleshooting</h3>
+          <p>
+            Diagnosing hardware problems and
+            supporting computer peripherals.
+          </p>
+        </div>
 
-<p>
+        <div class="skill-card reveal">
+          <div class="skill-icon">🪟</div>
+          <h3>Windows</h3>
+          <p>
+            Windows installation, configuration,
+            troubleshooting and maintenance.
+          </p>
+        </div>
 
-My experience includes Windows installation and
-configuration, application deployment, system formatting,
-data backup and restoration, antivirus management,
-Microsoft Outlook support, printer setup and
-network troubleshooting.
+        <div class="skill-card reveal">
+          <div class="skill-icon">🌐</div>
+          <h3>Networking</h3>
+          <p>
+            Basic network troubleshooting,
+            connectivity and network services.
+          </p>
+        </div>
 
-</p>
+        <div class="skill-card reveal">
+          <div class="skill-icon">📧</div>
+          <h3>Microsoft Outlook</h3>
+          <p>
+            Email configuration and
+            Outlook-related technical support.
+          </p>
+        </div>
 
+        <div class="skill-card reveal">
+          <div class="skill-icon">🖨️</div>
+          <h3>Printer Support</h3>
+          <p>
+            Printer installation, configuration
+            and troubleshooting.
+          </p>
+        </div>
 
-<p>
+      </div>
 
-I enjoy solving technical problems and helping users
-maintain reliable and efficient IT systems.
+    </div>
 
-</p>
+  </section>
 
-</div>
 
+  <!-- =========================
+       EDUCATION
+  ========================== -->
 
-<div class="about-card">
+  <section class="education" id="education">
 
-<h3>
-Quick Information
-</h3>
+    <div class="container">
 
+      <div class="section-title reveal">
+        <div class="small">Academic Background</div>
+        <h2>Education</h2>
+        <p>
+          Academic qualifications and learning journey.
+        </p>
+      </div>
 
-<div class="info-row">
-🧑‍💻
-<strong>Role:</strong>
-&nbsp;
-Desktop Support Engineer
-</div>
+      <div class="education-grid">
 
+        <div class="education-card reveal">
 
-<div class="info-row">
-⏱️
-<strong>Experience:</strong>
-&nbsp;
-1 Year
-</div>
+          <div class="year">
+            EDUCATION
+          </div>
 
+          <h3>Academic Qualification</h3>
 
-<div class="info-row">
-🌐
-<strong>Focus:</strong>
-&nbsp;
-Hardware & Networking
-</div>
+          <p>
+            Details of educational qualifications are available
+            in my resume.
+          </p>
 
+        </div>
 
-<div class="info-row">
-🎓
-<strong>Degree:</strong>
-&nbsp;
-B.Com
-</div>
+        <div class="education-card reveal">
 
+          <div class="year">
+            CONTINUOUS LEARNING
+          </div>
 
-<div class="info-row">
-📜
-<strong>Certification:</strong>
-&nbsp;
-Hardware & Network Engineering
-</div>
+          <h3>Technical Learning</h3>
 
+          <p>
+            Continuously improving knowledge in IT support,
+            troubleshooting, networking and modern technologies.
+          </p>
 
-</div>
+        </div>
 
-</div>
+      </div>
 
-</div>
+    </div>
 
-</section>
+  </section>
 
 
-<!-- ================= EXPERIENCE ================= -->
+  <!-- =========================
+       PROJECTS
+  ========================== -->
 
-<section
-class="experience"
-id="experience">
+  <section class="projects" id="projects">
 
-<div class="container">
+    <div class="container">
 
+      <div class="section-title reveal">
+        <div class="small">My Work</div>
+        <h2>Projects</h2>
+        <p>
+          Practical projects built while learning and improving
+          technical skills.
+        </p>
+      </div>
 
-<div class="section-heading">
+      <div class="project-grid">
 
-<div class="section-label">
-Experience
-</div>
+        <!-- Project 1 -->
 
-<h2>
-Professional Experience
-</h2>
+        <div class="project-card reveal">
 
-<p>
-My hands-on IT support experience.
-</p>
+          <div class="project-top">
+            🧮
+          </div>
 
-</div>
+          <div class="project-content">
 
+            <h3>Smart Calculator</h3>
 
-<div class="experience-card">
+            <p>
+              A clean browser-based calculator with
+              interactive functionality.
+            </p>
 
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
 
-<div class="experience-top">
+            <a href="calculator.html"
+               class="project-link">
+              Live Demo →
+            </a>
 
+          </div>
 
-<div>
+        </div>
 
-<h3>
-Desktop Support Engineer
-</h3>
 
-<div class="company">
-Adcom Computer Technologies
-</div>
+        <!-- Project 2 -->
 
-</div>
+        <div class="project-card reveal">
 
+          <div class="project-top">
+            💻
+          </div>
 
-<div class="date">
-March 2025 – February 2026
-</div>
+          <div class="project-content">
 
+            <h3>Professional Portfolio</h3>
 
-</div>
+            <p>
+              Responsive personal portfolio website showcasing
+              professional skills, experience and projects.
+            </p>
 
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">Responsive</span>
+            </div>
 
-<ul>
+            <a href="#home"
+               class="project-link">
+              View Website →
+            </a>
 
-<li>
-Installed and configured Windows 10 and Windows 11
-operating systems for end-user workstations.
-</li>
+          </div>
 
-<li>
-Deployed and maintained application software across
-multiple systems.
-</li>
+        </div>
 
-<li>
-Performed system formatting, data backup and data
-restoration to support business continuity.
-</li>
 
-<li>
-Installed and managed antivirus programs for
-malware protection.
-</li>
+        <!-- Project 3 -->
 
-<li>
-Configured and troubleshot Microsoft Outlook profiles
-and mailbox backups.
-</li>
+        <div class="project-card reveal">
 
-<li>
-Set up local, shared and network printers for office users.
-</li>
+          <div class="project-top">
+            🛠️
+          </div>
 
-<li>
-Configured ADS, DHCP and DNS services for network operations.
-</li>
+          <div class="project-content">
 
-</ul>
+            <h3>IT Support Toolkit</h3>
 
-</div>
+            <p>
+              A collection of useful troubleshooting concepts
+              and technical support resources.
+            </p>
 
-</div>
+            <div class="tags">
+              <span class="tag">IT Support</span>
+              <span class="tag">Windows</span>
+              <span class="tag">Networking</span>
+            </div>
 
-</section>
+            <a href="#skills"
+               class="project-link">
+              Explore Skills →
+            </a>
 
+          </div>
 
-<!-- ================= SKILLS ================= -->
+        </div>
 
-<section
-class="skills"
-id="skills">
+      </div>
 
-<div class="container">
+    </div>
 
+  </section>
 
-<div class="section-heading">
 
-<div class="section-label">
-Technical Skills
-</div>
+  <!-- =========================
+       CTA
+  ========================== -->
 
-<h2>
-What I Can Work With
-</h2>
+  <section class="cta">
 
-<p>
-Core technical skills from my professional experience.
-</p>
+    <div class="container reveal">
 
-</div>
+      <h2>Let's Work Together</h2>
 
+      <p>
+        Looking for a reliable IT professional?
+        Feel free to connect with me for opportunities,
+        technical work or professional collaboration.
+      </p>
 
-<div class="skills-grid">
+      <div class="hero-buttons">
 
+        <a href="mailto:kuldip8718@gmail.com"
+           class="btn btn-primary">
+          📧 Email Me
+        </a>
 
-<div class="skill">
+        <a href="resume.pdf"
+           target="_blank"
+           class="btn btn-outline">
+          📄 View Resume
+        </a>
 
-<div class="skill-icon">
-🖥️
-</div>
+      </div>
 
-<h3>
-PC Assembly & Hardware
-</h3>
+    </div>
 
-</div>
+  </section>
 
 
-<div class="skill">
+  <!-- =========================
+       CONTACT
+  ========================== -->
 
-<div class="skill-icon">
-🪟
-</div>
+  <section id="contact">
 
-<h3>
-Windows 7 / 8 / 10 / 11
-</h3>
+    <div class="container">
 
-</div>
+      <div class="section-title reveal">
+        <div class="small">Get In Touch</div>
+        <h2>Contact Me</h2>
+        <p>
+          Have an opportunity or want to connect?
+          Send me a message.
+        </p>
+      </div>
 
+      <div class="contact-grid">
 
-<div class="skill">
+        <div class="contact-card reveal">
 
-<div class="skill-icon">
-🛠️
-</div>
+          <div class="contact-item">
 
-<h3>
-Hardware Troubleshooting
-</h3>
+            <div class="contact-icon">
+              📧
+            </div>
 
-</div>
+            <div>
+              <small>Email</small>
+              <strong>kuldip8718@gmail.com</strong>
+            </div>
 
+          </div>
 
-<div class="skill">
+          <div class="contact-item">
 
-<div class="skill-icon">
-🦠
-</div>
+            <div class="contact-icon">
+              💼
+            </div>
 
-<h3>
-Virus & Malware Removal
-</h3>
+            <div>
+              <small>Professional Role</small>
+              <strong>Desktop Support Engineer</strong>
+            </div>
 
-</div>
+          </div>
 
+          <div class="contact-item">
 
-<div class="skill">
+            <div class="contact-icon">
+              🌐
+            </div>
 
-<div class="skill-icon">
-📧
-</div>
+            <div>
+              <small>Specialization</small>
+              <strong>IT Support & Networking</strong>
+            </div>
 
-<h3>
-MS Outlook
-</h3>
+          </div>
 
-</div>
+        </div>
 
 
-<div class="skill">
+        <div class="contact-card reveal">
 
-<div class="skill-icon">
-🖨️
-</div>
+          <h3 style="font-size:28px;margin-bottom:15px;">
+            Let's Connect
+          </h3>
 
-<h3>
-Printer Setup
-</h3>
+          <p style="color:var(--muted);margin-bottom:25px;">
+            You can contact me directly through email
+            or visit my GitHub profile.
+          </p>
 
-</div>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;">
 
+            <a href="mailto:kuldip8718@gmail.com"
+               class="btn btn-primary">
+              📧 Send Email
+            </a>
 
-<div class="skill">
+            <a href="https://github.com/kuldeep17422"
+               target="_blank"
+               rel="noopener"
+               class="btn"
+               style="background:#111827;color:white;">
+              🐙 GitHub
+            </a>
 
-<div class="skill-icon">
-💾
-</div>
+          </div>
 
-<h3>
-Backup & Restoration
-</h3>
+        </div>
 
-</div>
+      </div>
 
+    </div>
 
-<div class="skill">
+  </section>
 
-<div class="skill-icon">
-🌐
-</div>
 
-<h3>
-Basic Networking
-</h3>
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
-</div>
+  <footer>
 
+    <div class="footer-logo">
+      Kuldeep<span>.</span>
+    </div>
 
-<div class="skill">
+    <p>
+      Desktop Support Engineer | IT Support | Networking
+    </p>
 
-<div class="skill-icon">
-🔧
-</div>
+    <div class="socials">
 
-<h3>
-Network Troubleshooting
-</h3>
+      <a href="https://github.com/kuldeep17422"
+         target="_blank"
+         rel="noopener"
+         aria-label="GitHub">
+        🐙
+      </a>
 
-</div>
+      <a href="mailto:kuldip8718@gmail.com"
+         aria-label="Email">
+        ✉️
+      </a>
 
+      <a href="#home"
+         aria-label="Home">
+        🏠
+      </a>
 
-<div class="skill">
+    </div>
 
-<div class="skill-icon">
-📡
-</div>
+    <p style="margin-top:25px;">
+      © <span id="year"></span> Kuldeep Borana. All Rights Reserved.
+    </p>
 
-<h3>
-DHCP & DNS
-</h3>
+  </footer>
 
-</div>
 
+  <!-- SCROLL TOP -->
 
-<div class="skill">
+  <button id="topBtn" aria-label="Scroll to top">
+    ↑
+  </button>
 
-<div class="skill-icon">
-🏢
-</div>
 
-<h3>
-ADS
-</h3>
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
 
-</div>
+  <script>
 
+    /* =========================
+       MOBILE MENU
+    ========================== */
 
-<div class="skill">
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
 
-<div class="skill-icon">
-💻
-</div>
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
 
-<h3>
-Software Deployment
-</h3>
+      menuBtn.textContent =
+        navLinks.classList.contains("active")
+        ? "✕"
+        : "☰";
+    });
 
-</div>
 
+    /* Close menu after clicking */
 
-</div>
+    document.querySelectorAll(".nav-links a").forEach(link => {
 
-</div>
+      link.addEventListener("click", () => {
 
-</section>
+        navLinks.classList.remove("active");
 
+        menuBtn.textContent = "☰";
 
-<!-- ================= CERTIFICATION ================= -->
+      });
 
-<section
-class="certification">
+    });
 
-<div class="container">
 
+    /* =========================
+       DARK MODE
+    ========================== */
 
-<div class="section-heading">
+    const themeBtn = document.getElementById("themeBtn");
 
-<div class="section-label">
-Certification
-</div>
+    const savedTheme = localStorage.getItem("theme");
 
-<h2>
-Professional Certification
-</h2>
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark");
+      themeBtn.textContent = "☀️";
+    }
 
-</div>
+    themeBtn.addEventListener("click", () => {
 
+      document.body.classList.toggle("dark");
 
-<div class="cert-card">
+      if (document.body.classList.contains("dark")) {
 
+        localStorage.setItem("theme", "dark");
 
-<div class="cert-icon">
-🏆
-</div>
+        themeBtn.textContent = "☀️";
 
+      } else {
 
-<div>
+        localStorage.setItem("theme", "light");
 
-<h3>
-Advanced Diploma in Hardware and Network Engineering
-</h3>
+        themeBtn.textContent = "🌙";
 
-<p>
-ADCOM Computer Technologies
-</p>
+      }
 
-</div>
+    });
 
 
-</div>
+    /* =========================
+       REVEAL ANIMATION
+    ========================== */
 
-</div>
+    const revealElements =
+      document.querySelectorAll(".reveal");
 
-</section>
+    const revealObserver =
+      new IntersectionObserver(
+        (entries) => {
 
+          entries.forEach(entry => {
 
-<!-- ================= EDUCATION ================= -->
+            if (entry.isIntersecting) {
 
-<section
-class="education"
-id="education">
+              entry.target.classList.add("active");
 
-<div class="container">
+            }
 
+          });
 
-<div class="section-heading">
+        },
+        {
+          threshold: 0.12
+        }
+      );
 
-<div class="section-label">
-Education
-</div>
+    revealElements.forEach(element => {
 
-<h2>
-Educational Background
-</h2>
+      revealObserver.observe(element);
 
-</div>
+    });
 
 
-<div class="education-grid">
+    /* =========================
+       SCROLL TOP BUTTON
+    ========================== */
 
+    const topBtn =
+      document.getElementById("topBtn");
 
-<div class="education-card">
+    window.addEventListener("scroll", () => {
 
-<h3>
-🎓 Bachelor of Commerce
-</h3>
+      if (window.scrollY > 500) {
 
-<p>
-Vikram University
-</p>
+        topBtn.classList.add("show");
 
-</div>
+      } else {
 
+        topBtn.classList.remove("show");
 
-<div class="education-card">
+      }
 
-<h3>
-📘 Higher Secondary
-</h3>
+    });
 
-<p>
-12th — MP Board
-</p>
+    topBtn.addEventListener("click", () => {
 
-</div>
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
 
+    });
 
-<div class="education-card">
 
-<h3>
-📗 Secondary
-</h3>
+    /* =========================
+       CURRENT YEAR
+    ========================== */
 
-<p>
-10th — MP Board
-</p>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
 
-</div>
 
+    /* =========================
+       ACTIVE NAVIGATION
+    ========================== */
 
-</div>
+    const sections =
+      document.querySelectorAll("section[id]");
 
-</div>
+    const navItems =
+      document.querySelectorAll(".nav-links a");
 
-</section>
+    window.addEventListener("scroll", () => {
 
+      let current = "";
 
-<!-- ================= STATS ================= -->
+      sections.forEach(section => {
 
-<section class="stats">
+        const sectionTop =
+          section.offsetTop - 150;
 
-<div class="container">
+        if (window.scrollY >= sectionTop) {
 
-
-<div class="stats-grid">
-
-
-<div class="stat">
-
-<h3>
-1+
-</h3>
-
-<p>
-Year Experience
-</p>
-
-</div>
-
-
-<div class="stat">
-
-<h3>
-12+
-</h3>
-
-<p>
-Technical Skills
-</p>
-
-</div>
-
-
-<div class="stat">
-
-<h3>
-2
-</h3>
-
-<p>
-Featured Projects
-</p>
-
-</div>
-
-
-<div class="stat">
-
-<h3>
-1
-</h3>
-
-<p>
-Professional Certification
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= PROJECTS ================= -->
-
-<section
-class="projects"
-id="projects">
-
-<div class="container">
-
-
-<div class="section-heading">
-
-<div class="section-label">
-Projects
-</div>
-
-<h2>
-My Projects
-</h2>
-
-<p>
-Practical projects I've built while developing my technical skills.
-</p>
-
-</div>
-
-
-<div class="projects-grid">
-
-
-<!-- CALCULATOR -->
-
-<div class="project">
-
-
-<div class="project-icon">
-🧮
-</div>
-
-
-<h3>
-Smart Calculator
-</h3>
-
-
-<p>
-
-A clean and responsive calculator built using HTML,
-CSS and JavaScript with a simple user-friendly interface.
-
-</p>
-
-
-<div class="tags">
-
-<span class="tag">
-HTML
-</span>
-
-<span class="tag">
-CSS
-</span>
-
-<span class="tag">
-JavaScript
-</span>
-
-</div>
-
-
-<div class="project-links">
-
-
-<a
-href="calculator.html"
-class="project-btn">
-
-🚀 Live Demo
-
-</a>
-
-
-<a
-href="https://github.com/kuldeep17422/my-first-project"
-target="_blank"
-class="project-btn dark">
-
-💻 GitHub
-
-</a>
-
-
-</div>
-
-</div>
-
-
-<!-- PORTFOLIO -->
-
-<div class="project">
-
-
-<div class="project-icon">
-👨‍💻
-</div>
-
-
-<h3>
-Personal Portfolio
-</h3>
-
-
-<p>
-
-A responsive personal portfolio showcasing my
-professional profile, technical skills, experience
-and projects.
-
-</p>
-
-
-<div class="tags">
-
-<span class="tag">
-HTML
-</span>
-
-<span class="tag">
-CSS
-</span>
-
-<span class="tag">
-JavaScript
-</span>
-
-<span class="tag">
-Responsive
-</span>
-
-</div>
-
-
-<div class="project-links">
-
-
-<a
-href="https://kuldeep17422.github.io/my-first-project/"
-target="_blank"
-class="project-btn">
-
-🌐 Live Website
-
-</a>
-
-
-<a
-href="https://github.com/kuldeep17422/my-first-project"
-target="_blank"
-class="project-btn dark">
-
-💻 GitHub
-
-</a>
-
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= HIRE ME ================= -->
-
-<section class="hire">
-
-<div class="container">
-
-
-<h2>
-Ready to Work Together? 🚀
-</h2>
-
-
-<p>
-
-I'm interested in IT support, desktop support,
-hardware, networking and technical support opportunities.
-
-</p>
-
-
-<a
-href="mailto:kuldip8718@gmail.com?subject=Job%20Opportunity"
-class="btn btn-white">
-
-📩 Contact Me
-
-</a>
-
-
-</div>
-
-</section>
-
-
-<!-- ================= CONTACT ================= -->
-
-<section
-class="contact"
-id="contact">
-
-<div class="container">
-
-
-<div class="section-heading">
-
-<div class="section-label">
-Contact
-</div>
-
-<h2>
-Let's Connect
-</h2>
-
-<p>
-
-Have a job opportunity, project or technical requirement?
-Get in touch.
-
-</p>
-
-</div>
-
-
-<div class="contact-grid">
-
-
-<div class="contact-info">
-
-
-<h3>
-Get In Touch
-</h3>
-
-
-<p>
-
-I'm available for professional opportunities
-and technical support roles.
-
-</p>
-
-
-<div class="contact-item">
-
-
-<div class="contact-icon">
-📧
-</div>
-
-
-<div>
-
-<small>
-Email
-</small>
-
-
-<a
-href="mailto:kuldip8718@gmail.com">
-
-kuldip8718@gmail.com
-
-</a>
-
-</div>
-
-
-</div>
-
-
-<div class="contact-item">
-
-
-<div class="contact-icon">
-💻
-</div>
-
-
-<div>
-
-<small>
-GitHub
-</small>
-
-
-<a
-href="https://github.com/kuldeep17422"
-target="_blank">
-
-github.com/kuldeep17422
-
-</a>
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-<!-- CONTACT FORM -->
-
-<form
-class="contact-form"
-onsubmit="sendEmail(event)">
-
-
-<div class="form-group">
-
-<label>
-Your Name
-</label>
-
-
-<input
-type="text"
-id="name"
-placeholder="Enter your name"
-required>
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-Your Email
-</label>
-
-
-<input
-type="email"
-id="email"
-placeholder="Enter your email"
-required>
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-Your Message
-</label>
-
-
-<textarea
-id="message"
-placeholder="Write your message..."
-required></textarea>
-
-</div>
-
-
-<button
-class="send"
-type="submit">
-
-Send Message 📩
-
-</button>
-
-
-</form>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-
-<div class="socials">
-
-
-<a
-href="https://github.com/kuldeep17422"
-target="_blank">
-
-GitHub
-
-</a>
-
-
-<a
-href="mailto:kuldip8718@gmail.com">
-
-Email
-
-</a>
-
-
-</div>
-
-
-<p>
-
-© 2026 Kuldeep Singh Borana.
-All Rights Reserved.
-
-</p>
-
-
-<p>
-
-Desktop Support Engineer
-•
-IT Support
-•
-Networking
-
-</p>
-
-
-</footer>
-
-
-<!-- ================= JAVASCRIPT ================= -->
-
-<script>
-
-
-/* MOBILE MENU */
-
-function toggleMenu(){
-
-    document
-    .getElementById("navMenu")
-    .classList.toggle("active");
-
-}
-
-
-/* CLOSE MOBILE MENU AFTER CLICK */
-
-document
-.querySelectorAll("#navMenu a")
-.forEach(function(link){
-
-    link.addEventListener(
-        "click",
-        function(){
-
-            document
-            .getElementById("navMenu")
-            .classList.remove("active");
+          current = section.getAttribute("id");
 
         }
-    );
 
-});
+      });
 
+      navItems.forEach(link => {
 
-/* CONTACT FORM */
+        link.style.color = "";
 
-function sendEmail(event){
+        if (link.getAttribute("href") === "#" + current) {
 
-    event.preventDefault();
+          link.style.color = "var(--primary)";
 
+        }
 
-    const name =
-        document
-        .getElementById("name")
-        .value;
+      });
 
+    });
 
-    const email =
-        document
-        .getElementById("email")
-        .value;
-
-
-    const message =
-        document
-        .getElementById("message")
-        .value;
-
-
-    const subject =
-        encodeURIComponent(
-            "Portfolio Contact - " + name
-        );
-
-
-    const body =
-        encodeURIComponent(
-            "Name: " + name +
-            "\nEmail: " + email +
-            "\n\nMessage:\n" +
-            message
-        );
-
-
-    window.location.href =
-        "mailto:kuldip8718@gmail.com" +
-        "?subject=" +
-        subject +
-        "&body=" +
-        body;
-
-}
-
-
-/* ACTIVE NAVIGATION */
-
-const sections =
-    document.querySelectorAll("section");
-
-
-const navLinks =
-    document.querySelectorAll(
-        "nav ul a"
-    );
-
-
-window.addEventListener(
-    "scroll",
-    function(){
-
-        let current = "";
-
-
-        sections.forEach(
-            function(section){
-
-                const top =
-                    section.offsetTop - 130;
-
-
-                if(
-                    window.scrollY >= top
-                ){
-
-                    current =
-                        section.id;
-
-                }
-
-            }
-        );
-
-
-        navLinks.forEach(
-            function(link){
-
-                link.classList.toggle(
-                    "active",
-                    link.getAttribute("href")
-                    === "#" + current
-                );
-
-            }
-        );
-
-    }
-);
-
-</script>
-
+  </script>
 
 </body>
 </html>
