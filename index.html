@@ -2,3341 +2,3273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080d1c">
+  <meta charset="UTF-8">
 
-<meta name="description"
-content="Kuldeep Borana — IT Support Professional Portfolio. Desktop Support, Hardware, Windows, Networking and Technical Support.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="author" content="Kuldeep Borana">
+  <meta name="theme-color" content="#0b1020">
 
-<link rel="manifest" href="manifest.json">
-<link rel="icon" type="image/png" href="developer.png">
+  <meta name="description"
+        content="Kuldeep Borana — IT Support & Desktop Support Professional Portfolio.">
 
-<title>Kuldeep Borana | IT Support Professional</title>
+  <meta name="author" content="Kuldeep Borana">
 
-<style>
+  <link rel="manifest" href="manifest.json">
 
-/* =========================================================
-   ROOT
-========================================================= */
+  <link rel="icon" type="image/png" href="developer.png">
 
-:root{
-  --dark:#080d1c;
-  --dark2:#11182d;
-  --primary:#6d5dfc;
-  --purple:#8b5cf6;
-  --cyan:#22d3ee;
-  --green:#22c55e;
+  <title>Kuldeep Borana | IT Support Professional</title>
 
-  --text:#172033;
-  --muted:#667085;
+  <style>
 
-  --bg:#f7f8fc;
-  --white:#ffffff;
+    /* =====================================================
+       ROOT
+    ===================================================== */
 
-  --border:rgba(15,23,42,.09);
+    :root {
+      --bg: #f7f8fc;
+      --white: #ffffff;
 
-  --shadow:
-    0 20px 60px rgba(15,23,42,.10);
+      --dark: #0b1020;
+      --dark-2: #11182d;
 
-  --radius:24px;
-}
+      --text: #172033;
+      --muted: #667085;
 
+      --primary: #6d5dfc;
+      --primary-2: #8b5cf6;
+      --cyan: #22d3ee;
 
-/* =========================================================
-   RESET
-========================================================= */
+      --green: #22c55e;
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+      --border: rgba(15, 23, 42, 0.09);
 
-html{
-  scroll-behavior:smooth;
-}
+      --shadow:
+        0 20px 60px rgba(15, 23, 42, 0.10);
 
-body{
-  font-family:
-    Inter,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+      --radius: 24px;
+    }
 
-  background:var(--bg);
-  color:var(--text);
 
-  overflow-x:hidden;
-}
+    /* =====================================================
+       RESET
+    ===================================================== */
 
-body.menu-open{
-  overflow:hidden;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-a{
-  color:inherit;
-  text-decoration:none;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-button{
-  font:inherit;
-}
+    body {
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
 
-::selection{
-  background:var(--primary);
-  color:white;
-}
+      background: var(--bg);
+      color: var(--text);
 
+      overflow-x: hidden;
+    }
 
-/* =========================================================
-   SCROLLBAR
-========================================================= */
+    body.menu-open {
+      overflow: hidden;
+    }
 
-::-webkit-scrollbar{
-  width:9px;
-}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-::-webkit-scrollbar-track{
-  background:#eceef4;
-}
+    button {
+      font: inherit;
+    }
 
-::-webkit-scrollbar-thumb{
-  background:
-    linear-gradient(
-      var(--primary),
-      var(--purple)
-    );
 
-  border-radius:20px;
-}
+    /* =====================================================
+       SCROLL BAR
+    ===================================================== */
 
+    ::-webkit-scrollbar {
+      width: 9px;
+    }
 
-/* =========================================================
-   LOADER
-========================================================= */
+    ::-webkit-scrollbar-track {
+      background: #eef0f5;
+    }
 
-#loader{
-  position:fixed;
-  inset:0;
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(
+        var(--primary),
+        var(--primary-2)
+      );
+      border-radius: 20px;
+    }
 
-  z-index:99999;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+    /* =====================================================
+       PRELOADER
+    ===================================================== */
 
-  background:var(--dark);
+    #loader {
+      position: fixed;
+      inset: 0;
 
-  transition:
-    opacity .5s ease,
-    visibility .5s ease;
-}
+      z-index: 99999;
 
-#loader.hide{
-  opacity:0;
-  visibility:hidden;
-}
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-.loader-content{
-  text-align:center;
-}
+      background: var(--dark);
 
-.loader-logo{
-  width:72px;
-  height:72px;
+      transition:
+        opacity .5s ease,
+        visibility .5s ease;
+    }
 
-  display:grid;
-  place-items:center;
+    #loader.hide {
+      opacity: 0;
+      visibility: hidden;
+    }
 
-  margin:auto auto 18px;
+    .loader-box {
+      text-align: center;
+      color: white;
+    }
 
-  border-radius:22px;
+    .loader-logo {
+      width: 70px;
+      height: 70px;
 
-  color:white;
+      margin: auto auto 18px;
 
-  font-size:24px;
-  font-weight:950;
+      border-radius: 22px;
 
-  background:
-    linear-gradient(
-      135deg,
-      var(--primary),
-      var(--purple)
-    );
+      display: grid;
+      place-items: center;
 
-  box-shadow:
-    0 15px 50px rgba(109,93,252,.4);
+      font-size: 25px;
+      font-weight: 900;
 
-  animation:loaderPulse 1.5s infinite;
-}
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-2)
+        );
 
-.loader-text{
-  color:#9da8c1;
+      box-shadow:
+        0 15px 45px rgba(109, 93, 252, .4);
 
-  font-size:12px;
+      animation: pulse 1.5s infinite;
+    }
 
-  letter-spacing:2px;
+    .loader-text {
+      color: #aeb8d0;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
 
-  text-transform:uppercase;
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
 
-  font-weight:800;
-}
+      50% {
+        transform: scale(1.08);
+      }
+    }
 
-@keyframes loaderPulse{
-  0%,100%{
-    transform:scale(1);
-  }
 
-  50%{
-    transform:scale(1.08);
-  }
-}
+    /* =====================================================
+       NAVBAR
+    ===================================================== */
 
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
 
-/* =========================================================
-   NAVBAR
-========================================================= */
+      width: 100%;
 
-header{
-  position:fixed;
+      z-index: 5000;
 
-  top:0;
-  left:0;
+      padding: 18px 5%;
 
-  width:100%;
+      transition: .3s ease;
+    }
 
-  z-index:5000;
+    header.scrolled {
+      padding-top: 11px;
+      padding-bottom: 11px;
 
-  padding:18px 5%;
+      background:
+        rgba(255,255,255,.86);
 
-  transition:.3s;
-}
+      backdrop-filter: blur(20px);
 
-header.scrolled{
-  padding-top:10px;
-  padding-bottom:10px;
+      box-shadow:
+        0 10px 35px rgba(15,23,42,.08);
+    }
 
-  background:
-    rgba(255,255,255,.88);
+    nav {
+      max-width: 1220px;
+      margin: auto;
 
-  backdrop-filter:blur(20px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-  box-shadow:
-    0 10px 35px rgba(15,23,42,.08);
-}
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
 
-nav{
-  max-width:1220px;
-  margin:auto;
+      color: white;
 
-  display:flex;
+      font-size: 1.55rem;
+      font-weight: 950;
 
-  align-items:center;
+      letter-spacing: -1px;
+    }
 
-  justify-content:space-between;
-}
+    header.scrolled .logo {
+      color: var(--dark);
+    }
 
-.logo{
-  display:flex;
+    .logo-mark {
+      width: 38px;
+      height: 38px;
 
-  align-items:center;
+      display: grid;
+      place-items: center;
 
-  gap:10px;
+      border-radius: 12px;
 
-  color:white;
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-2)
+        );
 
-  font-size:1.5rem;
+      color: white;
 
-  font-weight:950;
+      font-size: 14px;
 
-  letter-spacing:-1px;
-}
+      box-shadow:
+        0 8px 25px rgba(109,93,252,.25);
+    }
 
-header.scrolled .logo{
-  color:var(--dark);
-}
+    .logo span {
+      color: var(--primary);
+    }
 
-.logo-mark{
-  width:39px;
-  height:39px;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
 
-  display:grid;
-  place-items:center;
+      list-style: none;
+    }
 
-  border-radius:13px;
+    .nav-links a {
+      position: relative;
 
-  color:white;
+      color: rgba(255,255,255,.88);
 
-  font-size:13px;
+      font-size: .91rem;
+      font-weight: 750;
 
-  background:
-    linear-gradient(
-      135deg,
-      var(--primary),
-      var(--purple)
-    );
-}
+      transition: .25s;
+    }
 
-.logo span:last-child{
-  color:var(--primary);
-}
+    header.scrolled .nav-links a {
+      color: #263044;
+    }
 
-.nav-links{
-  display:flex;
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary) !important;
+    }
 
-  align-items:center;
+    .nav-links a::after {
+      content: "";
 
-  gap:28px;
+      position: absolute;
 
-  list-style:none;
-}
+      left: 0;
+      bottom: -8px;
 
-.nav-links a{
-  position:relative;
+      width: 0;
+      height: 2px;
 
-  color:rgba(255,255,255,.86);
+      border-radius: 10px;
 
-  font-size:.9rem;
+      background: var(--primary);
 
-  font-weight:750;
+      transition: .25s;
+    }
 
-  transition:.25s;
-}
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
 
-header.scrolled .nav-links a{
-  color:#273044;
-}
+    .nav-cta {
+      padding: 11px 18px;
 
-.nav-links a:hover,
-.nav-links a.active{
-  color:var(--primary)!important;
-}
+      border-radius: 12px;
 
-.nav-links a::after{
-  content:"";
+      color: white !important;
 
-  position:absolute;
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-2)
+        );
 
-  left:0;
-  bottom:-8px;
+      box-shadow:
+        0 10px 25px rgba(109,93,252,.25);
+    }
 
-  width:0;
-  height:2px;
+    .nav-cta::after {
+      display: none;
+    }
 
-  border-radius:20px;
+    .menu-btn {
+      display: none;
 
-  background:var(--primary);
+      width: 43px;
+      height: 43px;
 
-  transition:.25s;
-}
+      border: 0;
+      border-radius: 13px;
 
-.nav-links a:hover::after,
-.nav-links a.active::after{
-  width:100%;
-}
+      cursor: pointer;
 
-.nav-contact{
-  padding:10px 17px;
+      color: white;
+      background: rgba(255,255,255,.1);
+    }
 
-  border-radius:12px;
+    header.scrolled .menu-btn {
+      color: var(--dark);
+      background: #eef0ff;
+    }
 
-  color:white!important;
 
-  background:
-    linear-gradient(
-      135deg,
-      var(--primary),
-      var(--purple)
-    );
-}
+    /* =====================================================
+       HERO
+    ===================================================== */
 
-.nav-contact::after{
-  display:none;
-}
+    .hero {
+      position: relative;
 
-.menu-btn{
-  display:none;
+      min-height: 100vh;
 
-  width:43px;
-  height:43px;
+      display: flex;
+      align-items: center;
 
-  border:0;
+      padding:
+        135px 5%
+        85px;
 
-  border-radius:13px;
+      overflow: hidden;
 
-  color:white;
+      background:
+        radial-gradient(
+          circle at 15% 20%,
+          rgba(109,93,252,.30),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 85% 70%,
+          rgba(34,211,238,.16),
+          transparent 28%
+        ),
+        linear-gradient(
+          135deg,
+          #080d1c,
+          #11182d 55%,
+          #151331
+        );
+    }
 
-  background:rgba(255,255,255,.1);
+    .hero::before {
+      content: "";
 
-  cursor:pointer;
-}
+      position: absolute;
 
-header.scrolled .menu-btn{
-  color:var(--dark);
+      width: 650px;
+      height: 650px;
 
-  background:#eeeeff;
-}
+      right: -250px;
+      top: -200px;
 
+      border-radius: 50%;
 
-/* =========================================================
-   HERO
-========================================================= */
+      border:
+        1px solid rgba(255,255,255,.06);
 
-.hero{
-  position:relative;
+      box-shadow:
+        0 0 0 80px rgba(255,255,255,.015),
+        0 0 0 160px rgba(255,255,255,.01);
+    }
 
-  min-height:100vh;
+    .hero::after {
+      content: "";
 
-  display:flex;
+      position: absolute;
 
-  align-items:center;
+      width: 500px;
+      height: 500px;
 
-  padding:
-    140px 5%
-    90px;
+      left: -300px;
+      bottom: -300px;
 
-  overflow:hidden;
+      border-radius: 50%;
 
-  background:
-    radial-gradient(
-      circle at 15% 20%,
-      rgba(109,93,252,.30),
-      transparent 30%
-    ),
+      background:
+        rgba(109,93,252,.08);
 
-    radial-gradient(
-      circle at 85% 70%,
-      rgba(34,211,238,.15),
-      transparent 28%
-    ),
+      filter: blur(20px);
+    }
 
-    linear-gradient(
-      135deg,
-      #080d1c,
-      #11182d 55%,
-      #161331
-    );
-}
+    .hero-grid {
+      position: relative;
+      z-index: 2;
 
-.hero-grid{
-  position:relative;
+      max-width: 1220px;
+      width: 100%;
 
-  z-index:2;
+      margin: auto;
 
-  max-width:1220px;
+      display: grid;
 
-  width:100%;
+      grid-template-columns:
+        1.15fr .85fr;
 
-  margin:auto;
+      align-items: center;
 
-  display:grid;
+      gap: 60px;
+    }
 
-  grid-template-columns:
-    1.15fr .85fr;
+    .hero-copy {
+      max-width: 760px;
+    }
 
-  align-items:center;
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
 
-  gap:60px;
-}
+      padding: 9px 14px;
 
-.availability{
-  display:inline-flex;
+      margin-bottom: 23px;
 
-  align-items:center;
+      border-radius: 100px;
 
-  gap:9px;
+      color: #dce5ff;
 
-  padding:9px 14px;
+      background:
+        rgba(255,255,255,.06);
 
-  margin-bottom:22px;
+      border:
+        1px solid rgba(255,255,255,.1);
 
-  border-radius:100px;
+      backdrop-filter: blur(10px);
 
-  color:#dce5ff;
+      font-size: .82rem;
+      font-weight: 800;
+    }
 
-  background:
-    rgba(255,255,255,.06);
+    .status-dot {
+      width: 9px;
+      height: 9px;
 
-  border:
-    1px solid rgba(255,255,255,.10);
+      border-radius: 50%;
 
-  font-size:.78rem;
+      background: var(--green);
 
-  font-weight:850;
-}
+      box-shadow:
+        0 0 15px var(--green);
+    }
 
-.status-dot{
-  width:9px;
-  height:9px;
+    .hero h1 {
+      color: white;
 
-  border-radius:50%;
+      font-size:
+        clamp(
+          3.3rem,
+          7vw,
+          6.7rem
+        );
 
-  background:var(--green);
+      line-height: .94;
 
-  box-shadow:
-    0 0 15px var(--green);
-}
+      letter-spacing: -5px;
 
-.hero h1{
-  color:white;
+      font-weight: 950;
 
-  font-size:
-    clamp(
-      3.4rem,
-      7vw,
-      6.8rem
-    );
+      margin-bottom: 25px;
+    }
 
-  line-height:.94;
+    .hero h1 .gradient {
+      display: block;
 
-  letter-spacing:-5px;
+      background:
+        linear-gradient(
+          90deg,
+          #ffffff,
+          #a9a0ff,
+          #67e8f9
+        );
 
-  font-weight:950;
+      -webkit-background-clip: text;
+      background-clip: text;
 
-  margin-bottom:24px;
-}
+      color: transparent;
+    }
 
-.hero h1 .gradient{
-  display:block;
+    .hero-role {
+      color: #dbe4ff;
 
-  background:
-    linear-gradient(
-      90deg,
-      #fff,
-      #aaa1ff,
-      #67e8f9
-    );
+      font-size:
+        clamp(
+          1.05rem,
+          2vw,
+          1.45rem
+        );
 
-  -webkit-background-clip:text;
-  background-clip:text;
+      line-height: 1.6;
 
-  color:transparent;
-}
+      font-weight: 750;
 
-.hero-role{
-  color:#dbe4ff;
+      margin-bottom: 20px;
+    }
 
-  font-size:
-    clamp(
-      1.05rem,
-      2vw,
-      1.4rem
-    );
+    .hero-description {
+      max-width: 700px;
 
-  line-height:1.6;
+      color: #9da8c1;
 
-  font-weight:750;
+      font-size: 1rem;
 
-  margin-bottom:18px;
-}
+      line-height: 1.85;
 
-.hero-description{
-  max-width:700px;
+      margin-bottom: 31px;
+    }
 
-  color:#9da8c1;
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
 
-  line-height:1.85;
+      gap: 13px;
+    }
 
-  font-size:.98rem;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
 
-  margin-bottom:30px;
-}
+      min-height: 52px;
 
-.hero-actions{
-  display:flex;
+      padding:
+        0 21px;
 
-  flex-wrap:wrap;
+      border-radius: 14px;
 
-  gap:12px;
-}
+      font-size: .92rem;
+      font-weight: 850;
 
-.btn{
-  min-height:51px;
+      transition: .3s ease;
 
-  display:inline-flex;
+      cursor: pointer;
+    }
 
-  align-items:center;
+    .btn-primary {
+      color: white;
 
-  justify-content:center;
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-2)
+        );
 
-  gap:9px;
+      box-shadow:
+        0 15px 35px
+        rgba(109,93,252,.28);
+    }
 
-  padding:
-    0 20px;
+    .btn-primary:hover {
+      transform: translateY(-4px);
 
-  border-radius:14px;
+      box-shadow:
+        0 22px 45px
+        rgba(109,93,252,.35);
+    }
 
-  font-size:.9rem;
+    .btn-glass {
+      color: white;
 
-  font-weight:850;
+      border:
+        1px solid rgba(255,255,255,.13);
 
-  transition:.3s;
+      background:
+        rgba(255,255,255,.06);
 
-  cursor:pointer;
-}
+      backdrop-filter: blur(12px);
+    }
 
-.btn-primary{
-  color:white;
+    .btn-glass:hover {
+      background: white;
+      color: var(--dark);
 
-  background:
-    linear-gradient(
-      135deg,
-      var(--primary),
-      var(--purple)
-    );
+      transform: translateY(-4px);
+    }
 
-  box-shadow:
-    0 15px 35px rgba(109,93,252,.28);
-}
+    .hero-mini-stats {
+      display: flex;
+      flex-wrap: wrap;
 
-.btn-primary:hover{
-  transform:translateY(-4px);
+      gap: 30px;
 
-  box-shadow:
-    0 22px 45px rgba(109,93,252,.35);
-}
+      margin-top: 38px;
+    }
 
-.btn-glass{
-  color:white;
+    .hero-mini-stat strong {
+      display: block;
 
-  background:
-    rgba(255,255,255,.06);
+      color: white;
 
-  border:
-    1px solid rgba(255,255,255,.13);
+      font-size: 1.45rem;
+      font-weight: 900;
+    }
 
-  backdrop-filter:blur(10px);
-}
+    .hero-mini-stat span {
+      display: block;
 
-.btn-glass:hover{
-  color:var(--dark);
+      margin-top: 4px;
 
-  background:white;
+      color: #7f8aa5;
 
-  transform:translateY(-4px);
-}
+      font-size: .76rem;
+      font-weight: 700;
+    }
 
-.hero-stats{
-  display:flex;
 
-  flex-wrap:wrap;
+    /* =====================================================
+       HERO PROFILE CARD
+    ===================================================== */
 
-  gap:30px;
+    .hero-profile {
+      display: flex;
+      justify-content: center;
+    }
 
-  margin-top:37px;
-}
+    .profile-card {
+      position: relative;
 
-.hero-stat strong{
-  display:block;
+      width: min(390px, 100%);
 
-  color:white;
+      padding: 28px;
 
-  font-size:1.35rem;
+      border-radius: 32px;
 
-  font-weight:950;
-}
+      border:
+        1px solid rgba(255,255,255,.12);
 
-.hero-stat span{
-  display:block;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.10),
+          rgba(255,255,255,.035)
+        );
 
-  margin-top:4px;
+      box-shadow:
+        0 35px 100px rgba(0,0,0,.32);
 
-  color:#7f8aa5;
+      backdrop-filter: blur(20px);
 
-  font-size:.73rem;
+      transform:
+        perspective(900px)
+        rotateY(-5deg);
 
-  font-weight:700;
-}
+      transition: .5s;
+    }
 
+    .profile-card:hover {
+      transform:
+        perspective(900px)
+        rotateY(0)
+        translateY(-8px);
+    }
 
-/* =========================================================
-   PROFILE CARD
-========================================================= */
+    .profile-image {
+      position: relative;
 
-.hero-profile{
-  display:flex;
+      width: 235px;
+      height: 235px;
 
-  justify-content:center;
-}
+      margin: 0 auto 25px;
 
-.profile-card{
-  width:min(390px,100%);
+      padding: 8px;
 
-  padding:28px;
+      border-radius: 50%;
 
-  border-radius:32px;
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--cyan)
+        );
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255,255,255,.10),
-      rgba(255,255,255,.035)
-    );
+      box-shadow:
+        0 20px 55px
+        rgba(0,0,0,.3);
+    }
 
-  border:
-    1px solid rgba(255,255,255,.12);
+    .profile-image img {
+      width: 100%;
+      height: 100%;
 
-  box-shadow:
-    0 35px 100px rgba(0,0,0,.32);
+      border-radius: 50%;
 
-  backdrop-filter:blur(20px);
+      object-fit: cover;
 
-  transform:
-    perspective(900px)
-    rotateY(-5deg);
+      background: white;
 
-  transition:.5s;
-}
+      border: 6px solid #10162a;
+    }
 
-.profile-card:hover{
-  transform:
-    perspective(900px)
-    rotateY(0)
-    translateY(-8px);
-}
+    .profile-card h2 {
+      color: white;
 
-.profile-image{
-  width:230px;
-  height:230px;
+      text-align: center;
 
-  margin:
-    0 auto 24px;
+      font-size: 1.6rem;
 
-  padding:8px;
+      margin-bottom: 6px;
+    }
 
-  border-radius:50%;
+    .profile-card .role {
+      text-align: center;
 
-  background:
-    linear-gradient(
-      135deg,
-      var(--primary),
-      var(--cyan)
-    );
+      color: #9ea9c3;
 
-  box-shadow:
-    0 20px 55px rgba(0,0,0,.3);
-}
+      font-size: .88rem;
 
-.profile-image img{
-  width:100%;
-  height:100%;
+      margin-bottom: 24px;
+    }
 
-  object-fit:cover;
+    .profile-tags {
+      display: flex;
+      flex-wrap: wrap;
 
-  border-radius:50%;
+      justify-content: center;
 
-  background:white;
+      gap: 8px;
+    }
 
-  border:6px solid #10162a;
-}
+    .profile-tag {
+      padding: 8px 11px;
 
-.profile-card h2{
-  color:white;
+      border-radius: 10px;
 
-  text-align:center;
+      color: #cbd5ff;
 
-  font-size:1.6rem;
+      background:
+        rgba(255,255,255,.06);
 
-  margin-bottom:6px;
-}
+      border:
+        1px solid rgba(255,255,255,.08);
 
-.profile-role{
-  color:#9ea9c3;
+      font-size: .73rem;
+      font-weight: 750;
+    }
 
-  text-align:center;
 
-  font-size:.86rem;
+    /* =====================================================
+       SECTIONS
+    ===================================================== */
 
-  margin-bottom:22px;
-}
+    section {
+      padding:
+        105px 5%;
+    }
 
-.profile-tags{
-  display:flex;
+    .section-inner {
+      max-width: 1150px;
+      margin: auto;
+    }
 
-  flex-wrap:wrap;
+    .section-heading {
+      max-width: 700px;
 
-  justify-content:center;
+      margin:
+        0 auto 55px;
 
-  gap:8px;
-}
+      text-align: center;
+    }
 
-.tag{
-  padding:8px 11px;
+    .eyebrow {
+      color: var(--primary);
 
-  border-radius:10px;
+      font-size: .76rem;
 
-  color:#cbd5ff;
+      text-transform: uppercase;
 
-  background:
-    rgba(255,255,255,.06);
+      letter-spacing: 2.2px;
 
-  border:
-    1px solid rgba(255,255,255,.08);
+      font-weight: 950;
 
-  font-size:.72rem;
+      margin-bottom: 10px;
+    }
 
-  font-weight:750;
-}
+    .section-heading h2 {
+      color: var(--dark);
 
+      font-size:
+        clamp(
+          2.2rem,
+          5vw,
+          3.4rem
+        );
 
-/* =========================================================
-   GENERAL SECTION
-========================================================= */
+      line-height: 1.05;
 
-section{
-  padding:
-    105px 5%;
-}
+      letter-spacing: -2px;
 
-.section-inner{
-  max-width:1150px;
+      margin-bottom: 14px;
+    }
 
-  margin:auto;
-}
+    .section-heading p {
+      color: var(--muted);
 
-.section-heading{
-  max-width:720px;
+      line-height: 1.8;
 
-  margin:
-    0 auto 55px;
+      font-size: .96rem;
+    }
 
-  text-align:center;
-}
 
-.eyebrow{
-  color:var(--primary);
+    /* =====================================================
+       ABOUT
+    ===================================================== */
 
-  font-size:.74rem;
+    .about {
+      background: white;
+    }
 
-  text-transform:uppercase;
+    .about-grid {
+      display: grid;
 
-  letter-spacing:2.2px;
+      grid-template-columns:
+        1.05fr .95fr;
 
-  font-weight:950;
+      gap: 60px;
 
-  margin-bottom:10px;
-}
+      align-items: center;
+    }
 
-.section-heading h2{
-  color:var(--dark);
+    .about-copy h3 {
+      color: var(--dark);
 
-  font-size:
-    clamp(
-      2.2rem,
-      5vw,
-      3.4rem
-    );
+      font-size: 2rem;
 
-  line-height:1.05;
+      letter-spacing: -1px;
 
-  letter-spacing:-2px;
+      margin-bottom: 17px;
+    }
 
-  margin-bottom:14px;
-}
+    .about-copy p {
+      color: var(--muted);
 
-.section-heading p{
-  color:var(--muted);
+      line-height: 1.9;
 
-  line-height:1.8;
+      margin-bottom: 15px;
+    }
 
-  font-size:.95rem;
-}
+    .about-highlight {
+      display: grid;
 
+      grid-template-columns:
+        repeat(2, 1fr);
 
-/* =========================================================
-   ABOUT
-========================================================= */
+      gap: 14px;
 
-.about{
-  background:white;
-}
+      margin-top: 25px;
+    }
 
-.about-grid{
-  display:grid;
+    .highlight {
+      padding: 19px;
 
-  grid-template-columns:
-    1.05fr .95fr;
+      border-radius: 17px;
 
-  gap:60px;
+      background: #f7f8fc;
 
-  align-items:center;
-}
+      border: 1px solid var(--border);
+    }
 
-.about-copy h3{
-  color:var(--dark);
+    .highlight strong {
+      display: block;
 
-  font-size:2rem;
+      color: var(--dark);
 
-  letter-spacing:-1px;
+      margin-bottom: 5px;
+    }
 
-  margin-bottom:17px;
-}
+    .highlight span {
+      color: var(--muted);
 
-.about-copy p{
-  color:var(--muted);
+      font-size: .82rem;
+    }
 
-  line-height:1.9;
+    .stats-grid {
+      display: grid;
 
-  margin-bottom:14px;
-}
+      grid-template-columns:
+        repeat(2, 1fr);
 
-.highlights{
-  display:grid;
+      gap: 16px;
+    }
 
-  grid-template-columns:
-    repeat(2,1fr);
+    .stat-card {
+      position: relative;
 
-  gap:13px;
+      padding: 30px;
 
-  margin-top:25px;
-}
+      overflow: hidden;
 
-.highlight{
-  padding:18px;
+      border-radius: 23px;
 
-  border-radius:17px;
+      background:
+        linear-gradient(
+          145deg,
+          #f9faff,
+          #f0f1ff
+        );
 
-  background:#f7f8fc;
+      border: 1px solid var(--border);
 
-  border:1px solid var(--border);
-}
+      transition: .35s;
+    }
 
-.highlight strong{
-  display:block;
+    .stat-card::after {
+      content: "";
 
-  color:var(--dark);
+      position: absolute;
 
-  margin-bottom:5px;
-}
+      width: 90px;
+      height: 90px;
 
-.highlight span{
-  color:var(--muted);
+      right: -35px;
+      bottom: -35px;
 
-  font-size:.8rem;
-}
+      border-radius: 50%;
 
-.stats-grid{
-  display:grid;
+      background:
+        rgba(109,93,252,.10);
+    }
 
-  grid-template-columns:
-    repeat(2,1fr);
+    .stat-card:hover {
+      transform: translateY(-7px);
 
-  gap:15px;
-}
+      box-shadow: var(--shadow);
+    }
 
-.stat-card{
-  padding:28px;
+    .stat-card strong {
+      display: block;
 
-  border-radius:23px;
+      color: var(--primary);
 
-  background:
-    linear-gradient(
-      145deg,
-      #fafaff,
-      #f0f1ff
-    );
+      font-size: 2.15rem;
 
-  border:1px solid var(--border);
+      font-weight: 950;
 
-  transition:.35s;
-}
+      margin-bottom: 7px;
+    }
 
-.stat-card:hover{
-  transform:translateY(-7px);
+    .stat-card span {
+      color: var(--muted);
 
-  box-shadow:var(--shadow);
-}
+      font-size: .83rem;
 
-.stat-card strong{
-  display:block;
+      font-weight: 750;
+    }
 
-  color:var(--primary);
 
-  font-size:2rem;
+    /* =====================================================
+       EXPERIENCE
+    ===================================================== */
 
-  font-weight:950;
+    .experience {
+      background: #f7f8fc;
+    }
 
-  margin-bottom:7px;
-}
+    .timeline {
+      max-width: 900px;
 
-.stat-card span{
-  color:var(--muted);
+      margin: auto;
 
-  font-size:.81rem;
+      position: relative;
+    }
 
-  font-weight:750;
-}
+    .timeline::before {
+      content: "";
 
+      position: absolute;
 
-/* =========================================================
-   EXPERIENCE
-========================================================= */
+      top: 0;
+      bottom: 0;
 
-.experience{
-  background:#f7f8fc;
-}
+      left: 16px;
 
-.timeline{
-  max-width:900px;
+      width: 2px;
 
-  margin:auto;
+      background:
+        linear-gradient(
+          var(--primary),
+          var(--primary-2),
+          var(--cyan)
+        );
+    }
 
-  position:relative;
-}
+    .timeline-item {
+      position: relative;
 
-.timeline::before{
-  content:"";
+      padding-left: 57px;
 
-  position:absolute;
+      margin-bottom: 25px;
+    }
 
-  top:0;
-  bottom:0;
+    .timeline-dot {
+      position: absolute;
 
-  left:16px;
+      left: 5px;
+      top: 24px;
 
-  width:2px;
+      width: 24px;
+      height: 24px;
 
-  background:
-    linear-gradient(
-      var(--primary),
-      var(--purple),
-      var(--cyan)
-    );
-}
+      border-radius: 50%;
 
-.timeline-item{
-  position:relative;
+      background: white;
 
-  padding-left:57px;
+      border: 6px solid var(--primary);
 
-  margin-bottom:25px;
-}
+      box-shadow:
+        0 0 0 5px #f7f8fc;
+    }
 
-.timeline-dot{
-  position:absolute;
+    .timeline-card {
+      padding: 30px;
 
-  left:5px;
-  top:24px;
+      border-radius: 22px;
 
-  width:24px;
-  height:24px;
+      background: white;
 
-  border-radius:50%;
+      border: 1px solid var(--border);
 
-  background:white;
+      box-shadow:
+        0 8px 30px
+        rgba(15,23,42,.045);
 
-  border:6px solid var(--primary);
+      transition: .35s;
+    }
 
-  box-shadow:
-    0 0 0 5px #f7f8fc;
-}
+    .timeline-card:hover {
+      transform: translateX(7px);
 
-.timeline-card{
-  padding:29px;
+      box-shadow: var(--shadow);
+    }
 
-  border-radius:22px;
+    .date {
+      display: inline-block;
 
-  background:white;
+      padding: 7px 11px;
 
-  border:1px solid var(--border);
+      margin-bottom: 13px;
 
-  box-shadow:
-    0 8px 30px rgba(15,23,42,.045);
+      border-radius: 9px;
 
-  transition:.35s;
-}
+      color: var(--primary);
 
-.timeline-card:hover{
-  transform:translateX(7px);
+      background: #efefff;
 
-  box-shadow:var(--shadow);
-}
+      font-size: .7rem;
 
-.date{
-  display:inline-block;
+      font-weight: 900;
 
-  padding:7px 11px;
+      letter-spacing: .7px;
+    }
 
-  margin-bottom:13px;
+    .timeline-card h3 {
+      color: var(--dark);
 
-  border-radius:9px;
+      font-size: 1.4rem;
 
-  color:var(--primary);
+      margin-bottom: 6px;
+    }
 
-  background:#efefff;
+    .company {
+      color: var(--primary);
 
-  font-size:.68rem;
+      font-weight: 850;
 
-  font-weight:900;
+      font-size: .88rem;
 
-  letter-spacing:.7px;
-}
+      margin-bottom: 14px;
+    }
 
-.timeline-card h3{
-  color:var(--dark);
+    .timeline-card p {
+      color: var(--muted);
 
-  font-size:1.4rem;
+      line-height: 1.8;
 
-  margin-bottom:6px;
-}
+      font-size: .92rem;
+    }
 
-.company{
-  color:var(--primary);
 
-  font-size:.86rem;
+    /* =====================================================
+       SKILLS
+    ===================================================== */
 
-  font-weight:850;
+    .skills {
+      background: white;
+    }
 
-  margin-bottom:13px;
-}
+    .skills-grid {
+      display: grid;
 
-.timeline-card p{
-  color:var(--muted);
+      grid-template-columns:
+        repeat(3, 1fr);
 
-  line-height:1.8;
+      gap: 17px;
+    }
 
-  font-size:.9rem;
-}
+    .skill-card {
+      position: relative;
 
+      padding: 27px;
 
-/* =========================================================
-   SKILLS
-========================================================= */
+      overflow: hidden;
 
-.skills{
-  background:white;
-}
+      border-radius: 21px;
 
-.skills-grid{
-  display:grid;
+      background: white;
 
-  grid-template-columns:
-    repeat(3,1fr);
+      border: 1px solid var(--border);
 
-  gap:17px;
-}
+      box-shadow:
+        0 8px 25px
+        rgba(15,23,42,.035);
 
-.skill-card{
-  padding:27px;
+      transition: .35s;
+    }
 
-  border-radius:21px;
+    .skill-card:hover {
+      transform: translateY(-8px);
 
-  background:white;
+      border-color:
+        rgba(109,93,252,.25);
 
-  border:1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
 
-  box-shadow:
-    0 8px 25px rgba(15,23,42,.035);
+    .skill-icon {
+      width: 52px;
+      height: 52px;
 
-  transition:.35s;
-}
+      display: grid;
+      place-items: center;
 
-.skill-card:hover{
-  transform:translateY(-8px);
+      border-radius: 15px;
 
-  border-color:
-    rgba(109,93,252,.25);
+      margin-bottom: 18px;
 
-  box-shadow:var(--shadow);
-}
+      color: white;
 
-.skill-icon{
-  width:52px;
-  height:52px;
+      font-size: 1.4rem;
 
-  display:grid;
-  place-items:center;
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-2)
+        );
+    }
 
-  margin-bottom:17px;
+    .skill-card h3 {
+      color: var(--dark);
 
-  border-radius:15px;
+      margin-bottom: 8px;
 
-  color:white;
+      font-size: 1.08rem;
+    }
 
-  font-size:1.35rem;
+    .skill-card p {
+      color: var(--muted);
 
-  background:
-    linear-gradient(
-      135deg,
-      var(--primary),
-      var(--purple)
-    );
-}
+      font-size: .85rem;
 
-.skill-card h3{
-  color:var(--dark);
+      line-height: 1.7;
+    }
 
-  font-size:1.07rem;
 
-  margin-bottom:8px;
-}
+    /* =====================================================
+       PROJECTS
+    ===================================================== */
 
-.skill-card p{
-  color:var(--muted);
+    .projects {
+      background: #f7f8fc;
+    }
 
-  font-size:.84rem;
+    .project-grid {
+      display: grid;
 
-  line-height:1.7;
-}
+      grid-template-columns:
+        repeat(3, 1fr);
 
+      gap: 20px;
+    }
 
-/* =========================================================
-   PROJECTS
-========================================================= */
+    .project-card {
+      overflow: hidden;
 
-.projects{
-  background:#f7f8fc;
-}
+      border-radius: 24px;
 
-.project-grid{
-  display:grid;
+      background: white;
 
-  grid-template-columns:
-    repeat(3,1fr);
+      border: 1px solid var(--border);
 
-  gap:20px;
-}
+      box-shadow:
+        0 10px 35px
+        rgba(15,23,42,.05);
 
-.project-card{
-  overflow:hidden;
+      transition: .35s;
+    }
 
-  border-radius:24px;
+    .project-card:hover {
+      transform: translateY(-9px);
 
-  background:white;
+      box-shadow: var(--shadow);
+    }
 
-  border:1px solid var(--border);
+    .project-visual {
+      height: 175px;
 
-  box-shadow:
-    0 10px 35px rgba(15,23,42,.05);
+      display: grid;
+      place-items: center;
 
-  transition:.35s;
-}
+      font-size: 3.5rem;
 
-.project-card:hover{
-  transform:translateY(-9px);
+      color: white;
 
-  box-shadow:var(--shadow);
-}
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(255,255,255,.2),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          #6255ef,
+          #8b5cf6
+        );
+    }
 
-.project-visual{
-  height:175px;
+    .project-content {
+      padding: 25px;
+    }
 
-  display:grid;
+    .project-label {
+      display: inline-block;
 
-  place-items:center;
+      color: var(--primary);
 
-  font-size:3.5rem;
+      font-size: .68rem;
 
-  color:white;
+      text-transform: uppercase;
 
-  background:
-    linear-gradient(
-      135deg,
-      #6255ef,
-      #8b5cf6
-    );
-}
+      font-weight: 900;
 
-.project-content{
-  padding:25px;
-}
+      letter-spacing: 1px;
 
-.project-label{
-  display:inline-block;
+      margin-bottom: 9px;
+    }
 
-  color:var(--primary);
+    .project-content h3 {
+      color: var(--dark);
 
-  font-size:.66rem;
+      margin-bottom: 9px;
+    }
 
-  text-transform:uppercase;
+    .project-content p {
+      color: var(--muted);
 
-  font-weight:900;
+      font-size: .85rem;
 
-  letter-spacing:1px;
+      line-height: 1.7;
 
-  margin-bottom:9px;
-}
+      margin-bottom: 18px;
+    }
 
-.project-content h3{
-  color:var(--dark);
+    .project-link {
+      color: var(--primary);
 
-  margin-bottom:9px;
-}
+      font-size: .84rem;
 
-.project-content p{
-  color:var(--muted);
+      font-weight: 900;
+    }
 
-  font-size:.84rem;
 
-  line-height:1.7;
+    /* =====================================================
+       RESUME CTA
+    ===================================================== */
 
-  margin-bottom:18px;
-}
+    .resume-section {
+      background: white;
+    }
 
-.project-link{
-  color:var(--primary);
+    .resume-card {
+      position: relative;
 
-  font-size:.83rem;
+      overflow: hidden;
 
-  font-weight:900;
-}
+      padding: 55px;
 
+      border-radius: 30px;
 
-/* =========================================================
-   CERTIFICATIONS
-========================================================= */
+      background:
+        linear-gradient(
+          135deg,
+          #0d1325,
+          #18163a
+        );
 
-.certifications{
-  background:white;
-}
+      box-shadow:
+        0 30px 80px
+        rgba(15,23,42,.16);
+    }
 
-.cert-grid{
-  display:grid;
+    .resume-card::before {
+      content: "";
 
-  grid-template-columns:
-    repeat(3,1fr);
+      position: absolute;
 
-  gap:18px;
-}
+      width: 300px;
+      height: 300px;
 
-.cert-card{
-  position:relative;
+      right: -120px;
+      top: -120px;
 
-  padding:27px;
+      border-radius: 50%;
 
-  overflow:hidden;
+      background:
+        rgba(109,93,252,.20);
+    }
 
-  border-radius:22px;
+    .resume-card-content {
+      position: relative;
 
-  background:
-    linear-gradient(
-      145deg,
-      #ffffff,
-      #f7f7ff
-    );
+      z-index: 2;
 
-  border:1px solid var(--border);
+      display: flex;
 
-  transition:.35s;
-}
+      align-items: center;
 
-.cert-card::after{
-  content:"";
+      justify-content: space-between;
 
-  position:absolute;
+      gap: 30px;
+    }
 
-  width:120px;
-  height:120px;
+    .resume-card h2 {
+      color: white;
 
-  right:-50px;
-  top:-50px;
+      font-size:
+        clamp(
+          1.8rem,
+          4vw,
+          2.8rem
+        );
 
-  border-radius:50%;
+      letter-spacing: -1.5px;
 
-  background:
-    rgba(109,93,252,.08);
-}
+      margin-bottom: 10px;
+    }
 
-.cert-card:hover{
-  transform:translateY(-8px);
+    .resume-card p {
+      max-width: 650px;
 
-  box-shadow:var(--shadow);
-}
+      color: #98a4bf;
 
-.cert-icon{
-  width:52px;
-  height:52px;
+      line-height: 1.7;
+    }
 
-  display:grid;
-  place-items:center;
 
-  border-radius:15px;
+    /* =====================================================
+       CONTACT
+    ===================================================== */
 
-  margin-bottom:18px;
+    .contact {
+      color: white;
 
-  color:white;
+      background:
+        radial-gradient(
+          circle at 10% 20%,
+          rgba(109,93,252,.20),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          #080d1c,
+          #11182d
+        );
+    }
 
-  font-size:1.35rem;
+    .contact .section-heading h2 {
+      color: white;
+    }
 
-  background:
-    linear-gradient(
-      135deg,
-      var(--primary),
-      var(--purple)
-    );
-}
+    .contact .section-heading p {
+      color: #94a0ba;
+    }
 
-.cert-card h3{
-  color:var(--dark);
+    .contact-grid {
+      display: grid;
 
-  font-size:1.05rem;
+      grid-template-columns:
+        repeat(3, 1fr);
 
-  margin-bottom:8px;
-}
+      gap: 17px;
 
-.cert-card p{
-  color:var(--muted);
+      margin-bottom: 30px;
+    }
 
-  font-size:.82rem;
+    .contact-card {
+      padding: 29px;
 
-  line-height:1.7;
-}
+      text-align: center;
 
-.cert-status{
-  display:inline-flex;
+      border-radius: 22px;
 
-  margin-top:15px;
+      background:
+        rgba(255,255,255,.045);
 
-  padding:6px 9px;
+      border:
+        1px solid rgba(255,255,255,.09);
 
-  border-radius:8px;
+      transition: .3s;
+    }
 
-  color:var(--primary);
+    .contact-card:hover {
+      transform: translateY(-7px);
 
-  background:#efefff;
+      background:
+        rgba(255,255,255,.075);
+    }
 
-  font-size:.67rem;
+    .contact-icon {
+      width: 55px;
+      height: 55px;
 
-  font-weight:900;
-}
+      margin:
+        0 auto 15px;
 
+      display: grid;
+      place-items: center;
 
-/* =========================================================
-   RESUME
-========================================================= */
+      border-radius: 16px;
 
-.resume-section{
-  background:white;
-}
+      background:
+        rgba(109,93,252,.17);
 
-.resume-card{
-  position:relative;
+      font-size: 1.5rem;
+    }
 
-  overflow:hidden;
+    .contact-card h3 {
+      margin-bottom: 7px;
+    }
 
-  padding:55px;
+    .contact-card p {
+      color: #9ca8c0;
 
-  border-radius:30px;
+      font-size: .82rem;
 
-  background:
-    linear-gradient(
-      135deg,
-      #0d1325,
-      #18163a
-    );
+      line-height: 1.6;
 
-  box-shadow:
-    0 30px 80px rgba(15,23,42,.16);
-}
+      word-break: break-word;
+    }
 
-.resume-content{
-  position:relative;
+    .contact-card a {
+      transition: .2s;
+    }
 
-  z-index:2;
+    .contact-card a:hover {
+      color: #a9a0ff;
+    }
 
-  display:flex;
+    .whatsapp-big {
+      display: flex;
 
-  align-items:center;
+      align-items: center;
+      justify-content: center;
 
-  justify-content:space-between;
+      gap: 10px;
 
-  gap:30px;
-}
+      width: fit-content;
 
-.resume-card h2{
-  color:white;
+      margin: auto;
 
-  font-size:
-    clamp(
-      1.8rem,
-      4vw,
-      2.8rem
-    );
+      padding: 15px 25px;
 
-  letter-spacing:-1.5px;
+      border-radius: 15px;
 
-  margin-bottom:10px;
-}
+      color: white;
 
-.resume-card p{
-  max-width:650px;
+      background:
+        linear-gradient(
+          135deg,
+          #16a34a,
+          #22c55e
+        );
 
-  color:#98a4bf;
+      font-weight: 900;
 
-  line-height:1.7;
-}
+      box-shadow:
+        0 15px 35px
+        rgba(34,197,94,.22);
 
+      transition: .3s;
+    }
 
-/* =========================================================
-   CONTACT
-========================================================= */
+    .whatsapp-big:hover {
+      transform: translateY(-4px) scale(1.02);
 
-.contact{
-  color:white;
+      box-shadow:
+        0 20px 45px
+        rgba(34,197,94,.30);
+    }
 
-  background:
-    radial-gradient(
-      circle at 10% 20%,
-      rgba(109,93,252,.20),
-      transparent 30%
-    ),
 
-    linear-gradient(
-      135deg,
-      #080d1c,
-      #11182d
-    );
-}
+    /* =====================================================
+       FOOTER
+    ===================================================== */
 
-.contact .section-heading h2{
-  color:white;
-}
+    footer {
+      padding: 27px 5%;
 
-.contact .section-heading p{
-  color:#94a0ba;
-}
+      text-align: center;
 
-.contact-grid{
-  display:grid;
+      color: #74809a;
 
-  grid-template-columns:
-    repeat(3,1fr);
+      background: #060a14;
 
-  gap:17px;
+      font-size: .82rem;
+    }
 
-  margin-bottom:30px;
-}
+    footer strong {
+      color: white;
+    }
 
-.contact-card{
-  padding:29px;
 
-  text-align:center;
+    /* =====================================================
+       FLOATING WHATSAPP
+    ===================================================== */
 
-  border-radius:22px;
+    .floating-whatsapp {
+      position: fixed;
 
-  background:
-    rgba(255,255,255,.045);
+      right: 22px;
+      bottom: 22px;
 
-  border:
-    1px solid rgba(255,255,255,.09);
+      z-index: 4000;
 
-  transition:.3s;
-}
+      width: 58px;
+      height: 58px;
 
-.contact-card:hover{
-  transform:translateY(-7px);
+      display: grid;
+      place-items: center;
 
-  background:
-    rgba(255,255,255,.075);
-}
+      border-radius: 50%;
 
-.contact-icon{
-  width:55px;
-  height:55px;
+      color: white;
 
-  display:grid;
-  place-items:center;
+      background:
+        linear-gradient(
+          135deg,
+          #16a34a,
+          #22c55e
+        );
 
-  margin:
-    0 auto 15px;
+      font-size: 1.55rem;
 
-  border-radius:16px;
+      box-shadow:
+        0 14px 35px
+        rgba(34,197,94,.30);
 
-  background:
-    rgba(109,93,252,.17);
+      transition: .3s;
 
-  font-size:1.45rem;
-}
+      animation:
+        whatsappPulse 2.5s infinite;
+    }
 
-.contact-card h3{
-  margin-bottom:7px;
-}
+    .floating-whatsapp:hover {
+      transform: scale(1.1);
 
-.contact-card p{
-  color:#9ca8c0;
+      animation: none;
+    }
 
-  font-size:.8rem;
+    @keyframes whatsappPulse {
 
-  word-break:break-word;
-}
+      0%, 100% {
+        box-shadow:
+          0 14px 35px
+          rgba(34,197,94,.30);
+      }
 
-.contact-card a:hover{
-  color:#aaa1ff;
-}
+      50% {
+        box-shadow:
+          0 14px 45px
+          rgba(34,197,94,.50);
+      }
 
-.whatsapp-big{
-  width:max-content;
+    }
 
-  display:flex;
 
-  align-items:center;
+    /* =====================================================
+       BACK TO TOP
+    ===================================================== */
 
-  justify-content:center;
+    .top-btn {
+      position: fixed;
 
-  gap:10px;
+      right: 22px;
+      bottom: 94px;
 
-  margin:auto;
+      z-index: 3900;
 
-  padding:15px 25px;
+      width: 45px;
+      height: 45px;
 
-  border-radius:15px;
+      border: 0;
+      border-radius: 14px;
 
-  color:white;
+      color: white;
 
-  background:
-    linear-gradient(
-      135deg,
-      #16a34a,
-      #22c55e
-    );
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-2)
+        );
 
-  font-weight:900;
+      cursor: pointer;
 
-  box-shadow:
-    0 15px 35px rgba(34,197,94,.22);
+      opacity: 0;
+      visibility: hidden;
 
-  transition:.3s;
-}
+      transform: translateY(10px);
 
-.whatsapp-big:hover{
-  transform:
-    translateY(-4px)
-    scale(1.02);
-}
+      transition: .3s;
+    }
 
+    .top-btn.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
 
-/* =========================================================
-   FOOTER
-========================================================= */
 
-footer{
-  padding:27px 5%;
+    /* =====================================================
+       SCROLL REVEAL
+    ===================================================== */
 
-  text-align:center;
+    .reveal {
+      opacity: 0;
 
-  color:#74809a;
+      transform:
+        translateY(30px);
 
-  background:#060a14;
+      transition:
+        opacity .7s ease,
+        transform .7s ease;
+    }
 
-  font-size:.8rem;
-}
+    .reveal.show {
+      opacity: 1;
 
-footer strong{
-  color:white;
-}
+      transform:
+        translateY(0);
+    }
 
 
-/* =========================================================
-   FLOATING BUTTONS
-========================================================= */
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
 
-.floating-whatsapp{
-  position:fixed;
+    @media (max-width: 980px) {
 
-  right:22px;
-  bottom:22px;
+      .hero-grid {
+        grid-template-columns: 1fr;
 
-  z-index:4000;
+        text-align: center;
+      }
 
-  width:58px;
-  height:58px;
+      .hero-copy {
+        margin: auto;
+      }
 
-  display:grid;
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
 
-  place-items:center;
+      .hero-actions {
+        justify-content: center;
+      }
 
-  border-radius:50%;
+      .hero-mini-stats {
+        justify-content: center;
+      }
 
-  color:white;
+      .hero-profile {
+        order: -1;
+      }
 
-  background:
-    linear-gradient(
-      135deg,
-      #16a34a,
-      #22c55e
-    );
+      .profile-card {
+        max-width: 360px;
+      }
 
-  font-size:1.5rem;
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
 
-  box-shadow:
-    0 14px 35px rgba(34,197,94,.3);
+      .skills-grid,
+      .project-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
 
-  transition:.3s;
+      .contact-grid {
+        grid-template-columns:
+          repeat(3, 1fr);
+      }
 
-  animation:
-    whatsappPulse 2.5s infinite;
-}
+    }
 
-.floating-whatsapp:hover{
-  transform:scale(1.1);
 
-  animation:none;
-}
+    @media (max-width: 760px) {
 
-@keyframes whatsappPulse{
+      header {
+        padding: 14px 5%;
+      }
 
-  0%,100%{
-    box-shadow:
-      0 14px 35px
-      rgba(34,197,94,.3);
-  }
+      .menu-btn {
+        display: grid;
+        place-items: center;
+      }
 
-  50%{
-    box-shadow:
-      0 14px 45px
-      rgba(34,197,94,.5);
-  }
+      .nav-links {
+        position: fixed;
 
-}
+        top: 75px;
+        left: 5%;
+        right: 5%;
 
-.top-btn{
-  position:fixed;
+        width: auto;
 
-  right:22px;
-  bottom:94px;
+        padding: 22px;
 
-  z-index:3900;
+        flex-direction: column;
 
-  width:45px;
-  height:45px;
+        align-items: stretch;
 
-  border:0;
+        gap: 4px;
 
-  border-radius:14px;
+        border-radius: 20px;
 
-  color:white;
+        background:
+          rgba(255,255,255,.97);
 
-  background:
-    linear-gradient(
-      135deg,
-      var(--primary),
-      var(--purple)
-    );
+        box-shadow:
+          0 25px 70px
+          rgba(15,23,42,.18);
 
-  cursor:pointer;
+        transform:
+          translateY(-15px);
 
-  opacity:0;
+        opacity: 0;
 
-  visibility:hidden;
+        pointer-events: none;
 
-  transform:translateY(10px);
+        transition: .3s;
+      }
 
-  transition:.3s;
-}
+      .nav-links.open {
+        transform: translateY(0);
 
-.top-btn.show{
-  opacity:1;
+        opacity: 1;
 
-  visibility:visible;
+        pointer-events: auto;
+      }
 
-  transform:translateY(0);
-}
+      .nav-links li a {
+        display: block;
 
+        padding: 13px;
 
-/* =========================================================
-   REVEAL ANIMATION
-========================================================= */
+        color: var(--dark) !important;
 
-.reveal{
-  opacity:0;
+        border-radius: 11px;
+      }
 
-  transform:translateY(30px);
+      .nav-links li a:hover {
+        background: #f0efff;
+      }
 
-  transition:
-    opacity .7s ease,
-    transform .7s ease;
-}
+      .nav-cta {
+        text-align: center;
+        margin-top: 6px;
+      }
 
-.reveal.show{
-  opacity:1;
+      .hero {
+        padding-top: 110px;
+      }
 
-  transform:translateY(0);
-}
+      .hero h1 {
+        letter-spacing: -3px;
+      }
 
+      .hero-mini-stats {
+        gap: 20px;
+      }
 
-/* =========================================================
-   RESPONSIVE
-========================================================= */
+      .skills-grid,
+      .project-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
 
-@media(max-width:980px){
+      .resume-card {
+        padding: 35px 25px;
+      }
 
-  .hero-grid{
-    grid-template-columns:1fr;
+      .resume-card-content {
+        flex-direction: column;
 
-    text-align:center;
-  }
+        align-items: flex-start;
+      }
 
-  .hero-copy{
-    margin:auto;
-  }
+      .resume-card .btn {
+        width: 100%;
+      }
 
-  .hero-description{
-    margin-left:auto;
-    margin-right:auto;
-  }
+    }
 
-  .hero-actions{
-    justify-content:center;
-  }
 
-  .hero-stats{
-    justify-content:center;
-  }
+    @media (max-width: 500px) {
 
-  .hero-profile{
-    order:-1;
-  }
+      section {
+        padding:
+          78px 5%;
+      }
 
-  .profile-card{
-    max-width:360px;
-  }
+      .profile-image {
+        width: 190px;
+        height: 190px;
+      }
 
-  .about-grid{
-    grid-template-columns:1fr;
-  }
+      .profile-card {
+        padding: 22px;
+      }
 
-  .skills-grid,
-  .project-grid,
-  .cert-grid{
-    grid-template-columns:
-      repeat(2,1fr);
-  }
+      .hero-actions {
+        flex-direction: column;
+      }
 
-  .contact-grid{
-    grid-template-columns:
-      repeat(3,1fr);
-  }
+      .hero-actions .btn {
+        width: 100%;
+      }
 
-}
+      .about-highlight {
+        grid-template-columns: 1fr;
+      }
 
+      .stats-grid {
+        gap: 10px;
+      }
 
-@media(max-width:760px){
+      .stat-card {
+        padding: 22px 17px;
+      }
 
-  header{
-    padding:
-      14px 5%;
-  }
+      .stat-card strong {
+        font-size: 1.7rem;
+      }
 
-  .menu-btn{
-    display:grid;
+      .timeline::before {
+        left: 11px;
+      }
 
-    place-items:center;
-  }
+      .timeline-item {
+        padding-left: 40px;
+      }
 
-  .nav-links{
-    position:fixed;
+      .timeline-dot {
+        left: 0;
+      }
 
-    top:75px;
+      .timeline-card {
+        padding: 23px;
+      }
 
-    left:5%;
-    right:5%;
+      .floating-whatsapp {
+        width: 54px;
+        height: 54px;
 
-    padding:21px;
+        right: 17px;
+        bottom: 17px;
+      }
 
-    flex-direction:column;
+      .top-btn {
+        right: 17px;
+        bottom: 82px;
+      }
 
-    align-items:stretch;
+    }
 
-    gap:4px;
-
-    border-radius:20px;
-
-    background:
-      rgba(255,255,255,.97);
-
-    box-shadow:
-      0 25px 70px
-      rgba(15,23,42,.18);
-
-    transform:
-      translateY(-15px);
-
-    opacity:0;
-
-    pointer-events:none;
-
-    transition:.3s;
-  }
-
-  .nav-links.open{
-    transform:translateY(0);
-
-    opacity:1;
-
-    pointer-events:auto;
-  }
-
-  .nav-links a{
-    display:block;
-
-    padding:13px;
-
-    color:var(--dark)!important;
-
-    border-radius:11px;
-  }
-
-  .nav-links a:hover{
-    background:#f0efff;
-  }
-
-  .nav-contact{
-    text-align:center;
-
-    margin-top:5px;
-  }
-
-  .hero{
-    padding-top:110px;
-  }
-
-  .hero h1{
-    letter-spacing:-3px;
-  }
-
-  .skills-grid,
-  .project-grid,
-  .cert-grid,
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
-
-  .resume-card{
-    padding:35px 25px;
-  }
-
-  .resume-content{
-    flex-direction:column;
-
-    align-items:flex-start;
-  }
-
-  .resume-card .btn{
-    width:100%;
-  }
-
-}
-
-
-@media(max-width:500px){
-
-  section{
-    padding:
-      78px 5%;
-  }
-
-  .profile-image{
-    width:190px;
-    height:190px;
-  }
-
-  .profile-card{
-    padding:22px;
-  }
-
-  .hero-actions{
-    flex-direction:column;
-  }
-
-  .hero-actions .btn{
-    width:100%;
-  }
-
-  .highlights{
-    grid-template-columns:1fr;
-  }
-
-  .stats-grid{
-    gap:10px;
-  }
-
-  .stat-card{
-    padding:22px 17px;
-  }
-
-  .stat-card strong{
-    font-size:1.7rem;
-  }
-
-  .timeline::before{
-    left:11px;
-  }
-
-  .timeline-item{
-    padding-left:40px;
-  }
-
-  .timeline-dot{
-    left:0;
-  }
-
-  .timeline-card{
-    padding:23px;
-  }
-
-  .floating-whatsapp{
-    right:17px;
-    bottom:17px;
-
-    width:54px;
-    height:54px;
-  }
-
-  .top-btn{
-    right:17px;
-    bottom:82px;
-  }
-
-}
-
-</style>
+  </style>
 </head>
 
 
 <body>
 
 
-<!-- ========================================================
-     LOADER
-========================================================= -->
+  <!-- =====================================================
+       LOADER
+  ====================================================== -->
 
-<div id="loader">
+  <div id="loader">
 
-  <div class="loader-content">
+    <div class="loader-box">
 
-    <div class="loader-logo">
-      KB
-    </div>
+      <div class="loader-logo">
+        KB
+      </div>
 
-    <div class="loader-text">
-      Loading Portfolio
+      <div class="loader-text">
+        Loading Portfolio
+      </div>
+
     </div>
 
   </div>
 
-</div>
 
+  <!-- =====================================================
+       NAVBAR
+  ====================================================== -->
 
-<!-- ========================================================
-     NAVBAR
-========================================================= -->
+  <header id="header">
 
-<header id="header">
+    <nav>
 
-<nav>
+      <a href="#home" class="logo">
 
-  <a href="#home" class="logo">
+        <span class="logo-mark">
+          KB
+        </span>
 
-    <span class="logo-mark">
-      KB
-    </span>
+        Kuldeep<span>.</span>
 
-    Kuldeep<span>.</span>
-
-  </a>
-
-
-  <button
-    class="menu-btn"
-    id="menuBtn"
-    aria-label="Open menu"
-  >
-    ☰
-  </button>
-
-
-  <ul class="nav-links" id="navLinks">
-
-    <li>
-      <a href="#home" class="active">
-        Home
       </a>
-    </li>
-
-    <li>
-      <a href="#about">
-        About
-      </a>
-    </li>
-
-    <li>
-      <a href="#experience">
-        Experience
-      </a>
-    </li>
-
-    <li>
-      <a href="#skills">
-        Skills
-      </a>
-    </li>
-
-    <li>
-      <a href="#projects">
-        Projects
-      </a>
-    </li>
-
-    <li>
-      <a href="#certifications">
-        Certifications
-      </a>
-    </li>
-
-    <li>
-      <a href="#contact" class="nav-contact">
-        Contact
-      </a>
-    </li>
-
-  </ul>
-
-</nav>
-
-</header>
 
 
-<!-- ========================================================
-     HERO
-========================================================= -->
-
-<section class="hero" id="home">
-
-<div class="hero-grid">
-
-
-  <div class="hero-copy reveal">
-
-    <div class="availability">
-
-      <span class="status-dot"></span>
-
-      Available for IT Opportunities
-
-    </div>
-
-
-    <h1>
-
-      Kuldeep
-
-      <span class="gradient">
-        Borana
-      </span>
-
-    </h1>
-
-
-    <div class="hero-role">
-
-      Desktop Support Engineer
-      <br>
-
-      IT Support • Hardware • Networking
-
-    </div>
-
-
-    <p class="hero-description">
-
-      Reliable and solution-focused IT professional with
-      practical experience in desktop support, hardware
-      troubleshooting, Windows systems, software deployment,
-      Outlook, printers and networking support.
-
-    </p>
-
-
-    <div class="hero-actions">
-
-      <a
-        href="resume.pdf"
-        target="_blank"
-        class="btn btn-primary"
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Open navigation"
       >
-        📄 View Resume
-      </a>
+        ☰
+      </button>
 
 
-      <a
-        href="https://wa.me/919752133011"
-        target="_blank"
-        rel="noopener"
-        class="btn btn-glass"
-      >
-        💬 WhatsApp Me
-      </a>
+      <ul class="nav-links" id="navLinks">
+
+        <li>
+          <a href="#home" class="active">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a href="#about">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="#experience">
+            Experience
+          </a>
+        </li>
+
+        <li>
+          <a href="#skills">
+            Skills
+          </a>
+        </li>
+
+        <li>
+          <a href="#projects">
+            Projects
+          </a>
+        </li>
+
+        <li>
+          <a href="#contact" class="nav-cta">
+            Contact
+          </a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+  </header>
 
 
-      <a
-        href="#projects"
-        class="btn btn-glass"
-      >
-        🚀 View Projects
-      </a>
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
 
-    </div>
+  <section class="hero" id="home">
 
-
-    <div class="hero-stats">
-
-      <div class="hero-stat">
-        <strong>IT</strong>
-        <span>Support</span>
-      </div>
-
-      <div class="hero-stat">
-        <strong>PC</strong>
-        <span>Hardware</span>
-      </div>
-
-      <div class="hero-stat">
-        <strong>OS</strong>
-        <span>Windows</span>
-      </div>
-
-      <div class="hero-stat">
-        <strong>NET</strong>
-        <span>Networking</span>
-      </div>
-
-    </div>
-
-  </div>
+    <div class="hero-grid">
 
 
-  <div class="hero-profile reveal">
+      <div class="hero-copy reveal">
 
-    <div class="profile-card">
+        <div class="availability">
 
-      <div class="profile-image">
+          <span class="status-dot"></span>
 
-        <img
-          src="developer.png"
-          alt="Kuldeep Borana"
-        >
-
-      </div>
-
-
-      <h2>
-        Kuldeep Borana
-      </h2>
-
-
-      <div class="profile-role">
-        IT Support Professional
-      </div>
-
-
-      <div class="profile-tags">
-
-        <span class="tag">
-          Desktop Support
-        </span>
-
-        <span class="tag">
-          Hardware
-        </span>
-
-        <span class="tag">
-          Windows
-        </span>
-
-        <span class="tag">
-          Networking
-        </span>
-
-        <span class="tag">
-          Troubleshooting
-        </span>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-</div>
-
-</section>
-
-
-<!-- ========================================================
-     ABOUT
-========================================================= -->
-
-<section class="about" id="about">
-
-<div class="section-inner">
-
-
-  <div class="section-heading reveal">
-
-    <div class="eyebrow">
-      About Me
-    </div>
-
-    <h2>
-      Technology That Solves Problems
-    </h2>
-
-    <p>
-      A practical IT support professional focused on
-      reliable solutions and smooth user experiences.
-    </p>
-
-  </div>
-
-
-  <div class="about-grid">
-
-
-    <div class="about-copy reveal">
-
-      <h3>
-        Reliable. Technical. Solution-focused.
-      </h3>
-
-
-      <p>
-        I work in IT support with a focus on diagnosing
-        technical problems, maintaining systems and helping
-        users get back to work quickly.
-      </p>
-
-
-      <p>
-        My technical interests include desktop support,
-        computer hardware, Windows operating systems,
-        software installation, Outlook, printers and
-        networking.
-      </p>
-
-
-      <p>
-        I believe good IT support is not only about fixing
-        a problem — it is about finding the actual cause
-        and creating a dependable solution.
-      </p>
-
-
-      <div class="highlights">
-
-        <div class="highlight">
-
-          <strong>
-            Problem Solving
-          </strong>
-
-          <span>
-            Systematic troubleshooting approach
-          </span>
+          Available for IT Opportunities
 
         </div>
 
 
-        <div class="highlight">
+        <h1>
 
-          <strong>
-            User Support
-          </strong>
+          Kuldeep
 
-          <span>
-            Clear and practical technical assistance
+          <span class="gradient">
+            Borana
           </span>
 
-        </div>
-
-      </div>
-
-    </div>
+        </h1>
 
 
-    <div class="stats-grid reveal">
+        <div class="hero-role">
 
-      <div class="stat-card">
-        <strong>IT</strong>
-        <span>Technical Support</span>
-      </div>
-
-      <div class="stat-card">
-        <strong>PC</strong>
-        <span>Hardware Troubleshooting</span>
-      </div>
-
-      <div class="stat-card">
-        <strong>OS</strong>
-        <span>Windows Support</span>
-      </div>
-
-      <div class="stat-card">
-        <strong>NET</strong>
-        <span>Networking Support</span>
-      </div>
-
-    </div>
-
-
-  </div>
-
-</div>
-
-</section>
-
-
-<!-- ========================================================
-     EXPERIENCE
-========================================================= -->
-
-<section class="experience" id="experience">
-
-<div class="section-inner">
-
-
-  <div class="section-heading reveal">
-
-    <div class="eyebrow">
-      Professional Journey
-    </div>
-
-    <h2>
-      Experience
-    </h2>
-
-    <p>
-      Practical IT support responsibilities and technical
-      experience.
-    </p>
-
-  </div>
-
-
-  <div class="timeline">
-
-
-    <div class="timeline-item reveal">
-
-      <div class="timeline-dot"></div>
-
-      <div class="timeline-card">
-
-        <span class="date">
-          IT SUPPORT
-        </span>
-
-        <h3>
           Desktop Support Engineer
-        </h3>
+          <br>
 
-        <div class="company">
-          IT Support & Infrastructure
+          IT Support • Hardware • Networking
+
         </div>
 
-        <p>
-          Desktop troubleshooting, hardware diagnosis,
-          Windows installation and configuration,
-          software deployment, Outlook support,
-          printer troubleshooting and basic network
-          support.
+
+        <p class="hero-description">
+
+          Reliable and solution-focused IT professional with
+          practical experience in desktop support, hardware
+          troubleshooting, Windows systems, software deployment,
+          Outlook, printers and networking support.
+
         </p>
 
-      </div>
 
-    </div>
+        <div class="hero-actions">
+
+          <a
+            href="resume.pdf"
+            target="_blank"
+            class="btn btn-primary"
+          >
+            📄 View Resume
+          </a>
 
 
-    <div class="timeline-item reveal">
+          <a
+            href="https://wa.me/919752133011"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-glass"
+          >
+            💬 WhatsApp Me
+          </a>
 
-      <div class="timeline-dot"></div>
 
-      <div class="timeline-card">
+          <a
+            href="#projects"
+            class="btn btn-glass"
+          >
+            🚀 View Projects
+          </a>
 
-        <span class="date">
-          TECHNICAL SUPPORT
-        </span>
-
-        <h3>
-          IT Support Operations
-        </h3>
-
-        <div class="company">
-          Technical Support Environment
         </div>
 
-        <p>
-          Diagnosing technical issues, assisting users
-          with system problems, configuring devices
-          and maintaining reliable desktop environments.
-        </p>
+
+        <div class="hero-mini-stats">
+
+          <div class="hero-mini-stat">
+
+            <strong>IT</strong>
+
+            <span>
+              Support
+            </span>
+
+          </div>
+
+
+          <div class="hero-mini-stat">
+
+            <strong>PC</strong>
+
+            <span>
+              Hardware
+            </span>
+
+          </div>
+
+
+          <div class="hero-mini-stat">
+
+            <strong>OS</strong>
+
+            <span>
+              Windows
+            </span>
+
+          </div>
+
+
+          <div class="hero-mini-stat">
+
+            <strong>NET</strong>
+
+            <span>
+              Networking
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- PROFILE CARD -->
+
+      <div class="hero-profile reveal">
+
+        <div class="profile-card">
+
+          <div class="profile-image">
+
+            <img
+              src="developer.png"
+              alt="Kuldeep Borana"
+            >
+
+          </div>
+
+
+          <h2>
+            Kuldeep Borana
+          </h2>
+
+
+          <div class="role">
+            IT Support Professional
+          </div>
+
+
+          <div class="profile-tags">
+
+            <span class="profile-tag">
+              Desktop Support
+            </span>
+
+            <span class="profile-tag">
+              Hardware
+            </span>
+
+            <span class="profile-tag">
+              Windows
+            </span>
+
+            <span class="profile-tag">
+              Networking
+            </span>
+
+            <span class="profile-tag">
+              Troubleshooting
+            </span>
+
+          </div>
+
+        </div>
 
       </div>
 
     </div>
 
+  </section>
 
-  </div>
 
-</div>
+  <!-- =====================================================
+       ABOUT
+  ====================================================== -->
 
-</section>
+  <section class="about" id="about">
 
+    <div class="section-inner">
 
-<!-- ========================================================
-     SKILLS
-========================================================= -->
 
-<section class="skills" id="skills">
+      <div class="section-heading reveal">
 
-<div class="section-inner">
-
-
-  <div class="section-heading reveal">
-
-    <div class="eyebrow">
-      Expertise
-    </div>
-
-    <h2>
-      Technical Skills
-    </h2>
-
-    <p>
-      Core areas of IT support and troubleshooting.
-    </p>
-
-  </div>
-
-
-  <div class="skills-grid">
-
-
-    <div class="skill-card reveal">
-
-      <div class="skill-icon">
-        🖥️
-      </div>
-
-      <h3>
-        Desktop Support
-      </h3>
-
-      <p>
-        Desktop troubleshooting, configuration,
-        maintenance and end-user support.
-      </p>
-
-    </div>
-
-
-    <div class="skill-card reveal">
-
-      <div class="skill-icon">
-        🔧
-      </div>
-
-      <h3>
-        Hardware
-      </h3>
-
-      <p>
-        PC hardware diagnosis, component troubleshooting
-        and system maintenance.
-      </p>
-
-    </div>
-
-
-    <div class="skill-card reveal">
-
-      <div class="skill-icon">
-        🪟
-      </div>
-
-      <h3>
-        Windows
-      </h3>
-
-      <p>
-        Windows installation, configuration, updates
-        and troubleshooting.
-      </p>
-
-    </div>
-
-
-    <div class="skill-card reveal">
-
-      <div class="skill-icon">
-        🌐
-      </div>
-
-      <h3>
-        Networking
-      </h3>
-
-      <p>
-        Basic connectivity troubleshooting and network
-        device support.
-      </p>
-
-    </div>
-
-
-    <div class="skill-card reveal">
-
-      <div class="skill-icon">
-        📧
-      </div>
-
-      <h3>
-        Outlook
-      </h3>
-
-      <p>
-        Email configuration, troubleshooting and
-        user assistance.
-      </p>
-
-    </div>
-
-
-    <div class="skill-card reveal">
-
-      <div class="skill-icon">
-        🖨️
-      </div>
-
-      <h3>
-        Printers
-      </h3>
-
-      <p>
-        Printer installation, configuration and
-        troubleshooting.
-      </p>
-
-    </div>
-
-
-  </div>
-
-</div>
-
-</section>
-
-
-<!-- ========================================================
-     PROJECTS
-========================================================= -->
-
-<section class="projects" id="projects">
-
-<div class="section-inner">
-
-
-  <div class="section-heading reveal">
-
-    <div class="eyebrow">
-      Portfolio
-    </div>
-
-    <h2>
-      Featured Projects
-    </h2>
-
-    <p>
-      Selected practical projects and development work.
-    </p>
-
-  </div>
-
-
-  <div class="project-grid">
-
-
-    <div class="project-card reveal">
-
-      <div class="project-visual">
-        🧮
-      </div>
-
-      <div class="project-content">
-
-        <span class="project-label">
-          Web Project
-        </span>
-
-        <h3>
-          Smart Calculator
-        </h3>
-
-        <p>
-          Browser-based calculator project created with
-          HTML, CSS and JavaScript.
-        </p>
-
-        <a
-          href="calculator.html"
-          target="_blank"
-          class="project-link"
-        >
-          View Project →
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <div class="project-card reveal">
-
-      <div class="project-visual">
-        💼
-      </div>
-
-      <div class="project-content">
-
-        <span class="project-label">
-          Live Project
-        </span>
-
-        <h3>
-          Professional Portfolio
-        </h3>
-
-        <p>
-          Responsive portfolio website with premium UI,
-          animations, contact integration and PWA support.
-        </p>
-
-        <a
-          href="#home"
-          class="project-link"
-        >
-          Current Project →
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <div class="project-card reveal">
-
-      <div class="project-visual">
-        ⚙️
-      </div>
-
-      <div class="project-content">
-
-        <span class="project-label">
-          IT Project
-        </span>
-
-        <h3>
-          IT Support Toolkit
-        </h3>
-
-        <p>
-          Practical IT support resources focused on
-          troubleshooting and technical assistance.
-        </p>
-
-        <a
-          href="#contact"
-          class="project-link"
-        >
-          Discuss Project →
-        </a>
-
-      </div>
-
-    </div>
-
-
-  </div>
-
-</div>
-
-</section>
-
-
-<!-- ========================================================
-     CERTIFICATIONS
-========================================================= -->
-
-<section class="certifications" id="certifications">
-
-<div class="section-inner">
-
-
-  <div class="section-heading reveal">
-
-    <div class="eyebrow">
-      Qualifications
-    </div>
-
-    <h2>
-      Certifications & Learning
-    </h2>
-
-    <p>
-      Professional learning and technical development.
-    </p>
-
-  </div>
-
-
-  <div class="cert-grid">
-
-
-    <div class="cert-card reveal">
-
-      <div class="cert-icon">
-        🎓
-      </div>
-
-      <h3>
-        Diploma in Computer Technology
-      </h3>
-
-      <p>
-        Computer technology education covering core
-        computing and technical concepts.
-      </p>
-
-      <span class="cert-status">
-        Qualification
-      </span>
-
-    </div>
-
-
-    <div class="cert-card reveal">
-
-      <div class="cert-icon">
-        💻
-      </div>
-
-      <h3>
-        IT Support & Troubleshooting
-      </h3>
-
-      <p>
-        Practical technical knowledge across desktop,
-        hardware, Windows and user support.
-      </p>
-
-      <span class="cert-status">
-        Technical Skill
-      </span>
-
-    </div>
-
-
-    <div class="cert-card reveal">
-
-      <div class="cert-icon">
-        🌐
-      </div>
-
-      <h3>
-        Networking Fundamentals
-      </h3>
-
-      <p>
-        Practical understanding of connectivity,
-        network troubleshooting and basic support.
-      </p>
-
-      <span class="cert-status">
-        Technical Skill
-      </span>
-
-    </div>
-
-
-  </div>
-
-</div>
-
-</section>
-
-
-<!-- ========================================================
-     RESUME CTA
-========================================================= -->
-
-<section class="resume-section">
-
-<div class="section-inner">
-
-  <div class="resume-card reveal">
-
-    <div class="resume-content">
-
-      <div>
+        <div class="eyebrow">
+          About Me
+        </div>
 
         <h2>
-          Looking for an IT Professional?
+          Technology That Solves Problems
         </h2>
 
         <p>
-          View my resume to learn more about my technical
-          skills, experience and professional background.
+          A practical IT support professional focused on
+          reliable solutions and smooth user experiences.
         </p>
 
       </div>
 
 
+      <div class="about-grid">
+
+
+        <div class="about-copy reveal">
+
+          <h3>
+            Reliable. Technical. Solution-focused.
+          </h3>
+
+
+          <p>
+            I work in IT support with a focus on diagnosing
+            technical problems, maintaining systems and helping
+            users get back to work quickly.
+          </p>
+
+
+          <p>
+            My technical interests include desktop support,
+            computer hardware, Windows operating systems,
+            software installation, Outlook, printers and
+            networking.
+          </p>
+
+
+          <p>
+            I believe good IT support is not only about fixing
+            a problem — it is about finding the actual cause
+            and creating a dependable solution.
+          </p>
+
+
+          <div class="about-highlight">
+
+            <div class="highlight">
+
+              <strong>
+                Problem Solving
+              </strong>
+
+              <span>
+                Systematic troubleshooting approach
+              </span>
+
+            </div>
+
+
+            <div class="highlight">
+
+              <strong>
+                User Support
+              </strong>
+
+              <span>
+                Clear and practical technical assistance
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="stats-grid reveal">
+
+
+          <div class="stat-card">
+
+            <strong>
+              IT
+            </strong>
+
+            <span>
+              Technical Support
+            </span>
+
+          </div>
+
+
+          <div class="stat-card">
+
+            <strong>
+              PC
+            </strong>
+
+            <span>
+              Hardware Troubleshooting
+            </span>
+
+          </div>
+
+
+          <div class="stat-card">
+
+            <strong>
+              OS
+            </strong>
+
+            <span>
+              Windows Support
+            </span>
+
+          </div>
+
+
+          <div class="stat-card">
+
+            <strong>
+              NET
+            </strong>
+
+            <span>
+              Networking Support
+            </span>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       EXPERIENCE
+  ====================================================== -->
+
+  <section class="experience" id="experience">
+
+    <div class="section-inner">
+
+
+      <div class="section-heading reveal">
+
+        <div class="eyebrow">
+          Professional Journey
+        </div>
+
+        <h2>
+          Experience
+        </h2>
+
+        <p>
+          Practical IT support responsibilities and technical
+          experience.
+        </p>
+
+      </div>
+
+
+      <div class="timeline">
+
+
+        <div class="timeline-item reveal">
+
+          <div class="timeline-dot"></div>
+
+
+          <div class="timeline-card">
+
+            <span class="date">
+              IT SUPPORT
+            </span>
+
+
+            <h3>
+              Desktop Support Engineer
+            </h3>
+
+
+            <div class="company">
+              IT Support & Infrastructure
+            </div>
+
+
+            <p>
+              Desktop troubleshooting, hardware diagnosis,
+              Windows installation and configuration,
+              software deployment, Outlook support,
+              printer troubleshooting and basic network
+              support.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="timeline-item reveal">
+
+          <div class="timeline-dot"></div>
+
+
+          <div class="timeline-card">
+
+            <span class="date">
+              TECHNICAL SUPPORT
+            </span>
+
+
+            <h3>
+              IT Support Operations
+            </h3>
+
+
+            <div class="company">
+              Technical Support Environment
+            </div>
+
+
+            <p>
+              Diagnosing technical issues, assisting users
+              with system problems, configuring devices
+              and maintaining reliable desktop environments.
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       SKILLS
+  ====================================================== -->
+
+  <section class="skills" id="skills">
+
+    <div class="section-inner">
+
+
+      <div class="section-heading reveal">
+
+        <div class="eyebrow">
+          Expertise
+        </div>
+
+        <h2>
+          Technical Skills
+        </h2>
+
+        <p>
+          Core areas of IT support and troubleshooting.
+        </p>
+
+      </div>
+
+
+      <div class="skills-grid">
+
+
+        <div class="skill-card reveal">
+
+          <div class="skill-icon">
+            🖥️
+          </div>
+
+          <h3>
+            Desktop Support
+          </h3>
+
+          <p>
+            Desktop troubleshooting, configuration,
+            maintenance and end-user support.
+          </p>
+
+        </div>
+
+
+        <div class="skill-card reveal">
+
+          <div class="skill-icon">
+            🔧
+          </div>
+
+          <h3>
+            Hardware
+          </h3>
+
+          <p>
+            PC hardware diagnosis, component troubleshooting
+            and system maintenance.
+          </p>
+
+        </div>
+
+
+        <div class="skill-card reveal">
+
+          <div class="skill-icon">
+            🪟
+          </div>
+
+          <h3>
+            Windows
+          </h3>
+
+          <p>
+            Windows installation, configuration, updates
+            and troubleshooting.
+          </p>
+
+        </div>
+
+
+        <div class="skill-card reveal">
+
+          <div class="skill-icon">
+            🌐
+          </div>
+
+          <h3>
+            Networking
+          </h3>
+
+          <p>
+            Basic connectivity troubleshooting and network
+            device support.
+          </p>
+
+        </div>
+
+
+        <div class="skill-card reveal">
+
+          <div class="skill-icon">
+            📧
+          </div>
+
+          <h3>
+            Outlook
+          </h3>
+
+          <p>
+            Email configuration, troubleshooting and
+            user assistance.
+          </p>
+
+        </div>
+
+
+        <div class="skill-card reveal">
+
+          <div class="skill-icon">
+            🖨️
+          </div>
+
+          <h3>
+            Printers
+          </h3>
+
+          <p>
+            Printer installation, configuration and
+            troubleshooting.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       PROJECTS
+  ====================================================== -->
+
+  <section class="projects" id="projects">
+
+    <div class="section-inner">
+
+
+      <div class="section-heading reveal">
+
+        <div class="eyebrow">
+          Portfolio
+        </div>
+
+        <h2>
+          Featured Projects
+        </h2>
+
+        <p>
+          Selected work and practical projects.
+        </p>
+
+      </div>
+
+
+      <div class="project-grid">
+
+
+        <div class="project-card reveal">
+
+          <div class="project-visual">
+            🧮
+          </div>
+
+
+          <div class="project-content">
+
+            <span class="project-label">
+              Web Project
+            </span>
+
+            <h3>
+              Web Calculator
+            </h3>
+
+            <p>
+              A browser-based calculator built using
+              HTML, CSS and JavaScript.
+            </p>
+
+            <a
+              href="calculator.html"
+              target="_blank"
+              class="project-link"
+            >
+              View Project →
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="project-card reveal">
+
+          <div class="project-visual">
+            💼
+          </div>
+
+
+          <div class="project-content">
+
+            <span class="project-label">
+              Live Project
+            </span>
+
+            <h3>
+              Professional Portfolio
+            </h3>
+
+            <p>
+              Responsive personal portfolio with premium
+              UI, animations and PWA support.
+            </p>
+
+            <a
+              href="#home"
+              class="project-link"
+            >
+              Current Project →
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="project-card reveal">
+
+          <div class="project-visual">
+            ⚙️
+          </div>
+
+
+          <div class="project-content">
+
+            <span class="project-label">
+              IT Project
+            </span>
+
+            <h3>
+              IT Support Toolkit
+            </h3>
+
+            <p>
+              Practical collection of troubleshooting
+              knowledge and technical support resources.
+            </p>
+
+            <a
+              href="#contact"
+              class="project-link"
+            >
+              Discuss Project →
+            </a>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       RESUME
+  ====================================================== -->
+
+  <section class="resume-section">
+
+    <div class="section-inner">
+
+      <div class="resume-card reveal">
+
+        <div class="resume-card-content">
+
+          <div>
+
+            <h2>
+              Looking for an IT Professional?
+            </h2>
+
+            <p>
+              View my resume to learn more about my
+              technical skills, experience and professional
+              background.
+            </p>
+
+          </div>
+
+
+          <a
+            href="resume.pdf"
+            target="_blank"
+            class="btn btn-primary"
+          >
+            📄 Open Resume
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       CONTACT
+  ====================================================== -->
+
+  <section class="contact" id="contact">
+
+    <div class="section-inner">
+
+
+      <div class="section-heading reveal">
+
+        <div class="eyebrow">
+          Get In Touch
+        </div>
+
+        <h2>
+          Let's Connect
+        </h2>
+
+        <p>
+          Have an opportunity, project or technical requirement?
+          Feel free to connect with me.
+        </p>
+
+      </div>
+
+
+      <div class="contact-grid">
+
+
+        <div class="contact-card reveal">
+
+          <div class="contact-icon">
+            💬
+          </div>
+
+          <h3>
+            WhatsApp
+          </h3>
+
+          <p>
+            +91 97521 33011
+          </p>
+
+        </div>
+
+
+        <div class="contact-card reveal">
+
+          <div class="contact-icon">
+            📄
+          </div>
+
+          <h3>
+            Resume
+          </h3>
+
+          <p>
+            <a
+              href="resume.pdf"
+              target="_blank"
+            >
+              View Resume
+            </a>
+          </p>
+
+        </div>
+
+
+        <div class="contact-card reveal">
+
+          <div class="contact-icon">
+            💻
+          </div>
+
+          <h3>
+            GitHub
+          </h3>
+
+          <p>
+            <a
+              href="https://github.com/kuldeep17422"
+              target="_blank"
+              rel="noopener"
+            >
+              github.com/kuldeep17422
+            </a>
+          </p>
+
+        </div>
+
+
+      </div>
+
+
       <a
-        href="resume.pdf"
+        href="https://wa.me/919752133011?text=Hello%20Kuldeep%2C%20I%20visited%20your%20portfolio."
         target="_blank"
-        class="btn btn-primary"
+        rel="noopener"
+        class="whatsapp-big reveal"
       >
-        📄 Open Resume
+        💬 Start a WhatsApp Conversation
       </a>
 
-    </div>
-
-  </div>
-
-</div>
-
-</section>
-
-
-<!-- ========================================================
-     CONTACT
-========================================================= -->
-
-<section class="contact" id="contact">
-
-<div class="section-inner">
-
-
-  <div class="section-heading reveal">
-
-    <div class="eyebrow">
-      Get In Touch
-    </div>
-
-    <h2>
-      Let's Connect
-    </h2>
-
-    <p>
-      Have an opportunity, project or technical requirement?
-      Feel free to connect with me.
-    </p>
-
-  </div>
-
-
-  <div class="contact-grid">
-
-
-    <div class="contact-card reveal">
-
-      <div class="contact-icon">
-        💬
-      </div>
-
-      <h3>
-        WhatsApp
-      </h3>
-
-      <p>
-        +91 97521 33011
-      </p>
 
     </div>
 
-
-    <div class="contact-card reveal">
-
-      <div class="contact-icon">
-        📄
-      </div>
-
-      <h3>
-        Resume
-      </h3>
-
-      <p>
-        <a
-          href="resume.pdf"
-          target="_blank"
-        >
-          View Resume
-        </a>
-      </p>
-
-    </div>
+  </section>
 
 
-    <div class="contact-card reveal">
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
 
-      <div class="contact-icon">
-        💻
-      </div>
+  <footer>
 
-      <h3>
-        GitHub
-      </h3>
+    ©
+    <span id="year"></span>
 
-      <p>
-        <a
-          href="https://github.com/kuldeep17422"
-          target="_blank"
-          rel="noopener"
-        >
-          GitHub Profile
-        </a>
-      </p>
+    <strong>
+      Kuldeep Borana
+    </strong>
 
-    </div>
+    · IT Support Professional
+
+  </footer>
 
 
-  </div>
-
+  <!-- =====================================================
+       FLOATING WHATSAPP
+  ====================================================== -->
 
   <a
     href="https://wa.me/919752133011?text=Hello%20Kuldeep%2C%20I%20visited%20your%20portfolio."
     target="_blank"
     rel="noopener"
-    class="whatsapp-big reveal"
+    class="floating-whatsapp"
+    aria-label="Contact Kuldeep on WhatsApp"
+    title="Chat on WhatsApp"
   >
-    💬 Start a WhatsApp Conversation
+    💬
   </a>
 
 
-</div>
+  <!-- =====================================================
+       BACK TO TOP
+  ====================================================== -->
 
-</section>
-
-
-<!-- ========================================================
-     FOOTER
-========================================================= -->
-
-<footer>
-
-  ©
-  <span id="year"></span>
-
-  <strong>
-    Kuldeep Borana
-  </strong>
-
-  · IT Support Professional
-
-</footer>
+  <button
+    class="top-btn"
+    id="topBtn"
+    aria-label="Back to top"
+  >
+    ↑
+  </button>
 
 
-<!-- ========================================================
-     FLOATING WHATSAPP
-========================================================= -->
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
 
-<a
-  href="https://wa.me/919752133011?text=Hello%20Kuldeep%2C%20I%20visited%20your%20portfolio."
-  target="_blank"
-  rel="noopener"
-  class="floating-whatsapp"
-  title="Chat on WhatsApp"
-  aria-label="Chat on WhatsApp"
->
-  💬
-</a>
+  <script>
 
 
-<!-- ========================================================
-     BACK TO TOP
-========================================================= -->
+    /* =====================================================
+       PAGE LOADER
+    ===================================================== */
 
-<button
-  class="top-btn"
-  id="topBtn"
-  aria-label="Back to top"
->
-  ↑
-</button>
+    window.addEventListener("load", () => {
 
+      setTimeout(() => {
 
-<!-- ========================================================
-     JAVASCRIPT
-========================================================= -->
+        document
+          .getElementById("loader")
+          .classList.add("hide");
 
-<script>
-
-
-/* =========================================================
-   LOADER
-========================================================= */
-
-window.addEventListener("load",()=>{
-
-  setTimeout(()=>{
-
-    document
-      .getElementById("loader")
-      .classList
-      .add("hide");
-
-  },500);
-
-});
-
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-const menuBtn =
-  document.getElementById("menuBtn");
-
-const navLinks =
-  document.getElementById("navLinks");
-
-menuBtn.addEventListener("click",()=>{
-
-  navLinks.classList.toggle("open");
-
-  document.body.classList.toggle(
-    "menu-open"
-  );
-
-  menuBtn.textContent =
-    navLinks.classList.contains("open")
-      ? "✕"
-      : "☰";
-
-});
-
-
-document
-  .querySelectorAll(".nav-links a")
-  .forEach(link=>{
-
-    link.addEventListener("click",()=>{
-
-      navLinks.classList.remove("open");
-
-      document.body.classList.remove(
-        "menu-open"
-      );
-
-      menuBtn.textContent="☰";
+      }, 500);
 
     });
 
-  });
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    const menuBtn =
+      document.getElementById("menuBtn");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+
+      navLinks.classList.toggle("open");
+
+      document.body.classList.toggle(
+        "menu-open"
+      );
+
+      menuBtn.textContent =
+        navLinks.classList.contains("open")
+          ? "✕"
+          : "☰";
+
+    });
 
 
-/* =========================================================
-   HEADER
-========================================================= */
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(link => {
 
-const header =
-  document.getElementById("header");
+        link.addEventListener("click", () => {
 
-window.addEventListener("scroll",()=>{
+          navLinks.classList.remove("open");
 
-  if(window.scrollY>40){
+          document.body.classList.remove(
+            "menu-open"
+          );
 
-    header.classList.add("scrolled");
+          menuBtn.textContent = "☰";
 
-  }else{
+        });
 
-    header.classList.remove("scrolled");
-
-  }
-
-});
+      });
 
 
-/* =========================================================
-   ACTIVE NAVIGATION
-========================================================= */
+    /* =====================================================
+       HEADER
+    ===================================================== */
 
-const sections =
-  document.querySelectorAll(
-    "section[id]"
-  );
+    const header =
+      document.getElementById("header");
 
-const links =
-  document.querySelectorAll(
-    ".nav-links a"
-  );
+    window.addEventListener("scroll", () => {
 
-window.addEventListener("scroll",()=>{
+      if (window.scrollY > 40) {
 
-  let current="";
+        header.classList.add("scrolled");
 
-  sections.forEach(section=>{
+      } else {
 
-    const top =
-      section.offsetTop-180;
+        header.classList.remove("scrolled");
 
-    if(window.scrollY>=top){
+      }
 
-      current =
-        section.getAttribute("id");
-
-    }
-
-  });
+    });
 
 
-  links.forEach(link=>{
+    /* =====================================================
+       ACTIVE NAVIGATION
+    ===================================================== */
 
-    link.classList.remove("active");
+    const sections =
+      document.querySelectorAll(
+        "section[id]"
+      );
 
-    if(
-      link.getAttribute("href")
-      ===
-      "#"+current
-    ){
+    const links =
+      document.querySelectorAll(
+        ".nav-links a"
+      );
 
-      link.classList.add("active");
+    window.addEventListener("scroll", () => {
 
-    }
+      let current = "";
 
-  });
+      sections.forEach(section => {
 
-});
+        const top =
+          section.offsetTop - 180;
+
+        if (window.scrollY >= top) {
+
+          current =
+            section.getAttribute("id");
+
+        }
+
+      });
 
 
-/* =========================================================
-   REVEAL ANIMATION
-========================================================= */
+      links.forEach(link => {
 
-const observer =
-  new IntersectionObserver(
+        link.classList.remove(
+          "active"
+        );
 
-    entries=>{
+        if (
+          link.getAttribute("href")
+          ===
+          "#" + current
+        ) {
 
-      entries.forEach(entry=>{
-
-        if(entry.isIntersecting){
-
-          entry.target
-            .classList
-            .add("show");
-
-          observer.unobserve(
-            entry.target
+          link.classList.add(
+            "active"
           );
 
         }
 
       });
 
-    },
-
-    {
-      threshold:.10
-    }
-
-  );
+    });
 
 
-document
-  .querySelectorAll(".reveal")
-  .forEach(element=>{
+    /* =====================================================
+       REVEAL ANIMATION
+    ===================================================== */
 
-    observer.observe(element);
+    const observer =
+      new IntersectionObserver(
 
-  });
+        entries => {
 
+          entries.forEach(entry => {
 
-/* =========================================================
-   BACK TO TOP
-========================================================= */
+            if (
+              entry.isIntersecting
+            ) {
 
-const topBtn =
-  document.getElementById("topBtn");
+              entry.target
+                .classList
+                .add("show");
 
-window.addEventListener("scroll",()=>{
+              observer.unobserve(
+                entry.target
+              );
 
-  if(window.scrollY>550){
+            }
 
-    topBtn.classList.add("show");
+          });
 
-  }else{
+        },
 
-    topBtn.classList.remove("show");
+        {
+          threshold: 0.10
+        }
 
-  }
-
-});
-
-
-topBtn.addEventListener("click",()=>{
-
-  window.scrollTo({
-
-    top:0,
-
-    behavior:"smooth"
-
-  });
-
-});
+      );
 
 
-/* =========================================================
-   CURRENT YEAR
-========================================================= */
+    document
+      .querySelectorAll(".reveal")
+      .forEach(element => {
 
-document.getElementById("year")
-  .textContent =
-  new Date().getFullYear();
+        observer.observe(element);
+
+      });
 
 
-/* =========================================================
-   PWA SERVICE WORKER
-========================================================= */
+    /* =====================================================
+       BACK TO TOP
+    ===================================================== */
 
-if("serviceWorker" in navigator){
+    const topBtn =
+      document.getElementById("topBtn");
 
-  window.addEventListener(
-    "load",
-    ()=>{
+    window.addEventListener("scroll", () => {
 
-      navigator.serviceWorker
-        .register(
-          "./service-worker.js"
-        )
-        .then(()=>{
+      if (window.scrollY > 550) {
 
-          console.log(
-            "PWA service worker registered."
-          );
+        topBtn.classList.add("show");
 
-        })
-        .catch(error=>{
+      } else {
 
-          console.log(
-            "Service worker registration failed:",
-            error
-          );
+        topBtn.classList.remove("show");
+
+      }
+
+    });
+
+
+    topBtn.addEventListener(
+      "click",
+      () => {
+
+        window.scrollTo({
+
+          top: 0,
+
+          behavior: "smooth"
 
         });
 
+      }
+    );
+
+
+    /* =====================================================
+       YEAR
+    ===================================================== */
+
+    document.getElementById(
+      "year"
+    ).textContent =
+      new Date().getFullYear();
+
+
+    /* =====================================================
+       SERVICE WORKER / PWA
+    ===================================================== */
+
+    if (
+      "serviceWorker"
+      in navigator
+    ) {
+
+      window.addEventListener(
+        "load",
+        () => {
+
+          navigator.serviceWorker
+            .register(
+              "./service-worker.js"
+            )
+            .then(() => {
+
+              console.log(
+                "PWA service worker registered."
+              );
+
+            })
+            .catch(error => {
+
+              console.log(
+                "Service worker registration failed:",
+                error
+              );
+
+            });
+
+        }
+      );
+
     }
-  );
 
-}
-
-</script>
+  </script>
 
 </body>
 </html>
