@@ -1,4 +1,3 @@
-```javascript
 const CACHE_NAME = "kuldeep-portfolio-v2";
 
 const FILES_TO_CACHE = [
@@ -53,4 +52,3 @@ self.addEventListener("fetch", event => {
   );
 
 });
-```
