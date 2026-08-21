@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,8 +51,7 @@ html{
 }
 
 body{
-  font-family:
-  Inter,Segoe UI,Roboto,Arial,sans-serif;
+  font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;
   background:var(--bg);
   color:var(--text);
   overflow-x:hidden;
@@ -700,64 +699,155 @@ nav{
   transition:1.4s ease;
 }
 
-/* PROJECTS */
+/* =========================
+   PREMIUM PROJECTS
+========================= */
 
 .project-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:20px;
+  gap:24px;
 }
 
 .project{
+  position:relative;
   overflow:hidden;
   border:1px solid var(--line);
-  border-radius:25px;
-  background:var(--card);
-  transition:.4s;
+  border-radius:26px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.075),
+      rgba(255,255,255,.025)
+    );
+  backdrop-filter:blur(18px);
+  transition:.4s ease;
 }
 
 .project:hover{
   transform:translateY(-10px);
-  box-shadow:0 30px 70px rgba(0,0,0,.2);
+  border-color:rgba(117,103,255,.45);
+  box-shadow:
+    0 25px 70px rgba(0,0,0,.28),
+    0 0 35px rgba(117,103,255,.08);
 }
 
 .project-top{
-  height:180px;
+  height:190px;
+  position:relative;
   display:grid;
   place-items:center;
-  font-size:4rem;
+  font-size:4.5rem;
+  overflow:hidden;
   background:
-    radial-gradient(circle at 30% 30%,#9b91ff,transparent 35%),
-    linear-gradient(135deg,#211d55,#091b31);
+    radial-gradient(
+      circle at 30% 20%,
+      rgba(117,103,255,.5),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(34,211,238,.25),
+      transparent 35%
+    ),
+    linear-gradient(135deg,#111936,#090e1d);
+}
+
+.project-top::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.08),
+    transparent
+  );
+  transform:translateX(-100%);
+  transition:.7s;
+}
+
+.project:hover .project-top::after{
+  transform:translateX(100%);
 }
 
 .project-body{
-  padding:25px;
+  padding:28px;
 }
 
 .project-type{
+  display:inline-block;
+  margin-bottom:8px;
   color:var(--secondary);
   font-size:.65rem;
-  letter-spacing:1.5px;
+  letter-spacing:1.8px;
   text-transform:uppercase;
   font-weight:950;
 }
 
 .project h3{
-  margin:8px 0;
+  font-size:1.35rem;
+  margin:4px 0 12px;
 }
 
 .project p{
   color:var(--muted);
-  font-size:.82rem;
-  line-height:1.7;
-  margin-bottom:17px;
+  font-size:.83rem;
+  line-height:1.8;
+  margin-bottom:18px;
 }
 
-.project-link{
-  color:#a59cff;
-  font-size:.78rem;
+.project-tech{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-bottom:22px;
+}
+
+.project-tech span{
+  padding:6px 9px;
+  border-radius:8px;
+  background:var(--card2);
+  border:1px solid var(--line);
+  color:var(--muted);
+  font-size:.62rem;
+  font-weight:850;
+}
+
+.project-actions{
+  display:flex;
+  gap:9px;
+}
+
+.project-actions a{
+  flex:1;
+  min-height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:11px;
+  font-size:.72rem;
   font-weight:900;
+  transition:.25s;
+}
+
+.project-live{
+  color:white;
+  background:linear-gradient(
+    135deg,
+    var(--primary),
+    #9b5cff
+  );
+}
+
+.project-code{
+  border:1px solid var(--line);
+  background:var(--card2);
+  color:var(--text);
+}
+
+.project-actions a:hover{
+  transform:translateY(-3px);
 }
 
 /* CERTIFICATIONS */
@@ -1165,7 +1255,6 @@ footer{
 </nav>
 </header>
 
-
 <!-- HERO -->
 <section class="hero" id="home">
 <div class="container hero-grid">
@@ -1242,7 +1331,6 @@ footer{
 
   </div>
 
-
   <div class="profile-wrap reveal">
 
     <div class="profile-card">
@@ -1270,7 +1358,6 @@ footer{
 
 </div>
 </section>
-
 
 <!-- ABOUT -->
 <section id="about">
@@ -1310,7 +1397,6 @@ footer{
       </p>
 
     </div>
-
 
     <div class="about-cards reveal">
 
@@ -1354,7 +1440,6 @@ footer{
 </div>
 </section>
 
-
 <!-- EXPERIENCE -->
 <section id="experience">
 <div class="container">
@@ -1395,7 +1480,6 @@ footer{
 
     </div>
 
-
     <div class="timeline-item reveal">
 
       <div class="timeline-dot"></div>
@@ -1423,7 +1507,6 @@ footer{
   </div>
 </div>
 </section>
-
 
 <!-- SKILLS -->
 <section id="skills">
@@ -1503,8 +1586,7 @@ footer{
 </div>
 </section>
 
-
-<!-- PROJECTS -->
+<!-- PREMIUM PROJECTS -->
 <section id="projects">
 <div class="container">
 
@@ -1512,95 +1594,161 @@ footer{
     <div class="eyebrow">Featured Work</div>
     <h2>Projects</h2>
     <p>
-      Selected practical projects and development work.
+      Practical projects built with modern web technologies.
     </p>
   </div>
 
   <div class="project-grid">
 
+    <!-- CALCULATOR -->
     <div class="project reveal">
 
-      <div class="project-top">🧮</div>
+      <div class="project-top">
+        🧮
+      </div>
 
       <div class="project-body">
 
         <span class="project-type">
-          Web Project
+          Web Application
         </span>
 
         <h3>Smart Calculator</h3>
 
         <p>
-          Browser-based calculator project created with
-          HTML, CSS and JavaScript.
+          Responsive browser-based calculator with
+          arithmetic operations, percentage, keyboard
+          support, backspace and error handling.
         </p>
 
-        <a class="project-link"
-           href="calculator.html"
-           target="_blank">
-          View Project →
-        </a>
+        <div class="project-tech">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript</span>
+          <span>Responsive</span>
+        </div>
+
+        <div class="project-actions">
+
+          <a
+            href="calculator.html"
+            target="_blank"
+            class="project-live">
+            🚀 Live Demo
+          </a>
+
+          <a
+            href="https://github.com/kuldeep17422/my-first-project/blob/main/calculator.html"
+            target="_blank"
+            class="project-code">
+            💻 Code
+          </a>
+
+        </div>
 
       </div>
-
     </div>
 
-
+    <!-- PORTFOLIO -->
     <div class="project reveal">
 
-      <div class="project-top">💼</div>
+      <div class="project-top">
+        💼
+      </div>
 
       <div class="project-body">
 
         <span class="project-type">
-          Live Project
+          Personal Website
         </span>
 
         <h3>Professional Portfolio</h3>
 
         <p>
-          Responsive professional portfolio with
-          animations, contact integration and PWA support.
+          Modern responsive portfolio with animations,
+          dark and light themes, resume integration,
+          WhatsApp contact and PWA support.
         </p>
 
-        <a class="project-link" href="#home">
-          Current Project →
-        </a>
+        <div class="project-tech">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript</span>
+          <span>PWA</span>
+        </div>
+
+        <div class="project-actions">
+
+          <a
+            href="#home"
+            class="project-live">
+            🚀 Live Demo
+          </a>
+
+          <a
+            href="https://github.com/kuldeep17422"
+            target="_blank"
+            class="project-code">
+            💻 GitHub
+          </a>
+
+        </div>
 
       </div>
-
     </div>
 
-
+    <!-- ADCOM -->
     <div class="project reveal">
 
-      <div class="project-top">⚙️</div>
+      <div class="project-top">
+        📱
+      </div>
 
       <div class="project-body">
 
         <span class="project-type">
-          IT Project
+          Application Project
         </span>
 
-        <h3>IT Support Toolkit</h3>
+        <h3>ADCOM Computer Technology</h3>
 
         <p>
-          Practical IT support resources focused on
-          troubleshooting and technical assistance.
+          Computer institute management application concept
+          covering attendance, fees, tasks, authentication,
+          diploma information and exam schedules.
         </p>
 
-        <a class="project-link" href="#contact">
-          Discuss Project →
-        </a>
+        <div class="project-tech">
+          <span>Android</span>
+          <span>Authentication</span>
+          <span>Attendance</span>
+          <span>Management</span>
+        </div>
+
+        <div class="project-actions">
+
+          <a
+            href="https://github.com/kuldeep17422"
+            target="_blank"
+            class="project-live">
+            🚀 Project
+          </a>
+
+          <a
+            href="https://github.com/kuldeep17422"
+            target="_blank"
+            class="project-code">
+            💻 GitHub
+          </a>
+
+        </div>
 
       </div>
-
     </div>
 
   </div>
 </div>
 </section>
-
 
 <!-- CERTIFICATIONS -->
 <section id="certifications">
@@ -1635,7 +1783,6 @@ footer{
 
     </div>
 
-
     <div class="cert reveal">
 
       <div class="cert-icon">💻</div>
@@ -1654,7 +1801,6 @@ footer{
       </span>
 
     </div>
-
 
     <div class="cert reveal">
 
@@ -1678,7 +1824,6 @@ footer{
   </div>
 </div>
 </section>
-
 
 <!-- RESUME -->
 <section>
@@ -1705,7 +1850,6 @@ footer{
 
 </div>
 </section>
-
 
 <!-- CONTACT -->
 <section id="contact">
@@ -1760,13 +1904,11 @@ footer{
 </div>
 </section>
 
-
 <footer>
   © <span id="year"></span>
   <strong>Kuldeep Borana</strong>
   · IT Support Professional
 </footer>
-
 
 <a class="floating"
    href="https://wa.me/919752133011"
@@ -1776,7 +1918,6 @@ footer{
 </a>
 
 <button class="top" id="topBtn">↑</button>
-
 
 <script>
 
@@ -1983,4 +2124,4 @@ if("serviceWorker" in navigator){
 
 </body>
 </html>
-
+```
