@@ -1,10 +1,10 @@
-const CACHE_NAME = "kuldeep-portfolio-v2";
+const CACHE_NAME = "kuldeep-portfolio-v3";
 
 const FILES_TO_CACHE = [
   "./",
   "./index.html",
-  "./manifest.json",
-  "./developer.png",
+  "./manifest.json?v=3",
+  "./developer.png?v=3",
   "./resume.pdf"
 ];
 
@@ -46,9 +46,9 @@ self.addEventListener("fetch", event => {
 
         return response;
       })
-      .catch(() =>
-        caches.match(event.request)
-      )
+      .catch(() => {
+        return caches.match(event.request);
+      })
   );
 
 });
