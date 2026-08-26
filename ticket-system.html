@@ -1,1 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>IT Support Ticket System | Kuldeep Borana</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background:#07111f;
+  color:#fff;
+  min-height:100vh;
+}
+
+header{
+  background:rgba(10,18,32,.95);
+  border-bottom:1px solid rgba(255,255,255,.1);
+  padding:18px 5%;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+.nav{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:bold;
+}
+
+.logo span{
+  color:#22d3ee;
+}
+
+.back{
+  color:#fff;
+  text-decoration:none;
+  padding:10px 16px;
+  border-radius:10px;
+  background:#7567ff;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:45px 5%;
+}
+
+.hero{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.hero h1{
+  font-size:clamp(2rem,5vw,3.5rem);
+  margin-bottom:12px;
+}
+
+.hero p{
+  color:#9ba7c0;
+  line-height:1.7;
+}
+
+.dashboard{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  margin-bottom:30px;
+}
+
+.stat{
+  padding:22px;
+  border-radius:18px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.stat small{
+  color:#9ba7c0;
+}
+
+.stat h2{
+  margin-top:8px;
+  font-size:30px;
+}
+
+.layout{
+  display:grid;
+  grid-template-columns:380px 1fr;
+  gap:22px;
+}
+
+.card{
+  background:rgba(255,255,255,.055);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:22px;
+  padding:25px;
+}
+
+.card h2{
+  margin-bottom:20px;
+}
+
+.form-group{
+  margin-bottom:15px;
+}
+
+label{
+  display:block;
+  color:#c5cede;
+  font-size:13px;
+  margin-bottom:7px;
+}
+
+input,
+select,
+textarea{
+  width:100%;
+  border:1px solid rgba(255,255,255,.12);
+  background:#0c1728;
+  color:#fff;
+  padding:12px;
+  border-radius:10px;
+  outline:none;
+}
+
+textarea{
+  min-height:100px;
+  resize:vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  border-color:#7567ff;
+}
+
+.btn{
+  width:100%;
+  border:none;
+  padding:13px;
+  border-radius:11px;
+  color:#fff;
+  background:linear-gradient(135deg,#7567ff,#22d3ee);
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.btn:hover{
+  opacity:.9;
+}
+
+.tools{
+  display:flex;
+  gap:10px;
+  margin-bottom:18px;
+}
+
+.tools input{
+  flex:1;
+}
+
+.clear-btn{
+  border:none;
+  padding:0 15px;
+  border-radius:10px;
+  background:#ef4444;
+  color:#fff;
+  cursor:pointer;
+}
+
+.ticket{
+  background:#0c1728;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
+  padding:18px;
+  margin-bottom:12px;
+}
+
+.ticket-head{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.ticket h3{
+  font-size:17px;
+}
+
+.ticket p{
+  color:#9ba7c0;
+  font-size:13px;
+  line-height:1.6;
+  margin:7px 0;
+}
+
+.badges{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+  margin-top:12px;
+}
+
+.badge{
+  padding:5px 9px;
+  border-radius:7px;
+  font-size:11px;
+  font-weight:bold;
+}
+
+.high{
+  background:#7f1d1d;
+  color:#fecaca;
+}
+
+.medium{
+  background:#78350f;
+  color:#fde68a;
+}
+
+.low{
+  background:#14532d;
+  color:#bbf7d0;
+}
+
+.open{
+  background:#1e3a8a;
+  color:#bfdbfe;
+}
+
+.progress-status{
+  background:#4c1d95;
+  color:#ddd6fe;
+}
+
+.resolved{
+  background:#14532d;
+  color:#bbf7d0;
+}
+
+.ticket-actions{
+  display:flex;
+  gap:8px;
+  margin-top:15px;
+}
+
+.ticket-actions button{
+  border:none;
+  padding:8px 12px;
+  border-radius:8px;
+  color:#fff;
+  cursor:pointer;
+  font-size:12px;
+}
+
+.next{
+  background:#2563eb;
+}
+
+.delete{
+  background:#dc2626;
+}
+
+.empty{
+  text-align:center;
+  color:#7f8ba3;
+  padding:40px 10px;
+}
+
+.footer{
+  text-align:center;
+  color:#718096;
+  margin-top:40px;
+  font-size:13px;
+}
+
+@media(max-width:900px){
+
+  .dashboard{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .layout{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:550px){
+
+  .dashboard{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .container{
+    padding:30px 4%;
+  }
+
+  .ticket-head{
+    flex-direction:column;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">
+      KB<span> IT Support</span>
+    </div>
+
+    <a href="index.html" class="back">
+      ← Portfolio
+    </a>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="hero">
+    <h1>🎫 IT Support Ticket System</h1>
+    <p>
+      A practical IT support dashboard for creating,
+      tracking and managing technical support tickets.
+    </p>
+  </div>
+
+  <div class="dashboard">
+
+    <div class="stat">
+      <small>Total Tickets</small>
+      <h2 id="total">0</h2>
+    </div>
+
+    <div class="stat">
+      <small>Open</small>
+      <h2 id="open">0</h2>
+    </div>
+
+    <div class="stat">
+      <small>In Progress</small>
+      <h2 id="progress">0</h2>
+    </div>
+
+    <div class="stat">
+      <small>Resolved</small>
+      <h2 id="resolved">0</h2>
+    </div>
+
+  </div>
+
+  <div class="layout">
+
+    <div class="card">
+
+      <h2>Create Ticket</h2>
+
+      <form id="ticketForm">
+
+        <div class="form-group">
+          <label>Employee Name</label>
+          <input
+            type="text"
+            id="employee"
+            placeholder="Enter employee name"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label>Issue Title</label>
+          <input
+            type="text"
+            id="title"
+            placeholder="Example: Outlook not opening"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label>Category</label>
+
+          <select id="category">
+
+            <option>Hardware</option>
+            <option>Software</option>
+            <option>Network</option>
+            <option>Outlook</option>
+            <option>Printer</option>
+            <option>Windows</option>
+
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Priority</label>
+
+          <select id="priority">
+
+            <option value="High">High</option>
+            <option value="Medium" selected>Medium</option>
+            <option value="Low">Low</option>
+
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Problem Description</label>
+
+          <textarea
+            id="description"
+            placeholder="Describe the technical problem..."
+            required
+          ></textarea>
+
+        </div>
+
+        <button class="btn" type="submit">
+          + Create Support Ticket
+        </button>
+
+      </form>
+
+    </div>
+
+    <div class="card">
+
+      <h2>Support Tickets</h2>
+
+      <div class="tools">
+
+        <input
+          type="text"
+          id="search"
+          placeholder="Search tickets..."
+        >
+
+        <button
+          class="clear-btn"
+          onclick="clearTickets()">
+          Clear
+        </button>
+
+      </div>
+
+      <div id="ticketList"></div>
+
+    </div>
+
+  </div>
+
+  <div class="footer">
+    IT Support Ticket Management System ·
+    Designed by Kuldeep Borana 🚀
+  </div>
+
+</div>
+
+<script>
+
+let tickets =
+JSON.parse(localStorage.getItem("kuldeepTickets")) || [];
+
+
+const form =
+document.getElementById("ticketForm");
+
+const ticketList =
+document.getElementById("ticketList");
+
+const search =
+document.getElementById("search");
+
+
+form.addEventListener("submit", function(e){
+
+  e.preventDefault();
+
+  const ticket = {
+
+    id: Date.now(),
+
+    employee:
+      document.getElementById("employee").value,
+
+    title:
+      document.getElementById("title").value,
+
+    category:
+      document.getElementById("category").value,
+
+    priority:
+      document.getElementById("priority").value,
+
+    description:
+      document.getElementById("description").value,
+
+    status:"Open",
+
+    date:new Date().toLocaleString()
+
+  };
+
+  tickets.unshift(ticket);
+
+  saveTickets();
+
+  form.reset();
+
+  renderTickets();
+
+});
+
+
+function saveTickets(){
+
+  localStorage.setItem(
+    "kuldeepTickets",
+    JSON.stringify(tickets)
+  );
+
+}
+
+
+function renderTickets(){
+
+  const query =
+    search.value.toLowerCase();
+
+  const filtered =
+    tickets.filter(ticket =>
+
+      ticket.employee.toLowerCase().includes(query) ||
+
+      ticket.title.toLowerCase().includes(query) ||
+
+      ticket.category.toLowerCase().includes(query)
+
+    );
+
+  ticketList.innerHTML = "";
+
+  if(filtered.length === 0){
+
+    ticketList.innerHTML =
+      `<div class="empty">
+        No support tickets found.
+      </div>`;
+
+  }
+
+  filtered.forEach(ticket => {
+
+    const priorityClass =
+      ticket.priority.toLowerCase();
+
+    let statusClass =
+      ticket.status === "In Progress"
+      ? "progress-status"
+      : ticket.status.toLowerCase();
+
+    const div =
+      document.createElement("div");
+
+    div.className = "ticket";
+
+    div.innerHTML = `
+
+      <div class="ticket-head">
+
+        <h3>
+          #${ticket.id.toString().slice(-5)}
+          · ${escapeHTML(ticket.title)}
+        </h3>
+
+        <strong>
+          ${escapeHTML(ticket.employee)}
+        </strong>
+
+      </div>
+
+      <p>
+        ${escapeHTML(ticket.description)}
+      </p>
+
+      <p>
+        <strong>Category:</strong>
+        ${escapeHTML(ticket.category)}
+      </p>
+
+      <p>
+        <strong>Created:</strong>
+        ${escapeHTML(ticket.date)}
+      </p>
+
+      <div class="badges">
+
+        <span class="badge ${priorityClass}">
+          ${escapeHTML(ticket.priority)}
+        </span>
+
+        <span class="badge ${statusClass}">
+          ${escapeHTML(ticket.status)}
+        </span>
+
+      </div>
+
+      <div class="ticket-actions">
+
+        <button
+          class="next"
+          onclick="nextStatus(${ticket.id})">
+          Change Status
+        </button>
+
+        <button
+          class="delete"
+          onclick="deleteTicket(${ticket.id})">
+          Delete
+        </button>
+
+      </div>
+
+    `;
+
+    ticketList.appendChild(div);
+
+  });
+
+  updateStats();
+
+}
+
+
+function nextStatus(id){
+
+  const ticket =
+    tickets.find(t => t.id === id);
+
+  if(!ticket) return;
+
+  if(ticket.status === "Open"){
+
+    ticket.status = "In Progress";
+
+  }
+  else if(ticket.status === "In Progress"){
+
+    ticket.status = "Resolved";
+
+  }
+  else{
+
+    ticket.status = "Open";
+
+  }
+
+  saveTickets();
+
+  renderTickets();
+
+}
+
+
+function deleteTicket(id){
+
+  if(!confirm("Delete this ticket?")) return;
+
+  tickets =
+    tickets.filter(t => t.id !== id);
+
+  saveTickets();
+
+  renderTickets();
+
+}
+
+
+function clearTickets(){
+
+  if(tickets.length === 0) return;
+
+  if(!confirm("Delete ALL tickets?")) return;
+
+  tickets = [];
+
+  saveTickets();
+
+  renderTickets();
+
+}
+
+
+function updateStats(){
+
+  document.getElementById("total")
+    .textContent = tickets.length;
+
+  document.getElementById("open")
+    .textContent =
+      tickets.filter(t =>
+        t.status === "Open"
+      ).length;
+
+  document.getElementById("progress")
+    .textContent =
+      tickets.filter(t =>
+        t.status === "In Progress"
+      ).length;
+
+  document.getElementById("resolved")
+    .textContent =
+      tickets.filter(t =>
+        t.status === "Resolved"
+      ).length;
+
+}
+
+
+function escapeHTML(value){
+
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+search.addEventListener(
+  "input",
+  renderTickets
+);
+
+
+renderTickets();
+
+</script>
+
+</body>
+</html>
