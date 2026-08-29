@@ -4,9 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>KB IT Helpdesk | Ticket Management</title>
+<title>KB IT Helpdesk | Ticket Management System</title>
 
 <style>
+:root{
+    --bg:#070b14;
+    --panel:#0e1422;
+    --panel2:#111827;
+    --border:rgba(255,255,255,.09);
+    --text:#f8fafc;
+    --muted:#8d9ab2;
+    --purple:#7c5cff;
+    --cyan:#22d3ee;
+    --blue:#3b82f6;
+    --green:#34d399;
+    --yellow:#fbbf24;
+    --red:#f87171;
+    --shadow:0 20px 60px rgba(0,0,0,.35);
+}
 
 *{
     margin:0;
@@ -15,44 +30,42 @@
     font-family:Inter,Segoe UI,Arial,sans-serif;
 }
 
-:root{
-    --bg:#070b14;
-    --panel:#0e1421;
-    --panel2:#111827;
-    --border:rgba(255,255,255,.08);
-    --text:#f8fafc;
-    --muted:#8491a7;
-    --purple:#7c5cff;
-    --blue:#3b82f6;
-    --cyan:#22d3ee;
-    --green:#22c55e;
-    --orange:#f59e0b;
-    --red:#ef4444;
-}
-
 body{
     background:
-        radial-gradient(circle at 15% 10%,rgba(124,92,255,.12),transparent 30%),
-        radial-gradient(circle at 90% 20%,rgba(34,211,238,.07),transparent 25%),
+        radial-gradient(circle at 15% 10%,rgba(124,92,255,.14),transparent 30%),
+        radial-gradient(circle at 85% 20%,rgba(34,211,238,.08),transparent 28%),
         var(--bg);
     color:var(--text);
     min-height:100vh;
 }
 
-/* ================= TOPBAR ================= */
+button,input,select,textarea{
+    font:inherit;
+}
 
-.topbar{
-    height:76px;
+button{
+    cursor:pointer;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* HEADER */
+
+.header{
+    height:82px;
     border-bottom:1px solid var(--border);
     background:rgba(7,11,20,.88);
     backdrop-filter:blur(18px);
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:0 30px;
+    padding:0 34px;
     position:sticky;
     top:0;
-    z-index:100;
+    z-index:50;
 }
 
 .brand{
@@ -62,20 +75,19 @@ body{
 }
 
 .logo{
-    width:43px;
-    height:43px;
-    border-radius:13px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:18px;
+    width:48px;
+    height:48px;
+    border-radius:15px;
+    display:grid;
+    place-items:center;
+    font-size:21px;
     font-weight:900;
-    background:linear-gradient(135deg,#7657ff,#20c9e8);
-    box-shadow:0 10px 30px rgba(124,92,255,.3);
+    background:linear-gradient(135deg,#8066ff,#16c9e8);
+    box-shadow:0 10px 30px rgba(124,92,255,.25);
 }
 
 .brand-name{
-    font-size:20px;
+    font-size:21px;
     font-weight:800;
 }
 
@@ -83,616 +95,497 @@ body{
     color:var(--cyan);
 }
 
-.top-actions{
+.header-actions{
     display:flex;
+    gap:10px;
     align-items:center;
-    gap:12px;
-}
-
-.online{
-    display:flex;
-    align-items:center;
-    gap:7px;
-    color:#9eabc0;
-    font-size:13px;
-}
-
-.online-dot{
-    width:8px;
-    height:8px;
-    border-radius:50%;
-    background:#22c55e;
-    box-shadow:0 0 12px #22c55e;
 }
 
 .top-btn{
     border:1px solid var(--border);
     background:#111827;
-    color:white;
-    padding:10px 15px;
-    border-radius:10px;
-    cursor:pointer;
-    text-decoration:none;
+    color:#fff;
+    padding:11px 17px;
+    border-radius:12px;
     font-weight:700;
 }
 
 .top-btn:hover{
-    background:#1a2233;
+    border-color:rgba(124,92,255,.6);
 }
 
-/* ================= APP ================= */
+.portfolio{
+    background:linear-gradient(135deg,#7558ff,#9b5cff);
+    border:none;
+}
+
+/* LAYOUT */
 
 .app{
-    display:flex;
-    min-height:calc(100vh - 76px);
+    display:grid;
+    grid-template-columns:245px 1fr;
+    min-height:calc(100vh - 82px);
 }
 
-/* ================= SIDEBAR ================= */
-
 .sidebar{
-    width:245px;
     border-right:1px solid var(--border);
-    background:rgba(9,14,25,.82);
+    background:rgba(8,12,23,.7);
     padding:25px 16px;
-    flex-shrink:0;
 }
 
 .side-title{
-    color:#65728a;
     font-size:11px;
-    font-weight:800;
     letter-spacing:2px;
-    padding:0 12px;
-    margin-bottom:14px;
+    color:#66748e;
+    font-weight:800;
+    padding:0 13px;
+    margin-bottom:12px;
 }
 
-.menu{
-    display:flex;
-    flex-direction:column;
-    gap:5px;
-}
-
-.menu button{
+.nav-item{
     width:100%;
-    border:0;
-    background:transparent;
-    color:#91a0b8;
-    padding:13px 14px;
-    border-radius:12px;
-    text-align:left;
-    cursor:pointer;
     display:flex;
     align-items:center;
-    gap:12px;
-    font-size:14px;
+    gap:13px;
+    border:1px solid transparent;
+    background:transparent;
+    color:#9ca9c0;
+    padding:13px 14px;
+    border-radius:13px;
+    margin-bottom:5px;
+    text-align:left;
     font-weight:700;
 }
 
-.menu button:hover{
-    background:#131b2b;
-    color:white;
+.nav-item:hover,
+.nav-item.active{
+    background:#171c2b;
+    color:#fff;
+    border-color:var(--border);
 }
 
-.menu button.active{
-    background:linear-gradient(
-        90deg,
-        rgba(124,92,255,.2),
-        rgba(124,92,255,.05)
-    );
-    color:white;
-    border:1px solid rgba(124,92,255,.3);
+.nav-item.active{
+    box-shadow:inset 3px 0 0 var(--purple);
 }
 
-.menu-icon{
-    width:27px;
+.nav-icon{
+    width:25px;
     text-align:center;
-    font-size:17px;
 }
 
-.side-info{
+.sidebar-card{
     margin-top:35px;
-    padding:17px;
     border:1px solid var(--border);
-    border-radius:16px;
-    background:linear-gradient(
-        145deg,
-        rgba(124,92,255,.09),
-        rgba(34,211,238,.03)
-    );
+    background:#111625;
+    border-radius:18px;
+    padding:18px;
 }
 
-.side-info small{
+.sidebar-card small{
     color:var(--cyan);
     font-weight:800;
     letter-spacing:1px;
 }
 
-.side-info p{
+.sidebar-card p{
+    color:#8290aa;
+    font-size:13px;
+    line-height:1.7;
     margin-top:9px;
-    color:#8491a7;
-    font-size:12px;
-    line-height:1.6;
 }
 
-/* ================= MAIN ================= */
+/* MAIN */
 
 .main{
-    flex:1;
     padding:38px;
-    min-width:0;
-    max-width:1700px;
+    max-width:1600px;
+    width:100%;
+    margin:auto;
 }
 
-.page-head{
+.hero{
     display:flex;
     justify-content:space-between;
-    align-items:flex-end;
-    gap:20px;
-    margin-bottom:28px;
+    align-items:end;
+    gap:25px;
+    margin-bottom:30px;
 }
 
 .eyebrow{
     color:var(--cyan);
-    font-size:11px;
+    font-size:12px;
     font-weight:900;
     letter-spacing:3px;
-    margin-bottom:9px;
+    margin-bottom:10px;
 }
 
-.page-head h1{
-    font-size:42px;
+.hero h1{
+    font-size:clamp(32px,4vw,58px);
     line-height:1;
-    letter-spacing:-1.5px;
+    letter-spacing:-2px;
 }
 
-.page-head p{
+.hero p{
     color:var(--muted);
-    margin-top:10px;
+    margin-top:13px;
+    font-size:16px;
 }
 
 .create-btn{
     border:0;
-    color:white;
-    font-size:14px;
+    color:#fff;
     font-weight:800;
-    padding:15px 21px;
-    border-radius:12px;
-    cursor:pointer;
-    background:linear-gradient(135deg,#7557ff,#9a55ff);
-    box-shadow:0 12px 30px rgba(124,92,255,.25);
-    transition:.2s;
+    padding:16px 22px;
+    border-radius:14px;
+    background:linear-gradient(135deg,#7457ff,#9c5bff);
+    box-shadow:0 15px 35px rgba(124,92,255,.25);
+    white-space:nowrap;
 }
 
 .create-btn:hover{
     transform:translateY(-2px);
-    box-shadow:0 16px 35px rgba(124,92,255,.4);
 }
 
-/* ================= STATS ================= */
+/* STATS */
 
 .stats{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
+    grid-template-columns:repeat(6,1fr);
+    gap:14px;
     margin-bottom:20px;
 }
 
-.stat-card{
+.stat{
     position:relative;
     overflow:hidden;
+    background:linear-gradient(145deg,#121827,#0d1320);
     border:1px solid var(--border);
-    background:linear-gradient(145deg,#111725,#0c111d);
-    border-radius:18px;
+    border-radius:19px;
     padding:20px;
+    min-height:135px;
 }
 
-.stat-card::after{
+.stat::after{
     content:"";
     position:absolute;
-    width:100px;
-    height:100px;
+    width:90px;
+    height:90px;
     border-radius:50%;
     right:-35px;
-    bottom:-45px;
-    background:rgba(124,92,255,.08);
-}
-
-.stat-top{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.stat-label{
-    color:#94a3b8;
-    font-size:13px;
-    font-weight:700;
+    bottom:-40px;
+    background:rgba(124,92,255,.10);
 }
 
 .stat-icon{
-    width:38px;
-    height:38px;
+    width:37px;
+    height:37px;
     border-radius:11px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#121c32;
+    display:grid;
+    place-items:center;
+    background:#101b31;
+    margin-bottom:14px;
 }
 
-.stat-number{
-    font-size:31px;
+.stat-label{
+    color:#8190aa;
+    font-size:12px;
+    font-weight:700;
+}
+
+.stat-value{
+    font-size:28px;
     font-weight:900;
-    margin-top:13px;
+    margin-top:4px;
 }
 
-.stat-sub{
-    color:#68768d;
-    font-size:11px;
-    margin-top:5px;
+.red{color:var(--red)}
+.green{color:var(--green)}
+.yellow{color:var(--yellow)}
+.cyan{color:var(--cyan)}
+
+/* TOOLBAR */
+
+.toolbar{
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr 1fr auto;
+    gap:10px;
+    margin-bottom:20px;
 }
 
-/* ================= CONTENT GRID ================= */
+.control{
+    height:50px;
+    background:#111725;
+    color:#fff;
+    border:1px solid var(--border);
+    border-radius:13px;
+    padding:0 15px;
+    outline:none;
+}
+
+.control:focus{
+    border-color:var(--purple);
+}
+
+.refresh{
+    width:50px;
+    border:1px solid var(--border);
+    background:#111725;
+    color:#fff;
+    border-radius:13px;
+    font-size:19px;
+}
+
+/* CONTENT */
 
 .content-grid{
     display:grid;
-    grid-template-columns:minmax(0,1fr) 330px;
+    grid-template-columns:minmax(0,1.65fr) minmax(300px,.7fr);
     gap:20px;
 }
 
-/* ================= TICKET AREA ================= */
-
 .panel{
-    background:linear-gradient(145deg,#101622,#0c111c);
+    background:rgba(14,20,34,.88);
     border:1px solid var(--border);
-    border-radius:18px;
+    border-radius:22px;
     overflow:hidden;
+    box-shadow:var(--shadow);
 }
 
 .panel-head{
-    padding:20px 22px;
-    border-bottom:1px solid var(--border);
     display:flex;
     justify-content:space-between;
     align-items:center;
-}
-
-.panel-title{
-    font-size:17px;
-    font-weight:800;
-}
-
-.ticket-count{
-    color:#7e8ba1;
-    font-size:12px;
-}
-
-/* ================= FILTERS ================= */
-
-.filters{
-    padding:16px;
+    padding:21px 24px;
     border-bottom:1px solid var(--border);
-    display:grid;
-    grid-template-columns:1.5fr 1fr 1fr 1fr;
-    gap:9px;
 }
 
-.search-box{
-    position:relative;
+.panel-head h2{
+    font-size:18px;
 }
 
-.search-box span{
-    position:absolute;
-    left:12px;
-    top:11px;
+.panel-head span{
+    color:var(--muted);
+    font-size:13px;
 }
 
-.search-box input,
-.filters select{
-    width:100%;
-    height:42px;
-    border-radius:10px;
-    border:1px solid var(--border);
-    outline:none;
-    background:#0a101b;
-    color:white;
-    padding:0 12px;
+.tickets{
+    padding:15px;
 }
 
-.search-box input{
-    padding-left:38px;
-}
-
-.filters select option{
-    background:#111827;
-}
-
-/* ================= TICKETS ================= */
-
-.ticket-list{
-    padding:16px;
-}
+/* TICKET */
 
 .ticket{
+    background:#0b111e;
     border:1px solid var(--border);
-    background:#0b111d;
-    border-radius:15px;
-    padding:18px;
+    border-radius:17px;
+    padding:20px;
     margin-bottom:12px;
     transition:.2s;
 }
 
 .ticket:hover{
-    border-color:rgba(124,92,255,.35);
+    border-color:rgba(124,92,255,.38);
     transform:translateY(-1px);
 }
 
-.ticket:last-child{
-    margin-bottom:0;
-}
-
-.ticket-row{
+.ticket-top{
     display:flex;
     justify-content:space-between;
-    gap:20px;
+    gap:15px;
 }
 
 .ticket-id{
     color:var(--cyan);
-    font-size:11px;
+    font-size:12px;
     font-weight:900;
     letter-spacing:1px;
 }
 
 .ticket-title{
-    margin-top:6px;
-    font-size:16px;
+    font-size:18px;
     font-weight:800;
+    margin-top:7px;
 }
 
-.ticket-description{
-    margin-top:8px;
-    color:#8795aa;
+.ticket-desc{
+    color:#8e9bb2;
     font-size:13px;
-    line-height:1.5;
+    line-height:1.6;
+    margin-top:8px;
 }
 
 .ticket-user{
     text-align:right;
-    min-width:120px;
-}
-
-.ticket-user strong{
-    display:block;
+    color:#dce3ef;
     font-size:13px;
+    font-weight:700;
 }
 
-.ticket-user span{
-    color:#64748b;
-    font-size:11px;
+.ticket-user small{
+    display:block;
+    color:#64728b;
+    font-weight:500;
+    margin-top:4px;
+}
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-top:15px;
+}
+
+.tag{
+    padding:6px 9px;
+    border-radius:8px;
+    font-size:10px;
+    font-weight:900;
+    background:#172033;
+    color:#b7c3d8;
+}
+
+.tag.high{
+    background:rgba(248,113,113,.12);
+    color:#fca5a5;
+}
+
+.tag.medium{
+    background:rgba(251,191,36,.12);
+    color:#fcd34d;
+}
+
+.tag.low{
+    background:rgba(52,211,153,.12);
+    color:#6ee7b7;
+}
+
+.tag.open{
+    background:rgba(59,130,246,.12);
+    color:#93c5fd;
+}
+
+.tag.progress{
+    background:rgba(124,92,255,.13);
+    color:#c4b5fd;
+}
+
+.tag.resolved{
+    background:rgba(52,211,153,.12);
+    color:#6ee7b7;
+}
+
+.overdue{
+    background:rgba(248,113,113,.13);
+    color:#fca5a5;
+}
+
+.ticket-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    border-top:1px solid rgba(255,255,255,.06);
+    margin-top:17px;
+    padding-top:15px;
 }
 
 .ticket-meta{
     display:flex;
-    align-items:center;
     flex-wrap:wrap;
-    gap:7px;
-    margin-top:14px;
-}
-
-.badge{
-    font-size:10px;
-    font-weight:900;
-    padding:6px 9px;
-    border-radius:7px;
-}
-
-.badge-high{
-    background:rgba(239,68,68,.12);
-    color:#fb7185;
-    border:1px solid rgba(239,68,68,.2);
-}
-
-.badge-medium{
-    background:rgba(245,158,11,.12);
-    color:#fbbf24;
-    border:1px solid rgba(245,158,11,.2);
-}
-
-.badge-low{
-    background:rgba(34,197,94,.12);
-    color:#4ade80;
-    border:1px solid rgba(34,197,94,.2);
-}
-
-.badge-open{
-    background:rgba(59,130,246,.12);
-    color:#60a5fa;
-    border:1px solid rgba(59,130,246,.2);
-}
-
-.badge-progress{
-    background:rgba(139,92,246,.12);
-    color:#a78bfa;
-    border:1px solid rgba(139,92,246,.2);
-}
-
-.badge-resolved{
-    background:rgba(34,197,94,.12);
-    color:#4ade80;
-    border:1px solid rgba(34,197,94,.2);
-}
-
-.category{
-    color:#94a3b8;
+    gap:14px;
+    color:#68768e;
     font-size:11px;
 }
 
-.ticket-footer{
-    margin-top:15px;
-    padding-top:13px;
-    border-top:1px solid rgba(255,255,255,.05);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.ticket-date{
-    color:#64748b;
-    font-size:11px;
-}
-
-.ticket-actions{
+.actions{
     display:flex;
     gap:7px;
 }
 
 .action-btn{
     border:1px solid var(--border);
-    background:#121a29;
-    color:#dbe4f0;
-    padding:7px 10px;
-    border-radius:8px;
-    cursor:pointer;
+    background:#151d2d;
+    color:#fff;
+    padding:8px 11px;
+    border-radius:9px;
     font-size:11px;
     font-weight:700;
 }
 
 .action-btn:hover{
-    background:#1b2639;
+    background:#202a3e;
 }
 
-.action-btn.delete{
-    color:#fb7185;
+.action-btn.primary{
+    background:#6048d8;
+    border-color:#6048d8;
 }
 
-/* ================= RIGHT PANEL ================= */
+.action-btn.danger{
+    color:#fca5a5;
+}
 
-.right-column{
+/* OVERVIEW */
+
+.overview-body{
+    padding:20px;
+}
+
+.overview-item{
     display:flex;
-    flex-direction:column;
-    gap:20px;
-}
-
-.overview{
-    padding:21px;
-}
-
-.overview h3{
-    font-size:16px;
-}
-
-.priority-item{
-    margin-top:20px;
-}
-
-.priority-line{
-    display:flex;
+    align-items:center;
     justify-content:space-between;
-    font-size:12px;
-    margin-bottom:8px;
+    padding:15px 0;
+    border-bottom:1px solid rgba(255,255,255,.06);
 }
 
-.priority-line span:last-child{
-    color:#cbd5e1;
-    font-weight:800;
-}
-
-.progress-bar{
-    width:100%;
-    height:6px;
-    background:#1a2333;
-    border-radius:20px;
-    overflow:hidden;
-}
-
-.progress-fill{
-    height:100%;
-    border-radius:20px;
-}
-
-.high-fill{
-    background:#ef4444;
-}
-
-.medium-fill{
-    background:#f59e0b;
-}
-
-.low-fill{
-    background:#22c55e;
-}
-
-.activity{
-    padding:21px;
-}
-
-.activity-item{
-    display:flex;
-    gap:12px;
-    padding:14px 0;
-    border-bottom:1px solid rgba(255,255,255,.05);
-}
-
-.activity-item:last-child{
+.overview-item:last-child{
     border-bottom:0;
 }
 
-.activity-icon{
-    width:30px;
-    height:30px;
-    flex-shrink:0;
-    border-radius:9px;
+.overview-left{
     display:flex;
     align-items:center;
-    justify-content:center;
-    background:#141d2d;
+    gap:12px;
 }
 
-.activity-text{
-    font-size:12px;
-    color:#b0bccd;
-    line-height:1.5;
+.overview-icon{
+    width:38px;
+    height:38px;
+    border-radius:12px;
+    display:grid;
+    place-items:center;
+    background:#151d2e;
 }
 
-.activity-text strong{
-    color:white;
+.overview-name{
+    font-weight:800;
+    font-size:13px;
 }
 
-.activity-time{
-    color:#64748b;
-    font-size:10px;
+.overview-sub{
+    color:#68768e;
+    font-size:11px;
+    margin-top:3px;
 }
 
-/* ================= EMPTY ================= */
-
-.empty{
-    text-align:center;
-    padding:55px 20px;
-    color:#65738a;
+.overview-count{
+    font-size:20px;
+    font-weight:900;
 }
 
-.empty-icon{
-    font-size:40px;
-    margin-bottom:12px;
-}
-
-.empty h3{
-    color:#a9b4c5;
-    margin-bottom:5px;
-}
-
-/* ================= MODAL ================= */
+/* MODAL */
 
 .modal{
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.7);
-    backdrop-filter:blur(8px);
+    background:rgba(0,0,0,.72);
+    backdrop-filter:blur(7px);
     display:none;
     align-items:center;
     justify-content:center;
     padding:20px;
-    z-index:500;
+    z-index:100;
 }
 
 .modal.show{
@@ -700,50 +593,53 @@ body{
 }
 
 .modal-box{
-    width:100%;
-    max-width:620px;
-    background:#0e1522;
-    border:1px solid rgba(255,255,255,.1);
-    border-radius:20px;
-    box-shadow:0 30px 100px rgba(0,0,0,.6);
-    overflow:hidden;
+    width:min(850px,100%);
+    max-height:92vh;
+    overflow:auto;
+    background:#0d1422;
+    border:1px solid var(--border);
+    border-radius:23px;
+    box-shadow:0 35px 100px rgba(0,0,0,.65);
 }
 
 .modal-head{
-    padding:20px 23px;
-    border-bottom:1px solid var(--border);
     display:flex;
-    align-items:center;
     justify-content:space-between;
+    align-items:center;
+    padding:21px 25px;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    background:#0d1422;
+    z-index:2;
 }
 
 .modal-head h2{
-    font-size:18px;
+    font-size:20px;
 }
 
 .close{
-    width:35px;
-    height:35px;
-    border:0;
-    border-radius:9px;
-    background:#182132;
+    width:38px;
+    height:38px;
+    border-radius:10px;
+    border:1px solid var(--border);
+    background:#161e2e;
     color:#fff;
-    cursor:pointer;
-    font-size:18px;
+    font-size:20px;
 }
 
 .form{
-    padding:23px;
+    padding:25px;
 }
 
 .form-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:15px;
+    gap:16px;
 }
 
 .form-group{
-    margin-bottom:15px;
+    margin-bottom:16px;
 }
 
 .form-group.full{
@@ -752,165 +648,293 @@ body{
 
 .form-group label{
     display:block;
-    color:#9aa7ba;
+    color:#a6b2c7;
     font-size:12px;
     font-weight:700;
     margin-bottom:7px;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea{
+.form-control{
     width:100%;
+    background:#111a2a;
     border:1px solid var(--border);
-    background:#080e18;
-    color:white;
-    border-radius:10px;
+    color:#fff;
+    border-radius:11px;
     padding:12px;
     outline:none;
 }
 
-.form-group textarea{
-    resize:vertical;
-    min-height:105px;
+.form-control:focus{
+    border-color:var(--purple);
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus{
-    border-color:var(--purple);
+textarea.form-control{
+    min-height:110px;
+    resize:vertical;
 }
 
 .modal-footer{
     display:flex;
     justify-content:flex-end;
-    gap:9px;
-    padding-top:5px;
+    gap:10px;
+    padding-top:10px;
 }
 
 .cancel-btn{
     border:1px solid var(--border);
-    background:#151e2d;
-    color:white;
-    padding:11px 17px;
-    border-radius:9px;
-    cursor:pointer;
+    background:#151d2c;
+    color:#fff;
+    padding:12px 18px;
+    border-radius:11px;
 }
 
 .submit-btn{
     border:0;
-    background:linear-gradient(135deg,#7657ff,#9a55ff);
-    color:white;
-    padding:11px 19px;
-    border-radius:9px;
+    background:linear-gradient(135deg,#7357ff,#9b59ff);
+    color:#fff;
     font-weight:800;
-    cursor:pointer;
+    padding:12px 20px;
+    border-radius:11px;
 }
 
-/* ================= TOAST ================= */
+/* DETAILS */
 
-.toast{
-    position:fixed;
-    right:25px;
-    bottom:25px;
+.detail-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    padding:25px;
+}
+
+.detail{
     background:#111a29;
-    border:1px solid rgba(34,197,94,.25);
-    padding:13px 17px;
-    border-radius:11px;
-    color:#dfffea;
-    box-shadow:0 15px 40px rgba(0,0,0,.4);
-    transform:translateY(100px);
-    opacity:0;
-    pointer-events:none;
-    transition:.3s;
-    z-index:800;
+    border:1px solid var(--border);
+    border-radius:13px;
+    padding:14px;
+}
+
+.detail small{
+    display:block;
+    color:#69778e;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:5px;
+}
+
+.detail strong{
     font-size:13px;
 }
 
-.toast.show{
-    transform:translateY(0);
-    opacity:1;
+.detail.full{
+    grid-column:1/-1;
 }
 
-/* ================= MOBILE ================= */
+.detail-description{
+    color:#a8b4c8;
+    line-height:1.7;
+    font-size:13px;
+}
 
-@media(max-width:1100px){
+/* TIMELINE */
+
+.timeline{
+    padding:0 25px 25px;
+}
+
+.timeline h3{
+    font-size:15px;
+    margin-bottom:18px;
+}
+
+.timeline-item{
+    position:relative;
+    padding-left:27px;
+    padding-bottom:18px;
+    border-left:1px solid #29334a;
+    margin-left:6px;
+}
+
+.timeline-item::before{
+    content:"";
+    position:absolute;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:var(--purple);
+    left:-5px;
+    top:2px;
+}
+
+.timeline-item strong{
+    font-size:12px;
+}
+
+.timeline-item p{
+    color:#75839b;
+    font-size:11px;
+    margin-top:4px;
+}
+
+.comments{
+    padding:0 25px 25px;
+}
+
+.comment{
+    background:#111a29;
+    border:1px solid var(--border);
+    border-radius:13px;
+    padding:13px;
+    margin-bottom:9px;
+}
+
+.comment strong{
+    font-size:12px;
+}
+
+.comment small{
+    color:#63728b;
+    margin-left:7px;
+}
+
+.comment p{
+    color:#99a7bc;
+    font-size:12px;
+    line-height:1.6;
+    margin-top:6px;
+}
+
+.comment-box{
+    display:flex;
+    gap:8px;
+    margin-top:12px;
+}
+
+.comment-box input{
+    flex:1;
+}
+
+/* TOAST */
+
+.toast-container{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    z-index:200;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.toast{
+    min-width:280px;
+    max-width:380px;
+    background:#111a29;
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+    border-radius:13px;
+    padding:14px 16px;
+    animation:slideIn .25s ease;
+}
+
+.toast strong{
+    display:block;
+    font-size:13px;
+}
+
+.toast span{
+    color:#8290a8;
+    font-size:11px;
+}
+
+@keyframes slideIn{
+    from{
+        opacity:0;
+        transform:translateX(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+/* EMPTY */
+
+.empty{
+    padding:55px 20px;
+    text-align:center;
+    color:#68768d;
+}
+
+.empty-icon{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1250px){
+    .stats{
+        grid-template-columns:repeat(3,1fr);
+    }
 
     .content-grid{
         grid-template-columns:1fr;
     }
-
-    .right-column{
-        display:grid;
-        grid-template-columns:1fr 1fr;
-    }
-
 }
 
-@media(max-width:850px){
+@media(max-width:900px){
+    .app{
+        grid-template-columns:1fr;
+    }
 
     .sidebar{
-        width:75px;
-        padding:20px 10px;
-    }
-
-    .side-title,
-    .menu button span:not(.menu-icon),
-    .side-info{
         display:none;
-    }
-
-    .menu button{
-        justify-content:center;
     }
 
     .main{
         padding:25px 18px;
     }
 
-    .stats{
+    .toolbar{
         grid-template-columns:1fr 1fr;
     }
 
-    .filters{
-        grid-template-columns:1fr 1fr;
+    .toolbar input{
+        grid-column:1/-1;
     }
 
+    .refresh{
+        width:auto;
+    }
 }
 
-@media(max-width:600px){
-
-    .topbar{
+@media(max-width:650px){
+    .header{
         padding:0 15px;
+        height:70px;
     }
 
     .brand-name{
-        display:none;
+        font-size:17px;
     }
 
-    .online{
-        display:none;
+    .logo{
+        width:42px;
+        height:42px;
     }
 
     .top-btn{
         padding:9px 11px;
     }
 
-    .sidebar{
+    .top-btn:first-child{
         display:none;
     }
 
-    .main{
-        padding:22px 13px;
-    }
-
-    .page-head{
-        align-items:flex-start;
+    .hero{
         flex-direction:column;
-    }
-
-    .page-head h1{
-        font-size:32px;
+        align-items:flex-start;
     }
 
     .create-btn{
@@ -921,86 +945,79 @@ body{
         grid-template-columns:1fr 1fr;
     }
 
-    .stat-card{
-        padding:15px;
-    }
-
-    .stat-number{
-        font-size:25px;
-    }
-
-    .filters{
+    .toolbar{
         grid-template-columns:1fr;
     }
 
-    .right-column{
-        grid-template-columns:1fr;
+    .toolbar input{
+        grid-column:auto;
     }
 
-    .ticket-row{
+    .ticket-top,
+    .ticket-bottom{
         flex-direction:column;
+        align-items:flex-start;
     }
 
     .ticket-user{
         text-align:left;
     }
 
-    .ticket-footer{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:10px;
+    .actions{
+        width:100%;
     }
 
-    .form-grid{
+    .action-btn{
+        flex:1;
+    }
+
+    .form-grid,
+    .detail-grid{
         grid-template-columns:1fr;
     }
 
-    .form-group.full{
+    .form-group.full,
+    .detail.full{
         grid-column:auto;
     }
-
 }
 
+@media(max-width:430px){
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:35px;
+    }
+}
 </style>
 </head>
 
 <body>
 
-<!-- ================= TOPBAR ================= -->
-
-<header class="topbar">
+<header class="header">
 
     <div class="brand">
-
         <div class="logo">KB</div>
 
         <div class="brand-name">
             KB <span>Helpdesk</span>
         </div>
-
     </div>
 
-    <div class="top-actions">
-
-        <div class="online">
-            <span class="online-dot"></span>
-            System Online
-        </div>
-
-        <button class="top-btn">
-            👤 Admin
+    <div class="header-actions">
+        <button class="top-btn" onclick="showAbout()">
+            ℹ️ About
         </button>
 
-        <a href="index.html" class="top-btn">
+        <a href="index.html" class="top-btn portfolio">
             ← Portfolio
         </a>
-
     </div>
 
 </header>
 
-
-<!-- ================= APP ================= -->
 
 <div class="app">
 
@@ -1009,45 +1026,42 @@ body{
     <aside class="sidebar">
 
         <div class="side-title">
-            HELPDESK
+            HELP DESK
         </div>
 
-        <div class="menu">
+        <button class="nav-item active" onclick="filterStatus('All',this)">
+            <span class="nav-icon">📊</span>
+            Dashboard
+        </button>
 
-            <button class="active">
-                <span class="menu-icon">📊</span>
-                <span>Dashboard</span>
-            </button>
+        <button class="nav-item" onclick="filterStatus('All',this)">
+            <span class="nav-icon">🎫</span>
+            All Tickets
+        </button>
 
-            <button onclick="setStatusFilter('all')">
-                <span class="menu-icon">🎫</span>
-                <span>All Tickets</span>
-            </button>
+        <button class="nav-item" onclick="filterStatus('Open',this)">
+            <span class="nav-icon">🔵</span>
+            Open Tickets
+        </button>
 
-            <button onclick="setStatusFilter('Open')">
-                <span class="menu-icon">🔵</span>
-                <span>Open Tickets</span>
-            </button>
+        <button class="nav-item" onclick="filterStatus('In Progress',this)">
+            <span class="nav-icon">🟣</span>
+            In Progress
+        </button>
 
-            <button onclick="setStatusFilter('In Progress')">
-                <span class="menu-icon">🟣</span>
-                <span>In Progress</span>
-            </button>
+        <button class="nav-item" onclick="filterStatus('Resolved',this)">
+            <span class="nav-icon">🟢</span>
+            Resolved
+        </button>
 
-            <button onclick="setStatusFilter('Resolved')">
-                <span class="menu-icon">🟢</span>
-                <span>Resolved</span>
-            </button>
-
-        </div>
-
-        <div class="side-info">
+        <div class="sidebar-card">
 
             <small>IT SUPPORT</small>
 
             <p>
-                Professional IT ticket management
-                dashboard created by Kuldeep Borana.
+                Professional IT service desk
+                for managing employee support
+                requests and technical issues.
             </p>
 
         </div>
@@ -1059,14 +1073,12 @@ body{
 
     <main class="main">
 
-        <!-- HEADER -->
-
-        <section class="page-head">
+        <section class="hero">
 
             <div>
 
                 <div class="eyebrow">
-                    IT SERVICE DESK
+                    IT SERVICE MANAGEMENT
                 </div>
 
                 <h1>
@@ -1074,17 +1086,14 @@ body{
                 </h1>
 
                 <p>
-                    Monitor, manage and resolve technical support requests.
+                    Monitor, assign, track and resolve
+                    technical support requests.
                 </p>
 
             </div>
 
-            <button
-                class="create-btn"
-                onclick="openModal()">
-
+            <button class="create-btn" onclick="openCreateModal()">
                 ＋ Create New Ticket
-
             </button>
 
         </section>
@@ -1094,112 +1103,84 @@ body{
 
         <section class="stats">
 
-            <div class="stat-card">
-
-                <div class="stat-top">
-
-                    <div class="stat-label">
-                        Total Tickets
-                    </div>
-
-                    <div class="stat-icon">
-                        🎫
-                    </div>
-
-                </div>
-
-                <div
-                    class="stat-number"
-                    id="total">
-                    0
-                </div>
-
-                <div class="stat-sub">
-                    All support requests
-                </div>
-
+            <div class="stat">
+                <div class="stat-icon">🎫</div>
+                <div class="stat-label">TOTAL TICKETS</div>
+                <div class="stat-value" id="totalCount">0</div>
             </div>
 
-
-            <div class="stat-card">
-
-                <div class="stat-top">
-
-                    <div class="stat-label">
-                        Open
-                    </div>
-
-                    <div class="stat-icon">
-                        🔵
-                    </div>
-
-                </div>
-
-                <div
-                    class="stat-number"
-                    id="open">
-                    0
-                </div>
-
-                <div class="stat-sub">
-                    Waiting for support
-                </div>
-
+            <div class="stat">
+                <div class="stat-icon">🔵</div>
+                <div class="stat-label">OPEN</div>
+                <div class="stat-value" id="openCount">0</div>
             </div>
 
-
-            <div class="stat-card">
-
-                <div class="stat-top">
-
-                    <div class="stat-label">
-                        In Progress
-                    </div>
-
-                    <div class="stat-icon">
-                        🟣
-                    </div>
-
-                </div>
-
-                <div
-                    class="stat-number"
-                    id="progress">
-                    0
-                </div>
-
-                <div class="stat-sub">
-                    Currently being handled
-                </div>
-
+            <div class="stat">
+                <div class="stat-icon">🟣</div>
+                <div class="stat-label">IN PROGRESS</div>
+                <div class="stat-value" id="progressCount">0</div>
             </div>
 
-
-            <div class="stat-card">
-
-                <div class="stat-top">
-
-                    <div class="stat-label">
-                        Resolved
-                    </div>
-
-                    <div class="stat-icon">
-                        🟢
-                    </div>
-
-                </div>
-
-                <div
-                    class="stat-number"
-                    id="resolved">
-                    0
-                </div>
-
-                <div class="stat-sub">
-                    Successfully completed
-                </div>
-
+            <div class="stat">
+                <div class="stat-icon">🟢</div>
+                <div class="stat-label">RESOLVED</div>
+                <div class="stat-value green" id="resolvedCount">0</div>
             </div>
+
+            <div class="stat">
+                <div class="stat-icon">🔥</div>
+                <div class="stat-label">HIGH PRIORITY</div>
+                <div class="stat-value red" id="highCount">0</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-icon">⚠️</div>
+                <div class="stat-label">OVERDUE</div>
+                <div class="stat-value red" id="overdueCount">0</div>
+            </div>
+
+        </section>
+
+
+        <!-- FILTER -->
+
+        <section class="toolbar">
+
+            <input
+                id="search"
+                class="control"
+                type="text"
+                placeholder="🔎 Search ticket, employee, ID..."
+            >
+
+            <select id="statusFilter" class="control">
+                <option value="All">All Status</option>
+                <option value="Open">Open</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Resolved">Resolved</option>
+            </select>
+
+            <select id="priorityFilter" class="control">
+                <option value="All">All Priority</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+
+            <select id="categoryFilter" class="control">
+                <option value="All">All Categories</option>
+                <option>Hardware</option>
+                <option>Software</option>
+                <option>Network</option>
+                <option>Outlook</option>
+                <option>Printer</option>
+                <option>Windows</option>
+                <option>Other</option>
+            </select>
+
+            <button class="refresh" onclick="renderAll()">
+                ↻
+            </button>
 
         </section>
 
@@ -1208,217 +1189,157 @@ body{
 
         <section class="content-grid">
 
-            <!-- TICKETS -->
+            <div class="panel">
+
+                <div class="panel-head">
+
+                    <h2>
+                        Support Tickets
+                    </h2>
+
+                    <span id="ticketCount">
+                        0 tickets
+                    </span>
+
+                </div>
+
+                <div class="tickets" id="ticketList"></div>
+
+            </div>
+
 
             <div class="panel">
 
                 <div class="panel-head">
 
-                    <div class="panel-title">
-                        Support Tickets
-                    </div>
-
-                    <div
-                        class="ticket-count"
-                        id="ticketCount">
-                        0 tickets
-                    </div>
-
-                </div>
-
-
-                <!-- FILTERS -->
-
-                <div class="filters">
-
-                    <div class="search-box">
-
-                        <span>🔍</span>
-
-                        <input
-                            type="text"
-                            id="search"
-                            placeholder="Search tickets, employees..."
-                        >
-
-                    </div>
-
-
-                    <select id="statusFilter">
-
-                        <option value="all">
-                            All Status
-                        </option>
-
-                        <option value="Open">
-                            Open
-                        </option>
-
-                        <option value="In Progress">
-                            In Progress
-                        </option>
-
-                        <option value="Resolved">
-                            Resolved
-                        </option>
-
-                    </select>
-
-
-                    <select id="priorityFilter">
-
-                        <option value="all">
-                            All Priority
-                        </option>
-
-                        <option value="High">
-                            High
-                        </option>
-
-                        <option value="Medium">
-                            Medium
-                        </option>
-
-                        <option value="Low">
-                            Low
-                        </option>
-
-                    </select>
-
-
-                    <select id="categoryFilter">
-
-                        <option value="all">
-                            All Categories
-                        </option>
-
-                        <option>Hardware</option>
-                        <option>Software</option>
-                        <option>Network</option>
-                        <option>Outlook</option>
-                        <option>Printer</option>
-                        <option>Windows</option>
-
-                    </select>
-
-                </div>
-
-
-                <div
-                    class="ticket-list"
-                    id="ticketList">
-                </div>
-
-            </div>
-
-
-            <!-- RIGHT -->
-
-            <div class="right-column">
-
-                <!-- PRIORITY -->
-
-                <div class="panel overview">
-
-                    <h3>
+                    <h2>
                         Ticket Overview
-                    </h3>
-
-
-                    <div class="priority-item">
-
-                        <div class="priority-line">
-                            <span>🔴 High Priority</span>
-                            <span id="highCount">0</span>
-                        </div>
-
-                        <div class="progress-bar">
-
-                            <div
-                                class="progress-fill high-fill"
-                                id="highBar"
-                                style="width:0%">
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="priority-item">
-
-                        <div class="priority-line">
-                            <span>🟠 Medium Priority</span>
-                            <span id="mediumCount">0</span>
-                        </div>
-
-                        <div class="progress-bar">
-
-                            <div
-                                class="progress-fill medium-fill"
-                                id="mediumBar"
-                                style="width:0%">
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="priority-item">
-
-                        <div class="priority-line">
-                            <span>🟢 Low Priority</span>
-                            <span id="lowCount">0</span>
-                        </div>
-
-                        <div class="progress-bar">
-
-                            <div
-                                class="progress-fill low-fill"
-                                id="lowBar"
-                                style="width:0%">
-                            </div>
-
-                        </div>
-
-                    </div>
+                    </h2>
 
                 </div>
 
+                <div class="overview-body">
 
-                <!-- ACTIVITY -->
+                    <div class="overview-item">
 
-                <div class="panel activity">
+                        <div class="overview-left">
 
-                    <h3>
-                        Recent Activity
-                    </h3>
+                            <div class="overview-icon">🔥</div>
 
-                    <div id="activityList">
-
-                        <div class="activity-item">
-
-                            <div class="activity-icon">
-                                🚀
-                            </div>
-
-                            <div class="activity-text">
-
-                                <strong>
-                                    Helpdesk started
-                                </strong>
-
-                                <br>
-
-                                Ticket system is ready.
-
-                                <div class="activity-time">
-                                    System
+                            <div>
+                                <div class="overview-name">
+                                    High Priority
                                 </div>
 
+                                <div class="overview-sub">
+                                    Needs attention
+                                </div>
                             </div>
 
+                        </div>
+
+                        <div class="overview-count red" id="overviewHigh">
+                            0
+                        </div>
+
+                    </div>
+
+
+                    <div class="overview-item">
+
+                        <div class="overview-left">
+
+                            <div class="overview-icon">💻</div>
+
+                            <div>
+                                <div class="overview-name">
+                                    Hardware
+                                </div>
+
+                                <div class="overview-sub">
+                                    Hardware issues
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="overview-count" id="overviewHardware">
+                            0
+                        </div>
+
+                    </div>
+
+
+                    <div class="overview-item">
+
+                        <div class="overview-left">
+
+                            <div class="overview-icon">🖥️</div>
+
+                            <div>
+                                <div class="overview-name">
+                                    Software
+                                </div>
+
+                                <div class="overview-sub">
+                                    Software issues
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="overview-count" id="overviewSoftware">
+                            0
+                        </div>
+
+                    </div>
+
+
+                    <div class="overview-item">
+
+                        <div class="overview-left">
+
+                            <div class="overview-icon">🌐</div>
+
+                            <div>
+                                <div class="overview-name">
+                                    Network
+                                </div>
+
+                                <div class="overview-sub">
+                                    Network issues
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="overview-count" id="overviewNetwork">
+                            0
+                        </div>
+
+                    </div>
+
+
+                    <div class="overview-item">
+
+                        <div class="overview-left">
+
+                            <div class="overview-icon">⭐</div>
+
+                            <div>
+                                <div class="overview-name">
+                                    Average Rating
+                                </div>
+
+                                <div class="overview-sub">
+                                    User satisfaction
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="overview-count yellow" id="avgRating">
+                            —
                         </div>
 
                     </div>
@@ -1434,79 +1355,69 @@ body{
 </div>
 
 
-<!-- ================= CREATE TICKET MODAL ================= -->
+<!-- CREATE MODAL -->
 
-<div
-    class="modal"
-    id="ticketModal">
+<div class="modal" id="createModal">
 
     <div class="modal-box">
 
         <div class="modal-head">
 
             <h2>
-                🎫 Create Support Ticket
+                🎫 Create New Support Ticket
             </h2>
 
-            <button
-                class="close"
-                onclick="closeModal()">
+            <button class="close" onclick="closeCreateModal()">
                 ×
             </button>
 
         </div>
 
 
-        <form
-            class="form"
-            id="ticketForm">
+        <form class="form" id="ticketForm">
 
             <div class="form-grid">
 
                 <div class="form-group">
 
-                    <label>
-                        Employee Name
-                    </label>
+                    <label>Employee Name *</label>
 
                     <input
                         id="employee"
-                        type="text"
-                        placeholder="e.g. Kuldeep"
-                        required>
+                        class="form-control"
+                        placeholder="e.g. Kuldeep Borana"
+                        required
+                    >
 
                 </div>
 
 
                 <div class="form-group">
 
-                    <label>
-                        Issue Title
-                    </label>
+                    <label>Employee ID</label>
 
                     <input
-                        id="title"
-                        type="text"
-                        placeholder="e.g. Outlook not opening"
-                        required>
+                        id="employeeId"
+                        class="form-control"
+                        placeholder="e.g. EMP1024"
+                    >
 
                 </div>
 
 
                 <div class="form-group">
 
-                    <label>
-                        Category
-                    </label>
+                    <label>Department</label>
 
-                    <select id="category">
+                    <select id="department" class="form-control">
 
-                        <option>Hardware</option>
-                        <option>Software</option>
-                        <option>Network</option>
-                        <option>Outlook</option>
-                        <option>Printer</option>
-                        <option>Windows</option>
+                        <option>IT</option>
+                        <option>HR</option>
+                        <option>Finance</option>
+                        <option>Sales</option>
+                        <option>Marketing</option>
+                        <option>Operations</option>
+                        <option>Management</option>
 
                     </select>
 
@@ -1515,25 +1426,41 @@ body{
 
                 <div class="form-group">
 
-                    <label>
-                        Priority
-                    </label>
+                    <label>Email</label>
 
-                    <select id="priority">
+                    <input
+                        id="email"
+                        type="email"
+                        class="form-control"
+                        placeholder="employee@company.com"
+                    >
 
-                        <option value="High">
-                            High
-                        </option>
+                </div>
 
-                        <option
-                            value="Medium"
-                            selected>
-                            Medium
-                        </option>
 
-                        <option value="Low">
-                            Low
-                        </option>
+                <div class="form-group">
+
+                    <label>Contact Number</label>
+
+                    <input
+                        id="phone"
+                        class="form-control"
+                        placeholder="+91 XXXXX XXXXX"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Assignee</label>
+
+                    <select id="assignee" class="form-control">
+
+                        <option>Kuldeep Borana</option>
+                        <option>Rahul Sharma</option>
+                        <option>Amit Patel</option>
+                        <option>IT Support Team</option>
 
                     </select>
 
@@ -1542,14 +1469,89 @@ body{
 
                 <div class="form-group full">
 
-                    <label>
-                        Problem Description
-                    </label>
+                    <label>Issue Title *</label>
+
+                    <input
+                        id="title"
+                        class="form-control"
+                        placeholder="e.g. Outlook is not opening"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Category</label>
+
+                    <select id="category" class="form-control">
+
+                        <option>Hardware</option>
+                        <option>Software</option>
+                        <option>Network</option>
+                        <option>Outlook</option>
+                        <option>Printer</option>
+                        <option>Windows</option>
+                        <option>Other</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Priority</label>
+
+                    <select id="priority" class="form-control">
+
+                        <option value="High">High</option>
+                        <option value="Medium" selected>Medium</option>
+                        <option value="Low">Low</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Due Date *</label>
+
+                    <input
+                        id="dueDate"
+                        type="date"
+                        class="form-control"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Attachment</label>
+
+                    <input
+                        id="attachment"
+                        type="file"
+                        class="form-control"
+                    >
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label>Problem Description *</label>
 
                     <textarea
                         id="description"
+                        class="form-control"
                         placeholder="Describe the technical problem..."
-                        required></textarea>
+                        required
+                    ></textarea>
 
                 </div>
 
@@ -1561,7 +1563,7 @@ body{
                 <button
                     type="button"
                     class="cancel-btn"
-                    onclick="closeModal()">
+                    onclick="closeCreateModal()">
                     Cancel
                 </button>
 
@@ -1580,36 +1582,51 @@ body{
 </div>
 
 
+<!-- DETAILS MODAL -->
+
+<div class="modal" id="detailsModal">
+
+    <div class="modal-box">
+
+        <div class="modal-head">
+
+            <h2 id="detailTitle">
+                Ticket Details
+            </h2>
+
+            <button class="close" onclick="closeDetails()">
+                ×
+            </button>
+
+        </div>
+
+        <div id="detailsContent"></div>
+
+    </div>
+
+</div>
+
+
 <!-- TOAST -->
 
-<div
-    class="toast"
-    id="toast">
-</div>
+<div class="toast-container" id="toastContainer"></div>
 
 
 <script>
 
-/* ================= DATA ================= */
+/* =========================
+   DATA
+========================= */
 
 let tickets =
-JSON.parse(
-    localStorage.getItem("KB_HELPDESK_TICKETS")
-) || [];
+JSON.parse(localStorage.getItem("KB_HELPDESK_TICKETS")) || [];
 
 
-let activities =
-JSON.parse(
-    localStorage.getItem("KB_HELPDESK_ACTIVITY")
-) || [];
+/* =========================
+   ELEMENTS
+========================= */
 
-
-/* ================= ELEMENTS ================= */
-
-const modal =
-document.getElementById("ticketModal");
-
-const form =
+const ticketForm =
 document.getElementById("ticketForm");
 
 const ticketList =
@@ -1628,187 +1645,263 @@ const categoryFilter =
 document.getElementById("categoryFilter");
 
 
-/* ================= MODAL ================= */
+/* =========================
+   INITIAL DATA
+========================= */
 
-function openModal(){
+if(tickets.length === 0){
 
-    modal.classList.add("show");
+    const demo = {
+        id:"KB-2026-0001",
+        employee:"Kuldeep",
+        employeeId:"EMP1001",
+        department:"IT",
+        email:"employee@company.com",
+        phone:"+91 98765 43210",
+        title:"Outlook not opening",
+        category:"Outlook",
+        priority:"High",
+        description:"Outlook application is not opening on the employee laptop.",
+        assignee:"Kuldeep Borana",
+        dueDate:getDatePlus(2),
+        attachment:"",
+        status:"Open",
+        createdAt:new Date().toLocaleString(),
+        comments:[],
+        timeline:[
+            {
+                text:"Ticket created",
+                date:new Date().toLocaleString()
+            }
+        ],
+        rating:null
+    };
 
-    setTimeout(() => {
+    tickets.push(demo);
 
-        document.getElementById("employee").focus();
-
-    },100);
-
+    save();
 }
 
 
-function closeModal(){
+/* =========================
+   HELPERS
+========================= */
 
-    modal.classList.remove("show");
+function save(){
 
+    localStorage.setItem(
+        "KB_HELPDESK_TICKETS",
+        JSON.stringify(tickets)
+    );
 }
 
 
-/* click outside */
+function getDatePlus(days){
 
-modal.addEventListener(
-    "click",
-    function(e){
+    const date = new Date();
 
-        if(e.target === modal){
+    date.setDate(
+        date.getDate() + days
+    );
 
-            closeModal();
+    return date.toISOString().split("T")[0];
+}
+
+
+function escapeHTML(value){
+
+    return String(value ?? "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+}
+
+
+function isOverdue(ticket){
+
+    if(ticket.status === "Resolved"){
+        return false;
+    }
+
+    if(!ticket.dueDate){
+        return false;
+    }
+
+    const today =
+        new Date().toISOString().split("T")[0];
+
+    return ticket.dueDate < today;
+}
+
+
+function getStatusClass(status){
+
+    if(status === "In Progress"){
+        return "progress";
+    }
+
+    return status.toLowerCase();
+}
+
+
+function nextTicketId(){
+
+    let max = 0;
+
+    tickets.forEach(ticket => {
+
+        const match =
+            String(ticket.id).match(/(\d+)$/);
+
+        if(match){
+
+            max =
+                Math.max(
+                    max,
+                    parseInt(match[1])
+                );
 
         }
 
+    });
+
+    return "KB-2026-" +
+        String(max + 1).padStart(4,"0");
+}
+
+
+/* =========================
+   CREATE TICKET
+========================= */
+
+function openCreateModal(){
+
+    document.getElementById("createModal")
+        .classList.add("show");
+
+    const due =
+        document.getElementById("dueDate");
+
+    if(!due.value){
+        due.value = getDatePlus(2);
     }
-);
+}
 
 
-/* ESC */
+function closeCreateModal(){
 
-document.addEventListener(
-    "keydown",
-    function(e){
-
-        if(e.key === "Escape"){
-
-            closeModal();
-
-        }
-
-    }
-);
+    document.getElementById("createModal")
+        .classList.remove("show");
+}
 
 
-/* ================= CREATE ================= */
-
-form.addEventListener(
+ticketForm.addEventListener(
     "submit",
     function(e){
 
         e.preventDefault();
 
+        const file =
+            document.getElementById("attachment").files[0];
+
+        const now =
+            new Date().toLocaleString();
 
         const ticket = {
 
-            id:
-                "TKT-" +
-                Math.floor(
-                    100000 +
-                    Math.random()*900000
-                ),
+            id:nextTicketId(),
 
             employee:
-                document.getElementById(
-                    "employee"
-                ).value.trim(),
+                document.getElementById("employee").value.trim(),
+
+            employeeId:
+                document.getElementById("employeeId").value.trim(),
+
+            department:
+                document.getElementById("department").value,
+
+            email:
+                document.getElementById("email").value.trim(),
+
+            phone:
+                document.getElementById("phone").value.trim(),
 
             title:
-                document.getElementById(
-                    "title"
-                ).value.trim(),
+                document.getElementById("title").value.trim(),
 
             category:
-                document.getElementById(
-                    "category"
-                ).value,
+                document.getElementById("category").value,
 
             priority:
-                document.getElementById(
-                    "priority"
-                ).value,
+                document.getElementById("priority").value,
 
             description:
-                document.getElementById(
-                    "description"
-                ).value.trim(),
+                document.getElementById("description").value.trim(),
+
+            assignee:
+                document.getElementById("assignee").value,
+
+            dueDate:
+                document.getElementById("dueDate").value,
+
+            attachment:
+                file ? file.name : "",
 
             status:"Open",
 
-            date:
-                new Date().toLocaleString()
+            createdAt:now,
+
+            comments:[],
+
+            timeline:[
+                {
+                    text:"Ticket created",
+                    date:now
+                }
+            ],
+
+            rating:null
 
         };
 
 
         tickets.unshift(ticket);
 
+        save();
 
-        addActivity(
-            "🎫",
-            "New ticket created",
-            ticket.title
-        );
+        ticketForm.reset();
 
+        closeCreateModal();
 
-        saveData();
-
-        form.reset();
-
-        closeModal();
-
-        render();
+        renderAll();
 
         showToast(
-            "✓ Ticket created successfully"
+            "Ticket Created",
+            ticket.id + " created successfully."
         );
 
     }
 );
 
 
-/* ================= SAVE ================= */
+/* =========================
+   RENDER
+========================= */
 
-function saveData(){
+function renderAll(){
 
-    localStorage.setItem(
-        "KB_HELPDESK_TICKETS",
-        JSON.stringify(tickets)
-    );
+    renderTickets();
 
-    localStorage.setItem(
-        "KB_HELPDESK_ACTIVITY",
-        JSON.stringify(activities)
-    );
+    updateStats();
+
+    updateOverview();
 
 }
 
 
-/* ================= ACTIVITY ================= */
-
-function addActivity(
-    icon,
-    title,
-    detail
-){
-
-    activities.unshift({
-
-        icon:icon,
-        title:title,
-        detail:detail,
-        time:new Date().toLocaleTimeString(
-            [],
-            {
-                hour:"2-digit",
-                minute:"2-digit"
-            }
-        )
-
-    });
-
-
-    activities =
-        activities.slice(0,6);
-
-}
-
-
-/* ================= RENDER ================= */
-
-function render(){
+function renderTickets(){
 
     const query =
         search.value.toLowerCase().trim();
@@ -1826,244 +1919,326 @@ function render(){
     const filtered =
         tickets.filter(ticket => {
 
-            const textMatch =
-                ticket.employee
-                    .toLowerCase()
-                    .includes(query)
+            const text =
+                (
+                    ticket.id + " " +
+                    ticket.employee + " " +
+                    ticket.title + " " +
+                    ticket.category + " " +
+                    ticket.assignee
+                ).toLowerCase();
 
-                ||
+            const matchesSearch =
+                text.includes(query);
 
-                ticket.title
-                    .toLowerCase()
-                    .includes(query)
-
-                ||
-
-                ticket.description
-                    .toLowerCase()
-                    .includes(query)
-
-                ||
-
-                ticket.category
-                    .toLowerCase()
-                    .includes(query);
-
-
-            const statusMatch =
-                status === "all" ||
+            const matchesStatus =
+                status === "All" ||
                 ticket.status === status;
 
-
-            const priorityMatch =
-                priority === "all" ||
+            const matchesPriority =
+                priority === "All" ||
                 ticket.priority === priority;
 
-
-            const categoryMatch =
-                category === "all" ||
+            const matchesCategory =
+                category === "All" ||
                 ticket.category === category;
 
-
             return (
-                textMatch &&
-                statusMatch &&
-                priorityMatch &&
-                categoryMatch
+                matchesSearch &&
+                matchesStatus &&
+                matchesPriority &&
+                matchesCategory
             );
 
         });
 
 
-    ticketList.innerHTML = "";
-
-
-    document.getElementById(
-        "ticketCount"
-    ).textContent =
-        filtered.length +
-        (
-            filtered.length === 1
-            ? " ticket"
-            : " tickets"
-        );
+    document.getElementById("ticketCount")
+        .textContent =
+            filtered.length +
+            (filtered.length === 1
+                ? " ticket"
+                : " tickets");
 
 
     if(filtered.length === 0){
 
         ticketList.innerHTML = `
-
             <div class="empty">
 
                 <div class="empty-icon">
                     🎫
                 </div>
 
-                <h3>
-                    No tickets found
-                </h3>
-
-                <p>
-                    Create a new support ticket
-                    to get started.
-                </p>
+                No tickets found.
 
             </div>
-
         `;
 
+        return;
     }
 
 
-    filtered.forEach(ticket => {
+    ticketList.innerHTML =
+        filtered.map(ticket => {
 
-        ticketList.appendChild(
-            createTicketElement(ticket)
+            const overdue =
+                isOverdue(ticket);
+
+            return `
+
+            <div class="ticket">
+
+                <div class="ticket-top">
+
+                    <div>
+
+                        <div class="ticket-id">
+                            ${escapeHTML(ticket.id)}
+                        </div>
+
+                        <div class="ticket-title">
+                            ${escapeHTML(ticket.title)}
+                        </div>
+
+                        <div class="ticket-desc">
+                            ${escapeHTML(ticket.description)}
+                        </div>
+
+                    </div>
+
+
+                    <div class="ticket-user">
+
+                        ${escapeHTML(ticket.employee)}
+
+                        <small>
+                            ${escapeHTML(ticket.department || "Department not specified")}
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="tags">
+
+                    <span class="tag ${ticket.priority.toLowerCase()}">
+                        ${escapeHTML(ticket.priority)} Priority
+                    </span>
+
+                    <span class="tag ${getStatusClass(ticket.status)}">
+                        ${escapeHTML(ticket.status)}
+                    </span>
+
+                    <span class="tag">
+                        ${escapeHTML(ticket.category)}
+                    </span>
+
+                    <span class="tag">
+                        👤 ${escapeHTML(ticket.assignee)}
+                    </span>
+
+                    ${
+                        overdue
+                        ?
+                        `<span class="tag overdue">
+                            ⚠️ SLA Overdue
+                        </span>`
+                        :
+                        `<span class="tag">
+                            ⏱️ Due ${escapeHTML(ticket.dueDate || "—")}
+                        </span>`
+                    }
+
+                </div>
+
+
+                <div class="ticket-bottom">
+
+                    <div class="ticket-meta">
+
+                        <span>
+                            📅 ${escapeHTML(ticket.createdAt)}
+                        </span>
+
+                        <span>
+                            💬 ${(ticket.comments || []).length} comments
+                        </span>
+
+                        ${
+                            ticket.attachment
+                            ?
+                            `<span>
+                                📎 ${escapeHTML(ticket.attachment)}
+                            </span>`
+                            :
+                            ""
+                        }
+
+                        ${
+                            ticket.rating
+                            ?
+                            `<span>
+                                ⭐ ${ticket.rating}/5
+                            </span>`
+                            :
+                            ""
+                        }
+
+                    </div>
+
+
+                    <div class="actions">
+
+                        <button
+                            class="action-btn"
+                            onclick="viewTicket('${ticket.id}')">
+                            👁 View
+                        </button>
+
+                        <button
+                            class="action-btn primary"
+                            onclick="changeStatus('${ticket.id}')">
+                            🔄 Status
+                        </button>
+
+                        ${
+                            ticket.status === "Resolved"
+                            ?
+                            `<button
+                                class="action-btn"
+                                onclick="rateTicket('${ticket.id}')">
+                                ⭐ Rate
+                            </button>`
+                            :
+                            ""
+                        }
+
+                        <button
+                            class="action-btn danger"
+                            onclick="deleteTicket('${ticket.id}')">
+                            🗑
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            `;
+
+        }).join("");
+
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+function updateStats(){
+
+    document.getElementById("totalCount")
+        .textContent = tickets.length;
+
+    document.getElementById("openCount")
+        .textContent =
+            tickets.filter(
+                t => t.status === "Open"
+            ).length;
+
+    document.getElementById("progressCount")
+        .textContent =
+            tickets.filter(
+                t => t.status === "In Progress"
+            ).length;
+
+    document.getElementById("resolvedCount")
+        .textContent =
+            tickets.filter(
+                t => t.status === "Resolved"
+            ).length;
+
+    document.getElementById("highCount")
+        .textContent =
+            tickets.filter(
+                t => t.priority === "High"
+            ).length;
+
+    document.getElementById("overdueCount")
+        .textContent =
+            tickets.filter(
+                t => isOverdue(t)
+            ).length;
+
+}
+
+
+/* =========================
+   OVERVIEW
+========================= */
+
+function updateOverview(){
+
+    document.getElementById("overviewHigh")
+        .textContent =
+            tickets.filter(
+                t => t.priority === "High"
+            ).length;
+
+    document.getElementById("overviewHardware")
+        .textContent =
+            tickets.filter(
+                t => t.category === "Hardware"
+            ).length;
+
+    document.getElementById("overviewSoftware")
+        .textContent =
+            tickets.filter(
+                t => t.category === "Software"
+            ).length;
+
+    document.getElementById("overviewNetwork")
+        .textContent =
+            tickets.filter(
+                t => t.category === "Network"
+            ).length;
+
+
+    const rated =
+        tickets.filter(
+            t => t.rating
         );
 
-    });
+    if(rated.length){
 
+        const avg =
+            rated.reduce(
+                (sum,t) =>
+                    sum + Number(t.rating),
+                0
+            ) / rated.length;
 
-    updateStats();
+        document.getElementById("avgRating")
+            .textContent =
+                avg.toFixed(1) + " ⭐";
 
-    updateOverview();
+    }
+    else{
 
-    renderActivities();
+        document.getElementById("avgRating")
+            .textContent = "—";
 
-}
-
-
-/* ================= TICKET ELEMENT ================= */
-
-function createTicketElement(ticket){
-
-    const div =
-        document.createElement("div");
-
-    div.className = "ticket";
-
-
-    const priorityClass =
-        ticket.priority === "High"
-        ? "badge-high"
-        : ticket.priority === "Medium"
-        ? "badge-medium"
-        : "badge-low";
-
-
-    const statusClass =
-        ticket.status === "Open"
-        ? "badge-open"
-        : ticket.status === "In Progress"
-        ? "badge-progress"
-        : "badge-resolved";
-
-
-    div.innerHTML = `
-
-        <div class="ticket-row">
-
-            <div>
-
-                <div class="ticket-id">
-                    ${escapeHTML(ticket.id)}
-                </div>
-
-                <div class="ticket-title">
-                    ${escapeHTML(ticket.title)}
-                </div>
-
-                <div class="ticket-description">
-                    ${escapeHTML(ticket.description)}
-                </div>
-
-            </div>
-
-
-            <div class="ticket-user">
-
-                <strong>
-                    ${escapeHTML(ticket.employee)}
-                </strong>
-
-                <span>
-                    Employee
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="ticket-meta">
-
-            <span class="badge ${priorityClass}">
-                ${escapeHTML(ticket.priority)}
-            </span>
-
-            <span class="badge ${statusClass}">
-                ${escapeHTML(ticket.status)}
-            </span>
-
-            <span class="category">
-                ${escapeHTML(ticket.category)}
-            </span>
-
-        </div>
-
-
-        <div class="ticket-footer">
-
-            <div class="ticket-date">
-                Created ${escapeHTML(ticket.date)}
-            </div>
-
-
-            <div class="ticket-actions">
-
-                <button
-                    class="action-btn"
-                    onclick="changeStatus('${ticket.id}')">
-
-                    ${getNextAction(ticket.status)}
-
-                </button>
-
-
-                <button
-                    class="action-btn delete"
-                    onclick="deleteTicket('${ticket.id}')">
-
-                    Delete
-
-                </button>
-
-            </div>
-
-        </div>
-
-    `;
-
-
-    return div;
+    }
 
 }
 
 
-/* ================= STATUS ================= */
-
-function getNextAction(status){
-
-    if(status === "Open")
-        return "Start";
-
-    if(status === "In Progress")
-        return "Resolve";
-
-    return "Reopen";
-
-}
-
+/* =========================
+   CHANGE STATUS
+========================= */
 
 function changeStatus(id){
 
@@ -2072,64 +2247,62 @@ function changeStatus(id){
             t => t.id === id
         );
 
-
     if(!ticket) return;
 
 
     if(ticket.status === "Open"){
 
-        ticket.status =
-            "In Progress";
-
-        addActivity(
-            "🟣",
-            "Ticket started",
-            ticket.title
-        );
+        ticket.status = "In Progress";
 
     }
+    else if(ticket.status === "In Progress"){
 
-    else if(
-        ticket.status === "In Progress"
-    ){
-
-        ticket.status =
-            "Resolved";
-
-        addActivity(
-            "✅",
-            "Ticket resolved",
-            ticket.title
-        );
+        ticket.status = "Resolved";
 
     }
-
     else{
 
-        ticket.status =
-            "Open";
-
-        addActivity(
-            "🔄",
-            "Ticket reopened",
-            ticket.title
-        );
+        ticket.status = "Open";
 
     }
 
 
-    saveData();
+    const now =
+        new Date().toLocaleString();
 
-    render();
+
+    ticket.timeline =
+        ticket.timeline || [];
+
+
+    ticket.timeline.push({
+
+        text:
+            "Status changed to " +
+            ticket.status,
+
+        date:now
+
+    });
+
+
+    save();
+
+    renderAll();
 
     showToast(
-        "✓ Ticket status updated"
+        "Status Updated",
+        ticket.id +
+        " → " +
+        ticket.status
     );
 
 }
 
 
-/* ================= DELETE ================= */
+/* =========================
+   DELETE
+========================= */
 
 function deleteTicket(id){
 
@@ -2138,18 +2311,15 @@ function deleteTicket(id){
             t => t.id === id
         );
 
-
     if(!ticket) return;
 
 
-    if(
-        !confirm(
-            "Delete this support ticket?"
-        )
-    ){
-
+    if(!confirm(
+        "Delete " +
+        ticket.id +
+        " permanently?"
+    )){
         return;
-
     }
 
 
@@ -2159,309 +2329,873 @@ function deleteTicket(id){
         );
 
 
-    addActivity(
-        "🗑️",
-        "Ticket deleted",
-        ticket.title
-    );
+    save();
 
-
-    saveData();
-
-    render();
+    renderAll();
 
     showToast(
-        "Ticket deleted"
+        "Ticket Deleted",
+        id + " removed."
     );
 
 }
 
 
-/* ================= STATS ================= */
+/* =========================
+   VIEW DETAILS
+========================= */
 
-function updateStats(){
+function viewTicket(id){
 
-    document.getElementById(
-        "total"
-    ).textContent =
-        tickets.length;
-
-
-    document.getElementById(
-        "open"
-    ).textContent =
-        tickets.filter(
-            t => t.status === "Open"
-        ).length;
-
-
-    document.getElementById(
-        "progress"
-    ).textContent =
-        tickets.filter(
-            t => t.status === "In Progress"
-        ).length;
-
-
-    document.getElementById(
-        "resolved"
-    ).textContent =
-        tickets.filter(
-            t => t.status === "Resolved"
-        ).length;
-
-}
-
-
-/* ================= OVERVIEW ================= */
-
-function updateOverview(){
-
-    const total =
-        tickets.length || 1;
-
-
-    const high =
-        tickets.filter(
-            t => t.priority === "High"
-        ).length;
-
-
-    const medium =
-        tickets.filter(
-            t => t.priority === "Medium"
-        ).length;
-
-
-    const low =
-        tickets.filter(
-            t => t.priority === "Low"
-        ).length;
-
-
-    document.getElementById(
-        "highCount"
-    ).textContent = high;
-
-
-    document.getElementById(
-        "mediumCount"
-    ).textContent = medium;
-
-
-    document.getElementById(
-        "lowCount"
-    ).textContent = low;
-
-
-    document.getElementById(
-        "highBar"
-    ).style.width =
-        (high / total * 100) + "%";
-
-
-    document.getElementById(
-        "mediumBar"
-    ).style.width =
-        (medium / total * 100) + "%";
-
-
-    document.getElementById(
-        "lowBar"
-    ).style.width =
-        (low / total * 100) + "%";
-
-}
-
-
-/* ================= ACTIVITY ================= */
-
-function renderActivities(){
-
-    const list =
-        document.getElementById(
-            "activityList"
+    const ticket =
+        tickets.find(
+            t => t.id === id
         );
 
+    if(!ticket) return;
 
-    if(activities.length === 0){
 
-        list.innerHTML = `
+    document.getElementById("detailTitle")
+        .textContent =
+            ticket.id +
+            " · " +
+            ticket.title;
 
-            <div class="activity-item">
 
-                <div class="activity-icon">
-                    🚀
-                </div>
+    const comments =
+        ticket.comments || [];
 
-                <div class="activity-text">
 
-                    <strong>
-                        System ready
-                    </strong>
+    const timeline =
+        ticket.timeline || [];
 
-                    <br>
 
-                    Helpdesk is waiting for activity.
+    document.getElementById("detailsContent")
+        .innerHTML = `
 
+        <div class="detail-grid">
+
+            <div class="detail">
+                <small>Employee</small>
+                <strong>
+                    ${escapeHTML(ticket.employee)}
+                </strong>
+            </div>
+
+            <div class="detail">
+                <small>Employee ID</small>
+                <strong>
+                    ${escapeHTML(ticket.employeeId || "—")}
+                </strong>
+            </div>
+
+            <div class="detail">
+                <small>Department</small>
+                <strong>
+                    ${escapeHTML(ticket.department || "—")}
+                </strong>
+            </div>
+
+            <div class="detail">
+                <small>Email</small>
+                <strong>
+                    ${escapeHTML(ticket.email || "—")}
+                </strong>
+            </div>
+
+            <div class="detail">
+                <small>Contact</small>
+                <strong>
+                    ${escapeHTML(ticket.phone || "—")}
+                </strong>
+            </div>
+
+            <div class="detail">
+                <small>Assignee</small>
+                <strong>
+                    ${escapeHTML(ticket.assignee)}
+                </strong>
+            </div>
+
+            <div class="detail">
+                <small>Category</small>
+                <strong>
+                    ${escapeHTML(ticket.category)}
+                </strong>
+            </div>
+
+            <div class="detail">
+                <small>Priority</small>
+                <strong>
+                    ${escapeHTML(ticket.priority)}
+                </strong>
+            </div>
+
+            <div class="detail">
+                <small>Status</small>
+                <strong>
+                    ${escapeHTML(ticket.status)}
+                </strong>
+            </div>
+
+            <div class="detail">
+                <small>Due Date</small>
+                <strong>
+                    ${escapeHTML(ticket.dueDate || "—")}
+                    ${isOverdue(ticket) ? " ⚠️ OVERDUE" : ""}
+                </strong>
+            </div>
+
+            <div class="detail full">
+
+                <small>
+                    Problem Description
+                </small>
+
+                <div class="detail-description">
+                    ${escapeHTML(ticket.description)}
                 </div>
 
             </div>
+
+            ${
+                ticket.attachment
+                ?
+                `
+                <div class="detail full">
+
+                    <small>
+                        Attachment
+                    </small>
+
+                    <strong>
+                        📎 ${escapeHTML(ticket.attachment)}
+                    </strong>
+
+                </div>
+                `
+                :
+                ""
+            }
+
+        </div>
+
+
+        <div class="timeline">
+
+            <h3>
+                Activity Timeline
+            </h3>
+
+            ${
+                timeline.length
+                ?
+                timeline.map(item => `
+
+                    <div class="timeline-item">
+
+                        <strong>
+                            ${escapeHTML(item.text)}
+                        </strong>
+
+                        <p>
+                            ${escapeHTML(item.date)}
+                        </p>
+
+                    </div>
+
+                `).join("")
+                :
+                `<p style="color:#68768e">
+                    No activity yet.
+                </p>`
+            }
+
+        </div>
+
+
+        <div class="comments">
+
+            <h3>
+                💬 Comments
+            </h3>
+
+
+            ${
+                comments.length
+                ?
+                comments.map(comment => `
+
+                    <div class="comment">
+
+                        <strong>
+                            ${escapeHTML(comment.user)}
+                        </strong>
+
+                        <small>
+                            ${escapeHTML(comment.date)}
+                        </small>
+
+                        <p>
+                            ${escapeHTML(comment.text)}
+                        </p>
+
+                    </div>
+
+                `).join("")
+                :
+                `<div class="comment">
+                    <p>No comments yet.</p>
+                </div>`
+            }
+
+
+            <div class="comment-box">
+
+                <input
+                    id="newComment"
+                    class="form-control"
+                    placeholder="Add a support update..."
+                >
+
+                <button
+                    class="submit-btn"
+                    onclick="addComment('${ticket.id}')">
+                    Add
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal-footer"
+             style="padding:0 25px 25px">
+
+            <button
+                class="cancel-btn"
+                onclick="printTicket('${ticket.id}')">
+                🖨 Print
+            </button>
+
+            ${
+                ticket.status === "Resolved"
+                ?
+                `<button
+                    class="submit-btn"
+                    onclick="rateTicket('${ticket.id}')">
+                    ⭐ Rate Ticket
+                </button>`
+                :
+                ""
+            }
+
+        </div>
 
         `;
 
-        return;
 
-    }
-
-
-    list.innerHTML =
-        activities
-        .slice(0,5)
-        .map(a => `
-
-            <div class="activity-item">
-
-                <div class="activity-icon">
-                    ${a.icon}
-                </div>
-
-                <div class="activity-text">
-
-                    <strong>
-                        ${escapeHTML(a.title)}
-                    </strong>
-
-                    <br>
-
-                    ${escapeHTML(a.detail)}
-
-                    <div class="activity-time">
-                        ${escapeHTML(a.time)}
-                    </div>
-
-                </div>
-
-            </div>
-
-        `)
-        .join("");
+    document.getElementById("detailsModal")
+        .classList.add("show");
 
 }
 
 
-/* ================= FILTER ================= */
+function closeDetails(){
+
+    document.getElementById("detailsModal")
+        .classList.remove("show");
+
+}
+
+
+/* =========================
+   COMMENTS
+========================= */
+
+function addComment(id){
+
+    const input =
+        document.getElementById("newComment");
+
+    if(!input || !input.value.trim()){
+
+        showToast(
+            "Comment Required",
+            "Please enter an update."
+        );
+
+        return;
+    }
+
+
+    const ticket =
+        tickets.find(
+            t => t.id === id
+        );
+
+    if(!ticket) return;
+
+
+    const now =
+        new Date().toLocaleString();
+
+
+    ticket.comments =
+        ticket.comments || [];
+
+
+    ticket.comments.push({
+
+        user:"IT Support",
+
+        text:input.value.trim(),
+
+        date:now
+
+    });
+
+
+    ticket.timeline =
+        ticket.timeline || [];
+
+
+    ticket.timeline.push({
+
+        text:"Support comment added",
+
+        date:now
+
+    });
+
+
+    save();
+
+    viewTicket(id);
+
+    renderAll();
+
+    showToast(
+        "Comment Added",
+        "Support update saved."
+    );
+
+}
+
+
+/* =========================
+   RATING
+========================= */
+
+function rateTicket(id){
+
+    const ticket =
+        tickets.find(
+            t => t.id === id
+        );
+
+    if(!ticket) return;
+
+
+    const rating =
+        prompt(
+            "Rate this resolved ticket from 1 to 5:",
+            ticket.rating || "5"
+        );
+
+
+    if(rating === null) return;
+
+
+    const value =
+        Number(rating);
+
+
+    if(
+        !Number.isInteger(value) ||
+        value < 1 ||
+        value > 5
+    ){
+
+        showToast(
+            "Invalid Rating",
+            "Please enter a number from 1 to 5."
+        );
+
+        return;
+    }
+
+
+    ticket.rating = value;
+
+    save();
+
+    renderAll();
+
+    viewTicket(id);
+
+    showToast(
+        "Rating Saved",
+        "Thank you for your feedback."
+    );
+
+}
+
+
+/* =========================
+   FILTERS
+========================= */
 
 search.addEventListener(
     "input",
-    render
+    renderTickets
 );
 
 statusFilter.addEventListener(
     "change",
-    render
+    renderTickets
 );
 
 priorityFilter.addEventListener(
     "change",
-    render
+    renderTickets
 );
 
 categoryFilter.addEventListener(
     "change",
-    render
+    renderTickets
 );
 
 
-function setStatusFilter(status){
+function filterStatus(status,element){
 
-    statusFilter.value =
-        status;
+    statusFilter.value = status;
 
-    render();
+    document.querySelectorAll(".nav-item")
+        .forEach(
+            item =>
+                item.classList.remove("active")
+        );
+
+
+    if(element){
+        element.classList.add("active");
+    }
+
+
+    renderTickets();
 
 }
 
 
-/* ================= TOAST ================= */
+/* =========================
+   TOAST
+========================= */
 
-let toastTimer;
+function showToast(title,message){
 
+    const container =
+        document.getElementById("toastContainer");
 
-function showToast(message){
 
     const toast =
-        document.getElementById(
-            "toast"
-        );
+        document.createElement("div");
+
+    toast.className = "toast";
 
 
-    toast.textContent =
-        message;
+    toast.innerHTML = `
+
+        <strong>
+            ${escapeHTML(title)}
+        </strong>
+
+        <span>
+            ${escapeHTML(message)}
+        </span>
+
+    `;
 
 
-    toast.classList.add(
-        "show"
+    container.appendChild(toast);
+
+
+    setTimeout(
+        () => toast.remove(),
+        3500
     );
-
-
-    clearTimeout(
-        toastTimer
-    );
-
-
-    toastTimer =
-        setTimeout(
-            () => {
-
-                toast.classList.remove(
-                    "show"
-                );
-
-            },
-            2500
-        );
 
 }
 
 
-/* ================= SECURITY ================= */
+/* =========================
+   ABOUT
+========================= */
 
-function escapeHTML(value){
+function showAbout(){
 
-    return String(value)
+    alert(
+`KB IT Helpdesk
 
-        .replace(
-            /&/g,
-            "&amp;"
-        )
+Professional IT Support Ticket Management System
 
-        .replace(
-            /</g,
-            "&lt;"
-        )
+Features:
+• Ticket Management
+• Employee Details
+• Assignment
+• SLA / Due Date
+• Priority Management
+• Comments
+• Activity Timeline
+• Ticket Rating
+• Analytics
+• CSV Export
+• Print Support Report
+• LocalStorage Database
 
-        .replace(
-            />/g,
-            "&gt;"
-        )
-
-        .replace(
-            /"/g,
-            "&quot;"
-        )
-
-        .replace(
-            /'/g,
-            "&#039;"
-        );
+Designed by Kuldeep Borana 🚀`
+    );
 
 }
 
 
-/* ================= START ================= */
+/* =========================
+   PRINT
+========================= */
 
-render();
+function printTicket(id){
+
+    const ticket =
+        tickets.find(
+            t => t.id === id
+        );
+
+    if(!ticket) return;
+
+
+    const printWindow =
+        window.open(
+            "",
+            "_blank",
+            "width=900,height=700"
+        );
+
+
+    printWindow.document.write(`
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>
+${escapeHTML(ticket.id)}
+</title>
+
+<style>
+
+body{
+    font-family:Arial,sans-serif;
+    padding:40px;
+    color:#111;
+}
+
+h1{
+    margin-bottom:5px;
+}
+
+.header{
+    border-bottom:2px solid #222;
+    padding-bottom:20px;
+    margin-bottom:25px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.box{
+    border:1px solid #ddd;
+    padding:15px;
+    border-radius:8px;
+}
+
+small{
+    display:block;
+    color:#777;
+    margin-bottom:5px;
+}
+
+.full{
+    grid-column:1/-1;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>
+IT Support Ticket
+</h1>
+
+<p>
+${escapeHTML(ticket.id)}
+</p>
+
+</div>
+
+
+<div class="grid">
+
+<div class="box">
+<small>Employee</small>
+<strong>
+${escapeHTML(ticket.employee)}
+</strong>
+</div>
+
+<div class="box">
+<small>Employee ID</small>
+<strong>
+${escapeHTML(ticket.employeeId || "—")}
+</strong>
+</div>
+
+<div class="box">
+<small>Department</small>
+<strong>
+${escapeHTML(ticket.department || "—")}
+</strong>
+</div>
+
+<div class="box">
+<small>Assignee</small>
+<strong>
+${escapeHTML(ticket.assignee)}
+</strong>
+</div>
+
+<div class="box">
+<small>Category</small>
+<strong>
+${escapeHTML(ticket.category)}
+</strong>
+</div>
+
+<div class="box">
+<small>Priority</small>
+<strong>
+${escapeHTML(ticket.priority)}
+</strong>
+</div>
+
+<div class="box">
+<small>Status</small>
+<strong>
+${escapeHTML(ticket.status)}
+</strong>
+</div>
+
+<div class="box">
+<small>Due Date</small>
+<strong>
+${escapeHTML(ticket.dueDate || "—")}
+</strong>
+</div>
+
+<div class="box full">
+
+<small>
+Issue
+</small>
+
+<strong>
+${escapeHTML(ticket.title)}
+</strong>
+
+<p>
+${escapeHTML(ticket.description)}
+</p>
+
+</div>
+
+</div>
+
+<br>
+
+<p>
+Generated by KB IT Helpdesk
+</p>
+
+</body>
+
+</html>
+
+    `);
+
+
+    printWindow.document.close();
+
+    printWindow.focus();
+
+    printWindow.print();
+
+}
+
+
+/* =========================
+   CLOSE MODALS
+========================= */
+
+document.querySelectorAll(".modal")
+    .forEach(modal => {
+
+        modal.addEventListener(
+            "click",
+            function(e){
+
+                if(e.target === modal){
+
+                    modal.classList.remove("show");
+
+                }
+
+            }
+        );
+
+    });
+
+
+/* =========================
+   EXPORT CSV
+========================= */
+
+function exportCSV(){
+
+    if(!tickets.length){
+
+        showToast(
+            "No Data",
+            "There are no tickets to export."
+        );
+
+        return;
+    }
+
+
+    const headers = [
+        "Ticket ID",
+        "Employee",
+        "Employee ID",
+        "Department",
+        "Email",
+        "Phone",
+        "Title",
+        "Category",
+        "Priority",
+        "Assignee",
+        "Status",
+        "Due Date",
+        "Created"
+    ];
+
+
+    const rows =
+        tickets.map(t => [
+
+            t.id,
+            t.employee,
+            t.employeeId,
+            t.department,
+            t.email,
+            t.phone,
+            t.title,
+            t.category,
+            t.priority,
+            t.assignee,
+            t.status,
+            t.dueDate,
+            t.createdAt
+
+        ]);
+
+
+    const csv =
+        [headers,...rows]
+        .map(row =>
+            row.map(value =>
+                `"${String(value ?? "")
+                    .replace(/"/g,'""')}"`
+            ).join(",")
+        )
+        .join("\n");
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {type:"text/csv;charset=utf-8;"}
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const a =
+        document.createElement("a");
+
+    a.href = url;
+
+    a.download =
+        "KB-Helpdesk-Tickets.csv";
+
+    a.click();
+
+    URL.revokeObjectURL(url);
+
+
+    showToast(
+        "Export Complete",
+        "CSV report downloaded."
+    );
+
+}
+
+
+/* Add export option to header */
+
+const exportButton =
+    document.createElement("button");
+
+exportButton.className =
+    "top-btn";
+
+exportButton.innerHTML =
+    "📥 Export";
+
+exportButton.onclick =
+    exportCSV;
+
+document.querySelector(".header-actions")
+    .insertBefore(
+        exportButton,
+        document.querySelector(".portfolio")
+    );
+
+
+/* =========================
+   START
+========================= */
+
+renderAll();
 
 </script>
 
