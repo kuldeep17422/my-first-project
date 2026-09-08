@@ -3,47 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#070b17">
 
-<meta name="description"
-content="Kuldeep Borana — Desktop Support Engineer and IT Support Professional.">
+<meta name="theme-color" content="#070b17">
+<meta name="description" content="Kuldeep Borana — IT Support Professional, Desktop Support Engineer, Hardware & Networking Specialist.">
+<meta name="author" content="Kuldeep Borana">
+<meta name="keywords" content="Kuldeep Borana, IT Support, Desktop Support Engineer, Hardware, Networking, Windows, IT Engineer">
+
+<meta property="og:title" content="Kuldeep Borana | IT Support Professional">
+<meta property="og:description" content="IT Support Professional specializing in Desktop Support, Hardware, Windows and Networking.">
+<meta property="og:type" content="website">
 
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="developer.png">
 
 <title>Kuldeep Borana | IT Support Professional</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
 <style>
 
 :root{
   --bg:#070b17;
-  --bg2:#0d1324;
+  --bg2:#0c1222;
   --card:rgba(255,255,255,.055);
-  --card2:rgba(255,255,255,.08);
-  --text:#fff;
+  --card2:rgba(255,255,255,.085);
+  --text:#ffffff;
   --muted:#9ba7c0;
-  --line:rgba(255,255,255,.1);
+  --line:rgba(255,255,255,.10);
   --primary:#7567ff;
-  --secondary:#22d3ee;
+  --primary2:#9a8cff;
+  --cyan:#22d3ee;
   --green:#22c55e;
-  --max:1180px;
+  --orange:#fb923c;
+  --pink:#f472b6;
+  --max:1200px;
   --radius:24px;
+  --shadow:0 25px 80px rgba(0,0,0,.35);
 }
 
 body.light{
   --bg:#f5f7fb;
   --bg2:#ffffff;
-  --card:#ffffff;
-  --card2:#f1f3fa;
-  --text:#101827;
-  --muted:#667085;
-  --line:rgba(15,23,42,.09);
+  --card:rgba(0,0,0,.045);
+  --card2:rgba(0,0,0,.07);
+  --text:#111827;
+  --muted:#5f6b7a;
+  --line:rgba(0,0,0,.10);
+  --shadow:0 25px 70px rgba(30,40,70,.12);
 }
 
 *{
-  box-sizing:border-box;
   margin:0;
   padding:0;
+  box-sizing:border-box;
 }
 
 html{
@@ -52,57 +66,55 @@ html{
 
 body{
   font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;
-  background:var(--bg);
+  background:
+    radial-gradient(circle at 15% 15%,rgba(117,103,255,.10),transparent 30%),
+    radial-gradient(circle at 85% 25%,rgba(34,211,238,.08),transparent 28%),
+    var(--bg);
   color:var(--text);
   overflow-x:hidden;
-  transition:.3s;
+  line-height:1.7;
+}
+
+body::selection{
+  background:var(--primary);
+  color:white;
 }
 
 a{
-  text-decoration:none;
   color:inherit;
+  text-decoration:none;
+}
+
+img{
+  max-width:100%;
+  display:block;
 }
 
 button{
   font:inherit;
 }
 
-section{
-  padding:110px 5%;
-}
-
 .container{
-  max-width:var(--max);
+  width:min(var(--max),92%);
   margin:auto;
 }
 
-.reveal{
-  opacity:0;
-  transform:translateY(35px);
-  transition:.8s ease;
+section{
+  padding:110px 0;
+  position:relative;
 }
 
-.reveal.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-
-/* LOADER */
+/* ================= LOADER ================= */
 
 #loader{
   position:fixed;
   inset:0;
-  z-index:99999;
-  display:grid;
-  place-items:center;
   background:#070b17;
-  transition:.5s;
-}
-
-#loader.hide{
-  opacity:0;
-  visibility:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:99999;
+  transition:.6s ease;
 }
 
 .loader-box{
@@ -110,105 +122,94 @@ section{
 }
 
 .loader-logo{
-  width:70px;
-  height:70px;
+  width:75px;
+  height:75px;
+  border-radius:22px;
   display:grid;
   place-items:center;
   margin:auto auto 18px;
-  border-radius:20px;
+  background:linear-gradient(135deg,var(--primary),var(--cyan));
+  font-family:"Space Grotesk";
+  font-weight:800;
+  font-size:25px;
   color:white;
-  font-size:22px;
-  font-weight:950;
-  background:linear-gradient(135deg,#7567ff,#22d3ee);
+  box-shadow:0 0 45px rgba(117,103,255,.5);
   animation:pulse 1.5s infinite;
 }
 
-.loader-box p{
-  color:#8793ad;
-  font-size:12px;
-  letter-spacing:3px;
-  font-weight:800;
+.loader-text{
+  color:#aeb8cd;
+  font-size:14px;
 }
 
-@keyframes pulse{
-  50%{
-    transform:scale(1.1)
-  }
-}
-
-
-/* BACKGROUND */
-
-.background{
-  position:fixed;
-  inset:0;
-  z-index:-2;
+.loader-line{
+  width:180px;
+  height:3px;
+  margin:16px auto 0;
+  background:rgba(255,255,255,.1);
   overflow:hidden;
-  pointer-events:none;
+  border-radius:10px;
 }
 
-.orb{
-  position:absolute;
+.loader-line span{
+  display:block;
+  width:40%;
+  height:100%;
+  background:linear-gradient(90deg,var(--primary),var(--cyan));
+  animation:loading 1.1s infinite;
+}
+
+/* ================= BACKGROUND ================= */
+
+.bg-orb{
+  position:fixed;
   border-radius:50%;
   filter:blur(80px);
+  pointer-events:none;
+  z-index:-2;
   opacity:.28;
 }
 
-.orb.one{
-  width:420px;
-  height:420px;
+.orb1{
+  width:350px;
+  height:350px;
   background:#7567ff;
-  top:-160px;
-  left:-120px;
-  animation:float1 10s infinite alternate;
+  left:-180px;
+  top:15%;
 }
 
-.orb.two{
-  width:360px;
-  height:360px;
-  background:#22d3ee;
-  right:-100px;
-  top:40%;
-  animation:float2 12s infinite alternate;
-}
-
-.orb.three{
+.orb2{
   width:300px;
   height:300px;
-  background:#8b5cf6;
+  background:#22d3ee;
+  right:-150px;
+  top:45%;
+}
+
+.orb3{
+  width:280px;
+  height:280px;
+  background:#a855f7;
   left:35%;
-  bottom:-160px;
+  bottom:-150px;
 }
 
-@keyframes float1{
-  to{
-    transform:translate(100px,80px)
-  }
-}
-
-@keyframes float2{
-  to{
-    transform:translate(-100px,-80px)
-  }
-}
-
-
-/* NAV */
+/* ================= HEADER ================= */
 
 header{
   position:fixed;
   top:0;
   left:0;
   width:100%;
-  z-index:5000;
-  padding:18px 5%;
+  z-index:1000;
+  padding:18px 0;
   transition:.3s;
 }
 
 header.scrolled{
-  padding:10px 5%;
+  padding:11px 0;
   background:rgba(7,11,23,.78);
-  backdrop-filter:blur(18px);
+  backdrop-filter:blur(20px);
   border-bottom:1px solid var(--line);
 }
 
@@ -216,8 +217,8 @@ body.light header.scrolled{
   background:rgba(255,255,255,.82);
 }
 
-nav{
-  max-width:var(--max);
+.nav{
+  width:min(1200px,92%);
   margin:auto;
   display:flex;
   align-items:center;
@@ -227,9 +228,10 @@ nav{
 .logo{
   display:flex;
   align-items:center;
-  gap:10px;
-  font-size:1.3rem;
-  font-weight:950;
+  gap:11px;
+  font-family:"Space Grotesk";
+  font-weight:700;
+  font-size:19px;
 }
 
 .logo-mark{
@@ -238,483 +240,475 @@ nav{
   display:grid;
   place-items:center;
   border-radius:13px;
+  background:linear-gradient(135deg,var(--primary),var(--cyan));
   color:white;
-  background:linear-gradient(
-    135deg,
-    var(--primary),
-    var(--secondary)
-  );
+  box-shadow:0 8px 30px rgba(117,103,255,.3);
 }
 
-.logo span:last-child{
-  color:var(--primary);
+.logo span{
+  color:var(--muted);
 }
 
 .nav-links{
   display:flex;
-  gap:25px;
-  list-style:none;
   align-items:center;
+  gap:7px;
 }
 
 .nav-links a{
   color:var(--muted);
-  font-size:.85rem;
-  font-weight:800;
+  padding:10px 13px;
+  border-radius:12px;
+  font-size:14px;
   transition:.25s;
 }
 
 .nav-links a:hover,
 .nav-links a.active{
   color:var(--text);
+  background:var(--card);
 }
 
-.nav-cta{
-  padding:10px 15px;
-  border-radius:12px;
-  color:white!important;
-  background:linear-gradient(
-    135deg,
-    var(--primary),
-    #9b5cff
-  );
-}
-
-.nav-tools{
+.nav-actions{
   display:flex;
-  align-items:center;
   gap:8px;
+  align-items:center;
 }
 
-.theme-btn,
-.menu-btn{
+.icon-btn{
   width:40px;
   height:40px;
   border:1px solid var(--line);
-  border-radius:12px;
   background:var(--card);
   color:var(--text);
+  border-radius:12px;
   cursor:pointer;
+  display:grid;
+  place-items:center;
+  transition:.25s;
+}
+
+.icon-btn:hover{
+  transform:translateY(-2px);
+  background:var(--card2);
 }
 
 .menu-btn{
   display:none;
 }
 
-
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
   min-height:100vh;
   display:flex;
   align-items:center;
-  padding-top:145px;
-  position:relative;
+  padding-top:150px;
 }
 
 .hero-grid{
   display:grid;
-  grid-template-columns:1.15fr .85fr;
+  grid-template-columns:1.25fr .75fr;
   gap:70px;
   align-items:center;
 }
 
-.badge{
+.availability{
   display:inline-flex;
   align-items:center;
   gap:9px;
-  padding:9px 14px;
-  margin-bottom:23px;
-  border:1px solid var(--line);
-  border-radius:100px;
-  background:var(--card);
-  color:var(--muted);
-  font-size:.75rem;
-  font-weight:850;
-  backdrop-filter:blur(12px);
+  padding:8px 13px;
+  border:1px solid rgba(34,197,94,.22);
+  background:rgba(34,197,94,.07);
+  border-radius:999px;
+  color:#72e69a;
+  font-size:13px;
+  margin-bottom:24px;
 }
 
 .dot{
   width:8px;
   height:8px;
+  background:#22c55e;
   border-radius:50%;
-  background:var(--green);
-  box-shadow:0 0 15px var(--green);
+  box-shadow:0 0 14px #22c55e;
+  animation:blink 1.5s infinite;
 }
 
 .hero h1{
-  font-size:clamp(3.4rem,7vw,6.6rem);
-  line-height:.9;
-  letter-spacing:-6px;
-  font-weight:950;
-  margin-bottom:25px;
+  font-family:"Space Grotesk";
+  font-size:clamp(48px,7vw,82px);
+  line-height:1;
+  letter-spacing:-4px;
+  margin-bottom:18px;
 }
 
-.gradient{
-  display:block;
-  background:linear-gradient(
-    90deg,
-    #7567ff,
-    #22d3ee,
-    #fff
-  );
+.gradient-text{
+  background:linear-gradient(90deg,var(--primary2),var(--cyan));
   -webkit-background-clip:text;
   background-clip:text;
   color:transparent;
 }
 
 .hero-role{
-  font-size:1.25rem;
-  line-height:1.6;
-  font-weight:800;
-  margin-bottom:15px;
-}
-
-.hero-description{
-  max-width:670px;
-  color:var(--muted);
-  line-height:1.9;
-  font-size:.96rem;
-  margin-bottom:28px;
-}
-
-.actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-}
-
-.btn{
-  min-height:50px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  padding:0 20px;
-  border-radius:14px;
-  font-size:.85rem;
-  font-weight:900;
-  transition:.3s;
-}
-
-.btn-primary{
-  color:white;
-  background:linear-gradient(
-    135deg,
-    var(--primary),
-    #9b5cff
-  );
-  box-shadow:0 15px 40px rgba(117,103,255,.25);
-}
-
-.btn-outline{
-  border:1px solid var(--line);
-  background:var(--card);
-  color:var(--text);
-}
-
-.btn:hover{
-  transform:translateY(-4px);
-}
-
-.hero-stats{
-  display:flex;
-  gap:35px;
-  margin-top:35px;
-}
-
-.hero-stat strong{
-  display:block;
-  font-size:1.3rem;
-  font-weight:950;
-}
-
-.hero-stat span{
-  color:var(--muted);
-  font-size:.7rem;
-  font-weight:700;
-}
-
-
-/* PROFILE */
-
-.profile-wrap{
-  display:flex;
-  justify-content:center;
-}
-
-.profile-card{
-  width:min(390px,100%);
-  padding:28px;
-  border:1px solid var(--line);
-  border-radius:32px;
-  background:linear-gradient(
-    145deg,
-    rgba(255,255,255,.1),
-    rgba(255,255,255,.025)
-  );
-  backdrop-filter:blur(20px);
-  box-shadow:0 35px 100px rgba(0,0,0,.35);
-  transform:rotateY(-5deg);
-  transition:.5s;
-}
-
-.profile-card:hover{
-  transform:rotateY(0) translateY(-8px);
-}
-
-.profile-ring{
-  width:230px;
-  height:230px;
-  padding:7px;
-  margin:auto auto 23px;
-  border-radius:50%;
-  background:linear-gradient(
-    135deg,
-    var(--primary),
-    var(--secondary)
-  );
-}
-
-.profile-ring img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  border-radius:50%;
-  background:white;
-  border:6px solid #0c1222;
-}
-
-.profile-card h2{
-  text-align:center;
-  font-size:1.6rem;
-  margin-bottom:5px;
-}
-
-.profile-card > p{
-  text-align:center;
-  color:var(--muted);
-  font-size:.82rem;
+  font-family:"Space Grotesk";
+  font-size:clamp(21px,3vw,31px);
+  font-weight:600;
   margin-bottom:20px;
 }
 
-.tags{
+.hero-role span{
+  color:var(--cyan);
+}
+
+.hero-description{
+  max-width:700px;
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.9;
+}
+
+.hero-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:13px;
+  margin-top:32px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  padding:13px 19px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  font-weight:600;
+  font-size:14px;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+.btn-primary{
+  background:linear-gradient(135deg,var(--primary),#5b4ff3);
+  border-color:transparent;
+  color:white;
+  box-shadow:0 15px 35px rgba(117,103,255,.25);
+}
+
+.btn-secondary{
+  background:var(--card);
+}
+
+.btn-whatsapp{
+  background:rgba(34,197,94,.10);
+  border-color:rgba(34,197,94,.2);
+  color:#67e695;
+}
+
+.hero-stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  margin-top:48px;
+  border:1px solid var(--line);
+  background:var(--card);
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.stat{
+  padding:19px 15px;
+  border-right:1px solid var(--line);
+  text-align:center;
+}
+
+.stat:last-child{
+  border-right:0;
+}
+
+.stat strong{
+  display:block;
+  font-family:"Space Grotesk";
+  font-size:20px;
+}
+
+.stat small{
+  color:var(--muted);
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+/* ================= PROFILE CARD ================= */
+
+.profile-wrap{
+  position:relative;
+}
+
+.profile-card{
+  position:relative;
+  padding:28px;
+  border:1px solid var(--line);
+  background:linear-gradient(145deg,var(--card2),var(--card));
+  backdrop-filter:blur(25px);
+  border-radius:32px;
+  box-shadow:var(--shadow);
+  text-align:center;
+  overflow:hidden;
+}
+
+.profile-card::before{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background:var(--primary);
+  filter:blur(70px);
+  opacity:.18;
+  top:-80px;
+  left:-50px;
+}
+
+.profile-image{
+  width:210px;
+  height:210px;
+  object-fit:cover;
+  border-radius:50%;
+  margin:5px auto 22px;
+  border:5px solid rgba(255,255,255,.08);
+  box-shadow:0 0 0 10px rgba(117,103,255,.06),0 25px 70px rgba(0,0,0,.4);
+  position:relative;
+  z-index:2;
+}
+
+.profile-card h3{
+  font-family:"Space Grotesk";
+  font-size:26px;
+}
+
+.profile-card p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.profile-tags{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  gap:7px;
+  gap:8px;
+  margin-top:20px;
 }
 
 .tag{
-  padding:8px 10px;
-  border-radius:9px;
-  background:var(--card2);
+  padding:7px 11px;
+  border-radius:999px;
+  background:var(--card);
   border:1px solid var(--line);
+  font-size:11px;
   color:var(--muted);
-  font-size:.68rem;
-  font-weight:800;
 }
 
+.profile-badge{
+  position:absolute;
+  top:18px;
+  right:18px;
+  z-index:5;
+  background:rgba(34,197,94,.12);
+  border:1px solid rgba(34,197,94,.2);
+  color:#67e695;
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:10px;
+}
 
-/* SECTION */
+/* ================= SECTION ================= */
+
+.section-head{
+  max-width:700px;
+  margin-bottom:45px;
+}
 
 .eyebrow{
-  color:var(--secondary);
+  color:var(--cyan);
+  font-size:12px;
+  font-weight:700;
   text-transform:uppercase;
-  letter-spacing:2.5px;
-  font-size:.7rem;
-  font-weight:950;
+  letter-spacing:2px;
   margin-bottom:10px;
 }
 
-.heading{
-  text-align:center;
-  max-width:720px;
-  margin:0 auto 55px;
-}
-
-.heading h2{
-  font-size:clamp(2.2rem,5vw,3.5rem);
-  line-height:1;
-  letter-spacing:-2.5px;
+.section-head h2{
+  font-family:"Space Grotesk";
+  font-size:clamp(34px,5vw,52px);
+  line-height:1.1;
+  letter-spacing:-2px;
   margin-bottom:15px;
 }
 
-.heading p{
+.section-head p{
   color:var(--muted);
-  line-height:1.8;
 }
 
-
-/* ABOUT */
+/* ================= ABOUT ================= */
 
 .about-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:55px;
-  align-items:center;
+  gap:25px;
 }
 
-.about-text h3{
-  font-size:2rem;
-  margin-bottom:17px;
+.about-text{
+  padding:32px;
+  border:1px solid var(--line);
+  background:var(--card);
+  border-radius:var(--radius);
 }
 
 .about-text p{
   color:var(--muted);
-  line-height:1.9;
-  margin-bottom:14px;
+  margin-bottom:17px;
 }
 
 .about-cards{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:14px;
+  gap:15px;
 }
 
 .info-card{
   padding:25px;
   border:1px solid var(--line);
-  border-radius:22px;
   background:var(--card);
-  transition:.35s;
+  border-radius:20px;
+  transition:.3s;
 }
 
 .info-card:hover{
-  transform:translateY(-7px);
-  border-color:rgba(117,103,255,.4);
+  transform:translateY(-5px);
+  background:var(--card2);
+  border-color:rgba(117,103,255,.35);
 }
 
 .info-icon{
-  font-size:1.5rem;
-  margin-bottom:14px;
+  font-size:27px;
+  margin-bottom:13px;
 }
 
-.info-card h4{
+.info-card h3{
+  font-family:"Space Grotesk";
+  font-size:18px;
   margin-bottom:7px;
 }
 
 .info-card p{
   color:var(--muted);
-  font-size:.78rem;
-  line-height:1.7;
+  font-size:13px;
 }
 
-
-/* EXPERIENCE */
+/* ================= EXPERIENCE ================= */
 
 .timeline{
-  max-width:900px;
-  margin:auto;
   position:relative;
+  max-width:900px;
 }
 
-.timeline:before{
+.timeline::before{
   content:"";
   position:absolute;
-  left:15px;
-  top:0;
-  bottom:0;
-  width:2px;
-  background:linear-gradient(
-    var(--primary),
-    var(--secondary)
-  );
+  left:9px;
+  top:10px;
+  bottom:10px;
+  width:1px;
+  background:linear-gradient(var(--primary),transparent);
 }
 
 .timeline-item{
   position:relative;
-  padding-left:55px;
-  margin-bottom:25px;
+  padding-left:45px;
+  margin-bottom:35px;
 }
 
 .timeline-dot{
   position:absolute;
-  left:4px;
-  top:23px;
-  width:23px;
-  height:23px;
+  left:0;
+  top:7px;
+  width:19px;
+  height:19px;
   border-radius:50%;
   background:var(--bg);
-  border:6px solid var(--primary);
+  border:4px solid var(--primary);
+  box-shadow:0 0 20px rgba(117,103,255,.6);
 }
 
 .timeline-card{
   padding:28px;
   border:1px solid var(--line);
-  border-radius:22px;
   background:var(--card);
-  transition:.35s;
-}
-
-.timeline-card:hover{
-  transform:translateX(7px);
+  border-radius:22px;
 }
 
 .timeline-card .date{
-  display:inline-block;
-  padding:7px 10px;
-  border-radius:8px;
-  background:rgba(117,103,255,.13);
-  color:#9b91ff;
-  font-size:.65rem;
-  font-weight:950;
-  margin-bottom:13px;
+  color:var(--cyan);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1.5px;
 }
 
 .timeline-card h3{
-  margin-bottom:6px;
+  font-family:"Space Grotesk";
+  font-size:23px;
+  margin:5px 0;
 }
 
 .timeline-card .role{
-  color:var(--secondary);
-  font-size:.82rem;
-  font-weight:850;
+  color:var(--muted);
+  font-size:13px;
   margin-bottom:13px;
 }
 
 .timeline-card p{
   color:var(--muted);
-  font-size:.84rem;
-  line-height:1.8;
+  font-size:14px;
 }
 
+/* ================= SKILLS ================= */
 
-/* SKILLS */
-
-.skill-grid{
+.skills-grid{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:18px;
+  grid-template-columns:1fr 1fr;
+  gap:17px;
 }
 
 .skill{
-  padding:25px;
+  padding:22px;
   border:1px solid var(--line);
-  border-radius:21px;
   background:var(--card);
+  border-radius:18px;
 }
 
 .skill-top{
   display:flex;
   justify-content:space-between;
-  margin-bottom:12px;
+  margin-bottom:11px;
 }
 
 .skill-top strong{
-  font-size:.9rem;
+  font-size:14px;
 }
 
 .skill-top span{
-  color:var(--secondary);
-  font-weight:900;
-  font-size:.78rem;
+  color:var(--cyan);
+  font-size:13px;
 }
 
 .progress{
-  height:8px;
-  border-radius:20px;
-  background:rgba(127,127,127,.15);
+  height:7px;
+  background:rgba(255,255,255,.07);
+  border-radius:99px;
   overflow:hidden;
 }
 
@@ -722,112 +716,148 @@ nav{
   display:block;
   width:0;
   height:100%;
-  border-radius:20px;
-  background:linear-gradient(
-    90deg,
-    var(--primary),
-    var(--secondary)
-  );
-  transition:1.4s ease;
+  border-radius:99px;
+  background:linear-gradient(90deg,var(--primary),var(--cyan));
+  transition:1.4s cubic-bezier(.2,.8,.2,1);
 }
 
+/* ================= TECH STACK ================= */
 
-/* PROJECTS */
+.stack-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+.stack-card{
+  padding:25px;
+  border:1px solid var(--line);
+  background:var(--card);
+  border-radius:20px;
+  transition:.3s;
+  position:relative;
+  overflow:hidden;
+}
+
+.stack-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(34,211,238,.3);
+}
+
+.stack-icon{
+  font-size:30px;
+  margin-bottom:15px;
+}
+
+.stack-card h3{
+  font-family:"Space Grotesk";
+  font-size:17px;
+  margin-bottom:7px;
+}
+
+.stack-card p{
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* ================= WHY HIRE ================= */
+
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.why-card{
+  padding:30px;
+  border:1px solid var(--line);
+  background:linear-gradient(145deg,var(--card2),var(--card));
+  border-radius:23px;
+  transition:.3s;
+}
+
+.why-card:hover{
+  transform:translateY(-7px);
+}
+
+.why-number{
+  font-family:"Space Grotesk";
+  font-size:38px;
+  font-weight:700;
+  color:rgba(117,103,255,.45);
+}
+
+.why-card h3{
+  margin:10px 0;
+  font-family:"Space Grotesk";
+  font-size:20px;
+}
+
+.why-card p{
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* ================= PROJECTS ================= */
 
 .project-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
 }
 
-.project{
+.project-card{
+  padding:27px;
+  border:1px solid var(--line);
+  background:var(--card);
+  border-radius:24px;
+  transition:.35s;
   position:relative;
   overflow:hidden;
-  border:1px solid var(--line);
-  border-radius:26px;
-  background:linear-gradient(
-    145deg,
-    rgba(255,255,255,.075),
-    rgba(255,255,255,.025)
-  );
-  backdrop-filter:blur(18px);
-  transition:.4s ease;
 }
 
-.project:hover{
-  transform:translateY(-10px);
-  border-color:rgba(117,103,255,.45);
-  box-shadow:
-    0 25px 70px rgba(0,0,0,.28),
-    0 0 35px rgba(117,103,255,.08);
+.project-card:hover{
+  transform:translateY(-7px);
+  border-color:rgba(117,103,255,.35);
+  box-shadow:0 25px 70px rgba(0,0,0,.2);
 }
 
 .project-top{
-  height:190px;
-  position:relative;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:18px;
+}
+
+.project-number{
+  width:45px;
+  height:45px;
   display:grid;
   place-items:center;
-  font-size:4.5rem;
-  overflow:hidden;
-  background:
-    radial-gradient(
-      circle at 30% 20%,
-      rgba(117,103,255,.5),
-      transparent 35%
-    ),
-    radial-gradient(
-      circle at 80% 80%,
-      rgba(34,211,238,.25),
-      transparent 35%
-    ),
-    linear-gradient(
-      135deg,
-      #111936,
-      #090e1d
-    );
-}
-
-.project-top::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,255,255,.08),
-    transparent
-  );
-  transform:translateX(-100%);
-  transition:.7s;
-}
-
-.project:hover .project-top::after{
-  transform:translateX(100%);
-}
-
-.project-body{
-  padding:28px;
+  border-radius:14px;
+  background:linear-gradient(135deg,rgba(117,103,255,.2),rgba(34,211,238,.1));
+  color:var(--cyan);
+  font-family:"Space Grotesk";
+  font-weight:700;
 }
 
 .project-type{
-  display:inline-block;
-  margin-bottom:8px;
-  color:var(--secondary);
-  font-size:.65rem;
-  letter-spacing:1.8px;
-  text-transform:uppercase;
-  font-weight:950;
-}
-
-.project h3{
-  font-size:1.35rem;
-  margin:4px 0 12px;
-}
-
-.project p{
   color:var(--muted);
-  font-size:.83rem;
-  line-height:1.8;
+  font-size:11px;
+  border:1px solid var(--line);
+  padding:6px 10px;
+  border-radius:999px;
+}
+
+.project-card h3{
+  font-family:"Space Grotesk";
+  font-size:23px;
+  margin-bottom:8px;
+}
+
+.project-card p{
+  color:var(--muted);
+  font-size:13px;
   margin-bottom:18px;
 }
 
@@ -835,57 +865,29 @@ nav{
   display:flex;
   flex-wrap:wrap;
   gap:7px;
-  margin-bottom:22px;
+  margin-bottom:20px;
 }
 
 .project-tech span{
-  padding:6px 9px;
+  font-size:10px;
+  color:var(--muted);
+  padding:5px 8px;
   border-radius:8px;
   background:var(--card2);
-  border:1px solid var(--line);
-  color:var(--muted);
-  font-size:.62rem;
-  font-weight:850;
 }
 
-.project-actions{
+.project-links{
   display:flex;
   gap:9px;
 }
 
-.project-actions a{
-  flex:1;
-  min-height:42px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:11px;
-  font-size:.72rem;
-  font-weight:900;
-  transition:.25s;
+.project-links a{
+  font-size:12px;
+  font-weight:600;
+  color:var(--cyan);
 }
 
-.project-live{
-  color:white;
-  background:linear-gradient(
-    135deg,
-    var(--primary),
-    #9b5cff
-  );
-}
-
-.project-code{
-  border:1px solid var(--line);
-  background:var(--card2);
-  color:var(--text);
-}
-
-.project-actions a:hover{
-  transform:translateY(-3px);
-}
-
-
-/* CERTIFICATIONS */
+/* ================= CERTIFICATIONS ================= */
 
 .cert-grid{
   display:grid;
@@ -893,396 +895,336 @@ nav{
   gap:18px;
 }
 
-.cert{
-  position:relative;
-  padding:28px;
+.cert-card{
+  padding:27px;
   border:1px solid var(--line);
-  border-radius:22px;
   background:var(--card);
-  overflow:hidden;
-  transition:.35s;
-}
-
-.cert:hover{
-  transform:translateY(-8px);
-}
-
-.cert:after{
-  content:"";
-  position:absolute;
-  width:130px;
-  height:130px;
-  right:-60px;
-  top:-60px;
-  border-radius:50%;
-  background:rgba(117,103,255,.1);
+  border-radius:22px;
 }
 
 .cert-icon{
-  width:52px;
-  height:52px;
-  display:grid;
-  place-items:center;
-  border-radius:15px;
-  background:linear-gradient(
-    135deg,
-    var(--primary),
-    #9b5cff
-  );
-  margin-bottom:18px;
+  font-size:30px;
+  margin-bottom:15px;
 }
 
-.cert h3{
-  font-size:1rem;
-  margin-bottom:8px;
+.cert-card h3{
+  font-family:"Space Grotesk";
+  font-size:18px;
 }
 
-.cert p{
+.cert-card p{
   color:var(--muted);
-  font-size:.8rem;
-  line-height:1.7;
+  font-size:12px;
+  margin-top:6px;
 }
 
-.cert-label{
-  display:inline-block;
-  margin-top:15px;
-  padding:6px 9px;
-  border-radius:7px;
-  background:rgba(117,103,255,.12);
-  color:#a39bff;
-  font-size:.62rem;
-  font-weight:900;
-}
+/* ================= CTA ================= */
 
-
-/* RESUME */
-
-.resume-box{
-  padding:55px;
-  border-radius:30px;
-  border:1px solid var(--line);
+.cta{
+  padding:45px;
+  border:1px solid rgba(117,103,255,.25);
   background:
-    radial-gradient(
-      circle at 85% 20%,
-      rgba(34,211,238,.15),
-      transparent 30%
-    ),
-    linear-gradient(
-      135deg,
-      #111832,
-      #17113b
-    );
+    radial-gradient(circle at 80% 20%,rgba(34,211,238,.12),transparent 30%),
+    radial-gradient(circle at 20% 80%,rgba(117,103,255,.15),transparent 35%),
+    var(--card);
+  border-radius:30px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:30px;
 }
 
-.resume-box h2{
-  font-size:clamp(1.8rem,4vw,2.8rem);
+.cta h2{
+  font-family:"Space Grotesk";
+  font-size:clamp(28px,4vw,43px);
+  line-height:1.1;
   margin-bottom:10px;
 }
 
-.resume-box p{
-  color:#9ba7c0;
-  line-height:1.7;
+.cta p{
+  color:var(--muted);
 }
 
-
-/* CONTACT */
+/* ================= CONTACT ================= */
 
 .contact-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:17px;
-  margin-bottom:25px;
+  gap:15px;
 }
 
 .contact-card{
-  text-align:center;
-  padding:28px;
+  padding:25px;
   border:1px solid var(--line);
-  border-radius:22px;
   background:var(--card);
+  border-radius:20px;
   transition:.3s;
 }
 
 .contact-card:hover{
-  transform:translateY(-7px);
-  border-color:rgba(117,103,255,.4);
+  transform:translateY(-5px);
+  background:var(--card2);
 }
 
 .contact-icon{
-  font-size:1.5rem;
+  font-size:25px;
   margin-bottom:12px;
 }
 
 .contact-card h3{
-  margin-bottom:7px;
+  font-family:"Space Grotesk";
+  font-size:17px;
 }
 
 .contact-card p{
   color:var(--muted);
-  font-size:.78rem;
+  font-size:12px;
+  margin:3px 0 13px;
   word-break:break-word;
 }
 
 .contact-card a{
-  transition:.25s;
+  color:var(--cyan);
+  font-size:12px;
+  font-weight:600;
 }
 
-.contact-card a:hover{
-  color:var(--secondary);
-}
-
-.whatsapp{
-  width:max-content;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  gap:9px;
-  padding:15px 24px;
-  border-radius:14px;
-  color:white;
-  font-weight:900;
-  background:linear-gradient(
-    135deg,
-    #16a34a,
-    #22c55e
-  );
-  transition:.3s;
-}
-
-.whatsapp:hover{
-  transform:translateY(-4px);
-}
-
-
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
-  padding:28px 5%;
-  text-align:center;
-  color:#7c879e;
+  padding:35px 0;
   border-top:1px solid var(--line);
-  font-size:.78rem;
+  text-align:center;
 }
 
-.footer-instagram{
-  display:inline-block;
-  margin-top:12px;
-  color:#ff6bb5;
-  font-weight:800;
-  transition:.25s;
+footer p{
+  color:var(--muted);
+  font-size:12px;
 }
 
-.footer-instagram:hover{
-  color:var(--secondary);
-  transform:translateY(-2px);
+.footer-name{
+  color:var(--text);
+  font-family:"Space Grotesk";
+  font-weight:700;
 }
 
+/* ================= FLOAT BUTTONS ================= */
 
-/* FLOATING */
-
-.floating{
+.whatsapp-float{
   position:fixed;
   right:22px;
   bottom:22px;
-  z-index:4000;
-  width:57px;
-  height:57px;
+  width:54px;
+  height:54px;
+  border-radius:50%;
   display:grid;
   place-items:center;
-  border-radius:50%;
+  background:#25d366;
   color:white;
-  font-size:1.4rem;
-  background:#20c463;
-  box-shadow:0 15px 40px rgba(34,197,94,.35);
-}
-
-.top{
-  position:fixed;
-  right:22px;
-  bottom:91px;
-  z-index:4000;
-  width:43px;
-  height:43px;
-  border:1px solid var(--line);
-  border-radius:13px;
-  background:var(--card);
-  color:var(--text);
-  cursor:pointer;
-  opacity:0;
-  visibility:hidden;
+  font-size:24px;
+  z-index:500;
+  box-shadow:0 10px 30px rgba(37,211,102,.3);
   transition:.3s;
 }
 
-.top.show{
+.whatsapp-float:hover{
+  transform:scale(1.08);
+}
+
+#topBtn{
+  position:fixed;
+  right:22px;
+  bottom:90px;
+  width:42px;
+  height:42px;
+  border:1px solid var(--line);
+  background:var(--card2);
+  color:var(--text);
+  border-radius:12px;
+  cursor:pointer;
+  display:none;
+  z-index:500;
+}
+
+/* ================= REVEAL ================= */
+
+.reveal{
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity .8s ease,transform .8s ease;
+}
+
+.reveal.show{
   opacity:1;
-  visibility:visible;
+  transform:none;
 }
 
+/* ================= ANIMATIONS ================= */
 
-/* MOBILE */
-
-@media(max-width:950px){
-
-  .hero-grid,
-  .about-grid{
-    grid-template-columns:1fr;
-  }
-
-  .hero{
-    text-align:center;
-  }
-
-  .hero-description{
-    margin-left:auto;
-    margin-right:auto;
-  }
-
-  .actions,
-  .hero-stats{
-    justify-content:center;
-  }
-
-  .profile-wrap{
-    order:-1;
-  }
-
-  .project-grid,
-  .cert-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .contact-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
+@keyframes pulse{
+  50%{transform:scale(1.05)}
 }
 
+@keyframes loading{
+  0%{transform:translateX(-100%)}
+  100%{transform:translateX(350%)}
+}
 
-@media(max-width:720px){
+@keyframes blink{
+  50%{opacity:.35}
+}
 
-  header{
-    padding:12px 5%;
-  }
+/* ================= RESPONSIVE ================= */
 
-  .menu-btn{
-    display:block;
-  }
+@media(max-width:1000px){
 
   .nav-links{
-    position:fixed;
-    left:5%;
-    right:5%;
+    position:absolute;
     top:70px;
-    padding:18px;
+    left:4%;
+    right:4%;
+    padding:12px;
     flex-direction:column;
     align-items:stretch;
-    gap:3px;
+    background:rgba(10,15,30,.96);
+    backdrop-filter:blur(25px);
     border:1px solid var(--line);
     border-radius:20px;
-    background:var(--bg2);
-    box-shadow:0 25px 70px rgba(0,0,0,.25);
-    transform:translateY(-15px);
     opacity:0;
-    pointer-events:none;
-    transition:.3s;
+    visibility:hidden;
+    transform:translateY(-10px);
+    transition:.25s;
+  }
+
+  body.light .nav-links{
+    background:rgba(255,255,255,.96);
   }
 
   .nav-links.open{
-    transform:translateY(0);
     opacity:1;
-    pointer-events:auto;
+    visibility:visible;
+    transform:none;
   }
 
   .nav-links a{
-    display:block;
-    padding:12px;
+    padding:13px;
   }
 
-  .nav-cta{
-    text-align:center;
+  .menu-btn{
+    display:grid;
   }
 
-  .skill-grid,
-  .project-grid,
-  .cert-grid,
-  .contact-grid{
+  .hero-grid{
     grid-template-columns:1fr;
   }
 
-  .resume-box{
-    flex-direction:column;
-    align-items:flex-start;
-    padding:35px 25px;
+  .profile-wrap{
+    max-width:450px;
+    margin:auto;
   }
 
-  .resume-box .btn{
-    width:100%;
+  .stack-grid{
+    grid-template-columns:repeat(2,1fr);
   }
 
-  .hero h1{
-    letter-spacing:-3px;
+  .contact-grid{
+    grid-template-columns:repeat(2,1fr);
   }
 
+  .why-grid{
+    grid-template-columns:1fr;
+  }
 }
 
-
-@media(max-width:500px){
+@media(max-width:700px){
 
   section{
-    padding:80px 5%;
+    padding:80px 0;
   }
 
   .hero{
-    padding-top:110px;
+    padding-top:120px;
   }
 
-  .profile-ring{
-    width:190px;
-    height:190px;
+  .hero h1{
+    font-size:51px;
+    letter-spacing:-3px;
   }
 
-  .profile-card{
-    padding:22px;
+  .hero-stats{
+    grid-template-columns:1fr 1fr;
   }
 
-  .actions{
-    flex-direction:column;
+  .stat:nth-child(2){
+    border-right:0;
   }
 
-  .actions .btn{
-    width:100%;
+  .stat:nth-child(-n+2){
+    border-bottom:1px solid var(--line);
   }
 
-  .about-cards{
+  .about-grid,
+  .project-grid,
+  .skills-grid{
     grid-template-columns:1fr;
   }
 
-  .timeline-item{
-    padding-left:42px;
+  .about-cards{
+    grid-template-columns:1fr 1fr;
   }
 
-  .timeline:before{
-    left:10px;
+  .stack-grid,
+  .cert-grid{
+    grid-template-columns:1fr 1fr;
   }
 
-  .timeline-dot{
-    left:0;
+  .cta{
+    padding:30px;
+    flex-direction:column;
+    align-items:flex-start;
   }
 
-  .floating{
-    right:16px;
-    bottom:16px;
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:480px){
+
+  .container{
+    width:90%;
   }
 
-  .top{
-    right:16px;
-    bottom:80px;
+  .hero h1{
+    font-size:44px;
   }
 
+  .hero-role{
+    font-size:21px;
+  }
+
+  .about-cards,
+  .stack-grid,
+  .cert-grid{
+    grid-template-columns:1fr;
+  }
+
+  .profile-image{
+    width:180px;
+    height:180px;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+  .project-links{
+    flex-wrap:wrap;
+  }
 }
 
 </style>
@@ -1290,306 +1232,141 @@ footer{
 
 <body>
 
-
 <!-- LOADER -->
-
 <div id="loader">
-
   <div class="loader-box">
-
-    <div class="loader-logo">
-      KB
-    </div>
-
-    <p>
-      Loading Portfolio
-    </p>
-
+    <div class="loader-logo">KB</div>
+    <div class="loader-text">Loading Portfolio...</div>
+    <div class="loader-line"><span></span></div>
   </div>
-
 </div>
-
 
 <!-- BACKGROUND -->
+<div class="bg-orb orb1"></div>
+<div class="bg-orb orb2"></div>
+<div class="bg-orb orb3"></div>
 
-<div class="background">
-
-  <div class="orb one"></div>
-
-  <div class="orb two"></div>
-
-  <div class="orb three"></div>
-
-</div>
-
-
-<!-- NAVIGATION -->
-
+<!-- HEADER -->
 <header id="header">
+  <nav class="nav">
 
-<nav>
+    <a href="#home" class="logo">
+      <div class="logo-mark">KB</div>
+      <div>Kuldeep<span>.</span></div>
+    </a>
 
-  <a href="#home" class="logo">
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#stack">Tech Stack</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </div>
 
-    <span class="logo-mark">
-      KB
-    </span>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">☾</button>
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
 
-    Kuldeep<span>.</span>
-
-  </a>
-
-
-  <ul class="nav-links" id="navLinks">
-
-    <li>
-      <a class="active" href="#home">
-        Home
-      </a>
-    </li>
-
-    <li>
-      <a href="#about">
-        About
-      </a>
-    </li>
-
-    <li>
-      <a href="#experience">
-        Experience
-      </a>
-    </li>
-
-    <li>
-      <a href="#skills">
-        Skills
-      </a>
-    </li>
-
-    <li>
-      <a href="#projects">
-        Projects
-      </a>
-    </li>
-
-    <li>
-      <a href="#certifications">
-        Certifications
-      </a>
-    </li>
-
-    <li>
-      <a class="nav-cta" href="#contact">
-        Contact
-      </a>
-    </li>
-
-  </ul>
-
-
-  <div class="nav-tools">
-
-    <button class="theme-btn" id="themeBtn">
-      ☀️
-    </button>
-
-    <button class="menu-btn" id="menuBtn">
-      ☰
-    </button>
-
-  </div>
-
-</nav>
-
+  </nav>
 </header>
 
+<main>
 
 <!-- HERO -->
-
 <section class="hero" id="home">
-
 <div class="container hero-grid">
 
+  <div class="hero-content reveal">
 
-  <div class="reveal">
-
-    <div class="badge">
-
+    <div class="availability">
       <span class="dot"></span>
-
       Available for IT Opportunities
-
     </div>
-
 
     <h1>
-
-      Kuldeep
-
-      <span class="gradient">
-        Borana
-      </span>
-
+      Hi, I'm<br>
+      <span class="gradient-text">Kuldeep Borana</span>
     </h1>
 
-
     <div class="hero-role">
-
-      Desktop Support Engineer
-
-      <br>
-
-      IT Support • Hardware • Networking
-
+      Desktop Support Engineer <span>/</span> IT Support
     </div>
-
 
     <p class="hero-description">
-
-      Reliable and solution-focused IT professional with
-      practical experience in desktop support, hardware
-      troubleshooting, Windows systems, software support,
-      Outlook, printers and networking.
-
+      IT Support Professional focused on desktop troubleshooting,
+      hardware diagnostics, Windows systems, software support,
+      Microsoft Outlook, printers, networking and reliable user support.
     </p>
 
+    <div class="hero-buttons">
 
-    <div class="actions">
-
-      <a
-        class="btn btn-primary"
-        href="resume.pdf"
-        target="_blank">
-
+      <a class="btn btn-primary" href="resume.pdf" target="_blank">
         📄 View Resume
-
       </a>
 
-
-      <a
-        class="btn btn-outline"
-        href="https://wa.me/919752133011"
-        target="_blank">
-
-        💬 WhatsApp
-
+      <a class="btn btn-whatsapp"
+         href="https://wa.me/919752133011?text=Hello%20Kuldeep,%20I%20visited%20your%20portfolio."
+         target="_blank">
+        💬 WhatsApp Me
       </a>
 
-
-      <a
-        class="btn btn-outline"
-        href="#projects">
-
-        🚀 Projects
-
+      <a class="btn btn-secondary" href="#projects">
+        🚀 View Projects
       </a>
 
     </div>
-
 
     <div class="hero-stats">
 
-      <div class="hero-stat">
-
-        <strong>
-          IT
-        </strong>
-
-        <span>
-          Support
-        </span>
-
+      <div class="stat">
+        <strong>IT</strong>
+        <small>Support</small>
       </div>
 
-
-      <div class="hero-stat">
-
-        <strong>
-          PC
-        </strong>
-
-        <span>
-          Hardware
-        </span>
-
+      <div class="stat">
+        <strong>PC</strong>
+        <small>Hardware</small>
       </div>
 
-
-      <div class="hero-stat">
-
-        <strong>
-          OS
-        </strong>
-
-        <span>
-          Windows
-        </span>
-
+      <div class="stat">
+        <strong>WIN</strong>
+        <small>Windows</small>
       </div>
 
-
-      <div class="hero-stat">
-
-        <strong>
-          NET
-        </strong>
-
-        <span>
-          Networking
-        </span>
-
+      <div class="stat">
+        <strong>NET</strong>
+        <small>Networking</small>
       </div>
 
     </div>
 
   </div>
-
 
   <div class="profile-wrap reveal">
 
     <div class="profile-card">
 
-      <div class="profile-ring">
+      <div class="profile-badge">● Open to Work</div>
 
-        <img
-          src="developer.png"
-          alt="Kuldeep Borana">
+      <img
+        src="developer.png"
+        alt="Kuldeep Borana"
+        class="profile-image"
+      >
 
-      </div>
+      <h3>Kuldeep Borana</h3>
+      <p>IT Support Professional</p>
 
-
-      <h2>
-        Kuldeep Borana
-      </h2>
-
-
-      <p>
-        IT Support Professional
-      </p>
-
-
-      <div class="tags">
-
-        <span class="tag">
-          Desktop Support
-        </span>
-
-        <span class="tag">
-          Hardware
-        </span>
-
-        <span class="tag">
-          Windows
-        </span>
-
-        <span class="tag">
-          Networking
-        </span>
-
-        <span class="tag">
-          Troubleshooting
-        </span>
-
+      <div class="profile-tags">
+        <span class="tag">Desktop Support</span>
+        <span class="tag">Hardware</span>
+        <span class="tag">Windows</span>
+        <span class="tag">Networking</span>
+        <span class="tag">Troubleshooting</span>
       </div>
 
     </div>
@@ -1597,1252 +1374,739 @@ footer{
   </div>
 
 </div>
-
 </section>
 
 
 <!-- ABOUT -->
-
 <section id="about">
-
 <div class="container">
 
-
-  <div class="heading reveal">
-
-    <div class="eyebrow">
-      About Me
-    </div>
-
-    <h2>
-      Technology That Solves Problems
-    </h2>
-
-    <p>
-      Practical IT support with a focus on reliability,
-      troubleshooting and user experience.
-    </p>
-
+  <div class="section-head reveal">
+    <div class="eyebrow">About Me</div>
+    <h2>Technology That <span class="gradient-text">Solves Problems.</span></h2>
+    <p>Practical IT support with a focus on reliability, troubleshooting and user experience.</p>
   </div>
-
 
   <div class="about-grid">
 
-
     <div class="about-text reveal">
 
-      <h3>
-        Reliable. Technical. Solution-focused.
-      </h3>
-
-
       <p>
-        I work in IT support with a focus on diagnosing
-        technical problems, maintaining systems and helping
-        users get back to work quickly.
+        I am an IT Support Professional with practical experience in
+        desktop support, hardware troubleshooting, Windows systems,
+        software installation and technical problem solving.
       </p>
 
-
       <p>
-        My technical areas include desktop support,
-        computer hardware, Windows operating systems,
-        software installation, Outlook, printers and
-        networking support.
+        My focus is simple: understand the problem, troubleshoot it
+        efficiently and provide a reliable solution for the user.
       </p>
 
-
       <p>
-        My approach is simple: understand the problem,
-        identify the cause and provide a dependable solution.
+        I enjoy working with computers, networking, system configuration
+        and learning new technologies to improve my technical skills.
       </p>
 
     </div>
 
+    <div class="about-cards">
 
-    <div class="about-cards reveal">
-
-
-      <div class="info-card">
-
-        <div class="info-icon">
-          🖥️
-        </div>
-
-        <h4>
-          Desktop Support
-        </h4>
-
-        <p>
-          System configuration, troubleshooting and
-          end-user technical assistance.
-        </p>
-
+      <div class="info-card reveal">
+        <div class="info-icon">🖥️</div>
+        <h3>Desktop Support</h3>
+        <p>System troubleshooting, configuration and user assistance.</p>
       </div>
 
-
-      <div class="info-card">
-
-        <div class="info-icon">
-          🔧
-        </div>
-
-        <h4>
-          Hardware
-        </h4>
-
-        <p>
-          PC hardware diagnosis and practical
-          troubleshooting.
-        </p>
-
+      <div class="info-card reveal">
+        <div class="info-icon">🔧</div>
+        <h3>Hardware</h3>
+        <p>PC hardware diagnosis, upgrades and troubleshooting.</p>
       </div>
 
-
-      <div class="info-card">
-
-        <div class="info-icon">
-          🌐
-        </div>
-
-        <h4>
-          Networking
-        </h4>
-
-        <p>
-          Basic connectivity and network troubleshooting.
-        </p>
-
+      <div class="info-card reveal">
+        <div class="info-icon">🌐</div>
+        <h3>Networking</h3>
+        <p>Basic network troubleshooting, connectivity and configuration.</p>
       </div>
 
-
-      <div class="info-card">
-
-        <div class="info-icon">
-          ⚙️
-        </div>
-
-        <h4>
-          Problem Solving
-        </h4>
-
-        <p>
-          Structured approach to finding technical causes.
-        </p>
-
+      <div class="info-card reveal">
+        <div class="info-icon">⚡</div>
+        <h3>Problem Solving</h3>
+        <p>Quick analysis and practical technical solutions.</p>
       </div>
-
 
     </div>
 
   </div>
 
 </div>
-
 </section>
 
 
 <!-- EXPERIENCE -->
-
 <section id="experience">
-
 <div class="container">
 
-
-  <div class="heading reveal">
-
-    <div class="eyebrow">
-      Professional Journey
-    </div>
-
-    <h2>
-      Experience
-    </h2>
-
-    <p>
-      Practical IT support and technical responsibilities.
-    </p>
-
+  <div class="section-head reveal">
+    <div class="eyebrow">Experience</div>
+    <h2>My <span class="gradient-text">Professional Journey.</span></h2>
+    <p>Hands-on experience supporting users, systems and IT infrastructure.</p>
   </div>
-
 
   <div class="timeline">
 
-
     <div class="timeline-item reveal">
 
       <div class="timeline-dot"></div>
 
-
       <div class="timeline-card">
 
-        <span class="date">
-          IT SUPPORT
-        </span>
+        <div class="date">IT SUPPORT</div>
 
-        <h3>
-          Desktop Support Engineer
-        </h3>
+        <h3>Desktop Support Engineer</h3>
 
-        <div class="role">
-          IT Support & Infrastructure
-        </div>
+        <div class="role">IT Support & Infrastructure</div>
 
         <p>
-          Desktop troubleshooting, hardware diagnosis,
-          Windows installation and configuration,
-          software deployment, Outlook support,
-          printer troubleshooting and basic network
-          support.
+          Desktop troubleshooting, hardware diagnosis, Windows
+          installation and configuration, software deployment,
+          Outlook support, printer troubleshooting and basic
+          network support.
         </p>
 
       </div>
 
     </div>
 
-
     <div class="timeline-item reveal">
 
       <div class="timeline-dot"></div>
 
-
       <div class="timeline-card">
 
-        <span class="date">
-          TECHNICAL SUPPORT
-        </span>
+        <div class="date">TECHNICAL SUPPORT</div>
 
-        <h3>
-          IT Support Operations
-        </h3>
+        <h3>IT Support Operations</h3>
 
-        <div class="role">
-          Technical Support Environment
-        </div>
+        <div class="role">Technical Support Environment</div>
 
         <p>
-          Diagnosing technical issues, assisting users
-          with system problems, configuring devices and
-          maintaining reliable desktop environments.
+          Diagnosing technical issues, assisting users, configuring
+          devices and maintaining a reliable desktop computing environment.
         </p>
 
       </div>
 
     </div>
-
 
   </div>
 
 </div>
-
 </section>
 
 
 <!-- SKILLS -->
-
 <section id="skills">
-
 <div class="container">
 
-
-  <div class="heading reveal">
-
-    <div class="eyebrow">
-      Technical Expertise
-    </div>
-
-    <h2>
-      My Skills
-    </h2>
-
-    <p>
-      Core technical areas used in IT support.
-    </p>
-
+  <div class="section-head reveal">
+    <div class="eyebrow">Technical Skills</div>
+    <h2>What I <span class="gradient-text">Work With.</span></h2>
+    <p>Core technical areas I use for IT support and troubleshooting.</p>
   </div>
 
-
-  <div class="skill-grid">
-
+  <div class="skills-grid">
 
     <div class="skill reveal">
-
       <div class="skill-top">
-
-        <strong>
-          Desktop Support
-        </strong>
-
-        <span>
-          90%
-        </span>
-
+        <strong>Desktop Support</strong>
+        <span>90%</span>
       </div>
-
-      <div class="progress">
-
-        <span data-width="90%"></span>
-
-      </div>
-
+      <div class="progress"><span data-width="90%"></span></div>
     </div>
-
 
     <div class="skill reveal">
-
       <div class="skill-top">
-
-        <strong>
-          Hardware Troubleshooting
-        </strong>
-
-        <span>
-          90%
-        </span>
-
+        <strong>Hardware Troubleshooting</strong>
+        <span>90%</span>
       </div>
-
-      <div class="progress">
-
-        <span data-width="90%"></span>
-
-      </div>
-
+      <div class="progress"><span data-width="90%"></span></div>
     </div>
-
 
     <div class="skill reveal">
-
       <div class="skill-top">
-
-        <strong>
-          Windows
-        </strong>
-
-        <span>
-          88%
-        </span>
-
+        <strong>Windows</strong>
+        <span>88%</span>
       </div>
-
-      <div class="progress">
-
-        <span data-width="88%"></span>
-
-      </div>
-
+      <div class="progress"><span data-width="88%"></span></div>
     </div>
-
 
     <div class="skill reveal">
-
       <div class="skill-top">
-
-        <strong>
-          Networking
-        </strong>
-
-        <span>
-          82%
-        </span>
-
+        <strong>Networking</strong>
+        <span>82%</span>
       </div>
-
-      <div class="progress">
-
-        <span data-width="82%"></span>
-
-      </div>
-
+      <div class="progress"><span data-width="82%"></span></div>
     </div>
-
 
     <div class="skill reveal">
-
       <div class="skill-top">
-
-        <strong>
-          Microsoft Outlook
-        </strong>
-
-        <span>
-          85%
-        </span>
-
+        <strong>Microsoft Outlook</strong>
+        <span>85%</span>
       </div>
-
-      <div class="progress">
-
-        <span data-width="85%"></span>
-
-      </div>
-
+      <div class="progress"><span data-width="85%"></span></div>
     </div>
-
 
     <div class="skill reveal">
-
       <div class="skill-top">
-
-        <strong>
-          Printer Support
-        </strong>
-
-        <span>
-          85%
-        </span>
-
+        <strong>Printer Support</strong>
+        <span>85%</span>
       </div>
-
-      <div class="progress">
-
-        <span data-width="85%"></span>
-
-      </div>
-
+      <div class="progress"><span data-width="85%"></span></div>
     </div>
-
 
   </div>
 
 </div>
+</section>
 
+
+<!-- TECH STACK -->
+<section id="stack">
+<div class="container">
+
+  <div class="section-head reveal">
+    <div class="eyebrow">Technology</div>
+    <h2>My <span class="gradient-text">Tech Stack.</span></h2>
+    <p>Technologies and tools I work with or continuously explore.</p>
+  </div>
+
+  <div class="stack-grid">
+
+    <div class="stack-card reveal">
+      <div class="stack-icon">🪟</div>
+      <h3>Windows</h3>
+      <p>Windows installation, configuration, troubleshooting and support.</p>
+    </div>
+
+    <div class="stack-card reveal">
+      <div class="stack-icon">💻</div>
+      <h3>Hardware</h3>
+      <p>Desktop, laptop, RAM, storage and peripheral troubleshooting.</p>
+    </div>
+
+    <div class="stack-card reveal">
+      <div class="stack-icon">🌐</div>
+      <h3>Networking</h3>
+      <p>LAN, IP configuration, connectivity and basic network troubleshooting.</p>
+    </div>
+
+    <div class="stack-card reveal">
+      <div class="stack-icon">📧</div>
+      <h3>Microsoft Outlook</h3>
+      <p>Email configuration, troubleshooting and user support.</p>
+    </div>
+
+    <div class="stack-card reveal">
+      <div class="stack-icon">🖨️</div>
+      <h3>Printers</h3>
+      <p>Printer installation, configuration and troubleshooting.</p>
+    </div>
+
+    <div class="stack-card reveal">
+      <div class="stack-icon">🐙</div>
+      <h3>GitHub</h3>
+      <p>Project hosting, version control and portfolio deployment.</p>
+    </div>
+
+    <div class="stack-card reveal">
+      <div class="stack-icon">🐳</div>
+      <h3>Docker</h3>
+      <p>Learning containerization and modern deployment workflows.</p>
+    </div>
+
+    <div class="stack-card reveal">
+      <div class="stack-icon">⚙️</div>
+      <h3>DevOps</h3>
+      <p>Exploring CI/CD, automation and modern infrastructure tools.</p>
+    </div>
+
+  </div>
+
+</div>
+</section>
+
+
+<!-- WHY HIRE -->
+<section>
+<div class="container">
+
+  <div class="section-head reveal">
+    <div class="eyebrow">Why Me</div>
+    <h2>Why <span class="gradient-text">Hire Me?</span></h2>
+    <p>A practical mindset focused on solving real technical problems.</p>
+  </div>
+
+  <div class="why-grid">
+
+    <div class="why-card reveal">
+      <div class="why-number">01</div>
+      <h3>Problem Solver</h3>
+      <p>
+        I approach technical issues systematically and focus on
+        finding practical solutions instead of temporary fixes.
+      </p>
+    </div>
+
+    <div class="why-card reveal">
+      <div class="why-number">02</div>
+      <h3>User Focused</h3>
+      <p>
+        Technical support is not only about systems. I also focus
+        on making sure users can work comfortably and efficiently.
+      </p>
+    </div>
+
+    <div class="why-card reveal">
+      <div class="why-number">03</div>
+      <h3>Always Learning</h3>
+      <p>
+        I continuously explore new technologies and improve my
+        skills in IT, networking, cloud and DevOps.
+      </p>
+    </div>
+
+  </div>
+
+</div>
 </section>
 
 
 <!-- PROJECTS -->
-
 <section id="projects">
-
 <div class="container">
 
-
-  <div class="heading reveal">
-
-    <div class="eyebrow">
-      Featured Work
-    </div>
-
-    <h2>
-      Projects
-    </h2>
-
-    <p>
-      Practical projects built with modern web technologies.
-    </p>
-
+  <div class="section-head reveal">
+    <div class="eyebrow">My Work</div>
+    <h2>Featured <span class="gradient-text">Projects.</span></h2>
+    <p>Some of the projects I have built while improving my technical skills.</p>
   </div>
-
 
   <div class="project-grid">
 
-
-    <!-- CALCULATOR -->
-
-    <div class="project reveal">
+    <div class="project-card reveal">
 
       <div class="project-top">
-        🧮
+        <div class="project-number">01</div>
+        <div class="project-type">WEB APP</div>
       </div>
 
+      <h3>Smart Calculator</h3>
 
-      <div class="project-body">
+      <p>
+        A clean responsive calculator application designed
+        with a simple and user-friendly interface.
+      </p>
 
-        <span class="project-type">
-          Web Application
-        </span>
+      <div class="project-tech">
+        <span>HTML5</span>
+        <span>CSS3</span>
+        <span>JavaScript</span>
+        <span>Responsive</span>
+      </div>
 
-        <h3>
-          Smart Calculator
-        </h3>
-
-        <p>
-          Responsive browser-based calculator with
-          arithmetic operations, percentage, keyboard
-          support, backspace and error handling.
-        </p>
-
-
-        <div class="project-tech">
-
-          <span>HTML5</span>
-          <span>CSS3</span>
-          <span>JavaScript</span>
-          <span>Responsive</span>
-
-        </div>
-
-
-        <div class="project-actions">
-
-          <a
-            href="calculator.html"
-            target="_blank"
-            class="project-live">
-
-            🚀 Live Demo
-
-          </a>
-
-
-          <a
-            href="https://github.com/kuldeep17422/my-first-project/blob/main/calculator.html"
-            target="_blank"
-            class="project-code">
-
-            💻 Code
-
-          </a>
-
-        </div>
-
+      <div class="project-links">
+        <a href="calculator.html">↗ Live Demo</a>
+        <a href="https://github.com/kuldeep17422" target="_blank">⌘ GitHub</a>
       </div>
 
     </div>
 
 
-    <!-- PORTFOLIO -->
-
-    <div class="project reveal">
+    <div class="project-card reveal">
 
       <div class="project-top">
-        💼
+        <div class="project-number">02</div>
+        <div class="project-type">PORTFOLIO</div>
       </div>
 
+      <h3>Professional Portfolio</h3>
 
-      <div class="project-body">
+      <p>
+        A premium responsive personal portfolio showcasing
+        my IT skills, projects, experience and contact information.
+      </p>
 
-        <span class="project-type">
-          Personal Website
-        </span>
+      <div class="project-tech">
+        <span>HTML5</span>
+        <span>CSS3</span>
+        <span>JavaScript</span>
+        <span>PWA</span>
+      </div>
 
-        <h3>
-          Professional Portfolio
-        </h3>
-
-        <p>
-          Modern responsive portfolio with animations,
-          dark and light themes, resume integration,
-          WhatsApp contact and PWA support.
-        </p>
-
-
-        <div class="project-tech">
-
-          <span>HTML5</span>
-          <span>CSS3</span>
-          <span>JavaScript</span>
-          <span>PWA</span>
-
-        </div>
-
-
-        <div class="project-actions">
-
-          <a
-            href="#home"
-            class="project-live">
-
-            🚀 Live Demo
-
-          </a>
-
-
-          <a
-            href="https://github.com/kuldeep17422"
-            target="_blank"
-            class="project-code">
-
-            💻 GitHub
-
-          </a>
-
-        </div>
-
+      <div class="project-links">
+        <a href="#home">↗ Live Website</a>
+        <a href="https://github.com/kuldeep17422" target="_blank">⌘ GitHub</a>
       </div>
 
     </div>
 
 
-    <!-- ADCOM -->
-
-    <div class="project reveal">
+    <div class="project-card reveal">
 
       <div class="project-top">
-        📱
+        <div class="project-number">03</div>
+        <div class="project-type">APPLICATION</div>
       </div>
 
+      <h3>ADCOM Computer Technology</h3>
 
-      <div class="project-body">
+      <p>
+        Application concept for attendance, authentication,
+        fees, activities, exams and management workflows.
+      </p>
 
-        <span class="project-type">
-          Application Project
-        </span>
+      <div class="project-tech">
+        <span>Android</span>
+        <span>Authentication</span>
+        <span>Attendance</span>
+        <span>Management</span>
+      </div>
 
-        <h3>
-          ADCOM Computer Technology
-        </h3>
-
-        <p>
-          Computer institute management application concept
-          covering attendance, fees, tasks, authentication,
-          diploma information and exam schedules.
-        </p>
-
-
-        <div class="project-tech">
-
-          <span>Android</span>
-          <span>Authentication</span>
-          <span>Attendance</span>
-          <span>Management</span>
-
-        </div>
-
-
-        <div class="project-actions">
-
-          <a
-            href="https://github.com/kuldeep17422"
-            target="_blank"
-            class="project-live">
-
-            🚀 Project
-
-          </a>
-
-
-          <a
-            href="https://github.com/kuldeep17422"
-            target="_blank"
-            class="project-code">
-
-            💻 GitHub
-
-          </a>
-
-        </div>
-
+      <div class="project-links">
+        <a href="https://github.com/kuldeep17422" target="_blank">⌘ View Project</a>
       </div>
 
     </div>
 
 
-    <!-- IT HELPDESK & TICKET SYSTEM -->
-
-    <div class="project reveal">
+    <div class="project-card reveal">
 
       <div class="project-top">
-        🛠️
+        <div class="project-number">04</div>
+        <div class="project-type">IT SUPPORT</div>
       </div>
 
+      <h3>IT Helpdesk & Ticket System</h3>
 
-      <div class="project-body">
+      <p>
+        A responsive helpdesk interface for creating and managing
+        technical support tickets using browser-based storage.
+      </p>
 
-        <span class="project-type">
-          IT Support Application
-        </span>
+      <div class="project-tech">
+        <span>HTML5</span>
+        <span>CSS3</span>
+        <span>JavaScript</span>
+        <span>LocalStorage</span>
+      </div>
 
-        <h3>
-          IT Helpdesk & Ticket System
-        </h3>
-
-        <p>
-          Practical IT support ticket management system
-          for creating, tracking, searching and managing
-          technical support requests with priority and
-          status tracking.
-        </p>
-
-
-        <div class="project-tech">
-
-          <span>HTML5</span>
-          <span>CSS3</span>
-          <span>JavaScript</span>
-          <span>LocalStorage</span>
-          <span>Responsive</span>
-
-        </div>
-
-
-        <div class="project-actions">
-
-          <a
-            href="ticket-system.html?v=3"
-            target="_blank"
-            class="project-live">
-
-            🚀 Live Demo
-
-          </a>
-
-
-          <a
-            href="https://github.com/kuldeep17422"
-            target="_blank"
-            class="project-code">
-
-            💻 GitHub
-
-          </a>
-
-        </div>
-
+      <div class="project-links">
+        <a href="ticket-system.html?v=3">↗ Live Demo</a>
+        <a href="https://github.com/kuldeep17422" target="_blank">⌘ GitHub</a>
       </div>
 
     </div>
-
 
   </div>
 
 </div>
-
 </section>
 
 
 <!-- CERTIFICATIONS -->
-
 <section id="certifications">
-
 <div class="container">
 
-
-  <div class="heading reveal">
-
-    <div class="eyebrow">
-      Qualifications
-    </div>
-
-    <h2>
-      Certifications & Learning
-    </h2>
-
-    <p>
-      Technical education and professional learning.
-    </p>
-
+  <div class="section-head reveal">
+    <div class="eyebrow">Qualifications</div>
+    <h2>Certifications & <span class="gradient-text">Learning.</span></h2>
+    <p>Technical knowledge and areas of professional development.</p>
   </div>
-
 
   <div class="cert-grid">
 
-
-    <div class="cert reveal">
-
-      <div class="cert-icon">
-        🎓
-      </div>
-
-      <h3>
-        Diploma in Computer Technology
-      </h3>
-
-      <p>
-        Computer technology education covering core
-        computing and technical concepts.
-      </p>
-
-      <span class="cert-label">
-        Qualification
-      </span>
-
+    <div class="cert-card reveal">
+      <div class="cert-icon">🎓</div>
+      <h3>Diploma in Computer Technology</h3>
+      <p>Qualification</p>
     </div>
 
-
-    <div class="cert reveal">
-
-      <div class="cert-icon">
-        💻
-      </div>
-
-      <h3>
-        IT Support & Troubleshooting
-      </h3>
-
-      <p>
-        Practical technical knowledge across desktop,
-        hardware, Windows and user support.
-      </p>
-
-      <span class="cert-label">
-        Technical Skill
-      </span>
-
+    <div class="cert-card reveal">
+      <div class="cert-icon">🛠️</div>
+      <h3>IT Support & Troubleshooting</h3>
+      <p>Technical Skill</p>
     </div>
 
-
-    <div class="cert reveal">
-
-      <div class="cert-icon">
-        🌐
-      </div>
-
-      <h3>
-        Networking Fundamentals
-      </h3>
-
-      <p>
-        Practical understanding of connectivity,
-        network troubleshooting and basic support.
-      </p>
-
-      <span class="cert-label">
-        Technical Skill
-      </span>
-
+    <div class="cert-card reveal">
+      <div class="cert-icon">🌐</div>
+      <h3>Networking Fundamentals</h3>
+      <p>Technical Skill</p>
     </div>
-
 
   </div>
 
 </div>
-
 </section>
 
 
-<!-- RESUME -->
-
+<!-- RESUME CTA -->
 <section>
-
 <div class="container">
 
-
-  <div class="resume-box reveal">
+  <div class="cta reveal">
 
     <div>
-
-      <h2>
-        Ready to know more?
-      </h2>
-
-      <p>
-        View my resume for additional professional
-        information and technical background.
-      </p>
-
+      <div class="eyebrow">Let's Connect</div>
+      <h2>Ready to solve the next <span class="gradient-text">IT challenge?</span></h2>
+      <p>Download my resume and let's connect professionally.</p>
     </div>
 
-
-    <a
-      class="btn btn-primary"
-      href="resume.pdf"
-      target="_blank">
-
+    <a class="btn btn-primary" href="resume.pdf" target="_blank">
       📄 Open Resume
-
     </a>
 
   </div>
 
 </div>
-
 </section>
 
 
 <!-- CONTACT -->
-
 <section id="contact">
-
 <div class="container">
 
-
-  <div class="heading reveal">
-
-    <div class="eyebrow">
-      Contact
-    </div>
-
-    <h2>
-      Let's Connect
-    </h2>
-
-    <p>
-      Have an opportunity or technical requirement?
-      Feel free to connect.
-    </p>
-
+  <div class="section-head reveal">
+    <div class="eyebrow">Contact</div>
+    <h2>Let's <span class="gradient-text">Connect.</span></h2>
+    <p>Feel free to contact me for IT opportunities, projects or professional discussions.</p>
   </div>
-
 
   <div class="contact-grid">
 
-
-    <!-- WHATSAPP -->
-
     <div class="contact-card reveal">
-
-      <div class="contact-icon">
-        💬
-      </div>
-
-      <h3>
-        WhatsApp
-      </h3>
-
-      <p>
-        +91 97521 33011
-      </p>
-
+      <div class="contact-icon">📧</div>
+      <h3>Email</h3>
+      <p>kuldip8718@gmail.com</p>
+      <a href="mailto:kuldip8718@gmail.com">Send Email →</a>
     </div>
 
-
-    <!-- RESUME -->
-
     <div class="contact-card reveal">
-
-      <div class="contact-icon">
-        📄
-      </div>
-
-      <h3>
-        Resume
-      </h3>
-
-      <p>
-
-        <a
-          href="resume.pdf"
-          target="_blank">
-
-          View Resume
-
-        </a>
-
-      </p>
-
+      <div class="contact-icon">💬</div>
+      <h3>WhatsApp</h3>
+      <p>Available for direct contact</p>
+      <a href="https://wa.me/919752133011" target="_blank">Message Me →</a>
     </div>
 
-
-    <!-- GITHUB -->
-
     <div class="contact-card reveal">
-
-      <div class="contact-icon">
-        💻
-      </div>
-
-      <h3>
-        GitHub
-      </h3>
-
-      <p>
-
-        <a
-          href="https://github.com/kuldeep17422"
-          target="_blank"
-          rel="noopener noreferrer">
-
-          GitHub Profile
-
-        </a>
-
-      </p>
-
+      <div class="contact-icon">🐙</div>
+      <h3>GitHub</h3>
+      <p>kuldeep17422</p>
+      <a href="https://github.com/kuldeep17422" target="_blank">View GitHub →</a>
     </div>
 
-
-    <!-- INSTAGRAM -->
-
     <div class="contact-card reveal">
-
-      <div class="contact-icon">
-        📸
-      </div>
-
-      <h3>
-        Instagram
-      </h3>
-
-      <p>
-
-        <a
-          href="https://www.instagram.com/kuldeep_singh._9/"
-          target="_blank"
-          rel="noopener noreferrer">
-
-          @kuldeep_singh._9
-
-        </a>
-
-      </p>
-
+      <div class="contact-icon">📸</div>
+      <h3>Instagram</h3>
+      <p>@kuldeep_singh._9</p>
+      <a href="https://www.instagram.com/kuldeep_singh._9/" target="_blank">Open Instagram →</a>
     </div>
-
 
   </div>
 
-
-  <a
-    class="whatsapp reveal"
-    href="https://wa.me/919752133011?text=Hello%20Kuldeep%2C%20I%20visited%20your%20portfolio."
-    target="_blank">
-
-    💬 Start WhatsApp Conversation
-
-  </a>
-
-
 </div>
-
 </section>
+
+</main>
 
 
 <!-- FOOTER -->
-
 <footer>
+<div class="container">
 
-  © <span id="year"></span>
+  <p>
+    © <span id="year"></span>
+    <span class="footer-name">Kuldeep Borana</span>
+    · IT Support Professional
+  </p>
 
-  <strong>
-    Kuldeep Borana
-  </strong>
+  <p style="margin-top:5px;">
+    Built with HTML, CSS & JavaScript ·
+    <a href="https://www.instagram.com/kuldeep_singh._9/" target="_blank">Instagram</a>
+  </p>
 
-  · IT Support Professional
-
-
-  <div>
-
-    <a
-      class="footer-instagram"
-      href="https://www.instagram.com/kuldeep_singh._9/"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Instagram">
-
-      📸 Instagram · @kuldeep_singh._9
-
-    </a>
-
-  </div>
-
+</div>
 </footer>
 
 
-<!-- FLOATING WHATSAPP -->
+<!-- FLOATING BUTTONS -->
+
+<button id="topBtn" aria-label="Back to top">↑</button>
 
 <a
-  class="floating"
-  href="https://wa.me/919752133011"
+  class="whatsapp-float"
+  href="https://wa.me/919752133011?text=Hello%20Kuldeep,%20I%20visited%20your%20portfolio."
   target="_blank"
   aria-label="WhatsApp">
-
   💬
-
 </a>
-
-
-<!-- TOP BUTTON -->
-
-<button
-  class="top"
-  id="topBtn">
-
-  ↑
-
-</button>
 
 
 <script>
 
+/* ================= LOADER ================= */
 
-/* LOADER */
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const loader = document.getElementById("loader");
 
-window.addEventListener("load",()=>{
+    loader.style.opacity = "0";
 
-  setTimeout(()=>{
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 600);
 
-    document
-      .getElementById("loader")
-      .classList.add("hide");
+  }, 500);
+});
 
-  },500);
+
+/* ================= HEADER ================= */
+
+const header = document.getElementById("header");
+
+window.addEventListener("scroll", () => {
+
+  if(window.scrollY > 40){
+    header.classList.add("scrolled");
+  }else{
+    header.classList.remove("scrolled");
+  }
 
 });
 
 
-/* HEADER */
+/* ================= MOBILE MENU ================= */
 
-const header =
-document.getElementById("header");
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
 
-
-window.addEventListener("scroll",()=>{
-
-  header.classList.toggle(
-    "scrolled",
-    window.scrollY>40
-  );
-
-});
-
-
-/* MOBILE MENU */
-
-const menuBtn =
-document.getElementById("menuBtn");
-
-const navLinks =
-document.getElementById("navLinks");
-
-
-menuBtn.addEventListener("click",()=>{
-
+menuBtn.addEventListener("click", () => {
   navLinks.classList.toggle("open");
-
-  menuBtn.textContent =
-    navLinks.classList.contains("open")
-    ? "✕"
-    : "☰";
-
 });
 
+document.querySelectorAll(".nav-links a").forEach(link => {
 
-document
-  .querySelectorAll(".nav-links a")
-  .forEach(a=>{
-
-    a.addEventListener("click",()=>{
-
-      navLinks.classList.remove("open");
-
-      menuBtn.textContent="☰";
-
-    });
-
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
   });
 
-
-/* THEME */
-
-const themeBtn =
-document.getElementById("themeBtn");
+});
 
 
-const savedTheme =
-localStorage.getItem("portfolio-theme");
+/* ================= THEME ================= */
 
+const themeBtn = document.getElementById("themeBtn");
 
-if(savedTheme==="light"){
+const savedTheme = localStorage.getItem("portfolio-theme");
 
+if(savedTheme === "light"){
   document.body.classList.add("light");
-
-  themeBtn.textContent="🌙";
-
+  themeBtn.textContent = "☀";
 }
 
-
-themeBtn.addEventListener("click",()=>{
+themeBtn.addEventListener("click", () => {
 
   document.body.classList.toggle("light");
 
-  const light =
-    document.body.classList.contains("light");
+  const isLight = document.body.classList.contains("light");
 
-
-  themeBtn.textContent =
-    light ? "🌙" : "☀️";
-
+  themeBtn.textContent = isLight ? "☀" : "☾";
 
   localStorage.setItem(
     "portfolio-theme",
-    light ? "light" : "dark"
+    isLight ? "light" : "dark"
   );
 
 });
 
 
-/* REVEAL */
+/* ================= REVEAL ANIMATION ================= */
 
-const observer =
-new IntersectionObserver(
+const observer = new IntersectionObserver(
+  entries => {
 
-  entries=>{
-
-    entries.forEach(entry=>{
+    entries.forEach(entry => {
 
       if(entry.isIntersecting){
 
         entry.target.classList.add("show");
 
-
-        const progress =
-        entry.target.querySelector(
-          ".progress span"
-        );
-
+        const progress = entry.target.querySelector(".progress span");
 
         if(progress){
-
-          progress.style.width =
-          progress.dataset.width;
-
+          progress.style.width = progress.dataset.width;
         }
-
-
-        observer.unobserve(entry.target);
 
       }
 
     });
 
   },
-
   {
     threshold:.12
   }
-
 );
 
 
-document
-  .querySelectorAll(".reveal")
-  .forEach(el=>{
-
-    observer.observe(el);
-
-  });
+document.querySelectorAll(".reveal").forEach(el => {
+  observer.observe(el);
+});
 
 
-/* ACTIVE NAV */
+/* ================= PROGRESS BARS ================= */
 
-const sections =
-document.querySelectorAll("section[id]");
+document.querySelectorAll(".progress span").forEach(bar => {
 
-const links =
-document.querySelectorAll(".nav-links a");
+  const parent = bar.closest(".reveal");
+
+  if(parent){
+    return;
+  }
+
+  const width = bar.dataset.width;
+
+  setTimeout(() => {
+    bar.style.width = width;
+  },500);
+
+});
 
 
-window.addEventListener("scroll",()=>{
+/* ================= ACTIVE NAV ================= */
 
-  let current="";
+const sections = document.querySelectorAll("section[id]");
+const navItems = document.querySelectorAll(".nav-links a");
 
+window.addEventListener("scroll", () => {
 
-  sections.forEach(section=>{
+  let current = "";
 
-    if(
-      window.scrollY >=
-      section.offsetTop-180
-    ){
+  sections.forEach(section => {
 
-      current=section.id;
+    const top = section.offsetTop - 180;
 
+    if(window.scrollY >= top){
+      current = section.getAttribute("id");
     }
 
   });
 
-
-  links.forEach(link=>{
+  navItems.forEach(link => {
 
     link.classList.remove("active");
 
-
-    if(
-      link.getAttribute("href")
-      ==="#"+current
-    ){
-
+    if(link.getAttribute("href") === "#" + current){
       link.classList.add("active");
-
     }
 
   });
@@ -2850,62 +2114,49 @@ window.addEventListener("scroll",()=>{
 });
 
 
-/* TOP BUTTON */
+/* ================= TOP BUTTON ================= */
 
-const topBtn =
-document.getElementById("topBtn");
+const topBtn = document.getElementById("topBtn");
 
+window.addEventListener("scroll", () => {
 
-window.addEventListener("scroll",()=>{
-
-  topBtn.classList.toggle(
-    "show",
-    window.scrollY>500
-  );
+  if(window.scrollY > 500){
+    topBtn.style.display = "grid";
+  }else{
+    topBtn.style.display = "none";
+  }
 
 });
 
-
-topBtn.addEventListener("click",()=>{
+topBtn.addEventListener("click", () => {
 
   window.scrollTo({
-
     top:0,
-
     behavior:"smooth"
-
   });
 
 });
 
 
-/* YEAR */
+/* ================= FOOTER YEAR ================= */
 
-document
-  .getElementById("year")
-  .textContent =
+document.getElementById("year").textContent =
   new Date().getFullYear();
 
 
-/* PWA */
+/* ================= PWA ================= */
 
 if("serviceWorker" in navigator){
 
-  window.addEventListener("load",()=>{
+  window.addEventListener("load", () => {
 
     navigator.serviceWorker
       .register("./service-worker.js")
-      .then(()=>{
-
-        console.log("PWA ready");
-
+      .then(() => {
+        console.log("Service Worker registered.");
       })
-      .catch(()=>{
-
-        console.log(
-          "Service worker unavailable"
-        );
-
+      .catch(error => {
+        console.log("Service Worker error:", error);
       });
 
   });
