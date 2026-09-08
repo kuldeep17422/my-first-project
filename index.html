@@ -14,6 +14,7 @@ content="Kuldeep Borana — Desktop Support Engineer and IT Support Professional
 <title>Kuldeep Borana | IT Support Professional</title>
 
 <style>
+
 :root{
   --bg:#070b17;
   --bg2:#0d1324;
@@ -86,6 +87,7 @@ section{
   transform:translateY(0);
 }
 
+
 /* LOADER */
 
 #loader{
@@ -129,8 +131,11 @@ section{
 }
 
 @keyframes pulse{
-  50%{transform:scale(1.1)}
+  50%{
+    transform:scale(1.1)
+  }
 }
+
 
 /* BACKGROUND */
 
@@ -176,12 +181,17 @@ section{
 }
 
 @keyframes float1{
-  to{transform:translate(100px,80px)}
+  to{
+    transform:translate(100px,80px)
+  }
 }
 
 @keyframes float2{
-  to{transform:translate(-100px,-80px)}
+  to{
+    transform:translate(-100px,-80px)
+  }
 }
+
 
 /* NAV */
 
@@ -229,7 +239,11 @@ nav{
   place-items:center;
   border-radius:13px;
   color:white;
-  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  );
 }
 
 .logo span:last-child{
@@ -259,7 +273,11 @@ nav{
   padding:10px 15px;
   border-radius:12px;
   color:white!important;
-  background:linear-gradient(135deg,var(--primary),#9b5cff);
+  background:linear-gradient(
+    135deg,
+    var(--primary),
+    #9b5cff
+  );
 }
 
 .nav-tools{
@@ -282,6 +300,7 @@ nav{
 .menu-btn{
   display:none;
 }
+
 
 /* HERO */
 
@@ -333,7 +352,12 @@ nav{
 
 .gradient{
   display:block;
-  background:linear-gradient(90deg,#7567ff,#22d3ee,#fff);
+  background:linear-gradient(
+    90deg,
+    #7567ff,
+    #22d3ee,
+    #fff
+  );
   -webkit-background-clip:text;
   background-clip:text;
   color:transparent;
@@ -375,7 +399,11 @@ nav{
 
 .btn-primary{
   color:white;
-  background:linear-gradient(135deg,var(--primary),#9b5cff);
+  background:linear-gradient(
+    135deg,
+    var(--primary),
+    #9b5cff
+  );
   box-shadow:0 15px 40px rgba(117,103,255,.25);
 }
 
@@ -406,6 +434,7 @@ nav{
   font-size:.7rem;
   font-weight:700;
 }
+
 
 /* PROFILE */
 
@@ -486,6 +515,7 @@ nav{
   font-weight:800;
 }
 
+
 /* SECTION */
 
 .eyebrow{
@@ -514,6 +544,7 @@ nav{
   color:var(--muted);
   line-height:1.8;
 }
+
 
 /* ABOUT */
 
@@ -568,6 +599,7 @@ nav{
   font-size:.78rem;
   line-height:1.7;
 }
+
 
 /* EXPERIENCE */
 
@@ -647,6 +679,7 @@ nav{
   line-height:1.8;
 }
 
+
 /* SKILLS */
 
 .skill-grid{
@@ -698,6 +731,7 @@ nav{
   transition:1.4s ease;
 }
 
+
 /* PROJECTS */
 
 .project-grid{
@@ -711,12 +745,11 @@ nav{
   overflow:hidden;
   border:1px solid var(--line);
   border-radius:26px;
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255,255,255,.075),
-      rgba(255,255,255,.025)
-    );
+  background:linear-gradient(
+    145deg,
+    rgba(255,255,255,.075),
+    rgba(255,255,255,.025)
+  );
   backdrop-filter:blur(18px);
   transition:.4s ease;
 }
@@ -747,7 +780,11 @@ nav{
       rgba(34,211,238,.25),
       transparent 35%
     ),
-    linear-gradient(135deg,#111936,#090e1d);
+    linear-gradient(
+      135deg,
+      #111936,
+      #090e1d
+    );
 }
 
 .project-top::after{
@@ -847,6 +884,7 @@ nav{
   transform:translateY(-3px);
 }
 
+
 /* CERTIFICATIONS */
 
 .cert-grid{
@@ -886,7 +924,11 @@ nav{
   display:grid;
   place-items:center;
   border-radius:15px;
-  background:linear-gradient(135deg,var(--primary),#9b5cff);
+  background:linear-gradient(
+    135deg,
+    var(--primary),
+    #9b5cff
+  );
   margin-bottom:18px;
 }
 
@@ -912,6 +954,7 @@ nav{
   font-weight:900;
 }
 
+
 /* RESUME */
 
 .resume-box{
@@ -919,8 +962,16 @@ nav{
   border-radius:30px;
   border:1px solid var(--line);
   background:
-    radial-gradient(circle at 85% 20%,rgba(34,211,238,.15),transparent 30%),
-    linear-gradient(135deg,#111832,#17113b);
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(34,211,238,.15),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #111832,
+      #17113b
+    );
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -937,21 +988,12 @@ nav{
   line-height:1.7;
 }
 
+
 /* CONTACT */
-<div class="contact-item">
-    <span class="contact-icon">📸</span>
-    <div>
-        <h3>Instagram</h3>
-        <a href="https://www.instagram.com/kuldeep_singh._9/"
-           target="_blank"
-           rel="noopener noreferrer">
-            @kuldeep_singh._9
-        </a>
-    </div>
-</div>
+
 .contact-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(4,1fr);
   gap:17px;
   margin-bottom:25px;
 }
@@ -962,6 +1004,12 @@ nav{
   border:1px solid var(--line);
   border-radius:22px;
   background:var(--card);
+  transition:.3s;
+}
+
+.contact-card:hover{
+  transform:translateY(-7px);
+  border-color:rgba(117,103,255,.4);
 }
 
 .contact-icon{
@@ -979,6 +1027,10 @@ nav{
   word-break:break-word;
 }
 
+.contact-card a{
+  transition:.25s;
+}
+
 .contact-card a:hover{
   color:var(--secondary);
 }
@@ -993,7 +1045,11 @@ nav{
   border-radius:14px;
   color:white;
   font-weight:900;
-  background:linear-gradient(135deg,#16a34a,#22c55e);
+  background:linear-gradient(
+    135deg,
+    #16a34a,
+    #22c55e
+  );
   transition:.3s;
 }
 
@@ -1001,20 +1057,30 @@ nav{
   transform:translateY(-4px);
 }
 
+
 /* FOOTER */
 
-footer{<a href="https://www.instagram.com/kuldeep_singh._9/"
-   target="_blank"
-   rel="noopener noreferrer"
-   aria-label="Instagram">
-    <i class="fab fa-instagram"></i>
-</a>
+footer{
   padding:28px 5%;
   text-align:center;
   color:#7c879e;
   border-top:1px solid var(--line);
   font-size:.78rem;
 }
+
+.footer-instagram{
+  display:inline-block;
+  margin-top:12px;
+  color:#ff6bb5;
+  font-weight:800;
+  transition:.25s;
+}
+
+.footer-instagram:hover{
+  color:var(--secondary);
+  transform:translateY(-2px);
+}
+
 
 /* FLOATING */
 
@@ -1056,6 +1122,7 @@ footer{<a href="https://www.instagram.com/kuldeep_singh._9/"
   visibility:visible;
 }
 
+
 /* MOBILE */
 
 @media(max-width:950px){
@@ -1088,7 +1155,12 @@ footer{<a href="https://www.instagram.com/kuldeep_singh._9/"
     grid-template-columns:repeat(2,1fr);
   }
 
+  .contact-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
 }
+
 
 @media(max-width:720px){
 
@@ -1157,6 +1229,7 @@ footer{<a href="https://www.instagram.com/kuldeep_singh._9/"
 
 }
 
+
 @media(max-width:500px){
 
   section{
@@ -1211,46 +1284,108 @@ footer{<a href="https://www.instagram.com/kuldeep_singh._9/"
   }
 
 }
+
 </style>
 </head>
 
 <body>
 
+
 <!-- LOADER -->
+
 <div id="loader">
+
   <div class="loader-box">
-    <div class="loader-logo">KB</div>
-    <p>Loading Portfolio</p>
+
+    <div class="loader-logo">
+      KB
+    </div>
+
+    <p>
+      Loading Portfolio
+    </p>
+
   </div>
+
 </div>
+
 
 <!-- BACKGROUND -->
+
 <div class="background">
+
   <div class="orb one"></div>
+
   <div class="orb two"></div>
+
   <div class="orb three"></div>
+
 </div>
 
+
 <!-- NAVIGATION -->
+
 <header id="header">
+
 <nav>
 
   <a href="#home" class="logo">
-    <span class="logo-mark">KB</span>
+
+    <span class="logo-mark">
+      KB
+    </span>
+
     Kuldeep<span>.</span>
+
   </a>
+
 
   <ul class="nav-links" id="navLinks">
 
-    <li><a class="active" href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#certifications">Certifications</a></li>
-    <li><a class="nav-cta" href="#contact">Contact</a></li>
+    <li>
+      <a class="active" href="#home">
+        Home
+      </a>
+    </li>
+
+    <li>
+      <a href="#about">
+        About
+      </a>
+    </li>
+
+    <li>
+      <a href="#experience">
+        Experience
+      </a>
+    </li>
+
+    <li>
+      <a href="#skills">
+        Skills
+      </a>
+    </li>
+
+    <li>
+      <a href="#projects">
+        Projects
+      </a>
+    </li>
+
+    <li>
+      <a href="#certifications">
+        Certifications
+      </a>
+    </li>
+
+    <li>
+      <a class="nav-cta" href="#contact">
+        Contact
+      </a>
+    </li>
 
   </ul>
+
 
   <div class="nav-tools">
 
@@ -1265,103 +1400,196 @@ footer{<a href="https://www.instagram.com/kuldeep_singh._9/"
   </div>
 
 </nav>
+
 </header>
 
+
 <!-- HERO -->
+
 <section class="hero" id="home">
+
 <div class="container hero-grid">
+
 
   <div class="reveal">
 
     <div class="badge">
+
       <span class="dot"></span>
+
       Available for IT Opportunities
+
     </div>
+
 
     <h1>
+
       Kuldeep
-      <span class="gradient">Borana</span>
+
+      <span class="gradient">
+        Borana
+      </span>
+
     </h1>
 
+
     <div class="hero-role">
+
       Desktop Support Engineer
+
       <br>
+
       IT Support • Hardware • Networking
+
     </div>
 
+
     <p class="hero-description">
+
       Reliable and solution-focused IT professional with
       practical experience in desktop support, hardware
       troubleshooting, Windows systems, software support,
       Outlook, printers and networking.
+
     </p>
+
 
     <div class="actions">
 
-      <a class="btn btn-primary"
-         href="resume.pdf"
-         target="_blank">
+      <a
+        class="btn btn-primary"
+        href="resume.pdf"
+        target="_blank">
+
         📄 View Resume
+
       </a>
 
-      <a class="btn btn-outline"
-         href="https://wa.me/919752133011"
-         target="_blank">
+
+      <a
+        class="btn btn-outline"
+        href="https://wa.me/919752133011"
+        target="_blank">
+
         💬 WhatsApp
+
       </a>
 
-      <a class="btn btn-outline"
-         href="#projects">
+
+      <a
+        class="btn btn-outline"
+        href="#projects">
+
         🚀 Projects
+
       </a>
 
     </div>
 
+
     <div class="hero-stats">
 
       <div class="hero-stat">
-        <strong>IT</strong>
-        <span>Support</span>
+
+        <strong>
+          IT
+        </strong>
+
+        <span>
+          Support
+        </span>
+
       </div>
 
-      <div class="hero-stat">
-        <strong>PC</strong>
-        <span>Hardware</span>
-      </div>
 
       <div class="hero-stat">
-        <strong>OS</strong>
-        <span>Windows</span>
+
+        <strong>
+          PC
+        </strong>
+
+        <span>
+          Hardware
+        </span>
+
       </div>
 
+
       <div class="hero-stat">
-        <strong>NET</strong>
-        <span>Networking</span>
+
+        <strong>
+          OS
+        </strong>
+
+        <span>
+          Windows
+        </span>
+
+      </div>
+
+
+      <div class="hero-stat">
+
+        <strong>
+          NET
+        </strong>
+
+        <span>
+          Networking
+        </span>
+
       </div>
 
     </div>
 
   </div>
 
+
   <div class="profile-wrap reveal">
 
     <div class="profile-card">
 
       <div class="profile-ring">
-        <img src="developer.png"
-             alt="Kuldeep Borana">
+
+        <img
+          src="developer.png"
+          alt="Kuldeep Borana">
+
       </div>
 
-      <h2>Kuldeep Borana</h2>
 
-      <p>IT Support Professional</p>
+      <h2>
+        Kuldeep Borana
+      </h2>
+
+
+      <p>
+        IT Support Professional
+      </p>
+
 
       <div class="tags">
-        <span class="tag">Desktop Support</span>
-        <span class="tag">Hardware</span>
-        <span class="tag">Windows</span>
-        <span class="tag">Networking</span>
-        <span class="tag">Troubleshooting</span>
+
+        <span class="tag">
+          Desktop Support
+        </span>
+
+        <span class="tag">
+          Hardware
+        </span>
+
+        <span class="tag">
+          Windows
+        </span>
+
+        <span class="tag">
+          Networking
+        </span>
+
+        <span class="tag">
+          Troubleshooting
+        </span>
+
       </div>
 
     </div>
@@ -1369,32 +1597,51 @@ footer{<a href="https://www.instagram.com/kuldeep_singh._9/"
   </div>
 
 </div>
+
 </section>
 
+
 <!-- ABOUT -->
+
 <section id="about">
+
 <div class="container">
 
+
   <div class="heading reveal">
-    <div class="eyebrow">About Me</div>
-    <h2>Technology That Solves Problems</h2>
+
+    <div class="eyebrow">
+      About Me
+    </div>
+
+    <h2>
+      Technology That Solves Problems
+    </h2>
+
     <p>
       Practical IT support with a focus on reliability,
       troubleshooting and user experience.
     </p>
+
   </div>
+
 
   <div class="about-grid">
 
+
     <div class="about-text reveal">
 
-      <h3>Reliable. Technical. Solution-focused.</h3>
+      <h3>
+        Reliable. Technical. Solution-focused.
+      </h3>
+
 
       <p>
         I work in IT support with a focus on diagnosing
         technical problems, maintaining systems and helping
         users get back to work quickly.
       </p>
+
 
       <p>
         My technical areas include desktop support,
@@ -1403,6 +1650,7 @@ footer{<a href="https://www.instagram.com/kuldeep_singh._9/"
         networking support.
       </p>
 
+
       <p>
         My approach is simple: understand the problem,
         identify the cause and provide a dependable solution.
@@ -1410,71 +1658,130 @@ footer{<a href="https://www.instagram.com/kuldeep_singh._9/"
 
     </div>
 
+
     <div class="about-cards reveal">
 
+
       <div class="info-card">
-        <div class="info-icon">🖥️</div>
-        <h4>Desktop Support</h4>
+
+        <div class="info-icon">
+          🖥️
+        </div>
+
+        <h4>
+          Desktop Support
+        </h4>
+
         <p>
           System configuration, troubleshooting and
           end-user technical assistance.
         </p>
+
       </div>
 
+
       <div class="info-card">
-        <div class="info-icon">🔧</div>
-        <h4>Hardware</h4>
+
+        <div class="info-icon">
+          🔧
+        </div>
+
+        <h4>
+          Hardware
+        </h4>
+
         <p>
           PC hardware diagnosis and practical
           troubleshooting.
         </p>
+
       </div>
 
+
       <div class="info-card">
-        <div class="info-icon">🌐</div>
-        <h4>Networking</h4>
+
+        <div class="info-icon">
+          🌐
+        </div>
+
+        <h4>
+          Networking
+        </h4>
+
         <p>
           Basic connectivity and network troubleshooting.
         </p>
+
       </div>
 
+
       <div class="info-card">
-        <div class="info-icon">⚙️</div>
-        <h4>Problem Solving</h4>
+
+        <div class="info-icon">
+          ⚙️
+        </div>
+
+        <h4>
+          Problem Solving
+        </h4>
+
         <p>
           Structured approach to finding technical causes.
         </p>
+
       </div>
+
 
     </div>
 
   </div>
+
 </div>
+
 </section>
 
+
 <!-- EXPERIENCE -->
+
 <section id="experience">
+
 <div class="container">
 
+
   <div class="heading reveal">
-    <div class="eyebrow">Professional Journey</div>
-    <h2>Experience</h2>
+
+    <div class="eyebrow">
+      Professional Journey
+    </div>
+
+    <h2>
+      Experience
+    </h2>
+
     <p>
       Practical IT support and technical responsibilities.
     </p>
+
   </div>
 
+
   <div class="timeline">
+
 
     <div class="timeline-item reveal">
 
       <div class="timeline-dot"></div>
 
+
       <div class="timeline-card">
 
-        <span class="date">IT SUPPORT</span>
+        <span class="date">
+          IT SUPPORT
+        </span>
 
-        <h3>Desktop Support Engineer</h3>
+        <h3>
+          Desktop Support Engineer
+        </h3>
 
         <div class="role">
           IT Support & Infrastructure
@@ -1492,15 +1799,21 @@ footer{<a href="https://www.instagram.com/kuldeep_singh._9/"
 
     </div>
 
+
     <div class="timeline-item reveal">
 
       <div class="timeline-dot"></div>
 
+
       <div class="timeline-card">
 
-        <span class="date">TECHNICAL SUPPORT</span>
+        <span class="date">
+          TECHNICAL SUPPORT
+        </span>
 
-        <h3>IT Support Operations</h3>
+        <h3>
+          IT Support Operations
+        </h3>
 
         <div class="role">
           Technical Support Environment
@@ -1516,108 +1829,221 @@ footer{<a href="https://www.instagram.com/kuldeep_singh._9/"
 
     </div>
 
+
   </div>
+
 </div>
+
 </section>
 
+
 <!-- SKILLS -->
+
 <section id="skills">
+
 <div class="container">
 
+
   <div class="heading reveal">
-    <div class="eyebrow">Technical Expertise</div>
-    <h2>My Skills</h2>
+
+    <div class="eyebrow">
+      Technical Expertise
+    </div>
+
+    <h2>
+      My Skills
+    </h2>
+
     <p>
       Core technical areas used in IT support.
     </p>
+
   </div>
+
 
   <div class="skill-grid">
 
-    <div class="skill reveal">
-      <div class="skill-top">
-        <strong>Desktop Support</strong>
-        <span>90%</span>
-      </div>
-      <div class="progress">
-        <span data-width="90%"></span>
-      </div>
-    </div>
 
     <div class="skill reveal">
+
       <div class="skill-top">
-        <strong>Hardware Troubleshooting</strong>
-        <span>90%</span>
+
+        <strong>
+          Desktop Support
+        </strong>
+
+        <span>
+          90%
+        </span>
+
       </div>
+
       <div class="progress">
+
         <span data-width="90%"></span>
+
       </div>
+
     </div>
 
+
     <div class="skill reveal">
+
       <div class="skill-top">
-        <strong>Windows</strong>
-        <span>88%</span>
+
+        <strong>
+          Hardware Troubleshooting
+        </strong>
+
+        <span>
+          90%
+        </span>
+
       </div>
+
       <div class="progress">
+
+        <span data-width="90%"></span>
+
+      </div>
+
+    </div>
+
+
+    <div class="skill reveal">
+
+      <div class="skill-top">
+
+        <strong>
+          Windows
+        </strong>
+
+        <span>
+          88%
+        </span>
+
+      </div>
+
+      <div class="progress">
+
         <span data-width="88%"></span>
+
       </div>
+
     </div>
 
+
     <div class="skill reveal">
+
       <div class="skill-top">
-        <strong>Networking</strong>
-        <span>82%</span>
+
+        <strong>
+          Networking
+        </strong>
+
+        <span>
+          82%
+        </span>
+
       </div>
+
       <div class="progress">
+
         <span data-width="82%"></span>
+
       </div>
+
     </div>
 
-    <div class="skill reveal">
-      <div class="skill-top">
-        <strong>Microsoft Outlook</strong>
-        <span>85%</span>
-      </div>
-      <div class="progress">
-        <span data-width="85%"></span>
-      </div>
-    </div>
 
     <div class="skill reveal">
+
       <div class="skill-top">
-        <strong>Printer Support</strong>
-        <span>85%</span>
+
+        <strong>
+          Microsoft Outlook
+        </strong>
+
+        <span>
+          85%
+        </span>
+
       </div>
+
       <div class="progress">
+
         <span data-width="85%"></span>
+
       </div>
+
     </div>
+
+
+    <div class="skill reveal">
+
+      <div class="skill-top">
+
+        <strong>
+          Printer Support
+        </strong>
+
+        <span>
+          85%
+        </span>
+
+      </div>
+
+      <div class="progress">
+
+        <span data-width="85%"></span>
+
+      </div>
+
+    </div>
+
 
   </div>
+
 </div>
+
 </section>
 
+
 <!-- PROJECTS -->
+
 <section id="projects">
+
 <div class="container">
 
+
   <div class="heading reveal">
-    <div class="eyebrow">Featured Work</div>
-    <h2>Projects</h2>
+
+    <div class="eyebrow">
+      Featured Work
+    </div>
+
+    <h2>
+      Projects
+    </h2>
+
     <p>
       Practical projects built with modern web technologies.
     </p>
+
   </div>
+
 
   <div class="project-grid">
 
+
     <!-- CALCULATOR -->
+
     <div class="project reveal">
 
       <div class="project-top">
         🧮
       </div>
+
 
       <div class="project-body">
 
@@ -1625,7 +2051,9 @@ footer{<a href="https://www.instagram.com/kuldeep_singh._9/"
           Web Application
         </span>
 
-        <h3>Smart Calculator</h3>
+        <h3>
+          Smart Calculator
+        </h3>
 
         <p>
           Responsive browser-based calculator with
@@ -1633,12 +2061,16 @@ footer{<a href="https://www.instagram.com/kuldeep_singh._9/"
           support, backspace and error handling.
         </p>
 
+
         <div class="project-tech">
+
           <span>HTML5</span>
           <span>CSS3</span>
           <span>JavaScript</span>
           <span>Responsive</span>
+
         </div>
+
 
         <div class="project-actions">
 
@@ -1646,27 +2078,36 @@ footer{<a href="https://www.instagram.com/kuldeep_singh._9/"
             href="calculator.html"
             target="_blank"
             class="project-live">
+
             🚀 Live Demo
+
           </a>
+
 
           <a
             href="https://github.com/kuldeep17422/my-first-project/blob/main/calculator.html"
             target="_blank"
             class="project-code">
+
             💻 Code
+
           </a>
 
         </div>
 
       </div>
+
     </div>
 
+
     <!-- PORTFOLIO -->
+
     <div class="project reveal">
 
       <div class="project-top">
         💼
       </div>
+
 
       <div class="project-body">
 
@@ -1674,7 +2115,9 @@ footer{<a href="https://www.instagram.com/kuldeep_singh._9/"
           Personal Website
         </span>
 
-        <h3>Professional Portfolio</h3>
+        <h3>
+          Professional Portfolio
+        </h3>
 
         <p>
           Modern responsive portfolio with animations,
@@ -1682,39 +2125,52 @@ footer{<a href="https://www.instagram.com/kuldeep_singh._9/"
           WhatsApp contact and PWA support.
         </p>
 
+
         <div class="project-tech">
+
           <span>HTML5</span>
           <span>CSS3</span>
           <span>JavaScript</span>
           <span>PWA</span>
+
         </div>
+
 
         <div class="project-actions">
 
           <a
             href="#home"
             class="project-live">
+
             🚀 Live Demo
+
           </a>
+
 
           <a
             href="https://github.com/kuldeep17422"
             target="_blank"
             class="project-code">
+
             💻 GitHub
+
           </a>
 
         </div>
 
       </div>
+
     </div>
 
+
     <!-- ADCOM -->
+
     <div class="project reveal">
 
       <div class="project-top">
         📱
       </div>
+
 
       <div class="project-body">
 
@@ -1722,7 +2178,9 @@ footer{<a href="https://www.instagram.com/kuldeep_singh._9/"
           Application Project
         </span>
 
-        <h3>ADCOM Computer Technology</h3>
+        <h3>
+          ADCOM Computer Technology
+        </h3>
 
         <p>
           Computer institute management application concept
@@ -1730,12 +2188,16 @@ footer{<a href="https://www.instagram.com/kuldeep_singh._9/"
           diploma information and exam schedules.
         </p>
 
+
         <div class="project-tech">
+
           <span>Android</span>
           <span>Authentication</span>
           <span>Attendance</span>
           <span>Management</span>
+
         </div>
+
 
         <div class="project-actions">
 
@@ -1743,27 +2205,36 @@ footer{<a href="https://www.instagram.com/kuldeep_singh._9/"
             href="https://github.com/kuldeep17422"
             target="_blank"
             class="project-live">
+
             🚀 Project
+
           </a>
+
 
           <a
             href="https://github.com/kuldeep17422"
             target="_blank"
             class="project-code">
+
             💻 GitHub
+
           </a>
 
         </div>
 
       </div>
+
     </div>
 
+
     <!-- IT HELPDESK & TICKET SYSTEM -->
+
     <div class="project reveal">
 
       <div class="project-top">
         🛠️
       </div>
+
 
       <div class="project-body">
 
@@ -1771,7 +2242,9 @@ footer{<a href="https://www.instagram.com/kuldeep_singh._9/"
           IT Support Application
         </span>
 
-        <h3>IT Helpdesk & Ticket System</h3>
+        <h3>
+          IT Helpdesk & Ticket System
+        </h3>
 
         <p>
           Practical IT support ticket management system
@@ -1780,56 +2253,85 @@ footer{<a href="https://www.instagram.com/kuldeep_singh._9/"
           status tracking.
         </p>
 
+
         <div class="project-tech">
+
           <span>HTML5</span>
           <span>CSS3</span>
           <span>JavaScript</span>
           <span>LocalStorage</span>
           <span>Responsive</span>
+
         </div>
+
 
         <div class="project-actions">
 
           <a
-            href="helpdesk.html"
+            href="ticket-system.html?v=3"
             target="_blank"
             class="project-live">
+
             🚀 Live Demo
+
           </a>
+
 
           <a
             href="https://github.com/kuldeep17422"
             target="_blank"
             class="project-code">
+
             💻 GitHub
+
           </a>
 
         </div>
 
       </div>
+
     </div>
 
+
   </div>
+
 </div>
+
 </section>
 
+
 <!-- CERTIFICATIONS -->
+
 <section id="certifications">
+
 <div class="container">
 
+
   <div class="heading reveal">
-    <div class="eyebrow">Qualifications</div>
-    <h2>Certifications & Learning</h2>
+
+    <div class="eyebrow">
+      Qualifications
+    </div>
+
+    <h2>
+      Certifications & Learning
+    </h2>
+
     <p>
       Technical education and professional learning.
     </p>
+
   </div>
+
 
   <div class="cert-grid">
 
+
     <div class="cert reveal">
 
-      <div class="cert-icon">🎓</div>
+      <div class="cert-icon">
+        🎓
+      </div>
 
       <h3>
         Diploma in Computer Technology
@@ -1846,9 +2348,12 @@ footer{<a href="https://www.instagram.com/kuldeep_singh._9/"
 
     </div>
 
+
     <div class="cert reveal">
 
-      <div class="cert-icon">💻</div>
+      <div class="cert-icon">
+        💻
+      </div>
 
       <h3>
         IT Support & Troubleshooting
@@ -1865,9 +2370,12 @@ footer{<a href="https://www.instagram.com/kuldeep_singh._9/"
 
     </div>
 
+
     <div class="cert reveal">
 
-      <div class="cert-icon">🌐</div>
+      <div class="cert-icon">
+        🌐
+      </div>
 
       <h3>
         Networking Fundamentals
@@ -1884,113 +2392,271 @@ footer{<a href="https://www.instagram.com/kuldeep_singh._9/"
 
     </div>
 
+
   </div>
+
 </div>
+
 </section>
 
+
 <!-- RESUME -->
+
 <section>
+
 <div class="container">
+
 
   <div class="resume-box reveal">
 
     <div>
-      <h2>Ready to know more?</h2>
+
+      <h2>
+        Ready to know more?
+      </h2>
 
       <p>
         View my resume for additional professional
         information and technical background.
       </p>
+
     </div>
 
-    <a class="btn btn-primary"
-       href="resume.pdf"
-       target="_blank">
+
+    <a
+      class="btn btn-primary"
+      href="resume.pdf"
+      target="_blank">
+
       📄 Open Resume
+
     </a>
 
   </div>
 
 </div>
+
 </section>
 
+
 <!-- CONTACT -->
+
 <section id="contact">
+
 <div class="container">
 
+
   <div class="heading reveal">
-    <div class="eyebrow">Contact</div>
-    <h2>Let's Connect</h2>
+
+    <div class="eyebrow">
+      Contact
+    </div>
+
+    <h2>
+      Let's Connect
+    </h2>
+
     <p>
       Have an opportunity or technical requirement?
       Feel free to connect.
     </p>
+
   </div>
+
 
   <div class="contact-grid">
 
-    <div class="contact-card reveal">
-      <div class="contact-icon">💬</div>
-      <h3>WhatsApp</h3>
-      <p>+91 97521 33011</p>
-    </div>
+
+    <!-- WHATSAPP -->
 
     <div class="contact-card reveal">
-      <div class="contact-icon">📄</div>
-      <h3>Resume</h3>
+
+      <div class="contact-icon">
+        💬
+      </div>
+
+      <h3>
+        WhatsApp
+      </h3>
+
       <p>
-        <a href="resume.pdf" target="_blank">
+        +91 97521 33011
+      </p>
+
+    </div>
+
+
+    <!-- RESUME -->
+
+    <div class="contact-card reveal">
+
+      <div class="contact-icon">
+        📄
+      </div>
+
+      <h3>
+        Resume
+      </h3>
+
+      <p>
+
+        <a
+          href="resume.pdf"
+          target="_blank">
+
           View Resume
+
         </a>
+
       </p>
+
     </div>
 
+
+    <!-- GITHUB -->
+
     <div class="contact-card reveal">
-      <div class="contact-icon">💻</div>
-      <h3>GitHub</h3>
+
+      <div class="contact-icon">
+        💻
+      </div>
+
+      <h3>
+        GitHub
+      </h3>
+
       <p>
-        <a href="https://github.com/kuldeep17422"
-           target="_blank">
+
+        <a
+          href="https://github.com/kuldeep17422"
+          target="_blank"
+          rel="noopener noreferrer">
+
           GitHub Profile
+
         </a>
+
       </p>
+
     </div>
+
+
+    <!-- INSTAGRAM -->
+
+    <div class="contact-card reveal">
+
+      <div class="contact-icon">
+        📸
+      </div>
+
+      <h3>
+        Instagram
+      </h3>
+
+      <p>
+
+        <a
+          href="https://www.instagram.com/kuldeep_singh._9/"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          @kuldeep_singh._9
+
+        </a>
+
+      </p>
+
+    </div>
+
 
   </div>
 
-  <a class="whatsapp reveal"
-     href="https://wa.me/919752133011?text=Hello%20Kuldeep%2C%20I%20visited%20your%20portfolio."
-     target="_blank">
+
+  <a
+    class="whatsapp reveal"
+    href="https://wa.me/919752133011?text=Hello%20Kuldeep%2C%20I%20visited%20your%20portfolio."
+    target="_blank">
+
     💬 Start WhatsApp Conversation
+
   </a>
 
+
 </div>
+
 </section>
 
+
+<!-- FOOTER -->
+
 <footer>
+
   © <span id="year"></span>
-  <strong>Kuldeep Borana</strong>
+
+  <strong>
+    Kuldeep Borana
+  </strong>
+
   · IT Support Professional
+
+
+  <div>
+
+    <a
+      class="footer-instagram"
+      href="https://www.instagram.com/kuldeep_singh._9/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram">
+
+      📸 Instagram · @kuldeep_singh._9
+
+    </a>
+
+  </div>
+
 </footer>
 
-<a class="floating"
-   href="https://wa.me/919752133011"
-   target="_blank"
-   aria-label="WhatsApp">
+
+<!-- FLOATING WHATSAPP -->
+
+<a
+  class="floating"
+  href="https://wa.me/919752133011"
+  target="_blank"
+  aria-label="WhatsApp">
+
   💬
+
 </a>
 
-<button class="top" id="topBtn">↑</button>
+
+<!-- TOP BUTTON -->
+
+<button
+  class="top"
+  id="topBtn">
+
+  ↑
+
+</button>
+
 
 <script>
+
 
 /* LOADER */
 
 window.addEventListener("load",()=>{
+
   setTimeout(()=>{
-    document.getElementById("loader")
+
+    document
+      .getElementById("loader")
       .classList.add("hide");
+
   },500);
+
 });
 
 
@@ -1999,11 +2665,14 @@ window.addEventListener("load",()=>{
 const header =
 document.getElementById("header");
 
+
 window.addEventListener("scroll",()=>{
+
   header.classList.toggle(
     "scrolled",
     window.scrollY>40
   );
+
 });
 
 
@@ -2015,6 +2684,7 @@ document.getElementById("menuBtn");
 const navLinks =
 document.getElementById("navLinks");
 
+
 menuBtn.addEventListener("click",()=>{
 
   navLinks.classList.toggle("open");
@@ -2023,15 +2693,23 @@ menuBtn.addEventListener("click",()=>{
     navLinks.classList.contains("open")
     ? "✕"
     : "☰";
+
 });
 
-document.querySelectorAll(".nav-links a")
-.forEach(a=>{
-  a.addEventListener("click",()=>{
-    navLinks.classList.remove("open");
-    menuBtn.textContent="☰";
+
+document
+  .querySelectorAll(".nav-links a")
+  .forEach(a=>{
+
+    a.addEventListener("click",()=>{
+
+      navLinks.classList.remove("open");
+
+      menuBtn.textContent="☰";
+
+    });
+
   });
-});
 
 
 /* THEME */
@@ -2039,13 +2717,19 @@ document.querySelectorAll(".nav-links a")
 const themeBtn =
 document.getElementById("themeBtn");
 
+
 const savedTheme =
 localStorage.getItem("portfolio-theme");
 
+
 if(savedTheme==="light"){
+
   document.body.classList.add("light");
+
   themeBtn.textContent="🌙";
+
 }
+
 
 themeBtn.addEventListener("click",()=>{
 
@@ -2054,13 +2738,16 @@ themeBtn.addEventListener("click",()=>{
   const light =
     document.body.classList.contains("light");
 
+
   themeBtn.textContent =
     light ? "🌙" : "☀️";
+
 
   localStorage.setItem(
     "portfolio-theme",
     light ? "light" : "dark"
   );
+
 });
 
 
@@ -2068,6 +2755,7 @@ themeBtn.addEventListener("click",()=>{
 
 const observer =
 new IntersectionObserver(
+
   entries=>{
 
     entries.forEach(entry=>{
@@ -2076,25 +2764,43 @@ new IntersectionObserver(
 
         entry.target.classList.add("show");
 
+
         const progress =
-        entry.target.querySelector(".progress span");
+        entry.target.querySelector(
+          ".progress span"
+        );
+
 
         if(progress){
+
           progress.style.width =
           progress.dataset.width;
+
         }
 
+
         observer.unobserve(entry.target);
+
       }
 
     });
 
   },
-  {threshold:.12}
+
+  {
+    threshold:.12
+  }
+
 );
 
-document.querySelectorAll(".reveal")
-.forEach(el=>observer.observe(el));
+
+document
+  .querySelectorAll(".reveal")
+  .forEach(el=>{
+
+    observer.observe(el);
+
+  });
 
 
 /* ACTIVE NAV */
@@ -2105,9 +2811,11 @@ document.querySelectorAll("section[id]");
 const links =
 document.querySelectorAll(".nav-links a");
 
+
 window.addEventListener("scroll",()=>{
 
   let current="";
+
 
   sections.forEach(section=>{
 
@@ -2115,20 +2823,26 @@ window.addEventListener("scroll",()=>{
       window.scrollY >=
       section.offsetTop-180
     ){
+
       current=section.id;
+
     }
 
   });
+
 
   links.forEach(link=>{
 
     link.classList.remove("active");
 
+
     if(
       link.getAttribute("href")
       ==="#"+current
     ){
+
       link.classList.add("active");
+
     }
 
   });
@@ -2141,6 +2855,7 @@ window.addEventListener("scroll",()=>{
 const topBtn =
 document.getElementById("topBtn");
 
+
 window.addEventListener("scroll",()=>{
 
   topBtn.classList.toggle(
@@ -2150,18 +2865,26 @@ window.addEventListener("scroll",()=>{
 
 });
 
+
 topBtn.addEventListener("click",()=>{
+
   window.scrollTo({
+
     top:0,
+
     behavior:"smooth"
+
   });
+
 });
 
 
 /* YEAR */
 
-document.getElementById("year")
-.textContent=new Date().getFullYear();
+document
+  .getElementById("year")
+  .textContent =
+  new Date().getFullYear();
 
 
 /* PWA */
@@ -2171,13 +2894,19 @@ if("serviceWorker" in navigator){
   window.addEventListener("load",()=>{
 
     navigator.serviceWorker
-    .register("./service-worker.js")
-    .then(()=>{
-      console.log("PWA ready");
-    })
-    .catch(()=>{
-      console.log("Service worker unavailable");
-    });
+      .register("./service-worker.js")
+      .then(()=>{
+
+        console.log("PWA ready");
+
+      })
+      .catch(()=>{
+
+        console.log(
+          "Service worker unavailable"
+        );
+
+      });
 
   });
 
