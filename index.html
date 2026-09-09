@@ -2,213 +2,181 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#05070d">
+<meta name="description" content="Kuldeep Borana — IT Support Professional, Desktop Support Engineer & DevOps Explorer">
 
-<title>Kuldeep Borana | IT Support Engineer</title>
+<title>Kuldeep Borana | IT Support • DevOps</title>
 
-<meta name="description" content="Kuldeep Borana — IT Support Engineer specializing in Desktop Support, Hardware, Windows, Networking and DevOps.">
-<meta name="theme-color" content="#050816">
-
-<link rel="icon" href="developer.png">
 <link rel="manifest" href="manifest.json">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-/* =========================
-   ROOT
-========================= */
-
 :root{
-  --bg:#050816;
-  --bg2:#090d1d;
-  --card:rgba(255,255,255,.055);
-  --card2:rgba(255,255,255,.09);
-  --text:#fff;
-  --muted:#99a5bd;
-  --line:rgba(255,255,255,.11);
-
-  --purple:#7c5cff;
-  --blue:#22d3ee;
-  --green:#22c55e;
-  --pink:#ec4899;
-
-  --radius:24px;
-  --max:1200px;
+    --bg:#05070d;
+    --bg2:#080b14;
+    --card:rgba(255,255,255,.055);
+    --card2:rgba(255,255,255,.025);
+    --line:rgba(255,255,255,.10);
+    --text:#f4f7ff;
+    --muted:#929bb0;
+    --blue:#5c8dff;
+    --cyan:#3de4ff;
+    --purple:#9b6cff;
+    --green:#48f2a3;
+    --orange:#ffb65c;
+    --shadow:0 30px 100px rgba(0,0,0,.45);
 }
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
 html{
-  scroll-behavior:smooth;
+    background:var(--bg);
 }
 
 body{
-  font-family:Inter,Arial,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.7;
-  overflow-x:hidden;
+    font-family:Inter,Arial,sans-serif;
+    background:
+        radial-gradient(circle at 10% 10%,rgba(92,141,255,.12),transparent 28%),
+        radial-gradient(circle at 90% 20%,rgba(155,108,255,.10),transparent 28%),
+        radial-gradient(circle at 50% 80%,rgba(61,228,255,.06),transparent 30%),
+        var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:999;
+    opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
 }
 
 a{
-  text-decoration:none;
-  color:inherit;
-}
-
-button{
-  font:inherit;
+    color:inherit;
+    text-decoration:none;
 }
 
 .container{
-  width:min(92%,var(--max));
-  margin:auto;
+    width:min(1180px,92%);
+    margin:auto;
 }
 
 section{
-  padding:110px 0;
-  position:relative;
+    padding:120px 0;
+    position:relative;
 }
 
-/* =========================
-   CURSOR GLOW
-========================= */
-
-.cursor-glow{
-  position:fixed;
-  width:350px;
-  height:350px;
-  border-radius:50%;
-  pointer-events:none;
-  background:radial-gradient(circle,
-    rgba(124,92,255,.13),
-    transparent 65%);
-  transform:translate(-50%,-50%);
-  z-index:-1;
-}
-
-/* =========================
-   BACKGROUND
-========================= */
-
-.grid-bg{
-  position:fixed;
-  inset:0;
-  z-index:-5;
-  opacity:.18;
-  background-image:
-    linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
-  background-size:50px 50px;
-  mask-image:linear-gradient(to bottom,#000,transparent);
-}
-
-.orb{
-  position:fixed;
-  border-radius:50%;
-  filter:blur(100px);
-  opacity:.20;
-  pointer-events:none;
-  z-index:-4;
-}
-
-.orb.one{
-  width:400px;
-  height:400px;
-  background:var(--purple);
-  left:-200px;
-  top:10%;
-}
-
-.orb.two{
-  width:350px;
-  height:350px;
-  background:var(--blue);
-  right:-180px;
-  top:45%;
-}
-
-.orb.three{
-  width:300px;
-  height:300px;
-  background:var(--pink);
-  left:40%;
-  bottom:-150px;
+::selection{
+    background:var(--cyan);
+    color:#02040a;
 }
 
 /* =========================
    LOADER
 ========================= */
 
-#loader{
-  position:fixed;
-  inset:0;
-  background:#050816;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:99999;
-  transition:.7s;
+.loader{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    background:#03050a;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:1s;
 }
 
-.loader-inner{
-  text-align:center;
+.loader.hide{
+    opacity:0;
+    visibility:hidden;
 }
 
-.loader-logo{
-  width:82px;
-  height:82px;
-  margin:auto;
-  border-radius:25px;
-  display:grid;
-  place-items:center;
-
-  font-family:"Space Grotesk";
-  font-size:25px;
-  font-weight:700;
-
-  background:linear-gradient(135deg,var(--purple),var(--blue));
-  box-shadow:0 0 70px rgba(124,92,255,.5);
+.loader-box{
+    width:min(420px,85%);
 }
 
-.loader-inner h3{
-  margin-top:20px;
-  font-family:"Space Grotesk";
+.loader-brand{
+    font-family:"Space Grotesk";
+    font-size:13px;
+    letter-spacing:5px;
+    color:var(--cyan);
+    margin-bottom:18px;
 }
 
-.loader-inner p{
-  color:var(--muted);
-  font-size:12px;
-  margin-top:4px;
+.loader-text{
+    font-size:34px;
+    font-weight:800;
+    margin-bottom:25px;
 }
 
-.loader-bar{
-  width:210px;
-  height:3px;
-  background:rgba(255,255,255,.1);
-  border-radius:10px;
-  overflow:hidden;
-  margin:18px auto;
+.loader-line{
+    height:2px;
+    background:#111827;
+    overflow:hidden;
 }
 
-.loader-bar span{
-  display:block;
-  width:40%;
-  height:100%;
-  background:linear-gradient(90deg,var(--purple),var(--blue));
-  animation:loader 1.2s infinite;
+.loader-line span{
+    display:block;
+    height:100%;
+    width:0;
+    background:linear-gradient(90deg,var(--blue),var(--cyan),var(--purple));
+    animation:load 2.2s ease forwards;
 }
 
-@keyframes loader{
-  from{transform:translateX(-150%)}
-  to{transform:translateX(400%)}
+@keyframes load{
+    to{width:100%}
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.grid{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.16;
+    background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+    background-size:70px 70px;
+    mask-image:linear-gradient(to bottom,black,transparent 90%);
+}
+
+.glow{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(80px);
+    pointer-events:none;
+}
+
+.glow.one{
+    width:420px;
+    height:420px;
+    background:rgba(92,141,255,.12);
+    top:50px;
+    left:-220px;
+}
+
+.glow.two{
+    width:450px;
+    height:450px;
+    background:rgba(155,108,255,.10);
+    top:350px;
+    right:-250px;
 }
 
 /* =========================
@@ -216,89 +184,76 @@ section{
 ========================= */
 
 header{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:1000;
-  padding:18px 0;
-  transition:.3s;
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    transition:.3s;
 }
 
 header.scrolled{
-  background:rgba(5,8,22,.75);
-  backdrop-filter:blur(22px);
-  border-bottom:1px solid var(--line);
-  padding:10px 0;
+    background:rgba(5,7,13,.78);
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--line);
 }
 
 .nav{
-  width:min(94%,1250px);
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+    height:82px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
 .logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-family:"Space Grotesk";
-  font-weight:700;
-  font-size:19px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-family:"Space Grotesk";
+    font-weight:800;
+    font-size:20px;
 }
 
-.logo-icon{
-  width:42px;
-  height:42px;
-  display:grid;
-  place-items:center;
-  border-radius:14px;
-  background:linear-gradient(135deg,var(--purple),var(--blue));
-  box-shadow:0 10px 30px rgba(124,92,255,.3);
-}
-
-.logo span{
-  color:var(--blue);
+.logo-mark{
+    width:38px;
+    height:38px;
+    display:grid;
+    place-items:center;
+    border:1px solid rgba(61,228,255,.4);
+    background:rgba(61,228,255,.07);
+    border-radius:12px;
+    color:var(--cyan);
+    box-shadow:0 0 30px rgba(61,228,255,.1);
 }
 
 .nav-links{
-  display:flex;
-  gap:5px;
+    display:flex;
+    gap:30px;
+    align-items:center;
 }
 
 .nav-links a{
-  color:var(--muted);
-  font-size:13px;
-  padding:10px 12px;
-  border-radius:12px;
-  transition:.25s;
+    color:#aeb6c8;
+    font-size:13px;
+    font-weight:600;
+    transition:.25s;
 }
 
-.nav-links a:hover,
-.nav-links a.active{
-  color:white;
-  background:var(--card);
+.nav-links a:hover{
+    color:white;
 }
 
-.nav-right{
-  display:flex;
-  gap:8px;
+.nav-cta{
+    padding:11px 18px;
+    border:1px solid rgba(61,228,255,.35);
+    border-radius:12px;
+    color:var(--cyan)!important;
+    background:rgba(61,228,255,.05);
 }
 
-.nav-btn{
-  width:40px;
-  height:40px;
-  border:1px solid var(--line);
-  border-radius:12px;
-  background:var(--card);
-  color:white;
-  cursor:pointer;
-}
-
-.menu-btn{
-  display:none;
+.menu{
+    display:none;
+    font-size:25px;
+    cursor:pointer;
 }
 
 /* =========================
@@ -306,309 +261,387 @@ header.scrolled{
 ========================= */
 
 .hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  padding-top:150px;
-  overflow:hidden;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding-top:120px;
+    overflow:hidden;
 }
 
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:70px;
-  align-items:center;
-}
-
-.status{
-  display:inline-flex;
-  align-items:center;
-  gap:9px;
-  padding:8px 14px;
-  border-radius:50px;
-  border:1px solid rgba(34,197,94,.25);
-  background:rgba(34,197,94,.07);
-  color:#6ee79a;
-  font-size:12px;
-  margin-bottom:25px;
-}
-
-.status-dot{
-  width:8px;
-  height:8px;
-  background:#22c55e;
-  border-radius:50%;
-  box-shadow:0 0 15px #22c55e;
-}
-
-.hero h1{
-  font-family:"Space Grotesk";
-  font-size:clamp(55px,7vw,90px);
-  line-height:.98;
-  letter-spacing:-5px;
-}
-
-.gradient{
-  background:linear-gradient(90deg,#a995ff,#22d3ee);
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-}
-
-.hero-role{
-  font-family:"Space Grotesk";
-  font-size:clamp(22px,3vw,31px);
-  margin-top:22px;
-  font-weight:600;
-}
-
-.hero-role span{
-  color:var(--blue);
-}
-
-.hero-description{
-  max-width:680px;
-  margin-top:18px;
-  color:var(--muted);
-  font-size:15px;
-  line-height:1.9;
-}
-
-.hero-buttons{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:30px;
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  padding:13px 19px;
-  border-radius:14px;
-  border:1px solid var(--line);
-  background:var(--card);
-  font-size:13px;
-  font-weight:600;
-  transition:.3s;
-}
-
-.btn:hover{
-  transform:translateY(-4px);
-}
-
-.btn-primary{
-  background:linear-gradient(135deg,var(--purple),#5944e8);
-  border-color:transparent;
-  box-shadow:0 15px 40px rgba(124,92,255,.25);
-}
-
-.btn-green{
-  color:#6ee79a;
-  background:rgba(34,197,94,.08);
-  border-color:rgba(34,197,94,.2);
-}
-
-/* =========================
-   HERO STATS
-========================= */
-
-.hero-stats{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  margin-top:45px;
-  border:1px solid var(--line);
-  background:var(--card);
-  border-radius:20px;
-  overflow:hidden;
-}
-
-.stat{
-  padding:18px 10px;
-  text-align:center;
-  border-right:1px solid var(--line);
-}
-
-.stat:last-child{
-  border:0;
-}
-
-.stat strong{
-  display:block;
-  font-family:"Space Grotesk";
-  font-size:20px;
-}
-
-.stat small{
-  color:var(--muted);
-  font-size:9px;
-  letter-spacing:1.5px;
-}
-
-/* =========================
-   PROFILE
-========================= */
-
-.profile{
-  position:relative;
-}
-
-.profile-card{
-  padding:30px;
-  text-align:center;
-  border-radius:32px;
-  border:1px solid var(--line);
-  background:linear-gradient(145deg,
-    rgba(255,255,255,.09),
-    rgba(255,255,255,.035));
-  backdrop-filter:blur(20px);
-  box-shadow:0 30px 90px rgba(0,0,0,.4);
-  position:relative;
-  overflow:hidden;
-}
-
-.profile-card::before{
-  content:"";
-  position:absolute;
-  width:200px;
-  height:200px;
-  background:var(--purple);
-  filter:blur(80px);
-  opacity:.18;
-  top:-100px;
-  left:-80px;
-}
-
-.profile-image{
-  width:220px;
-  height:220px;
-  object-fit:cover;
-  border-radius:50%;
-  margin:auto;
-  border:5px solid rgba(255,255,255,.08);
-  box-shadow:
-    0 0 0 10px rgba(124,92,255,.05),
-    0 30px 70px rgba(0,0,0,.45);
-  position:relative;
-}
-
-.profile-card h2{
-  font-family:"Space Grotesk";
-  font-size:26px;
-  margin-top:22px;
-}
-
-.profile-card p{
-  color:var(--muted);
-  font-size:13px;
-}
-
-.tags{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:7px;
-  margin-top:18px;
-}
-
-.tag{
-  padding:6px 10px;
-  border:1px solid var(--line);
-  background:var(--card);
-  border-radius:50px;
-  color:var(--muted);
-  font-size:10px;
-}
-
-/* =========================
-   SECTION TITLES
-========================= */
-
-.section-title{
-  margin-bottom:45px;
-  max-width:720px;
+.hero-layout{
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:60px;
+    align-items:center;
 }
 
 .eyebrow{
-  color:var(--blue);
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  margin-bottom:10px;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:9px 14px;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.035);
+    border-radius:999px;
+    color:#b8c0d0;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.4px;
+    margin-bottom:28px;
 }
 
-.section-title h2{
-  font-family:"Space Grotesk";
-  font-size:clamp(36px,5vw,55px);
-  line-height:1.1;
-  letter-spacing:-2px;
+.status-dot{
+    width:7px;
+    height:7px;
+    background:var(--green);
+    border-radius:50%;
+    box-shadow:0 0 15px var(--green);
+    animation:pulse 1.8s infinite;
 }
 
-.section-title p{
-  color:var(--muted);
-  margin-top:13px;
+@keyframes pulse{
+    50%{opacity:.35;transform:scale(.7)}
+}
+
+.hero h1{
+    font-family:"Space Grotesk";
+    font-size:clamp(58px,8vw,112px);
+    line-height:.88;
+    letter-spacing:-6px;
+    max-width:850px;
+}
+
+.hero h1 .dim{
+    color:#687287;
+}
+
+.gradient-text{
+    background:linear-gradient(90deg,#fff,var(--cyan),#9c8cff);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.role-line{
+    min-height:34px;
+    margin-top:28px;
+    font-family:"Space Grotesk";
+    font-size:20px;
+    color:#aeb8cb;
+}
+
+.role-line span{
+    color:var(--cyan);
+}
+
+.hero-description{
+    margin-top:22px;
+    max-width:650px;
+    color:var(--muted);
+    line-height:1.8;
+    font-size:15px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:13px;
+    flex-wrap:wrap;
+    margin-top:35px;
+}
+
+.btn{
+    padding:14px 20px;
+    border-radius:13px;
+    border:1px solid var(--line);
+    font-size:13px;
+    font-weight:700;
+    transition:.3s;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.btn-primary{
+    color:#031016;
+    background:linear-gradient(135deg,var(--cyan),#8aefff);
+    border:none;
+    box-shadow:0 15px 40px rgba(61,228,255,.16);
+}
+
+.btn-dark{
+    background:rgba(255,255,255,.04);
+}
+
+.hero-mini-stats{
+    display:flex;
+    gap:35px;
+    margin-top:45px;
+}
+
+.mini-stat strong{
+    display:block;
+    font-size:20px;
+}
+
+.mini-stat span{
+    display:block;
+    color:#707a8e;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    margin-top:5px;
 }
 
 /* =========================
-   ABOUT
+   PORTRAIT
 ========================= */
 
-.about-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
+.visual{
+    position:relative;
+    height:620px;
+    display:grid;
+    place-items:center;
 }
 
-.about-main,
-.about-card{
-  border:1px solid var(--line);
-  background:var(--card);
-  border-radius:var(--radius);
+.orbit{
+    position:absolute;
+    width:470px;
+    height:470px;
+    border:1px solid rgba(92,141,255,.20);
+    border-radius:50%;
+    animation:rotate 22s linear infinite;
+}
+
+.orbit:before,
+.orbit:after{
+    content:"";
+    position:absolute;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:var(--cyan);
+    box-shadow:0 0 25px var(--cyan);
+}
+
+.orbit:before{
+    top:38px;
+    left:65px;
+}
+
+.orbit:after{
+    bottom:80px;
+    right:40px;
+    background:var(--purple);
+    box-shadow:0 0 25px var(--purple);
+}
+
+.orbit.two{
+    width:390px;
+    height:390px;
+    border-color:rgba(155,108,255,.16);
+    animation-direction:reverse;
+    animation-duration:18s;
+}
+
+@keyframes rotate{
+    to{transform:rotate(360deg)}
+}
+
+.portrait-card{
+    width:330px;
+    height:440px;
+    position:relative;
+    z-index:3;
+    border-radius:35px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.16);
+    background:
+        linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.025));
+    box-shadow:
+        0 50px 100px rgba(0,0,0,.55),
+        0 0 80px rgba(61,228,255,.08);
+    transform:rotate(3deg);
+}
+
+.portrait-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    filter:saturate(.95) contrast(1.05);
+}
+
+.portrait-overlay{
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(to bottom,transparent 45%,rgba(3,5,10,.95));
+}
+
+.portrait-info{
+    position:absolute;
+    bottom:25px;
+    left:25px;
+    right:25px;
+}
+
+.portrait-info small{
+    color:var(--cyan);
+    letter-spacing:2px;
+    font-size:9px;
+    font-weight:800;
+}
+
+.portrait-info h3{
+    font-family:"Space Grotesk";
+    font-size:25px;
+    margin-top:7px;
+}
+
+.float-tag{
+    position:absolute;
+    z-index:5;
+    padding:12px 15px;
+    border:1px solid var(--line);
+    background:rgba(7,10,18,.72);
+    backdrop-filter:blur(15px);
+    border-radius:13px;
+    font-size:11px;
+    box-shadow:var(--shadow);
+}
+
+.tag-one{
+    top:100px;
+    right:20px;
+}
+
+.tag-two{
+    bottom:90px;
+    left:0;
+}
+
+.tag-three{
+    top:210px;
+    left:-20px;
+}
+
+.tag-icon{
+    color:var(--cyan);
+    margin-right:6px;
+}
+
+/* =========================
+   SECTION HEAD
+========================= */
+
+.section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:30px;
+    margin-bottom:55px;
+}
+
+.kicker{
+    color:var(--cyan);
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:10px;
+    font-weight:800;
+    margin-bottom:13px;
+}
+
+.section-head h2{
+    font-family:"Space Grotesk";
+    font-size:clamp(35px,5vw,58px);
+    letter-spacing:-3px;
+    line-height:.95;
+}
+
+.section-head p{
+    max-width:430px;
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.7;
+}
+
+/* =========================
+   BENTO
+========================= */
+
+.bento{
+    display:grid;
+    grid-template-columns:1.3fr .7fr .7fr;
+    gap:16px;
+}
+
+.box{
+    position:relative;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.018));
+    border-radius:24px;
+    padding:28px;
+    transition:.4s;
+}
+
+.box:hover{
+    transform:translateY(-6px);
+    border-color:rgba(61,228,255,.25);
+    box-shadow:0 25px 70px rgba(0,0,0,.25);
 }
 
 .about-main{
-  padding:35px;
+    grid-row:span 2;
+    min-height:390px;
 }
 
-.about-main p{
-  color:var(--muted);
-  font-size:14px;
-  margin-bottom:18px;
+.box h3{
+    font-family:"Space Grotesk";
+    font-size:23px;
+    margin-bottom:15px;
 }
 
-.about-cards{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
+.box p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.8;
 }
 
-.about-card{
-  padding:25px;
-  transition:.3s;
+.big-number{
+    font-family:"Space Grotesk";
+    font-size:70px;
+    font-weight:800;
+    color:#fff;
+    margin-top:50px;
+    line-height:1;
 }
 
-.about-card:hover{
-  transform:translateY(-6px);
-  background:var(--card2);
+.big-number span{
+    color:var(--cyan);
 }
 
-.about-icon{
-  font-size:28px;
+.box-label{
+    color:#6f798d;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    margin-top:8px;
 }
 
-.about-card h3{
-  font-family:"Space Grotesk";
-  margin-top:10px;
-  font-size:17px;
-}
-
-.about-card p{
-  color:var(--muted);
-  font-size:12px;
-  margin-top:5px;
+.corner{
+    position:absolute;
+    width:120px;
+    height:120px;
+    right:-40px;
+    bottom:-50px;
+    border-radius:50%;
+    background:rgba(61,228,255,.08);
+    filter:blur(10px);
 }
 
 /* =========================
@@ -616,442 +649,406 @@ header.scrolled{
 ========================= */
 
 .command{
-  border:1px solid var(--line);
-  border-radius:28px;
-  background:
-    radial-gradient(circle at 90% 10%,rgba(34,211,238,.1),transparent 30%),
-    var(--card);
-  overflow:hidden;
+    border:1px solid var(--line);
+    border-radius:28px;
+    overflow:hidden;
+    background:#080b12;
+    box-shadow:var(--shadow);
 }
 
-.command-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:18px 24px;
-  border-bottom:1px solid var(--line);
+.command-top{
+    padding:16px 20px;
+    border-bottom:1px solid var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.window-dots{
+    display:flex;
+    gap:6px;
+}
+
+.window-dots i{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#394052;
 }
 
 .command-title{
-  font-family:"Space Grotesk";
-  font-size:14px;
-}
-
-.command-live{
-  color:#6ee79a;
-  font-size:10px;
+    color:#697386;
+    font-size:11px;
+    letter-spacing:1px;
 }
 
 .command-body{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
+    display:grid;
+    grid-template-columns:1fr 1fr;
 }
 
-.system{
-  padding:28px 18px;
-  text-align:center;
-  border-right:1px solid var(--line);
+.command-left{
+    padding:35px;
+    border-right:1px solid var(--line);
 }
 
-.system:last-child{
-  border:0;
+.command-right{
+    padding:35px;
 }
 
-.system-icon{
-  font-size:25px;
+.terminal{
+    font-family:monospace;
+    color:#9eabc1;
+    font-size:13px;
+    line-height:2;
 }
 
-.system h3{
-  font-family:"Space Grotesk";
-  font-size:14px;
-  margin-top:10px;
+.terminal .green{
+    color:var(--green);
 }
 
-.system p{
-  color:#6ee79a;
-  font-size:10px;
-  margin-top:4px;
+.terminal .blue{
+    color:var(--cyan);
+}
+
+.terminal .purple{
+    color:#a98cff;
+}
+
+.metrics{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.metric{
+    padding:20px;
+    border:1px solid var(--line);
+    border-radius:16px;
+    background:rgba(255,255,255,.025);
+}
+
+.metric strong{
+    font-size:24px;
+    font-family:"Space Grotesk";
+}
+
+.metric span{
+    display:block;
+    color:#737d90;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-top:7px;
 }
 
 /* =========================
    SKILLS
 ========================= */
 
-.skills{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
 }
 
 .skill{
-  padding:22px;
-  border:1px solid var(--line);
-  background:var(--card);
-  border-radius:18px;
+    min-height:180px;
+    padding:24px;
+    border:1px solid var(--line);
+    border-radius:22px;
+    background:rgba(255,255,255,.035);
+    transition:.35s;
 }
 
-.skill-top{
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:10px;
+.skill:hover{
+    transform:translateY(-7px);
+    background:rgba(255,255,255,.06);
 }
 
-.skill-top strong{
-  font-size:13px;
+.skill-number{
+    color:#566176;
+    font-family:monospace;
+    font-size:11px;
 }
 
-.skill-top span{
-  color:var(--blue);
-  font-size:12px;
+.skill-icon{
+    font-size:27px;
+    margin:20px 0 16px;
 }
 
-.progress{
-  height:6px;
-  background:rgba(255,255,255,.07);
-  border-radius:50px;
-  overflow:hidden;
+.skill h3{
+    font-size:15px;
+    margin-bottom:7px;
 }
 
-.progress span{
-  display:block;
-  width:0;
-  height:100%;
-  background:linear-gradient(90deg,var(--purple),var(--blue));
-  transition:1.4s ease;
-}
-
-/* =========================
-   TECH STACK
-========================= */
-
-.tech-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
-}
-
-.tech{
-  padding:25px;
-  border:1px solid var(--line);
-  border-radius:20px;
-  background:var(--card);
-  transition:.35s;
-  position:relative;
-  overflow:hidden;
-}
-
-.tech:hover{
-  transform:translateY(-7px);
-  border-color:rgba(34,211,238,.35);
-}
-
-.tech-icon{
-  font-size:30px;
-}
-
-.tech h3{
-  font-family:"Space Grotesk";
-  margin-top:14px;
-  font-size:17px;
-}
-
-.tech p{
-  color:var(--muted);
-  font-size:11px;
-  margin-top:5px;
+.skill p{
+    color:#737d90;
+    font-size:11px;
+    line-height:1.6;
 }
 
 /* =========================
-   EXPERIENCE
+   DEVOPS PIPELINE
 ========================= */
 
-.timeline{
-  max-width:900px;
-  position:relative;
+.pipeline-wrap{
+    padding:45px;
+    border:1px solid var(--line);
+    border-radius:28px;
+    background:linear-gradient(135deg,rgba(92,141,255,.05),rgba(155,108,255,.04));
+    overflow:hidden;
 }
 
-.timeline::before{
-  content:"";
-  position:absolute;
-  left:9px;
-  top:5px;
-  bottom:5px;
-  width:1px;
-  background:linear-gradient(var(--purple),transparent);
+.pipeline{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:relative;
 }
 
-.timeline-item{
-  position:relative;
-  padding-left:45px;
-  margin-bottom:28px;
+.pipeline:before{
+    content:"";
+    position:absolute;
+    left:5%;
+    right:5%;
+    top:35px;
+    height:1px;
+    background:linear-gradient(90deg,var(--blue),var(--cyan),var(--purple));
+    opacity:.4;
 }
 
-.timeline-dot{
-  position:absolute;
-  left:0;
-  top:8px;
-  width:19px;
-  height:19px;
-  border-radius:50%;
-  background:var(--bg);
-  border:4px solid var(--purple);
-  box-shadow:0 0 20px rgba(124,92,255,.7);
+.stage{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    width:100px;
 }
 
-.timeline-card{
-  padding:27px;
-  border:1px solid var(--line);
-  background:var(--card);
-  border-radius:22px;
+.stage-circle{
+    width:70px;
+    height:70px;
+    margin:auto;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    border:1px solid rgba(61,228,255,.3);
+    background:#080b13;
+    font-family:monospace;
+    font-size:11px;
+    color:var(--cyan);
+    box-shadow:0 0 35px rgba(61,228,255,.07);
 }
 
-.timeline-card .label{
-  color:var(--blue);
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:1.5px;
+.stage strong{
+    display:block;
+    font-size:11px;
+    margin-top:13px;
 }
 
-.timeline-card h3{
-  font-family:"Space Grotesk";
-  font-size:22px;
-  margin-top:5px;
+.stage small{
+    display:block;
+    color:#626c80;
+    font-size:9px;
+    margin-top:4px;
 }
 
-.timeline-card .role{
-  color:var(--muted);
-  font-size:12px;
+.learning-grid{
+    margin-top:35px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
 }
 
-.timeline-card p{
-  color:var(--muted);
-  font-size:13px;
-  margin-top:12px;
+.learning{
+    padding:18px;
+    border:1px solid var(--line);
+    border-radius:16px;
+    background:rgba(255,255,255,.025);
+}
+
+.learning strong{
+    display:block;
+    font-size:13px;
+}
+
+.learning span{
+    color:var(--cyan);
+    font-size:9px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
 }
 
 /* =========================
    PROJECTS
 ========================= */
 
-.project-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
+.projects{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
 }
 
 .project{
-  padding:28px;
-  border:1px solid var(--line);
-  border-radius:25px;
-  background:var(--card);
-  position:relative;
-  overflow:hidden;
-  transition:.4s;
-}
-
-.project::after{
-  content:"";
-  position:absolute;
-  width:170px;
-  height:170px;
-  border-radius:50%;
-  background:var(--purple);
-  filter:blur(90px);
-  opacity:0;
-  right:-100px;
-  top:-100px;
-  transition:.4s;
+    min-height:360px;
+    border:1px solid var(--line);
+    border-radius:26px;
+    padding:30px;
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 80% 20%,rgba(92,141,255,.12),transparent 30%),
+        rgba(255,255,255,.03);
+    transition:.45s;
 }
 
 .project:hover{
-  transform:translateY(-8px);
-  border-color:rgba(124,92,255,.35);
+    transform:translateY(-8px);
+    border-color:rgba(92,141,255,.35);
 }
 
-.project:hover::after{
-  opacity:.15;
-}
-
-.project-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.project-no{
-  width:45px;
-  height:45px;
-  display:grid;
-  place-items:center;
-  border-radius:14px;
-  background:rgba(124,92,255,.12);
-  color:var(--blue);
-  font-family:"Space Grotesk";
-}
-
-.project-type{
-  color:var(--muted);
-  border:1px solid var(--line);
-  padding:5px 9px;
-  border-radius:50px;
-  font-size:9px;
+.project-number{
+    font-family:monospace;
+    color:#5e687c;
+    font-size:11px;
 }
 
 .project h3{
-  font-family:"Space Grotesk";
-  font-size:22px;
-  margin-top:20px;
+    font-family:"Space Grotesk";
+    font-size:28px;
+    margin-top:55px;
 }
 
 .project p{
-  color:var(--muted);
-  font-size:12px;
-  margin-top:8px;
+    color:#818b9f;
+    max-width:480px;
+    line-height:1.7;
+    font-size:13px;
+    margin-top:14px;
 }
 
-.project-tech{
-  display:flex;
-  flex-wrap:wrap;
-  gap:6px;
-  margin-top:17px;
+.project-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-top:22px;
 }
 
-.project-tech span{
-  background:var(--card2);
-  color:var(--muted);
-  padding:5px 8px;
-  border-radius:7px;
-  font-size:9px;
+.project-tags span{
+    padding:7px 10px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    color:#9aa4b8;
+    font-size:9px;
 }
 
-.project-links{
-  display:flex;
-  gap:15px;
-  margin-top:20px;
+.project-link{
+    position:absolute;
+    right:25px;
+    bottom:25px;
+    width:45px;
+    height:45px;
+    display:grid;
+    place-items:center;
+    border:1px solid var(--line);
+    border-radius:50%;
+    transition:.3s;
 }
 
-.project-links a{
-  color:var(--blue);
-  font-size:11px;
-  font-weight:700;
+.project-link:hover{
+    background:var(--cyan);
+    color:#02050a;
+}
+
+/* =========================
+   JOURNEY
+========================= */
+
+.journey{
+    position:relative;
+    max-width:850px;
+    margin:auto;
+}
+
+.journey:before{
+    content:"";
+    position:absolute;
+    left:18px;
+    top:0;
+    bottom:0;
+    width:1px;
+    background:linear-gradient(var(--cyan),rgba(255,255,255,.05));
+}
+
+.journey-item{
+    position:relative;
+    padding-left:60px;
+    margin-bottom:55px;
+}
+
+.journey-dot{
+    position:absolute;
+    left:10px;
+    top:3px;
+    width:17px;
+    height:17px;
+    border-radius:50%;
+    background:var(--bg);
+    border:2px solid var(--cyan);
+    box-shadow:0 0 20px rgba(61,228,255,.25);
+}
+
+.journey-item small{
+    color:var(--cyan);
+    font-family:monospace;
+}
+
+.journey-item h3{
+    font-family:"Space Grotesk";
+    font-size:25px;
+    margin:8px 0;
+}
+
+.journey-item p{
+    color:var(--muted);
+    line-height:1.7;
+    font-size:13px;
 }
 
 /* =========================
    WHY HIRE
 ========================= */
 
-.why-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:17px;
-}
-
 .why{
-  padding:30px;
-  border:1px solid var(--line);
-  background:var(--card);
-  border-radius:23px;
-  transition:.3s;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
 }
 
-.why:hover{
-  transform:translateY(-7px);
+.why-card{
+    padding:30px;
+    border:1px solid var(--line);
+    border-radius:22px;
+    background:rgba(255,255,255,.03);
 }
 
-.why-number{
-  font-family:"Space Grotesk";
-  font-size:38px;
-  color:rgba(124,92,255,.4);
+.why-card b{
+    display:block;
+    font-family:"Space Grotesk";
+    font-size:40px;
+    color:#20283a;
 }
 
-.why h3{
-  font-family:"Space Grotesk";
-  margin-top:8px;
+.why-card h3{
+    margin-top:30px;
+    font-size:17px;
 }
 
-.why p{
-  color:var(--muted);
-  font-size:12px;
-  margin-top:7px;
-}
-
-/* =========================
-   CERTIFICATIONS
-========================= */
-
-.cert-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:17px;
-}
-
-.cert{
-  padding:28px;
-  border:1px solid var(--line);
-  background:var(--card);
-  border-radius:22px;
-}
-
-.cert-icon{
-  font-size:30px;
-}
-
-.cert h3{
-  font-family:"Space Grotesk";
-  font-size:17px;
-  margin-top:13px;
-}
-
-.cert p{
-  color:var(--muted);
-  font-size:11px;
-  margin-top:4px;
-}
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
-}
-
-.contact{
-  padding:25px;
-  border:1px solid var(--line);
-  background:var(--card);
-  border-radius:20px;
-  transition:.3s;
-}
-
-.contact:hover{
-  transform:translateY(-6px);
-  background:var(--card2);
-}
-
-.contact-icon{
-  font-size:25px;
-}
-
-.contact h3{
-  font-family:"Space Grotesk";
-  margin-top:12px;
-  font-size:17px;
-}
-
-.contact p{
-  color:var(--muted);
-  font-size:11px;
-  margin:3px 0 12px;
-  word-break:break-word;
-}
-
-.contact a{
-  color:var(--blue);
-  font-size:11px;
-  font-weight:700;
+.why-card p{
+    color:#788296;
+    line-height:1.7;
+    font-size:12px;
+    margin-top:10px;
 }
 
 /* =========================
@@ -1059,28 +1056,65 @@ header.scrolled{
 ========================= */
 
 .cta{
-  padding:50px;
-  border:1px solid rgba(124,92,255,.25);
-  border-radius:30px;
-  background:
-    radial-gradient(circle at 80% 20%,rgba(34,211,238,.12),transparent 30%),
-    radial-gradient(circle at 10% 80%,rgba(124,92,255,.13),transparent 35%),
-    var(--card);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:30px;
+    text-align:center;
+    padding:90px 25px;
+    border:1px solid var(--line);
+    border-radius:35px;
+    background:
+        radial-gradient(circle at center,rgba(61,228,255,.08),transparent 45%),
+        rgba(255,255,255,.025);
+    overflow:hidden;
 }
 
 .cta h2{
-  font-family:"Space Grotesk";
-  font-size:clamp(30px,4vw,45px);
-  line-height:1.1;
+    font-family:"Space Grotesk";
+    font-size:clamp(42px,7vw,82px);
+    letter-spacing:-4px;
+    line-height:.95;
 }
 
 .cta p{
-  color:var(--muted);
-  margin-top:8px;
+    color:#7f899d;
+    max-width:550px;
+    margin:22px auto 30px;
+    line-height:1.7;
+    font-size:14px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.contact-card{
+    padding:28px;
+    border:1px solid var(--line);
+    border-radius:22px;
+    background:rgba(255,255,255,.03);
+}
+
+.contact-card span{
+    display:block;
+    color:#697386;
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+.contact-card a{
+    font-family:"Space Grotesk";
+    font-size:18px;
+    color:#e9edf5;
+}
+
+.contact-card a:hover{
+    color:var(--cyan);
 }
 
 /* =========================
@@ -1088,58 +1122,65 @@ header.scrolled{
 ========================= */
 
 footer{
-  padding:35px 0;
-  text-align:center;
-  border-top:1px solid var(--line);
+    padding:35px 0;
+    border-top:1px solid var(--line);
+    color:#626c80;
+    font-size:11px;
 }
 
-footer p{
-  color:var(--muted);
-  font-size:11px;
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
 }
 
-footer strong{
-  color:white;
+.footer-inner strong{
+    color:#a8b0c0;
 }
 
 /* =========================
-   FLOAT BUTTON
+   FLOATING BUTTONS
 ========================= */
 
 .whatsapp{
-  position:fixed;
-  right:22px;
-  bottom:22px;
-  width:55px;
-  height:55px;
-  display:grid;
-  place-items:center;
-  border-radius:50%;
-  background:#25d366;
-  color:white;
-  font-size:24px;
-  z-index:500;
-  box-shadow:0 12px 35px rgba(37,211,102,.3);
-  transition:.3s;
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    width:54px;
+    height:54px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:#20d66b;
+    color:#06120b;
+    font-size:22px;
+    z-index:800;
+    box-shadow:0 15px 35px rgba(32,214,107,.22);
 }
 
-.whatsapp:hover{
-  transform:scale(1.1);
+.top{
+    position:fixed;
+    right:22px;
+    bottom:88px;
+    width:42px;
+    height:42px;
+    border:1px solid var(--line);
+    border-radius:12px;
+    display:grid;
+    place-items:center;
+    background:rgba(10,13,21,.8);
+    backdrop-filter:blur(10px);
+    color:#9ca6b9;
+    cursor:pointer;
+    z-index:800;
+    opacity:0;
+    pointer-events:none;
+    transition:.3s;
 }
 
-#top{
-  position:fixed;
-  right:22px;
-  bottom:90px;
-  width:42px;
-  height:42px;
-  border-radius:12px;
-  border:1px solid var(--line);
-  background:var(--card2);
-  color:white;
-  display:none;
-  cursor:pointer;
-  z-index:500;
+.top.show{
+    opacity:1;
+    pointer-events:auto;
 }
 
 /* =========================
@@ -1147,1191 +1188,1125 @@ footer strong{
 ========================= */
 
 .reveal{
-  opacity:0;
-  transform:translateY(30px);
-  transition:.8s ease;
+    opacity:0;
+    transform:translateY(35px);
+    transition:1s cubic-bezier(.2,.7,.2,1);
 }
 
-.reveal.show{
-  opacity:1;
-  transform:none;
+.reveal.active{
+    opacity:1;
+    transform:none;
 }
 
 /* =========================
-   MOBILE
+   RESPONSIVE
 ========================= */
 
-@media(max-width:1000px){
+@media(max-width:950px){
 
-  .nav-links{
-    position:absolute;
-    top:70px;
-    left:4%;
-    right:4%;
-    display:flex;
-    flex-direction:column;
-    background:rgba(7,11,23,.97);
-    border:1px solid var(--line);
-    padding:10px;
-    border-radius:20px;
+    .hero-layout{
+        grid-template-columns:1fr;
+    }
 
-    opacity:0;
-    visibility:hidden;
-    transform:translateY(-10px);
-    transition:.25s;
-  }
+    .hero{
+        padding-top:140px;
+    }
 
-  .nav-links.open{
-    opacity:1;
-    visibility:visible;
-    transform:none;
-  }
+    .visual{
+        height:550px;
+    }
 
-  .menu-btn{
-    display:block;
-  }
+    .bento{
+        grid-template-columns:1fr 1fr;
+    }
 
-  .hero-grid{
-    grid-template-columns:1fr;
-  }
+    .about-main{
+        grid-column:span 2;
+        grid-row:auto;
+    }
 
-  .profile{
-    max-width:450px;
-    margin:auto;
-  }
+    .skills-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 
-  .tech-grid{
-    grid-template-columns:1fr 1fr;
-  }
+    .learning-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 
-  .contact-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .command-body{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .system:nth-child(3){
-    border-right:0;
-  }
-
-  .system:nth-child(-n+3){
-    border-bottom:1px solid var(--line);
-  }
 }
 
-@media(max-width:700px){
+@media(max-width:720px){
 
-  section{
-    padding:80px 0;
-  }
+    section{
+        padding:80px 0;
+    }
 
-  .hero{
-    padding-top:120px;
-  }
+    .nav-links{
+        position:absolute;
+        top:82px;
+        left:4%;
+        right:4%;
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        padding:20px;
+        background:rgba(7,10,17,.96);
+        border:1px solid var(--line);
+        border-radius:18px;
+        backdrop-filter:blur(20px);
+    }
 
-  .hero h1{
-    font-size:52px;
-    letter-spacing:-3px;
-  }
+    .nav-links.open{
+        display:flex;
+    }
 
-  .hero-stats{
-    grid-template-columns:1fr 1fr;
-  }
+    .nav-links a{
+        padding:12px;
+    }
 
-  .stat:nth-child(2){
-    border-right:0;
-  }
+    .menu{
+        display:block;
+    }
 
-  .stat:nth-child(-n+2){
-    border-bottom:1px solid var(--line);
-  }
+    .nav-cta{
+        text-align:center;
+    }
 
-  .about-grid,
-  .skills,
-  .project-grid{
-    grid-template-columns:1fr;
-  }
+    .hero h1{
+        font-size:55px;
+        letter-spacing:-4px;
+    }
 
-  .why-grid{
-    grid-template-columns:1fr;
-  }
+    .role-line{
+        font-size:16px;
+    }
 
-  .cert-grid{
-    grid-template-columns:1fr;
-  }
+    .hero-mini-stats{
+        gap:20px;
+    }
 
-  .command-body{
-    grid-template-columns:1fr 1fr;
-  }
+    .visual{
+        height:480px;
+    }
 
-  .system{
-    border-right:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-  }
+    .portrait-card{
+        width:270px;
+        height:370px;
+    }
 
-  .system:nth-child(even){
-    border-right:0;
-  }
+    .orbit{
+        width:340px;
+        height:340px;
+    }
 
-  .system:last-child{
-    grid-column:1/-1;
-    border-right:0;
-  }
+    .orbit.two{
+        width:290px;
+        height:290px;
+    }
 
-  .cta{
-    padding:32px;
-    flex-direction:column;
-    align-items:flex-start;
-  }
+    .float-tag{
+        font-size:9px;
+        padding:9px 11px;
+    }
 
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
+    .tag-one{
+        right:0;
+    }
+
+    .tag-three{
+        left:0;
+    }
+
+    .section-head{
+        display:block;
+    }
+
+    .section-head p{
+        margin-top:20px;
+    }
+
+    .bento,
+    .projects,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .about-main{
+        grid-column:auto;
+    }
+
+    .skills-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .command-body{
+        grid-template-columns:1fr;
+    }
+
+    .command-left{
+        border-right:none;
+        border-bottom:1px solid var(--line);
+    }
+
+    .pipeline-wrap{
+        padding:25px 12px;
+        overflow-x:auto;
+    }
+
+    .pipeline{
+        min-width:720px;
+    }
+
+    .learning-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .why{
+        grid-template-columns:1fr;
+    }
+
+    .cta h2{
+        letter-spacing:-2px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+    }
 }
 
-@media(max-width:480px){
+@media(max-width:430px){
 
-  .hero h1{
-    font-size:44px;
-  }
+    .hero h1{
+        font-size:46px;
+    }
 
-  .hero-role{
-    font-size:21px;
-  }
+    .hero-buttons{
+        flex-direction:column;
+    }
 
-  .about-cards,
-  .tech-grid{
-    grid-template-columns:1fr;
-  }
+    .btn{
+        justify-content:center;
+    }
 
-  .profile-image{
-    width:180px;
-    height:180px;
-  }
+    .skills-grid,
+    .learning-grid{
+        grid-template-columns:1fr;
+    }
 
-  .hero-buttons{
-    flex-direction:column;
-  }
+    .metrics{
+        grid-template-columns:1fr;
+    }
 
-  .btn{
-    width:100%;
-  }
+    .command-left,
+    .command-right{
+        padding:22px;
+    }
 }
 
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *:before,
+    *:after{
+        animation-duration:.01ms!important;
+        animation-iteration-count:1!important;
+        transition-duration:.01ms!important;
+        scroll-behavior:auto!important;
+    }
+}
 </style>
 </head>
 
-
 <body>
 
-<div id="loader">
-  <div class="loader-inner">
-    <div class="loader-logo">KB</div>
-    <h3>INITIALIZING...</h3>
-    <p>KULDEEP BORANA • IT SUPPORT</p>
-    <div class="loader-bar">
-      <span></span>
+<div class="loader" id="loader">
+    <div class="loader-box">
+        <div class="loader-brand">KB / SYSTEM INITIALIZATION</div>
+        <div class="loader-text">Loading portfolio...</div>
+        <div class="loader-line"><span></span></div>
     </div>
-  </div>
 </div>
 
-<div class="cursor-glow" id="cursorGlow"></div>
-
-<div class="grid-bg"></div>
-
-<div class="orb one"></div>
-<div class="orb two"></div>
-<div class="orb three"></div>
-
-
-<!-- ================= HEADER ================= -->
+<div class="grid"></div>
+<div class="glow one"></div>
+<div class="glow two"></div>
 
 <header id="header">
+    <div class="container nav">
 
-<nav class="nav">
+        <a href="#home" class="logo">
+            <div class="logo-mark">KB</div>
+            <span>KULDEEP.</span>
+        </a>
 
-<a href="#home" class="logo">
-  <div class="logo-icon">KB</div>
-  <div>Kuldeep<span>.</span></div>
-</a>
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#devops">DevOps</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <a class="nav-cta" href="resume.pdf" target="_blank">Resume ↗</a>
+        </nav>
 
-<div class="nav-links" id="navLinks">
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#experience">Experience</a>
-  <a href="#skills">Skills</a>
-  <a href="#stack">Tech Stack</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
-</div>
+        <div class="menu" id="menu">☰</div>
 
-<div class="nav-right">
-  <button class="nav-btn menu-btn" id="menuBtn">☰</button>
-</div>
-
-</nav>
-
+    </div>
 </header>
 
 
-<main>
-
-<!-- ================= HERO ================= -->
-
+<!-- HERO -->
 <section class="hero" id="home">
 
-<div class="container hero-grid">
+    <div class="container hero-layout">
 
-<div class="reveal">
+        <div class="hero-content reveal">
 
-<div class="status">
-  <span class="status-dot"></span>
-  AVAILABLE FOR IT OPPORTUNITIES
-</div>
+            <div class="eyebrow">
+                <span class="status-dot"></span>
+                AVAILABLE FOR IT OPPORTUNITIES
+            </div>
 
-<h1>
-  KULDEEP<br>
-  <span class="gradient">BORANA</span>
-</h1>
+            <h1>
+                I FIX.<br>
+                I BUILD.<br>
+                <span class="gradient-text">I AUTOMATE.</span>
+            </h1>
 
-<div class="hero-role">
-  Desktop Support Engineer
-  <span>•</span>
-  IT Support
-</div>
+            <div class="role-line">
+                <span id="role">IT Support Professional</span>
+            </div>
 
-<p class="hero-description">
-  IT Support Professional specializing in desktop troubleshooting,
-  hardware diagnostics, Windows systems, software support,
-  Microsoft Outlook, printers, networking and technical problem solving.
-</p>
+            <p class="hero-description">
+                IT Support Professional focused on desktop support, hardware,
+                Windows, networking and troubleshooting — currently exploring
+                DevOps, automation and modern cloud technologies.
+            </p>
 
-<div class="hero-buttons">
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">
+                    Explore my work →
+                </a>
 
-<a href="resume.pdf" target="_blank" class="btn btn-primary">
-  📄 View Resume
-</a>
+                <a href="resume.pdf" target="_blank" class="btn btn-dark">
+                    View Resume
+                </a>
 
-<a href="https://wa.me/919752133011?text=Hello%20Kuldeep,%20I%20visited%20your%20portfolio."
-target="_blank"
-class="btn btn-green">
-  💬 WhatsApp
-</a>
+                <a href="https://wa.me/919752133011" target="_blank" class="btn btn-dark">
+                    WhatsApp
+                </a>
+            </div>
 
-<a href="#projects" class="btn">
-  🚀 Explore Projects
-</a>
+            <div class="hero-mini-stats">
 
-</div>
+                <div class="mini-stat">
+                    <strong>IT</strong>
+                    <span>Support</span>
+                </div>
 
+                <div class="mini-stat">
+                    <strong>24/7</strong>
+                    <span>Problem Solving</span>
+                </div>
 
-<div class="hero-stats">
+                <div class="mini-stat">
+                    <strong>∞</strong>
+                    <span>Learning Mode</span>
+                </div>
 
-<div class="stat">
-<strong>IT</strong>
-<small>SUPPORT</small>
-</div>
+            </div>
 
-<div class="stat">
-<strong>PC</strong>
-<small>HARDWARE</small>
-</div>
-
-<div class="stat">
-<strong>WIN</strong>
-<small>WINDOWS</small>
-</div>
-
-<div class="stat">
-<strong>NET</strong>
-<small>NETWORKING</small>
-</div>
-
-</div>
-
-</div>
+        </div>
 
 
-<!-- PROFILE -->
+        <div class="visual reveal">
 
-<div class="profile reveal">
+            <div class="orbit"></div>
+            <div class="orbit two"></div>
 
-<div class="profile-card">
+            <div class="float-tag tag-one">
+                <span class="tag-icon">●</span>
+                Systems Online
+            </div>
 
-<img
-src="developer.png"
-alt="Kuldeep Borana"
-class="profile-image"
->
+            <div class="float-tag tag-two">
+                <span class="tag-icon">⌘</span>
+                DevOps Explorer
+            </div>
 
-<h2>Kuldeep Borana</h2>
+            <div class="float-tag tag-three">
+                <span class="tag-icon">⚡</span>
+                Troubleshooter
+            </div>
 
-<p>IT Support Professional</p>
+            <div class="portrait-card">
 
-<div class="tags">
+                <img src="developer.png" alt="Kuldeep Borana">
 
-<span class="tag">Desktop Support</span>
-<span class="tag">Hardware</span>
-<span class="tag">Windows</span>
-<span class="tag">Networking</span>
-<span class="tag">Troubleshooting</span>
+                <div class="portrait-overlay"></div>
 
-</div>
+                <div class="portrait-info">
+                    <small>IT SUPPORT / DEVOPS</small>
+                    <h3>Kuldeep Borana</h3>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</div>
-
+    </div>
 </section>
 
 
-<!-- ================= ABOUT ================= -->
-
+<!-- ABOUT -->
 <section id="about">
 
 <div class="container">
 
-<div class="section-title reveal">
+    <div class="section-head reveal">
+        <div>
+            <div class="kicker">01 / PROFILE</div>
+            <h2>More than<br>just support.</h2>
+        </div>
 
-<div class="eyebrow">ABOUT ME</div>
+        <p>
+            I enjoy solving real-world technical problems and continuously
+            expanding my knowledge toward automation and DevOps.
+        </p>
+    </div>
 
-<h2>
-Technology that
-<span class="gradient">solves problems.</span>
-</h2>
 
-<p>
-Practical IT support with a focus on reliability,
-troubleshooting and user experience.
-</p>
+    <div class="bento">
+
+        <div class="box about-main reveal">
+
+            <div class="kicker">WHO I AM</div>
+
+            <h3>Technology should make work simpler.</h3>
+
+            <p>
+                My core strength is practical IT troubleshooting:
+                understanding the problem, finding the root cause and
+                getting systems back to work.
+            </p>
+
+            <p style="margin-top:18px">
+                Alongside IT support, I'm building my knowledge around
+                Git, GitHub, Docker, Kubernetes, Jenkins, Terraform,
+                monitoring and automation.
+            </p>
+
+            <div class="big-number">
+                IT<span>→</span>DEVOPS
+            </div>
+
+            <div class="box-label">Current direction</div>
+
+            <div class="corner"></div>
+
+        </div>
+
+
+        <div class="box reveal">
+            <div class="kicker">01</div>
+            <h3>Support</h3>
+            <p>
+                Desktop, Windows, hardware, software and user troubleshooting.
+            </p>
+        </div>
+
+
+        <div class="box reveal">
+            <div class="kicker">02</div>
+            <h3>Network</h3>
+            <p>
+                Connectivity, printers, basic networking and infrastructure support.
+            </p>
+        </div>
+
+
+        <div class="box reveal">
+            <div class="kicker">03</div>
+            <h3>Automation</h3>
+            <p>
+                Learning modern tools and workflows to automate repetitive work.
+            </p>
+        </div>
+
+
+        <div class="box reveal">
+            <div class="kicker">04</div>
+            <h3>Learning</h3>
+            <p>
+                Always experimenting with new technologies and practical projects.
+            </p>
+        </div>
+
+    </div>
 
 </div>
-
-
-<div class="about-grid">
-
-<div class="about-main reveal">
-
-<p>
-I am an IT Support Professional with practical knowledge
-of desktop support, hardware troubleshooting, Windows systems,
-software installation and technical problem solving.
-</p>
-
-<p>
-My approach is simple — understand the problem,
-identify the root cause and provide a reliable solution.
-</p>
-
-<p>
-I am also continuously exploring networking, automation,
-cloud and DevOps technologies to expand my technical skill set.
-</p>
-
-</div>
-
-
-<div class="about-cards">
-
-<div class="about-card reveal">
-<div class="about-icon">🖥️</div>
-<h3>Desktop Support</h3>
-<p>System troubleshooting and user assistance.</p>
-</div>
-
-<div class="about-card reveal">
-<div class="about-icon">🔧</div>
-<h3>Hardware</h3>
-<p>PC hardware diagnosis and troubleshooting.</p>
-</div>
-
-<div class="about-card reveal">
-<div class="about-icon">🌐</div>
-<h3>Networking</h3>
-<p>Connectivity and basic network troubleshooting.</p>
-</div>
-
-<div class="about-card reveal">
-<div class="about-icon">⚡</div>
-<h3>Problem Solving</h3>
-<p>Fast analysis and practical solutions.</p>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 </section>
 
 
-<!-- ================= COMMAND CENTER ================= -->
-
+<!-- COMMAND CENTER -->
 <section>
 
 <div class="container">
 
-<div class="section-title reveal">
+    <div class="section-head reveal">
+        <div>
+            <div class="kicker">02 / COMMAND CENTER</div>
+            <h2>Inside my<br>workflow.</h2>
+        </div>
 
-<div class="eyebrow">IT COMMAND CENTER</div>
+        <p>
+            A simple view of how I approach technical problems:
+            diagnose → solve → improve → learn.
+        </p>
+    </div>
 
-<h2>
-System
-<span class="gradient">Status.</span>
-</h2>
 
-<p>
-A quick look at my core technical support areas.
-</p>
+    <div class="command reveal">
+
+        <div class="command-top">
+
+            <div class="window-dots">
+                <i></i>
+                <i></i>
+                <i></i>
+            </div>
+
+            <div class="command-title">
+                kuldeep@workstation:~$
+            </div>
+
+            <div style="color:#48f2a3;font-size:10px">
+                ● ONLINE
+            </div>
+
+        </div>
+
+
+        <div class="command-body">
+
+            <div class="command-left">
+
+<pre class="terminal">
+<span class="green">$</span> whoami
+
+<span class="blue">kuldeep-borana</span>
+
+<span class="green">$</span> role
+
+IT Support Professional
+Desktop Support Engineer
+
+<span class="green">$</span> focus
+
+<span class="purple">troubleshooting</span>
+<span class="purple">networking</span>
+<span class="purple">automation</span>
+<span class="purple">devops</span>
+
+<span class="green">$</span> status
+
+<span class="blue">learning continuously...</span>
+</pre>
+
+            </div>
+
+
+            <div class="command-right">
+
+                <div class="metrics">
+
+                    <div class="metric">
+                        <strong>IT</strong>
+                        <span>Core Domain</span>
+                    </div>
+
+                    <div class="metric">
+                        <strong>WIN</strong>
+                        <span>Windows Support</span>
+                    </div>
+
+                    <div class="metric">
+                        <strong>NET</strong>
+                        <span>Networking</span>
+                    </div>
+
+                    <div class="metric">
+                        <strong>DEV</strong>
+                        <span>DevOps Learning</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
-
-
-<div class="command reveal">
-
-<div class="command-head">
-
-<div class="command-title">
-SYSTEM MONITOR
-</div>
-
-<div class="command-live">
-● ALL SYSTEMS OPERATIONAL
-</div>
-
-</div>
-
-
-<div class="command-body">
-
-<div class="system">
-<div class="system-icon">🪟</div>
-<h3>Windows</h3>
-<p>● Operational</p>
-</div>
-
-<div class="system">
-<div class="system-icon">🌐</div>
-<h3>Network</h3>
-<p>● Operational</p>
-</div>
-
-<div class="system">
-<div class="system-icon">🖥️</div>
-<h3>Hardware</h3>
-<p>● Ready</p>
-</div>
-
-<div class="system">
-<div class="system-icon">🛠️</div>
-<h3>Support</h3>
-<p>● Active</p>
-</div>
-
-<div class="system">
-<div class="system-icon">🚀</div>
-<h3>Projects</h3>
-<p>● Online</p>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 </section>
 
 
-<!-- ================= EXPERIENCE ================= -->
-
-<section id="experience">
-
-<div class="container">
-
-<div class="section-title reveal">
-
-<div class="eyebrow">EXPERIENCE</div>
-
-<h2>
-My professional
-<span class="gradient">journey.</span>
-</h2>
-
-<p>
-Hands-on IT support and technical troubleshooting experience.
-</p>
-
-</div>
-
-
-<div class="timeline">
-
-<div class="timeline-item reveal">
-
-<div class="timeline-dot"></div>
-
-<div class="timeline-card">
-
-<div class="label">
-IT SUPPORT
-</div>
-
-<h3>Desktop Support Engineer</h3>
-
-<div class="role">
-IT Support & Infrastructure
-</div>
-
-<p>
-Desktop troubleshooting, hardware diagnosis,
-Windows installation and configuration, software deployment,
-Outlook support, printer troubleshooting and basic network support.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="timeline-item reveal">
-
-<div class="timeline-dot"></div>
-
-<div class="timeline-card">
-
-<div class="label">
-TECHNICAL SUPPORT
-</div>
-
-<h3>IT Support Operations</h3>
-
-<div class="role">
-Technical Support Environment
-</div>
-
-<p>
-Diagnosing technical issues, assisting users,
-configuring devices and maintaining desktop environments.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= SKILLS ================= -->
-
+<!-- SKILLS -->
 <section id="skills">
 
 <div class="container">
 
-<div class="section-title reveal">
+    <div class="section-head reveal">
+        <div>
+            <div class="kicker">03 / SKILL MATRIX</div>
+            <h2>Things I<br>work with.</h2>
+        </div>
 
-<div class="eyebrow">SKILLS</div>
-
-<h2>
-Technical
-<span class="gradient">Expertise.</span>
-</h2>
-
-<p>
-Core areas of my IT support skill set.
-</p>
-
-</div>
+        <p>
+            Practical skills built around real IT support,
+            troubleshooting and technology exploration.
+        </p>
+    </div>
 
 
-<div class="skills">
+    <div class="skills-grid">
 
-<div class="skill reveal">
-<div class="skill-top">
-<strong>Desktop Support</strong>
-<span>90%</span>
-</div>
-<div class="progress">
-<span data-width="90%"></span>
-</div>
-</div>
+        <div class="skill reveal">
+            <div class="skill-number">01</div>
+            <div class="skill-icon">🖥️</div>
+            <h3>Desktop Support</h3>
+            <p>System setup, troubleshooting and user support.</p>
+        </div>
 
+        <div class="skill reveal">
+            <div class="skill-number">02</div>
+            <div class="skill-icon">⚙️</div>
+            <h3>Hardware</h3>
+            <p>PC hardware diagnostics and component troubleshooting.</p>
+        </div>
 
-<div class="skill reveal">
-<div class="skill-top">
-<strong>Hardware Troubleshooting</strong>
-<span>90%</span>
-</div>
-<div class="progress">
-<span data-width="90%"></span>
-</div>
-</div>
+        <div class="skill reveal">
+            <div class="skill-number">03</div>
+            <div class="skill-icon">🪟</div>
+            <h3>Windows</h3>
+            <p>Windows configuration, maintenance and issue resolution.</p>
+        </div>
 
+        <div class="skill reveal">
+            <div class="skill-number">04</div>
+            <div class="skill-icon">🌐</div>
+            <h3>Networking</h3>
+            <p>Connectivity, basic network and printer troubleshooting.</p>
+        </div>
 
-<div class="skill reveal">
-<div class="skill-top">
-<strong>Windows</strong>
-<span>88%</span>
-</div>
-<div class="progress">
-<span data-width="88%"></span>
-</div>
-</div>
+        <div class="skill reveal">
+            <div class="skill-number">05</div>
+            <div class="skill-icon">📧</div>
+            <h3>Microsoft Outlook</h3>
+            <p>Email configuration and common Outlook issues.</p>
+        </div>
 
+        <div class="skill reveal">
+            <div class="skill-number">06</div>
+            <div class="skill-icon">🖨️</div>
+            <h3>Printer Support</h3>
+            <p>Printer installation, connectivity and troubleshooting.</p>
+        </div>
 
-<div class="skill reveal">
-<div class="skill-top">
-<strong>Networking</strong>
-<span>82%</span>
-</div>
-<div class="progress">
-<span data-width="82%"></span>
-</div>
-</div>
+        <div class="skill reveal">
+            <div class="skill-number">07</div>
+            <div class="skill-icon">🐙</div>
+            <h3>Git & GitHub</h3>
+            <p>Version control and GitHub-based project workflows.</p>
+        </div>
 
+        <div class="skill reveal">
+            <div class="skill-number">08</div>
+            <div class="skill-icon">🚀</div>
+            <h3>Web Projects</h3>
+            <p>Building and deploying practical web projects.</p>
+        </div>
 
-<div class="skill reveal">
-<div class="skill-top">
-<strong>Microsoft Outlook</strong>
-<span>85%</span>
-</div>
-<div class="progress">
-<span data-width="85%"></span>
-</div>
-</div>
-
-
-<div class="skill reveal">
-<div class="skill-top">
-<strong>Printer Support</strong>
-<span>85%</span>
-</div>
-<div class="progress">
-<span data-width="85%"></span>
-</div>
-</div>
+    </div>
 
 </div>
-
-</div>
-
 </section>
 
 
-<!-- ================= TECH STACK ================= -->
-
-<section id="stack">
+<!-- DEVOPS -->
+<section id="devops">
 
 <div class="container">
 
-<div class="section-title reveal">
+    <div class="section-head reveal">
 
-<div class="eyebrow">TECHNOLOGY</div>
+        <div>
+            <div class="kicker">04 / DEVOPS LAB</div>
+            <h2>From support<br>to automation.</h2>
+        </div>
 
-<h2>
-My
-<span class="gradient">Tech Stack.</span>
-</h2>
+        <p>
+            I'm actively exploring DevOps technologies and understanding
+            how modern applications move from code to production.
+        </p>
 
-<p>
-Technologies and tools I work with or am continuously learning.
-</p>
+    </div>
+
+
+    <div class="pipeline-wrap reveal">
+
+        <div class="pipeline">
+
+            <div class="stage">
+                <div class="stage-circle">PLAN</div>
+                <strong>Plan</strong>
+                <small>Design</small>
+            </div>
+
+            <div class="stage">
+                <div class="stage-circle">CODE</div>
+                <strong>Code</strong>
+                <small>Git</small>
+            </div>
+
+            <div class="stage">
+                <div class="stage-circle">BUILD</div>
+                <strong>Build</strong>
+                <small>Docker</small>
+            </div>
+
+            <div class="stage">
+                <div class="stage-circle">TEST</div>
+                <strong>Test</strong>
+                <small>CI</small>
+            </div>
+
+            <div class="stage">
+                <div class="stage-circle">DEPLOY</div>
+                <strong>Deploy</strong>
+                <small>K8s</small>
+            </div>
+
+            <div class="stage">
+                <div class="stage-circle">MON</div>
+                <strong>Monitor</strong>
+                <small>Metrics</small>
+            </div>
+
+        </div>
+
+
+        <div class="learning-grid">
+
+            <div class="learning">
+                <span>Exploring</span>
+                <strong>Docker</strong>
+            </div>
+
+            <div class="learning">
+                <span>Exploring</span>
+                <strong>Kubernetes</strong>
+            </div>
+
+            <div class="learning">
+                <span>Exploring</span>
+                <strong>Jenkins</strong>
+            </div>
+
+            <div class="learning">
+                <span>Exploring</span>
+                <strong>Terraform</strong>
+            </div>
+
+            <div class="learning">
+                <span>Exploring</span>
+                <strong>GitHub Actions</strong>
+            </div>
+
+            <div class="learning">
+                <span>Exploring</span>
+                <strong>Prometheus</strong>
+            </div>
+
+            <div class="learning">
+                <span>Core</span>
+                <strong>Git / GitHub</strong>
+            </div>
+
+            <div class="learning">
+                <span>Learning</span>
+                <strong>Cloud Concepts</strong>
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
-
-
-<div class="tech-grid">
-
-<div class="tech reveal">
-<div class="tech-icon">🪟</div>
-<h3>Windows</h3>
-<p>Installation, configuration and troubleshooting.</p>
-</div>
-
-<div class="tech reveal">
-<div class="tech-icon">💻</div>
-<h3>Hardware</h3>
-<p>Desktop, laptop and peripheral support.</p>
-</div>
-
-<div class="tech reveal">
-<div class="tech-icon">🌐</div>
-<h3>Networking</h3>
-<p>LAN, IP and connectivity troubleshooting.</p>
-</div>
-
-<div class="tech reveal">
-<div class="tech-icon">📧</div>
-<h3>Microsoft Outlook</h3>
-<p>Email configuration and support.</p>
-</div>
-
-<div class="tech reveal">
-<div class="tech-icon">🐙</div>
-<h3>GitHub</h3>
-<p>Repositories and project deployment.</p>
-</div>
-
-<div class="tech reveal">
-<div class="tech-icon">🐳</div>
-<h3>Docker</h3>
-<p>Learning containerization.</p>
-</div>
-
-<div class="tech reveal">
-<div class="tech-icon">⚙️</div>
-<h3>DevOps</h3>
-<p>CI/CD and automation concepts.</p>
-</div>
-
-<div class="tech reveal">
-<div class="tech-icon">☁️</div>
-<h3>Cloud</h3>
-<p>Exploring modern cloud technologies.</p>
-</div>
-
-</div>
-
-</div>
-
 </section>
 
 
-<!-- ================= PROJECTS ================= -->
-
+<!-- PROJECTS -->
 <section id="projects">
 
 <div class="container">
 
-<div class="section-title reveal">
+    <div class="section-head reveal">
 
-<div class="eyebrow">MY WORK</div>
+        <div>
+            <div class="kicker">05 / SELECTED WORK</div>
+            <h2>Things I've<br>built.</h2>
+        </div>
 
-<h2>
-Featured
-<span class="gradient">Projects.</span>
-</h2>
+        <p>
+            A collection of practical projects created while learning,
+            experimenting and improving my development skills.
+        </p>
 
-<p>
-Projects built while developing my technical and programming skills.
-</p>
-
-</div>
-
-
-<div class="project-grid">
+    </div>
 
 
-<div class="project reveal">
+    <div class="projects">
 
-<div class="project-top">
-<div class="project-no">01</div>
-<div class="project-type">WEB APP</div>
-</div>
+        <div class="project reveal">
 
-<h3>Smart Calculator</h3>
+            <div class="project-number">PROJECT / 01</div>
 
-<p>
-Responsive calculator application with a clean
-and user-friendly interface.
-</p>
+            <h3>Smart Calculator</h3>
 
-<div class="project-tech">
-<span>HTML5</span>
-<span>CSS3</span>
-<span>JavaScript</span>
-<span>Responsive</span>
-</div>
+            <p>
+                A clean and responsive calculator project designed
+                with a modern user interface and mobile-friendly layout.
+            </p>
 
-<div class="project-links">
-<a href="calculator.html">↗ Live Demo</a>
-<a href="https://github.com/kuldeep17422" target="_blank">⌘ GitHub</a>
-</div>
+            <div class="project-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Responsive</span>
+            </div>
 
-</div>
+            <a href="calculator.html" class="project-link">↗</a>
+
+        </div>
 
 
-<div class="project reveal">
+        <div class="project reveal">
 
-<div class="project-top">
-<div class="project-no">02</div>
-<div class="project-type">PORTFOLIO</div>
-</div>
+            <div class="project-number">PROJECT / 02</div>
 
-<h3>Professional Portfolio</h3>
+            <h3>Professional Portfolio</h3>
 
-<p>
-Modern personal portfolio showcasing skills,
-projects, experience and professional contact information.
-</p>
+            <p>
+                A personal portfolio platform showcasing my IT skills,
+                projects, technical journey and professional profile.
+            </p>
 
-<div class="project-tech">
-<span>HTML5</span>
-<span>CSS3</span>
-<span>JavaScript</span>
-<span>PWA</span>
-</div>
+            <div class="project-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>GitHub Pages</span>
+            </div>
 
-<div class="project-links">
-<a href="#home">↗ Live Website</a>
-<a href="https://github.com/kuldeep17422" target="_blank">⌘ GitHub</a>
-</div>
+            <a href="#home" class="project-link">↗</a>
 
-</div>
+        </div>
 
 
-<div class="project reveal">
+        <div class="project reveal">
 
-<div class="project-top">
-<div class="project-no">03</div>
-<div class="project-type">APPLICATION</div>
-</div>
+            <div class="project-number">PROJECT / 03</div>
 
-<h3>ADCOM Computer Technology</h3>
+            <h3>ADCOM Computer Technology</h3>
 
-<p>
-Application concept for attendance, authentication,
-fees, activities, exams and management workflows.
-</p>
+            <p>
+                A concept for an IT management platform focused on
+                attendance, fees, activities, exams and user workflows.
+            </p>
 
-<div class="project-tech">
-<span>Android</span>
-<span>Authentication</span>
-<span>Attendance</span>
-<span>Management</span>
-</div>
+            <div class="project-tags">
+                <span>Web App</span>
+                <span>Management</span>
+                <span>UI</span>
+                <span>Concept</span>
+            </div>
 
-<div class="project-links">
-<a href="https://github.com/kuldeep17422" target="_blank">⌘ View Project</a>
-</div>
+            <a href="#" class="project-link">↗</a>
 
-</div>
+        </div>
 
 
-<div class="project reveal">
+        <div class="project reveal">
 
-<div class="project-top">
-<div class="project-no">04</div>
-<div class="project-type">IT SUPPORT</div>
-</div>
+            <div class="project-number">PROJECT / 04</div>
 
-<h3>IT Helpdesk & Ticket System</h3>
+            <h3>IT Helpdesk & Ticket System</h3>
 
-<p>
-Responsive helpdesk application for creating
-and managing technical support tickets.
-</p>
+            <p>
+                A practical helpdesk concept for managing technical
+                requests, tickets and support workflows.
+            </p>
 
-<div class="project-tech">
-<span>HTML5</span>
-<span>CSS3</span>
-<span>JavaScript</span>
-<span>LocalStorage</span>
-</div>
+            <div class="project-tags">
+                <span>IT Support</span>
+                <span>Tickets</span>
+                <span>Dashboard</span>
+                <span>Workflow</span>
+            </div>
 
-<div class="project-links">
-<a href="ticket-system.html?v=3">↗ Live Demo</a>
-<a href="https://github.com/kuldeep17422" target="_blank">⌘ GitHub</a>
-</div>
+            <a href="ticket-system.html?v=3" class="project-link">↗</a>
+
+        </div>
+
+    </div>
 
 </div>
-
-
-</div>
-
-</div>
-
 </section>
 
 
-<!-- ================= WHY HIRE ================= -->
-
+<!-- JOURNEY -->
 <section>
 
 <div class="container">
 
-<div class="section-title reveal">
+    <div class="section-head reveal">
 
-<div class="eyebrow">WHY ME</div>
+        <div>
+            <div class="kicker">06 / JOURNEY</div>
+            <h2>My technical<br>direction.</h2>
+        </div>
 
-<h2>
-Why
-<span class="gradient">Hire Me?</span>
-</h2>
+        <p>
+            A continuous journey from hands-on IT support toward
+            automation and DevOps engineering.
+        </p>
 
-<p>
-A practical mindset focused on solving real-world technical problems.
-</p>
+    </div>
+
+
+    <div class="journey">
+
+        <div class="journey-item reveal">
+            <div class="journey-dot"></div>
+
+            <small>FOUNDATION</small>
+
+            <h3>IT Support</h3>
+
+            <p>
+                Building strong practical knowledge through desktop,
+                hardware, Windows, networking and troubleshooting.
+            </p>
+        </div>
+
+
+        <div class="journey-item reveal">
+            <div class="journey-dot"></div>
+
+            <small>BUILDING</small>
+
+            <h3>Web & GitHub</h3>
+
+            <p>
+                Creating websites, learning version control and
+                publishing projects using GitHub.
+            </p>
+        </div>
+
+
+        <div class="journey-item reveal">
+            <div class="journey-dot"></div>
+
+            <small>CURRENT FOCUS</small>
+
+            <h3>DevOps Explorer</h3>
+
+            <p>
+                Learning Docker, Kubernetes, Jenkins, Terraform,
+                GitHub Actions and monitoring concepts.
+            </p>
+        </div>
+
+
+        <div class="journey-item reveal">
+            <div class="journey-dot"></div>
+
+            <small>NEXT TARGET</small>
+
+            <h3>Automation & Cloud</h3>
+
+            <p>
+                Turning repetitive technical work into reliable,
+                automated workflows.
+            </p>
+        </div>
+
+    </div>
 
 </div>
-
-
-<div class="why-grid">
-
-<div class="why reveal">
-<div class="why-number">01</div>
-<h3>Problem Solver</h3>
-<p>
-I approach technical problems systematically
-and focus on reliable solutions.
-</p>
-</div>
-
-<div class="why reveal">
-<div class="why-number">02</div>
-<h3>User Focused</h3>
-<p>
-I understand that successful IT support means
-helping users work efficiently.
-</p>
-</div>
-
-<div class="why reveal">
-<div class="why-number">03</div>
-<h3>Always Learning</h3>
-<p>
-I continuously learn networking, automation,
-cloud and DevOps technologies.
-</p>
-</div>
-
-</div>
-
-</div>
-
 </section>
 
 
-<!-- ================= CERTIFICATIONS ================= -->
-
-<section id="certifications">
-
-<div class="container">
-
-<div class="section-title reveal">
-
-<div class="eyebrow">QUALIFICATIONS</div>
-
-<h2>
-Certifications &
-<span class="gradient">Learning.</span>
-</h2>
-
-<p>
-Technical knowledge and areas of professional development.
-</p>
-
-</div>
-
-
-<div class="cert-grid">
-
-<div class="cert reveal">
-<div class="cert-icon">🎓</div>
-<h3>Diploma in Computer Technology</h3>
-<p>Qualification</p>
-</div>
-
-<div class="cert reveal">
-<div class="cert-icon">🛠️</div>
-<h3>IT Support & Troubleshooting</h3>
-<p>Technical Skill</p>
-</div>
-
-<div class="cert reveal">
-<div class="cert-icon">🌐</div>
-<h3>Networking Fundamentals</h3>
-<p>Technical Skill</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= CTA ================= -->
-
+<!-- WHY -->
 <section>
 
 <div class="container">
 
-<div class="cta reveal">
+    <div class="section-head reveal">
 
-<div>
+        <div>
+            <div class="kicker">07 / WHY ME</div>
+            <h2>Built around<br>problem solving.</h2>
+        </div>
 
-<div class="eyebrow">
-LET'S CONNECT
+    </div>
+
+
+    <div class="why">
+
+        <div class="why-card reveal">
+            <b>01</b>
+            <h3>Practical mindset</h3>
+            <p>
+                I focus on solving the actual problem instead of
+                simply treating the visible symptom.
+            </p>
+        </div>
+
+        <div class="why-card reveal">
+            <b>02</b>
+            <h3>Always learning</h3>
+            <p>
+                Technology changes constantly, so I keep experimenting
+                with tools and new technical concepts.
+            </p>
+        </div>
+
+        <div class="why-card reveal">
+            <b>03</b>
+            <h3>Support + DevOps</h3>
+            <p>
+                My direction combines hands-on IT support knowledge
+                with automation and modern DevOps practices.
+            </p>
+        </div>
+
+    </div>
+
 </div>
-
-<h2>
-Ready for the next
-<span class="gradient">IT challenge?</span>
-</h2>
-
-<p>
-Let's connect for IT opportunities, projects and professional discussions.
-</p>
-
-</div>
-
-<a href="resume.pdf" target="_blank" class="btn btn-primary">
-📄 Open Resume
-</a>
-
-</div>
-
-</div>
-
 </section>
 
 
-<!-- ================= CONTACT ================= -->
+<!-- CTA -->
+<section>
 
+<div class="container">
+
+    <div class="cta reveal">
+
+        <div class="kicker">LET'S CONNECT</div>
+
+        <h2>
+            Have a problem?<br>
+            <span class="gradient-text">Let's solve it.</span>
+        </h2>
+
+        <p>
+            Whether it's IT support, a technical project or simply
+            connecting professionally — feel free to reach out.
+        </p>
+
+        <a href="mailto:kuldip8718@gmail.com" class="btn btn-primary">
+            Start a conversation →
+        </a>
+
+    </div>
+
+</div>
+</section>
+
+
+<!-- CONTACT -->
 <section id="contact">
 
 <div class="container">
 
-<div class="section-title reveal">
+    <div class="section-head reveal">
 
-<div class="eyebrow">CONTACT</div>
+        <div>
+            <div class="kicker">08 / CONTACT</div>
+            <h2>Let's talk.</h2>
+        </div>
 
-<h2>
-Let's
-<span class="gradient">Connect.</span>
-</h2>
+        <p>
+            Open to professional connections, IT opportunities
+            and interesting technology projects.
+        </p>
 
-<p>
-Have an opportunity or project? Let's talk.
-</p>
-
-</div>
-
-
-<div class="contact-grid">
+    </div>
 
 
-<div class="contact reveal">
+    <div class="contact-grid">
 
-<div class="contact-icon">📧</div>
+        <div class="contact-card reveal">
+            <span>Email</span>
+            <a href="mailto:kuldip8718@gmail.com">
+                kuldip8718@gmail.com
+            </a>
+        </div>
 
-<h3>Email</h3>
+        <div class="contact-card reveal">
+            <span>GitHub</span>
+            <a href="https://github.com/kuldeep17422" target="_blank">
+                github.com/kuldeep17422
+            </a>
+        </div>
 
-<p>
-kuldip8718@gmail.com
-</p>
+        <div class="contact-card reveal">
+            <span>Instagram</span>
+            <a href="https://instagram.com/kuldeep_singh._9" target="_blank">
+                @kuldeep_singh._9
+            </a>
+        </div>
 
-<a href="mailto:kuldip8718@gmail.com">
-Send Email →
-</a>
+        <div class="contact-card reveal">
+            <span>WhatsApp</span>
+            <a href="https://wa.me/919752133011" target="_blank">
+                Let's connect
+            </a>
+        </div>
 
-</div>
-
-
-<div class="contact reveal">
-
-<div class="contact-icon">💬</div>
-
-<h3>WhatsApp</h3>
-
-<p>
-Direct professional contact
-</p>
-
-<a href="https://wa.me/919752133011"
-target="_blank">
-Message Me →
-</a>
+    </div>
 
 </div>
-
-
-<div class="contact reveal">
-
-<div class="contact-icon">🐙</div>
-
-<h3>GitHub</h3>
-
-<p>
-kuldeep17422
-</p>
-
-<a href="https://github.com/kuldeep17422"
-target="_blank">
-View GitHub →
-</a>
-
-</div>
-
-
-<div class="contact reveal">
-
-<div class="contact-icon">📸</div>
-
-<h3>Instagram</h3>
-
-<p>
-@kuldeep_singh._9
-</p>
-
-<a href="https://www.instagram.com/kuldeep_singh._9/"
-target="_blank">
-Open Instagram →
-</a>
-
-</div>
-
-
-</div>
-
-</div>
-
 </section>
 
-</main>
-
-
-<!-- ================= FOOTER ================= -->
 
 <footer>
 
-<div class="container">
+<div class="container footer-inner">
 
-<p>
-© <span id="year"></span>
-<strong>Kuldeep Borana</strong>
-· IT Support Professional
-</p>
+    <div>
+        © <span id="year"></span>
+        <strong>Kuldeep Borana</strong>
+    </div>
 
-<p style="margin-top:5px">
-Built with HTML, CSS & JavaScript
-</p>
+    <div>
+        IT Support • DevOps Explorer • Continuous Learning
+    </div>
 
 </div>
 
 </footer>
 
 
-<!-- FLOATING BUTTON -->
-
-<button id="top">↑</button>
-
-<a
-class="whatsapp"
-href="https://wa.me/919752133011?text=Hello%20Kuldeep,%20I%20visited%20your%20portfolio."
-target="_blank">
-💬
+<a class="whatsapp" href="https://wa.me/919752133011" target="_blank" aria-label="WhatsApp">
+    ☎
 </a>
+
+<button class="top" id="topBtn">↑</button>
 
 
 <script>
@@ -2342,17 +2317,12 @@ target="_blank">
 
 window.addEventListener("load",()=>{
 
-  setTimeout(()=>{
-
-    const loader=document.getElementById("loader");
-
-    loader.style.opacity="0";
-
     setTimeout(()=>{
-      loader.style.display="none";
-    },700);
 
-  },700);
+        document.getElementById("loader")
+        .classList.add("hide");
+
+    },1200);
 
 });
 
@@ -2365,11 +2335,11 @@ const header=document.getElementById("header");
 
 window.addEventListener("scroll",()=>{
 
-  if(window.scrollY>40){
-    header.classList.add("scrolled");
-  }else{
-    header.classList.remove("scrolled");
-  }
+    if(window.scrollY>40){
+        header.classList.add("scrolled");
+    }else{
+        header.classList.remove("scrolled");
+    }
 
 });
 
@@ -2378,99 +2348,79 @@ window.addEventListener("scroll",()=>{
    MOBILE MENU
 ========================= */
 
-const menuBtn=document.getElementById("menuBtn");
-const navLinks=document.getElementById("navLinks");
+const menu=document.getElementById("menu");
+const nav=document.getElementById("navLinks");
 
-menuBtn.addEventListener("click",()=>{
+menu.addEventListener("click",()=>{
 
-  navLinks.classList.toggle("open");
+    nav.classList.toggle("open");
 
 });
 
 document.querySelectorAll(".nav-links a").forEach(link=>{
 
-  link.addEventListener("click",()=>{
-    navLinks.classList.remove("open");
-  });
+    link.addEventListener("click",()=>{
+        nav.classList.remove("open");
+    });
 
 });
 
 
 /* =========================
-   CURSOR EFFECT
+   ROLE ROTATION
 ========================= */
 
-const cursor=document.getElementById("cursorGlow");
+const roles=[
+    "IT Support Professional",
+    "Desktop Support Engineer",
+    "Technical Troubleshooter",
+    "DevOps Explorer",
+    "Technology Learner"
+];
 
-document.addEventListener("mousemove",(e)=>{
+let roleIndex=0;
 
-  cursor.style.left=e.clientX+"px";
-  cursor.style.top=e.clientY+"px";
+const roleElement=document.getElementById("role");
 
-});
+setInterval(()=>{
+
+    roleIndex=(roleIndex+1)%roles.length;
+
+    roleElement.style.opacity="0";
+
+    setTimeout(()=>{
+
+        roleElement.textContent=roles[roleIndex];
+        roleElement.style.opacity="1";
+
+    },250);
+
+},2500);
 
 
 /* =========================
    REVEAL
 ========================= */
 
-const observer=new IntersectionObserver((entries)=>{
+const revealObserver=new IntersectionObserver(
+(entries)=>{
 
-  entries.forEach(entry=>{
+    entries.forEach(entry=>{
 
-    if(entry.isIntersecting){
+        if(entry.isIntersecting){
+            entry.target.classList.add("active");
+        }
 
-      entry.target.classList.add("show");
+    });
 
-      const bar=entry.target.querySelector(".progress span");
-
-      if(bar){
-        bar.style.width=bar.dataset.width;
-      }
-
-    }
-
-  });
-
-},{
-  threshold:.12
-});
-
+},
+{
+    threshold:.12
+}
+);
 
 document.querySelectorAll(".reveal").forEach(el=>{
-  observer.observe(el);
-});
-
-
-/* =========================
-   ACTIVE NAV
-========================= */
-
-const sections=document.querySelectorAll("section[id]");
-const links=document.querySelectorAll(".nav-links a");
-
-window.addEventListener("scroll",()=>{
-
-  let current="";
-
-  sections.forEach(section=>{
-
-    if(window.scrollY>=section.offsetTop-180){
-      current=section.id;
-    }
-
-  });
-
-  links.forEach(link=>{
-
-    link.classList.remove("active");
-
-    if(link.getAttribute("href")==="#"+current){
-      link.classList.add("active");
-    }
-
-  });
-
+    revealObserver.observe(el);
 });
 
 
@@ -2478,21 +2428,24 @@ window.addEventListener("scroll",()=>{
    TOP BUTTON
 ========================= */
 
-const topBtn=document.getElementById("top");
+const topBtn=document.getElementById("topBtn");
 
 window.addEventListener("scroll",()=>{
 
-  topBtn.style.display=
-    window.scrollY>500 ? "grid" : "none";
+    if(window.scrollY>600){
+        topBtn.classList.add("show");
+    }else{
+        topBtn.classList.remove("show");
+    }
 
 });
 
 topBtn.addEventListener("click",()=>{
 
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 
 });
 
@@ -2506,25 +2459,66 @@ new Date().getFullYear();
 
 
 /* =========================
+   PORTRAIT TILT
+========================= */
+
+const portrait=document.querySelector(".portrait-card");
+
+if(window.innerWidth>900){
+
+    document.addEventListener("mousemove",(e)=>{
+
+        const x=(window.innerWidth/2-e.clientX)/80;
+        const y=(window.innerHeight/2-e.clientY)/80;
+
+        portrait.style.transform=
+        `rotateY(${x}deg) rotateX(${y}deg) rotate(3deg)`;
+
+    });
+
+}
+
+
+/* =========================
    PWA
 ========================= */
 
 if("serviceWorker" in navigator){
 
-  window.addEventListener("load",()=>{
+    window.addEventListener("load",()=>{
 
-    navigator.serviceWorker
-      .register("./service-worker.js")
-      .then(()=>{
-        console.log("Service Worker registered");
-      })
-      .catch(error=>{
-        console.log("Service Worker error:",error);
-      });
+        navigator.serviceWorker
+        .register("./service-worker.js")
+        .catch(()=>{});
 
-  });
+    });
 
 }
+
+
+/* =========================
+   SMOOTH NAV
+========================= */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+    anchor.addEventListener("click",function(e){
+
+        const target=document.querySelector(this.getAttribute("href"));
+
+        if(target){
+
+            e.preventDefault();
+
+            target.scrollIntoView({
+                behavior:"smooth"
+            });
+
+        }
+
+    });
+
+});
 
 </script>
 
