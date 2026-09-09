@@ -2,21 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<meta name="theme-color" content="#070b17">
-<meta name="description" content="Kuldeep Borana — IT Support Professional, Desktop Support Engineer, Hardware & Networking Specialist.">
-<meta name="author" content="Kuldeep Borana">
-<meta name="keywords" content="Kuldeep Borana, IT Support, Desktop Support Engineer, Hardware, Networking, Windows, IT Engineer">
+<title>Kuldeep Borana | IT Support Engineer</title>
 
-<meta property="og:title" content="Kuldeep Borana | IT Support Professional">
-<meta property="og:description" content="IT Support Professional specializing in Desktop Support, Hardware, Windows and Networking.">
-<meta property="og:type" content="website">
+<meta name="description" content="Kuldeep Borana — IT Support Engineer specializing in Desktop Support, Hardware, Windows, Networking and DevOps.">
+<meta name="theme-color" content="#050816">
 
-<link rel="manifest" href="manifest.json">
 <link rel="icon" href="developer.png">
-
-<title>Kuldeep Borana | IT Support Professional</title>
+<link rel="manifest" href="manifest.json">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,34 +18,26 @@
 
 <style>
 
-:root{
-  --bg:#070b17;
-  --bg2:#0c1222;
-  --card:rgba(255,255,255,.055);
-  --card2:rgba(255,255,255,.085);
-  --text:#ffffff;
-  --muted:#9ba7c0;
-  --line:rgba(255,255,255,.10);
-  --primary:#7567ff;
-  --primary2:#9a8cff;
-  --cyan:#22d3ee;
-  --green:#22c55e;
-  --orange:#fb923c;
-  --pink:#f472b6;
-  --max:1200px;
-  --radius:24px;
-  --shadow:0 25px 80px rgba(0,0,0,.35);
-}
+/* =========================
+   ROOT
+========================= */
 
-body.light{
-  --bg:#f5f7fb;
-  --bg2:#ffffff;
-  --card:rgba(0,0,0,.045);
-  --card2:rgba(0,0,0,.07);
-  --text:#111827;
-  --muted:#5f6b7a;
-  --line:rgba(0,0,0,.10);
-  --shadow:0 25px 70px rgba(30,40,70,.12);
+:root{
+  --bg:#050816;
+  --bg2:#090d1d;
+  --card:rgba(255,255,255,.055);
+  --card2:rgba(255,255,255,.09);
+  --text:#fff;
+  --muted:#99a5bd;
+  --line:rgba(255,255,255,.11);
+
+  --purple:#7c5cff;
+  --blue:#22d3ee;
+  --green:#22c55e;
+  --pink:#ec4899;
+
+  --radius:24px;
+  --max:1200px;
 }
 
 *{
@@ -65,29 +51,16 @@ html{
 }
 
 body{
-  font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;
-  background:
-    radial-gradient(circle at 15% 15%,rgba(117,103,255,.10),transparent 30%),
-    radial-gradient(circle at 85% 25%,rgba(34,211,238,.08),transparent 28%),
-    var(--bg);
+  font-family:Inter,Arial,sans-serif;
+  background:var(--bg);
   color:var(--text);
-  overflow-x:hidden;
   line-height:1.7;
-}
-
-body::selection{
-  background:var(--primary);
-  color:white;
+  overflow-x:hidden;
 }
 
 a{
-  color:inherit;
   text-decoration:none;
-}
-
-img{
-  max-width:100%;
-  display:block;
+  color:inherit;
 }
 
 button{
@@ -95,7 +68,7 @@ button{
 }
 
 .container{
-  width:min(var(--max),92%);
+  width:min(92%,var(--max));
   margin:auto;
 }
 
@@ -104,97 +77,143 @@ section{
   position:relative;
 }
 
-/* ================= LOADER ================= */
+/* =========================
+   CURSOR GLOW
+========================= */
+
+.cursor-glow{
+  position:fixed;
+  width:350px;
+  height:350px;
+  border-radius:50%;
+  pointer-events:none;
+  background:radial-gradient(circle,
+    rgba(124,92,255,.13),
+    transparent 65%);
+  transform:translate(-50%,-50%);
+  z-index:-1;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.grid-bg{
+  position:fixed;
+  inset:0;
+  z-index:-5;
+  opacity:.18;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+  background-size:50px 50px;
+  mask-image:linear-gradient(to bottom,#000,transparent);
+}
+
+.orb{
+  position:fixed;
+  border-radius:50%;
+  filter:blur(100px);
+  opacity:.20;
+  pointer-events:none;
+  z-index:-4;
+}
+
+.orb.one{
+  width:400px;
+  height:400px;
+  background:var(--purple);
+  left:-200px;
+  top:10%;
+}
+
+.orb.two{
+  width:350px;
+  height:350px;
+  background:var(--blue);
+  right:-180px;
+  top:45%;
+}
+
+.orb.three{
+  width:300px;
+  height:300px;
+  background:var(--pink);
+  left:40%;
+  bottom:-150px;
+}
+
+/* =========================
+   LOADER
+========================= */
 
 #loader{
   position:fixed;
   inset:0;
-  background:#070b17;
+  background:#050816;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   z-index:99999;
-  transition:.6s ease;
+  transition:.7s;
 }
 
-.loader-box{
+.loader-inner{
   text-align:center;
 }
 
 .loader-logo{
-  width:75px;
-  height:75px;
-  border-radius:22px;
+  width:82px;
+  height:82px;
+  margin:auto;
+  border-radius:25px;
   display:grid;
   place-items:center;
-  margin:auto auto 18px;
-  background:linear-gradient(135deg,var(--primary),var(--cyan));
+
   font-family:"Space Grotesk";
-  font-weight:800;
   font-size:25px;
-  color:white;
-  box-shadow:0 0 45px rgba(117,103,255,.5);
-  animation:pulse 1.5s infinite;
+  font-weight:700;
+
+  background:linear-gradient(135deg,var(--purple),var(--blue));
+  box-shadow:0 0 70px rgba(124,92,255,.5);
 }
 
-.loader-text{
-  color:#aeb8cd;
-  font-size:14px;
+.loader-inner h3{
+  margin-top:20px;
+  font-family:"Space Grotesk";
 }
 
-.loader-line{
-  width:180px;
+.loader-inner p{
+  color:var(--muted);
+  font-size:12px;
+  margin-top:4px;
+}
+
+.loader-bar{
+  width:210px;
   height:3px;
-  margin:16px auto 0;
   background:rgba(255,255,255,.1);
-  overflow:hidden;
   border-radius:10px;
+  overflow:hidden;
+  margin:18px auto;
 }
 
-.loader-line span{
+.loader-bar span{
   display:block;
   width:40%;
   height:100%;
-  background:linear-gradient(90deg,var(--primary),var(--cyan));
-  animation:loading 1.1s infinite;
+  background:linear-gradient(90deg,var(--purple),var(--blue));
+  animation:loader 1.2s infinite;
 }
 
-/* ================= BACKGROUND ================= */
-
-.bg-orb{
-  position:fixed;
-  border-radius:50%;
-  filter:blur(80px);
-  pointer-events:none;
-  z-index:-2;
-  opacity:.28;
+@keyframes loader{
+  from{transform:translateX(-150%)}
+  to{transform:translateX(400%)}
 }
 
-.orb1{
-  width:350px;
-  height:350px;
-  background:#7567ff;
-  left:-180px;
-  top:15%;
-}
-
-.orb2{
-  width:300px;
-  height:300px;
-  background:#22d3ee;
-  right:-150px;
-  top:45%;
-}
-
-.orb3{
-  width:280px;
-  height:280px;
-  background:#a855f7;
-  left:35%;
-  bottom:-150px;
-}
-
-/* ================= HEADER ================= */
+/* =========================
+   NAVBAR
+========================= */
 
 header{
   position:fixed;
@@ -207,18 +226,14 @@ header{
 }
 
 header.scrolled{
-  padding:11px 0;
-  background:rgba(7,11,23,.78);
-  backdrop-filter:blur(20px);
+  background:rgba(5,8,22,.75);
+  backdrop-filter:blur(22px);
   border-bottom:1px solid var(--line);
-}
-
-body.light header.scrolled{
-  background:rgba(255,255,255,.82);
+  padding:10px 0;
 }
 
 .nav{
-  width:min(1200px,92%);
+  width:min(94%,1250px);
   margin:auto;
   display:flex;
   align-items:center;
@@ -228,123 +243,113 @@ body.light header.scrolled{
 .logo{
   display:flex;
   align-items:center;
-  gap:11px;
+  gap:10px;
   font-family:"Space Grotesk";
   font-weight:700;
   font-size:19px;
 }
 
-.logo-mark{
-  width:40px;
-  height:40px;
+.logo-icon{
+  width:42px;
+  height:42px;
   display:grid;
   place-items:center;
-  border-radius:13px;
-  background:linear-gradient(135deg,var(--primary),var(--cyan));
-  color:white;
-  box-shadow:0 8px 30px rgba(117,103,255,.3);
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--purple),var(--blue));
+  box-shadow:0 10px 30px rgba(124,92,255,.3);
 }
 
 .logo span{
-  color:var(--muted);
+  color:var(--blue);
 }
 
 .nav-links{
   display:flex;
-  align-items:center;
-  gap:7px;
+  gap:5px;
 }
 
 .nav-links a{
   color:var(--muted);
-  padding:10px 13px;
+  font-size:13px;
+  padding:10px 12px;
   border-radius:12px;
-  font-size:14px;
   transition:.25s;
 }
 
 .nav-links a:hover,
 .nav-links a.active{
-  color:var(--text);
+  color:white;
   background:var(--card);
 }
 
-.nav-actions{
+.nav-right{
   display:flex;
   gap:8px;
-  align-items:center;
 }
 
-.icon-btn{
+.nav-btn{
   width:40px;
   height:40px;
   border:1px solid var(--line);
-  background:var(--card);
-  color:var(--text);
   border-radius:12px;
+  background:var(--card);
+  color:white;
   cursor:pointer;
-  display:grid;
-  place-items:center;
-  transition:.25s;
-}
-
-.icon-btn:hover{
-  transform:translateY(-2px);
-  background:var(--card2);
 }
 
 .menu-btn{
   display:none;
 }
 
-/* ================= HERO ================= */
+/* =========================
+   HERO
+========================= */
 
 .hero{
   min-height:100vh;
   display:flex;
   align-items:center;
   padding-top:150px;
+  overflow:hidden;
 }
 
 .hero-grid{
   display:grid;
-  grid-template-columns:1.25fr .75fr;
+  grid-template-columns:1.2fr .8fr;
   gap:70px;
   align-items:center;
 }
 
-.availability{
+.status{
   display:inline-flex;
   align-items:center;
   gap:9px;
-  padding:8px 13px;
-  border:1px solid rgba(34,197,94,.22);
+  padding:8px 14px;
+  border-radius:50px;
+  border:1px solid rgba(34,197,94,.25);
   background:rgba(34,197,94,.07);
-  border-radius:999px;
-  color:#72e69a;
-  font-size:13px;
-  margin-bottom:24px;
+  color:#6ee79a;
+  font-size:12px;
+  margin-bottom:25px;
 }
 
-.dot{
+.status-dot{
   width:8px;
   height:8px;
   background:#22c55e;
   border-radius:50%;
-  box-shadow:0 0 14px #22c55e;
-  animation:blink 1.5s infinite;
+  box-shadow:0 0 15px #22c55e;
 }
 
 .hero h1{
   font-family:"Space Grotesk";
-  font-size:clamp(48px,7vw,82px);
-  line-height:1;
-  letter-spacing:-4px;
-  margin-bottom:18px;
+  font-size:clamp(55px,7vw,90px);
+  line-height:.98;
+  letter-spacing:-5px;
 }
 
-.gradient-text{
-  background:linear-gradient(90deg,var(--primary2),var(--cyan));
+.gradient{
+  background:linear-gradient(90deg,#a995ff,#22d3ee);
   -webkit-background-clip:text;
   background-clip:text;
   color:transparent;
@@ -352,67 +357,68 @@ body.light header.scrolled{
 
 .hero-role{
   font-family:"Space Grotesk";
-  font-size:clamp(21px,3vw,31px);
+  font-size:clamp(22px,3vw,31px);
+  margin-top:22px;
   font-weight:600;
-  margin-bottom:20px;
 }
 
 .hero-role span{
-  color:var(--cyan);
+  color:var(--blue);
 }
 
 .hero-description{
-  max-width:700px;
+  max-width:680px;
+  margin-top:18px;
   color:var(--muted);
-  font-size:16px;
+  font-size:15px;
   line-height:1.9;
 }
 
 .hero-buttons{
   display:flex;
+  gap:12px;
   flex-wrap:wrap;
-  gap:13px;
-  margin-top:32px;
+  margin-top:30px;
 }
 
 .btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  gap:9px;
+  gap:8px;
   padding:13px 19px;
   border-radius:14px;
   border:1px solid var(--line);
+  background:var(--card);
+  font-size:13px;
   font-weight:600;
-  font-size:14px;
   transition:.3s;
 }
 
 .btn:hover{
-  transform:translateY(-3px);
+  transform:translateY(-4px);
 }
 
 .btn-primary{
-  background:linear-gradient(135deg,var(--primary),#5b4ff3);
+  background:linear-gradient(135deg,var(--purple),#5944e8);
   border-color:transparent;
-  color:white;
-  box-shadow:0 15px 35px rgba(117,103,255,.25);
+  box-shadow:0 15px 40px rgba(124,92,255,.25);
 }
 
-.btn-secondary{
-  background:var(--card);
-}
-
-.btn-whatsapp{
-  background:rgba(34,197,94,.10);
+.btn-green{
+  color:#6ee79a;
+  background:rgba(34,197,94,.08);
   border-color:rgba(34,197,94,.2);
-  color:#67e695;
 }
+
+/* =========================
+   HERO STATS
+========================= */
 
 .hero-stats{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  margin-top:48px;
+  margin-top:45px;
   border:1px solid var(--line);
   background:var(--card);
   border-radius:20px;
@@ -420,13 +426,13 @@ body.light header.scrolled{
 }
 
 .stat{
-  padding:19px 15px;
-  border-right:1px solid var(--line);
+  padding:18px 10px;
   text-align:center;
+  border-right:1px solid var(--line);
 }
 
 .stat:last-child{
-  border-right:0;
+  border:0;
 }
 
 .stat strong{
@@ -437,140 +443,140 @@ body.light header.scrolled{
 
 .stat small{
   color:var(--muted);
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:1px;
+  font-size:9px;
+  letter-spacing:1.5px;
 }
 
-/* ================= PROFILE CARD ================= */
+/* =========================
+   PROFILE
+========================= */
 
-.profile-wrap{
+.profile{
   position:relative;
 }
 
 .profile-card{
-  position:relative;
-  padding:28px;
-  border:1px solid var(--line);
-  background:linear-gradient(145deg,var(--card2),var(--card));
-  backdrop-filter:blur(25px);
-  border-radius:32px;
-  box-shadow:var(--shadow);
+  padding:30px;
   text-align:center;
+  border-radius:32px;
+  border:1px solid var(--line);
+  background:linear-gradient(145deg,
+    rgba(255,255,255,.09),
+    rgba(255,255,255,.035));
+  backdrop-filter:blur(20px);
+  box-shadow:0 30px 90px rgba(0,0,0,.4);
+  position:relative;
   overflow:hidden;
 }
 
 .profile-card::before{
   content:"";
   position:absolute;
-  width:180px;
-  height:180px;
-  border-radius:50%;
-  background:var(--primary);
-  filter:blur(70px);
+  width:200px;
+  height:200px;
+  background:var(--purple);
+  filter:blur(80px);
   opacity:.18;
-  top:-80px;
-  left:-50px;
+  top:-100px;
+  left:-80px;
 }
 
 .profile-image{
-  width:210px;
-  height:210px;
+  width:220px;
+  height:220px;
   object-fit:cover;
   border-radius:50%;
-  margin:5px auto 22px;
+  margin:auto;
   border:5px solid rgba(255,255,255,.08);
-  box-shadow:0 0 0 10px rgba(117,103,255,.06),0 25px 70px rgba(0,0,0,.4);
+  box-shadow:
+    0 0 0 10px rgba(124,92,255,.05),
+    0 30px 70px rgba(0,0,0,.45);
   position:relative;
-  z-index:2;
 }
 
-.profile-card h3{
+.profile-card h2{
   font-family:"Space Grotesk";
   font-size:26px;
+  margin-top:22px;
 }
 
 .profile-card p{
   color:var(--muted);
-  font-size:14px;
+  font-size:13px;
 }
 
-.profile-tags{
+.tags{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  gap:8px;
-  margin-top:20px;
+  gap:7px;
+  margin-top:18px;
 }
 
 .tag{
-  padding:7px 11px;
-  border-radius:999px;
-  background:var(--card);
-  border:1px solid var(--line);
-  font-size:11px;
-  color:var(--muted);
-}
-
-.profile-badge{
-  position:absolute;
-  top:18px;
-  right:18px;
-  z-index:5;
-  background:rgba(34,197,94,.12);
-  border:1px solid rgba(34,197,94,.2);
-  color:#67e695;
   padding:6px 10px;
-  border-radius:999px;
+  border:1px solid var(--line);
+  background:var(--card);
+  border-radius:50px;
+  color:var(--muted);
   font-size:10px;
 }
 
-/* ================= SECTION ================= */
+/* =========================
+   SECTION TITLES
+========================= */
 
-.section-head{
-  max-width:700px;
+.section-title{
   margin-bottom:45px;
+  max-width:720px;
 }
 
 .eyebrow{
-  color:var(--cyan);
-  font-size:12px;
+  color:var(--blue);
+  font-size:11px;
   font-weight:700;
-  text-transform:uppercase;
   letter-spacing:2px;
+  text-transform:uppercase;
   margin-bottom:10px;
 }
 
-.section-head h2{
+.section-title h2{
   font-family:"Space Grotesk";
-  font-size:clamp(34px,5vw,52px);
+  font-size:clamp(36px,5vw,55px);
   line-height:1.1;
   letter-spacing:-2px;
-  margin-bottom:15px;
 }
 
-.section-head p{
+.section-title p{
   color:var(--muted);
+  margin-top:13px;
 }
 
-/* ================= ABOUT ================= */
+/* =========================
+   ABOUT
+========================= */
 
 .about-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:25px;
+  gap:20px;
 }
 
-.about-text{
-  padding:32px;
+.about-main,
+.about-card{
   border:1px solid var(--line);
   background:var(--card);
   border-radius:var(--radius);
 }
 
-.about-text p{
+.about-main{
+  padding:35px;
+}
+
+.about-main p{
   color:var(--muted);
-  margin-bottom:17px;
+  font-size:14px;
+  margin-bottom:18px;
 }
 
 .about-cards{
@@ -579,108 +585,102 @@ body.light header.scrolled{
   gap:15px;
 }
 
-.info-card{
+.about-card{
   padding:25px;
-  border:1px solid var(--line);
-  background:var(--card);
-  border-radius:20px;
   transition:.3s;
 }
 
-.info-card:hover{
-  transform:translateY(-5px);
+.about-card:hover{
+  transform:translateY(-6px);
   background:var(--card2);
-  border-color:rgba(117,103,255,.35);
 }
 
-.info-icon{
-  font-size:27px;
-  margin-bottom:13px;
+.about-icon{
+  font-size:28px;
 }
 
-.info-card h3{
+.about-card h3{
   font-family:"Space Grotesk";
-  font-size:18px;
-  margin-bottom:7px;
+  margin-top:10px;
+  font-size:17px;
 }
 
-.info-card p{
+.about-card p{
   color:var(--muted);
-  font-size:13px;
+  font-size:12px;
+  margin-top:5px;
 }
 
-/* ================= EXPERIENCE ================= */
+/* =========================
+   COMMAND CENTER
+========================= */
 
-.timeline{
-  position:relative;
-  max-width:900px;
-}
-
-.timeline::before{
-  content:"";
-  position:absolute;
-  left:9px;
-  top:10px;
-  bottom:10px;
-  width:1px;
-  background:linear-gradient(var(--primary),transparent);
-}
-
-.timeline-item{
-  position:relative;
-  padding-left:45px;
-  margin-bottom:35px;
-}
-
-.timeline-dot{
-  position:absolute;
-  left:0;
-  top:7px;
-  width:19px;
-  height:19px;
-  border-radius:50%;
-  background:var(--bg);
-  border:4px solid var(--primary);
-  box-shadow:0 0 20px rgba(117,103,255,.6);
-}
-
-.timeline-card{
-  padding:28px;
+.command{
   border:1px solid var(--line);
-  background:var(--card);
-  border-radius:22px;
+  border-radius:28px;
+  background:
+    radial-gradient(circle at 90% 10%,rgba(34,211,238,.1),transparent 30%),
+    var(--card);
+  overflow:hidden;
 }
 
-.timeline-card .date{
-  color:var(--cyan);
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:1.5px;
+.command-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 24px;
+  border-bottom:1px solid var(--line);
 }
 
-.timeline-card h3{
+.command-title{
   font-family:"Space Grotesk";
-  font-size:23px;
-  margin:5px 0;
-}
-
-.timeline-card .role{
-  color:var(--muted);
-  font-size:13px;
-  margin-bottom:13px;
-}
-
-.timeline-card p{
-  color:var(--muted);
   font-size:14px;
 }
 
-/* ================= SKILLS ================= */
+.command-live{
+  color:#6ee79a;
+  font-size:10px;
+}
 
-.skills-grid{
+.command-body{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+}
+
+.system{
+  padding:28px 18px;
+  text-align:center;
+  border-right:1px solid var(--line);
+}
+
+.system:last-child{
+  border:0;
+}
+
+.system-icon{
+  font-size:25px;
+}
+
+.system h3{
+  font-family:"Space Grotesk";
+  font-size:14px;
+  margin-top:10px;
+}
+
+.system p{
+  color:#6ee79a;
+  font-size:10px;
+  margin-top:4px;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:17px;
+  gap:15px;
 }
 
 .skill{
@@ -693,22 +693,22 @@ body.light header.scrolled{
 .skill-top{
   display:flex;
   justify-content:space-between;
-  margin-bottom:11px;
+  margin-bottom:10px;
 }
 
 .skill-top strong{
-  font-size:14px;
-}
-
-.skill-top span{
-  color:var(--cyan);
   font-size:13px;
 }
 
+.skill-top span{
+  color:var(--blue);
+  font-size:12px;
+}
+
 .progress{
-  height:7px;
+  height:6px;
   background:rgba(255,255,255,.07);
-  border-radius:99px;
+  border-radius:50px;
   overflow:hidden;
 }
 
@@ -716,187 +716,277 @@ body.light header.scrolled{
   display:block;
   width:0;
   height:100%;
-  border-radius:99px;
-  background:linear-gradient(90deg,var(--primary),var(--cyan));
-  transition:1.4s cubic-bezier(.2,.8,.2,1);
+  background:linear-gradient(90deg,var(--purple),var(--blue));
+  transition:1.4s ease;
 }
 
-/* ================= TECH STACK ================= */
+/* =========================
+   TECH STACK
+========================= */
 
-.stack-grid{
+.tech-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:16px;
+  gap:15px;
 }
 
-.stack-card{
+.tech{
   padding:25px;
   border:1px solid var(--line);
-  background:var(--card);
   border-radius:20px;
-  transition:.3s;
-  position:relative;
-  overflow:hidden;
-}
-
-.stack-card:hover{
-  transform:translateY(-6px);
-  border-color:rgba(34,211,238,.3);
-}
-
-.stack-icon{
-  font-size:30px;
-  margin-bottom:15px;
-}
-
-.stack-card h3{
-  font-family:"Space Grotesk";
-  font-size:17px;
-  margin-bottom:7px;
-}
-
-.stack-card p{
-  color:var(--muted);
-  font-size:12px;
-}
-
-/* ================= WHY HIRE ================= */
-
-.why-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-
-.why-card{
-  padding:30px;
-  border:1px solid var(--line);
-  background:linear-gradient(145deg,var(--card2),var(--card));
-  border-radius:23px;
-  transition:.3s;
-}
-
-.why-card:hover{
-  transform:translateY(-7px);
-}
-
-.why-number{
-  font-family:"Space Grotesk";
-  font-size:38px;
-  font-weight:700;
-  color:rgba(117,103,255,.45);
-}
-
-.why-card h3{
-  margin:10px 0;
-  font-family:"Space Grotesk";
-  font-size:20px;
-}
-
-.why-card p{
-  color:var(--muted);
-  font-size:13px;
-}
-
-/* ================= PROJECTS ================= */
-
-.project-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:20px;
-}
-
-.project-card{
-  padding:27px;
-  border:1px solid var(--line);
   background:var(--card);
-  border-radius:24px;
   transition:.35s;
   position:relative;
   overflow:hidden;
 }
 
-.project-card:hover{
+.tech:hover{
   transform:translateY(-7px);
-  border-color:rgba(117,103,255,.35);
-  box-shadow:0 25px 70px rgba(0,0,0,.2);
+  border-color:rgba(34,211,238,.35);
+}
+
+.tech-icon{
+  font-size:30px;
+}
+
+.tech h3{
+  font-family:"Space Grotesk";
+  margin-top:14px;
+  font-size:17px;
+}
+
+.tech p{
+  color:var(--muted);
+  font-size:11px;
+  margin-top:5px;
+}
+
+/* =========================
+   EXPERIENCE
+========================= */
+
+.timeline{
+  max-width:900px;
+  position:relative;
+}
+
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:9px;
+  top:5px;
+  bottom:5px;
+  width:1px;
+  background:linear-gradient(var(--purple),transparent);
+}
+
+.timeline-item{
+  position:relative;
+  padding-left:45px;
+  margin-bottom:28px;
+}
+
+.timeline-dot{
+  position:absolute;
+  left:0;
+  top:8px;
+  width:19px;
+  height:19px;
+  border-radius:50%;
+  background:var(--bg);
+  border:4px solid var(--purple);
+  box-shadow:0 0 20px rgba(124,92,255,.7);
+}
+
+.timeline-card{
+  padding:27px;
+  border:1px solid var(--line);
+  background:var(--card);
+  border-radius:22px;
+}
+
+.timeline-card .label{
+  color:var(--blue);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1.5px;
+}
+
+.timeline-card h3{
+  font-family:"Space Grotesk";
+  font-size:22px;
+  margin-top:5px;
+}
+
+.timeline-card .role{
+  color:var(--muted);
+  font-size:12px;
+}
+
+.timeline-card p{
+  color:var(--muted);
+  font-size:13px;
+  margin-top:12px;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.project-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.project{
+  padding:28px;
+  border:1px solid var(--line);
+  border-radius:25px;
+  background:var(--card);
+  position:relative;
+  overflow:hidden;
+  transition:.4s;
+}
+
+.project::after{
+  content:"";
+  position:absolute;
+  width:170px;
+  height:170px;
+  border-radius:50%;
+  background:var(--purple);
+  filter:blur(90px);
+  opacity:0;
+  right:-100px;
+  top:-100px;
+  transition:.4s;
+}
+
+.project:hover{
+  transform:translateY(-8px);
+  border-color:rgba(124,92,255,.35);
+}
+
+.project:hover::after{
+  opacity:.15;
 }
 
 .project-top{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  margin-bottom:18px;
 }
 
-.project-number{
+.project-no{
   width:45px;
   height:45px;
   display:grid;
   place-items:center;
   border-radius:14px;
-  background:linear-gradient(135deg,rgba(117,103,255,.2),rgba(34,211,238,.1));
-  color:var(--cyan);
+  background:rgba(124,92,255,.12);
+  color:var(--blue);
   font-family:"Space Grotesk";
-  font-weight:700;
 }
 
 .project-type{
   color:var(--muted);
-  font-size:11px;
   border:1px solid var(--line);
-  padding:6px 10px;
-  border-radius:999px;
+  padding:5px 9px;
+  border-radius:50px;
+  font-size:9px;
 }
 
-.project-card h3{
+.project h3{
   font-family:"Space Grotesk";
-  font-size:23px;
-  margin-bottom:8px;
+  font-size:22px;
+  margin-top:20px;
 }
 
-.project-card p{
+.project p{
   color:var(--muted);
-  font-size:13px;
-  margin-bottom:18px;
+  font-size:12px;
+  margin-top:8px;
 }
 
 .project-tech{
   display:flex;
   flex-wrap:wrap;
-  gap:7px;
-  margin-bottom:20px;
+  gap:6px;
+  margin-top:17px;
 }
 
 .project-tech span{
-  font-size:10px;
+  background:var(--card2);
   color:var(--muted);
   padding:5px 8px;
-  border-radius:8px;
-  background:var(--card2);
+  border-radius:7px;
+  font-size:9px;
 }
 
 .project-links{
   display:flex;
-  gap:9px;
+  gap:15px;
+  margin-top:20px;
 }
 
 .project-links a{
-  font-size:12px;
-  font-weight:600;
-  color:var(--cyan);
+  color:var(--blue);
+  font-size:11px;
+  font-weight:700;
 }
 
-/* ================= CERTIFICATIONS ================= */
+/* =========================
+   WHY HIRE
+========================= */
+
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:17px;
+}
+
+.why{
+  padding:30px;
+  border:1px solid var(--line);
+  background:var(--card);
+  border-radius:23px;
+  transition:.3s;
+}
+
+.why:hover{
+  transform:translateY(-7px);
+}
+
+.why-number{
+  font-family:"Space Grotesk";
+  font-size:38px;
+  color:rgba(124,92,255,.4);
+}
+
+.why h3{
+  font-family:"Space Grotesk";
+  margin-top:8px;
+}
+
+.why p{
+  color:var(--muted);
+  font-size:12px;
+  margin-top:7px;
+}
+
+/* =========================
+   CERTIFICATIONS
+========================= */
 
 .cert-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:18px;
+  gap:17px;
 }
 
-.cert-card{
-  padding:27px;
+.cert{
+  padding:28px;
   border:1px solid var(--line);
   background:var(--card);
   border-radius:22px;
@@ -904,48 +994,23 @@ body.light header.scrolled{
 
 .cert-icon{
   font-size:30px;
-  margin-bottom:15px;
 }
 
-.cert-card h3{
+.cert h3{
   font-family:"Space Grotesk";
-  font-size:18px;
+  font-size:17px;
+  margin-top:13px;
 }
 
-.cert-card p{
+.cert p{
   color:var(--muted);
-  font-size:12px;
-  margin-top:6px;
+  font-size:11px;
+  margin-top:4px;
 }
 
-/* ================= CTA ================= */
-
-.cta{
-  padding:45px;
-  border:1px solid rgba(117,103,255,.25);
-  background:
-    radial-gradient(circle at 80% 20%,rgba(34,211,238,.12),transparent 30%),
-    radial-gradient(circle at 20% 80%,rgba(117,103,255,.15),transparent 35%),
-    var(--card);
-  border-radius:30px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:30px;
-}
-
-.cta h2{
-  font-family:"Space Grotesk";
-  font-size:clamp(28px,4vw,43px);
-  line-height:1.1;
-  margin-bottom:10px;
-}
-
-.cta p{
-  color:var(--muted);
-}
-
-/* ================= CONTACT ================= */
+/* =========================
+   CONTACT
+========================= */
 
 .contact-grid{
   display:grid;
@@ -953,7 +1018,7 @@ body.light header.scrolled{
   gap:15px;
 }
 
-.contact-card{
+.contact{
   padding:25px;
   border:1px solid var(--line);
   background:var(--card);
@@ -961,97 +1026,130 @@ body.light header.scrolled{
   transition:.3s;
 }
 
-.contact-card:hover{
-  transform:translateY(-5px);
+.contact:hover{
+  transform:translateY(-6px);
   background:var(--card2);
 }
 
 .contact-icon{
   font-size:25px;
-  margin-bottom:12px;
 }
 
-.contact-card h3{
+.contact h3{
   font-family:"Space Grotesk";
+  margin-top:12px;
   font-size:17px;
 }
 
-.contact-card p{
+.contact p{
   color:var(--muted);
-  font-size:12px;
-  margin:3px 0 13px;
+  font-size:11px;
+  margin:3px 0 12px;
   word-break:break-word;
 }
 
-.contact-card a{
-  color:var(--cyan);
-  font-size:12px;
-  font-weight:600;
+.contact a{
+  color:var(--blue);
+  font-size:11px;
+  font-weight:700;
 }
 
-/* ================= FOOTER ================= */
+/* =========================
+   CTA
+========================= */
+
+.cta{
+  padding:50px;
+  border:1px solid rgba(124,92,255,.25);
+  border-radius:30px;
+  background:
+    radial-gradient(circle at 80% 20%,rgba(34,211,238,.12),transparent 30%),
+    radial-gradient(circle at 10% 80%,rgba(124,92,255,.13),transparent 35%),
+    var(--card);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:30px;
+}
+
+.cta h2{
+  font-family:"Space Grotesk";
+  font-size:clamp(30px,4vw,45px);
+  line-height:1.1;
+}
+
+.cta p{
+  color:var(--muted);
+  margin-top:8px;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
   padding:35px 0;
-  border-top:1px solid var(--line);
   text-align:center;
+  border-top:1px solid var(--line);
 }
 
 footer p{
   color:var(--muted);
-  font-size:12px;
+  font-size:11px;
 }
 
-.footer-name{
-  color:var(--text);
-  font-family:"Space Grotesk";
-  font-weight:700;
+footer strong{
+  color:white;
 }
 
-/* ================= FLOAT BUTTONS ================= */
+/* =========================
+   FLOAT BUTTON
+========================= */
 
-.whatsapp-float{
+.whatsapp{
   position:fixed;
   right:22px;
   bottom:22px;
-  width:54px;
-  height:54px;
-  border-radius:50%;
+  width:55px;
+  height:55px;
   display:grid;
   place-items:center;
+  border-radius:50%;
   background:#25d366;
   color:white;
   font-size:24px;
   z-index:500;
-  box-shadow:0 10px 30px rgba(37,211,102,.3);
+  box-shadow:0 12px 35px rgba(37,211,102,.3);
   transition:.3s;
 }
 
-.whatsapp-float:hover{
-  transform:scale(1.08);
+.whatsapp:hover{
+  transform:scale(1.1);
 }
 
-#topBtn{
+#top{
   position:fixed;
   right:22px;
   bottom:90px;
   width:42px;
   height:42px;
+  border-radius:12px;
   border:1px solid var(--line);
   background:var(--card2);
-  color:var(--text);
-  border-radius:12px;
-  cursor:pointer;
+  color:white;
   display:none;
+  cursor:pointer;
   z-index:500;
 }
 
-/* ================= REVEAL ================= */
+/* =========================
+   REVEAL
+========================= */
 
 .reveal{
   opacity:0;
   transform:translateY(30px);
-  transition:opacity .8s ease,transform .8s ease;
+  transition:.8s ease;
 }
 
 .reveal.show{
@@ -1059,22 +1157,9 @@ footer p{
   transform:none;
 }
 
-/* ================= ANIMATIONS ================= */
-
-@keyframes pulse{
-  50%{transform:scale(1.05)}
-}
-
-@keyframes loading{
-  0%{transform:translateX(-100%)}
-  100%{transform:translateX(350%)}
-}
-
-@keyframes blink{
-  50%{opacity:.35}
-}
-
-/* ================= RESPONSIVE ================= */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:1000px){
 
@@ -1083,21 +1168,17 @@ footer p{
     top:70px;
     left:4%;
     right:4%;
-    padding:12px;
+    display:flex;
     flex-direction:column;
-    align-items:stretch;
-    background:rgba(10,15,30,.96);
-    backdrop-filter:blur(25px);
+    background:rgba(7,11,23,.97);
     border:1px solid var(--line);
+    padding:10px;
     border-radius:20px;
+
     opacity:0;
     visibility:hidden;
     transform:translateY(-10px);
     transition:.25s;
-  }
-
-  body.light .nav-links{
-    background:rgba(255,255,255,.96);
   }
 
   .nav-links.open{
@@ -1106,33 +1187,37 @@ footer p{
     transform:none;
   }
 
-  .nav-links a{
-    padding:13px;
-  }
-
   .menu-btn{
-    display:grid;
+    display:block;
   }
 
   .hero-grid{
     grid-template-columns:1fr;
   }
 
-  .profile-wrap{
+  .profile{
     max-width:450px;
     margin:auto;
   }
 
-  .stack-grid{
-    grid-template-columns:repeat(2,1fr);
+  .tech-grid{
+    grid-template-columns:1fr 1fr;
   }
 
   .contact-grid{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:1fr 1fr;
   }
 
-  .why-grid{
-    grid-template-columns:1fr;
+  .command-body{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .system:nth-child(3){
+    border-right:0;
+  }
+
+  .system:nth-child(-n+3){
+    border-bottom:1px solid var(--line);
   }
 }
 
@@ -1147,7 +1232,7 @@ footer p{
   }
 
   .hero h1{
-    font-size:51px;
+    font-size:52px;
     letter-spacing:-3px;
   }
 
@@ -1164,22 +1249,39 @@ footer p{
   }
 
   .about-grid,
-  .project-grid,
-  .skills-grid{
+  .skills,
+  .project-grid{
     grid-template-columns:1fr;
   }
 
-  .about-cards{
+  .why-grid{
+    grid-template-columns:1fr;
+  }
+
+  .cert-grid{
+    grid-template-columns:1fr;
+  }
+
+  .command-body{
     grid-template-columns:1fr 1fr;
   }
 
-  .stack-grid,
-  .cert-grid{
-    grid-template-columns:1fr 1fr;
+  .system{
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+
+  .system:nth-child(even){
+    border-right:0;
+  }
+
+  .system:last-child{
+    grid-column:1/-1;
+    border-right:0;
   }
 
   .cta{
-    padding:30px;
+    padding:32px;
     flex-direction:column;
     align-items:flex-start;
   }
@@ -1191,10 +1293,6 @@ footer p{
 
 @media(max-width:480px){
 
-  .container{
-    width:90%;
-  }
-
   .hero h1{
     font-size:44px;
   }
@@ -1204,8 +1302,7 @@ footer p{
   }
 
   .about-cards,
-  .stack-grid,
-  .cert-grid{
+  .tech-grid{
     grid-template-columns:1fr;
   }
 
@@ -1221,762 +1318,1054 @@ footer p{
   .btn{
     width:100%;
   }
-
-  .project-links{
-    flex-wrap:wrap;
-  }
 }
 
 </style>
 </head>
 
+
 <body>
 
-<!-- LOADER -->
 <div id="loader">
-  <div class="loader-box">
+  <div class="loader-inner">
     <div class="loader-logo">KB</div>
-    <div class="loader-text">Loading Portfolio...</div>
-    <div class="loader-line"><span></span></div>
+    <h3>INITIALIZING...</h3>
+    <p>KULDEEP BORANA • IT SUPPORT</p>
+    <div class="loader-bar">
+      <span></span>
+    </div>
   </div>
 </div>
 
-<!-- BACKGROUND -->
-<div class="bg-orb orb1"></div>
-<div class="bg-orb orb2"></div>
-<div class="bg-orb orb3"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
 
-<!-- HEADER -->
+<div class="grid-bg"></div>
+
+<div class="orb one"></div>
+<div class="orb two"></div>
+<div class="orb three"></div>
+
+
+<!-- ================= HEADER ================= -->
+
 <header id="header">
-  <nav class="nav">
 
-    <a href="#home" class="logo">
-      <div class="logo-mark">KB</div>
-      <div>Kuldeep<span>.</span></div>
-    </a>
+<nav class="nav">
 
-    <div class="nav-links" id="navLinks">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#stack">Tech Stack</a>
-      <a href="#projects">Projects</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#contact">Contact</a>
-    </div>
+<a href="#home" class="logo">
+  <div class="logo-icon">KB</div>
+  <div>Kuldeep<span>.</span></div>
+</a>
 
-    <div class="nav-actions">
-      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">☾</button>
-      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
-    </div>
+<div class="nav-links" id="navLinks">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#skills">Skills</a>
+  <a href="#stack">Tech Stack</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</div>
 
-  </nav>
+<div class="nav-right">
+  <button class="nav-btn menu-btn" id="menuBtn">☰</button>
+</div>
+
+</nav>
+
 </header>
+
 
 <main>
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
+
 <section class="hero" id="home">
+
 <div class="container hero-grid">
 
-  <div class="hero-content reveal">
+<div class="reveal">
 
-    <div class="availability">
-      <span class="dot"></span>
-      Available for IT Opportunities
-    </div>
+<div class="status">
+  <span class="status-dot"></span>
+  AVAILABLE FOR IT OPPORTUNITIES
+</div>
 
-    <h1>
-      Hi, I'm<br>
-      <span class="gradient-text">Kuldeep Borana</span>
-    </h1>
+<h1>
+  KULDEEP<br>
+  <span class="gradient">BORANA</span>
+</h1>
 
-    <div class="hero-role">
-      Desktop Support Engineer <span>/</span> IT Support
-    </div>
+<div class="hero-role">
+  Desktop Support Engineer
+  <span>•</span>
+  IT Support
+</div>
 
-    <p class="hero-description">
-      IT Support Professional focused on desktop troubleshooting,
-      hardware diagnostics, Windows systems, software support,
-      Microsoft Outlook, printers, networking and reliable user support.
-    </p>
+<p class="hero-description">
+  IT Support Professional specializing in desktop troubleshooting,
+  hardware diagnostics, Windows systems, software support,
+  Microsoft Outlook, printers, networking and technical problem solving.
+</p>
 
-    <div class="hero-buttons">
+<div class="hero-buttons">
 
-      <a class="btn btn-primary" href="resume.pdf" target="_blank">
-        📄 View Resume
-      </a>
+<a href="resume.pdf" target="_blank" class="btn btn-primary">
+  📄 View Resume
+</a>
 
-      <a class="btn btn-whatsapp"
-         href="https://wa.me/919752133011?text=Hello%20Kuldeep,%20I%20visited%20your%20portfolio."
-         target="_blank">
-        💬 WhatsApp Me
-      </a>
+<a href="https://wa.me/919752133011?text=Hello%20Kuldeep,%20I%20visited%20your%20portfolio."
+target="_blank"
+class="btn btn-green">
+  💬 WhatsApp
+</a>
 
-      <a class="btn btn-secondary" href="#projects">
-        🚀 View Projects
-      </a>
-
-    </div>
-
-    <div class="hero-stats">
-
-      <div class="stat">
-        <strong>IT</strong>
-        <small>Support</small>
-      </div>
-
-      <div class="stat">
-        <strong>PC</strong>
-        <small>Hardware</small>
-      </div>
-
-      <div class="stat">
-        <strong>WIN</strong>
-        <small>Windows</small>
-      </div>
-
-      <div class="stat">
-        <strong>NET</strong>
-        <small>Networking</small>
-      </div>
-
-    </div>
-
-  </div>
-
-  <div class="profile-wrap reveal">
-
-    <div class="profile-card">
-
-      <div class="profile-badge">● Open to Work</div>
-
-      <img
-        src="developer.png"
-        alt="Kuldeep Borana"
-        class="profile-image"
-      >
-
-      <h3>Kuldeep Borana</h3>
-      <p>IT Support Professional</p>
-
-      <div class="profile-tags">
-        <span class="tag">Desktop Support</span>
-        <span class="tag">Hardware</span>
-        <span class="tag">Windows</span>
-        <span class="tag">Networking</span>
-        <span class="tag">Troubleshooting</span>
-      </div>
-
-    </div>
-
-  </div>
+<a href="#projects" class="btn">
+  🚀 Explore Projects
+</a>
 
 </div>
+
+
+<div class="hero-stats">
+
+<div class="stat">
+<strong>IT</strong>
+<small>SUPPORT</small>
+</div>
+
+<div class="stat">
+<strong>PC</strong>
+<small>HARDWARE</small>
+</div>
+
+<div class="stat">
+<strong>WIN</strong>
+<small>WINDOWS</small>
+</div>
+
+<div class="stat">
+<strong>NET</strong>
+<small>NETWORKING</small>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PROFILE -->
+
+<div class="profile reveal">
+
+<div class="profile-card">
+
+<img
+src="developer.png"
+alt="Kuldeep Borana"
+class="profile-image"
+>
+
+<h2>Kuldeep Borana</h2>
+
+<p>IT Support Professional</p>
+
+<div class="tags">
+
+<span class="tag">Desktop Support</span>
+<span class="tag">Hardware</span>
+<span class="tag">Windows</span>
+<span class="tag">Networking</span>
+<span class="tag">Troubleshooting</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 
-<!-- ABOUT -->
+<!-- ================= ABOUT ================= -->
+
 <section id="about">
+
 <div class="container">
 
-  <div class="section-head reveal">
-    <div class="eyebrow">About Me</div>
-    <h2>Technology That <span class="gradient-text">Solves Problems.</span></h2>
-    <p>Practical IT support with a focus on reliability, troubleshooting and user experience.</p>
-  </div>
+<div class="section-title reveal">
 
-  <div class="about-grid">
+<div class="eyebrow">ABOUT ME</div>
 
-    <div class="about-text reveal">
+<h2>
+Technology that
+<span class="gradient">solves problems.</span>
+</h2>
 
-      <p>
-        I am an IT Support Professional with practical experience in
-        desktop support, hardware troubleshooting, Windows systems,
-        software installation and technical problem solving.
-      </p>
-
-      <p>
-        My focus is simple: understand the problem, troubleshoot it
-        efficiently and provide a reliable solution for the user.
-      </p>
-
-      <p>
-        I enjoy working with computers, networking, system configuration
-        and learning new technologies to improve my technical skills.
-      </p>
-
-    </div>
-
-    <div class="about-cards">
-
-      <div class="info-card reveal">
-        <div class="info-icon">🖥️</div>
-        <h3>Desktop Support</h3>
-        <p>System troubleshooting, configuration and user assistance.</p>
-      </div>
-
-      <div class="info-card reveal">
-        <div class="info-icon">🔧</div>
-        <h3>Hardware</h3>
-        <p>PC hardware diagnosis, upgrades and troubleshooting.</p>
-      </div>
-
-      <div class="info-card reveal">
-        <div class="info-icon">🌐</div>
-        <h3>Networking</h3>
-        <p>Basic network troubleshooting, connectivity and configuration.</p>
-      </div>
-
-      <div class="info-card reveal">
-        <div class="info-icon">⚡</div>
-        <h3>Problem Solving</h3>
-        <p>Quick analysis and practical technical solutions.</p>
-      </div>
-
-    </div>
-
-  </div>
+<p>
+Practical IT support with a focus on reliability,
+troubleshooting and user experience.
+</p>
 
 </div>
+
+
+<div class="about-grid">
+
+<div class="about-main reveal">
+
+<p>
+I am an IT Support Professional with practical knowledge
+of desktop support, hardware troubleshooting, Windows systems,
+software installation and technical problem solving.
+</p>
+
+<p>
+My approach is simple — understand the problem,
+identify the root cause and provide a reliable solution.
+</p>
+
+<p>
+I am also continuously exploring networking, automation,
+cloud and DevOps technologies to expand my technical skill set.
+</p>
+
+</div>
+
+
+<div class="about-cards">
+
+<div class="about-card reveal">
+<div class="about-icon">🖥️</div>
+<h3>Desktop Support</h3>
+<p>System troubleshooting and user assistance.</p>
+</div>
+
+<div class="about-card reveal">
+<div class="about-icon">🔧</div>
+<h3>Hardware</h3>
+<p>PC hardware diagnosis and troubleshooting.</p>
+</div>
+
+<div class="about-card reveal">
+<div class="about-icon">🌐</div>
+<h3>Networking</h3>
+<p>Connectivity and basic network troubleshooting.</p>
+</div>
+
+<div class="about-card reveal">
+<div class="about-icon">⚡</div>
+<h3>Problem Solving</h3>
+<p>Fast analysis and practical solutions.</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 
-<!-- EXPERIENCE -->
+<!-- ================= COMMAND CENTER ================= -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title reveal">
+
+<div class="eyebrow">IT COMMAND CENTER</div>
+
+<h2>
+System
+<span class="gradient">Status.</span>
+</h2>
+
+<p>
+A quick look at my core technical support areas.
+</p>
+
+</div>
+
+
+<div class="command reveal">
+
+<div class="command-head">
+
+<div class="command-title">
+SYSTEM MONITOR
+</div>
+
+<div class="command-live">
+● ALL SYSTEMS OPERATIONAL
+</div>
+
+</div>
+
+
+<div class="command-body">
+
+<div class="system">
+<div class="system-icon">🪟</div>
+<h3>Windows</h3>
+<p>● Operational</p>
+</div>
+
+<div class="system">
+<div class="system-icon">🌐</div>
+<h3>Network</h3>
+<p>● Operational</p>
+</div>
+
+<div class="system">
+<div class="system-icon">🖥️</div>
+<h3>Hardware</h3>
+<p>● Ready</p>
+</div>
+
+<div class="system">
+<div class="system-icon">🛠️</div>
+<h3>Support</h3>
+<p>● Active</p>
+</div>
+
+<div class="system">
+<div class="system-icon">🚀</div>
+<h3>Projects</h3>
+<p>● Online</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
 <section id="experience">
+
 <div class="container">
 
-  <div class="section-head reveal">
-    <div class="eyebrow">Experience</div>
-    <h2>My <span class="gradient-text">Professional Journey.</span></h2>
-    <p>Hands-on experience supporting users, systems and IT infrastructure.</p>
-  </div>
+<div class="section-title reveal">
 
-  <div class="timeline">
+<div class="eyebrow">EXPERIENCE</div>
 
-    <div class="timeline-item reveal">
+<h2>
+My professional
+<span class="gradient">journey.</span>
+</h2>
 
-      <div class="timeline-dot"></div>
-
-      <div class="timeline-card">
-
-        <div class="date">IT SUPPORT</div>
-
-        <h3>Desktop Support Engineer</h3>
-
-        <div class="role">IT Support & Infrastructure</div>
-
-        <p>
-          Desktop troubleshooting, hardware diagnosis, Windows
-          installation and configuration, software deployment,
-          Outlook support, printer troubleshooting and basic
-          network support.
-        </p>
-
-      </div>
-
-    </div>
-
-    <div class="timeline-item reveal">
-
-      <div class="timeline-dot"></div>
-
-      <div class="timeline-card">
-
-        <div class="date">TECHNICAL SUPPORT</div>
-
-        <h3>IT Support Operations</h3>
-
-        <div class="role">Technical Support Environment</div>
-
-        <p>
-          Diagnosing technical issues, assisting users, configuring
-          devices and maintaining a reliable desktop computing environment.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
+<p>
+Hands-on IT support and technical troubleshooting experience.
+</p>
 
 </div>
+
+
+<div class="timeline">
+
+<div class="timeline-item reveal">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+<div class="label">
+IT SUPPORT
+</div>
+
+<h3>Desktop Support Engineer</h3>
+
+<div class="role">
+IT Support & Infrastructure
+</div>
+
+<p>
+Desktop troubleshooting, hardware diagnosis,
+Windows installation and configuration, software deployment,
+Outlook support, printer troubleshooting and basic network support.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="timeline-item reveal">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+<div class="label">
+TECHNICAL SUPPORT
+</div>
+
+<h3>IT Support Operations</h3>
+
+<div class="role">
+Technical Support Environment
+</div>
+
+<p>
+Diagnosing technical issues, assisting users,
+configuring devices and maintaining desktop environments.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 
-<!-- SKILLS -->
+<!-- ================= SKILLS ================= -->
+
 <section id="skills">
+
 <div class="container">
 
-  <div class="section-head reveal">
-    <div class="eyebrow">Technical Skills</div>
-    <h2>What I <span class="gradient-text">Work With.</span></h2>
-    <p>Core technical areas I use for IT support and troubleshooting.</p>
-  </div>
+<div class="section-title reveal">
 
-  <div class="skills-grid">
+<div class="eyebrow">SKILLS</div>
 
-    <div class="skill reveal">
-      <div class="skill-top">
-        <strong>Desktop Support</strong>
-        <span>90%</span>
-      </div>
-      <div class="progress"><span data-width="90%"></span></div>
-    </div>
+<h2>
+Technical
+<span class="gradient">Expertise.</span>
+</h2>
 
-    <div class="skill reveal">
-      <div class="skill-top">
-        <strong>Hardware Troubleshooting</strong>
-        <span>90%</span>
-      </div>
-      <div class="progress"><span data-width="90%"></span></div>
-    </div>
-
-    <div class="skill reveal">
-      <div class="skill-top">
-        <strong>Windows</strong>
-        <span>88%</span>
-      </div>
-      <div class="progress"><span data-width="88%"></span></div>
-    </div>
-
-    <div class="skill reveal">
-      <div class="skill-top">
-        <strong>Networking</strong>
-        <span>82%</span>
-      </div>
-      <div class="progress"><span data-width="82%"></span></div>
-    </div>
-
-    <div class="skill reveal">
-      <div class="skill-top">
-        <strong>Microsoft Outlook</strong>
-        <span>85%</span>
-      </div>
-      <div class="progress"><span data-width="85%"></span></div>
-    </div>
-
-    <div class="skill reveal">
-      <div class="skill-top">
-        <strong>Printer Support</strong>
-        <span>85%</span>
-      </div>
-      <div class="progress"><span data-width="85%"></span></div>
-    </div>
-
-  </div>
+<p>
+Core areas of my IT support skill set.
+</p>
 
 </div>
+
+
+<div class="skills">
+
+<div class="skill reveal">
+<div class="skill-top">
+<strong>Desktop Support</strong>
+<span>90%</span>
+</div>
+<div class="progress">
+<span data-width="90%"></span>
+</div>
+</div>
+
+
+<div class="skill reveal">
+<div class="skill-top">
+<strong>Hardware Troubleshooting</strong>
+<span>90%</span>
+</div>
+<div class="progress">
+<span data-width="90%"></span>
+</div>
+</div>
+
+
+<div class="skill reveal">
+<div class="skill-top">
+<strong>Windows</strong>
+<span>88%</span>
+</div>
+<div class="progress">
+<span data-width="88%"></span>
+</div>
+</div>
+
+
+<div class="skill reveal">
+<div class="skill-top">
+<strong>Networking</strong>
+<span>82%</span>
+</div>
+<div class="progress">
+<span data-width="82%"></span>
+</div>
+</div>
+
+
+<div class="skill reveal">
+<div class="skill-top">
+<strong>Microsoft Outlook</strong>
+<span>85%</span>
+</div>
+<div class="progress">
+<span data-width="85%"></span>
+</div>
+</div>
+
+
+<div class="skill reveal">
+<div class="skill-top">
+<strong>Printer Support</strong>
+<span>85%</span>
+</div>
+<div class="progress">
+<span data-width="85%"></span>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 
-<!-- TECH STACK -->
+<!-- ================= TECH STACK ================= -->
+
 <section id="stack">
+
 <div class="container">
 
-  <div class="section-head reveal">
-    <div class="eyebrow">Technology</div>
-    <h2>My <span class="gradient-text">Tech Stack.</span></h2>
-    <p>Technologies and tools I work with or continuously explore.</p>
-  </div>
+<div class="section-title reveal">
 
-  <div class="stack-grid">
+<div class="eyebrow">TECHNOLOGY</div>
 
-    <div class="stack-card reveal">
-      <div class="stack-icon">🪟</div>
-      <h3>Windows</h3>
-      <p>Windows installation, configuration, troubleshooting and support.</p>
-    </div>
+<h2>
+My
+<span class="gradient">Tech Stack.</span>
+</h2>
 
-    <div class="stack-card reveal">
-      <div class="stack-icon">💻</div>
-      <h3>Hardware</h3>
-      <p>Desktop, laptop, RAM, storage and peripheral troubleshooting.</p>
-    </div>
-
-    <div class="stack-card reveal">
-      <div class="stack-icon">🌐</div>
-      <h3>Networking</h3>
-      <p>LAN, IP configuration, connectivity and basic network troubleshooting.</p>
-    </div>
-
-    <div class="stack-card reveal">
-      <div class="stack-icon">📧</div>
-      <h3>Microsoft Outlook</h3>
-      <p>Email configuration, troubleshooting and user support.</p>
-    </div>
-
-    <div class="stack-card reveal">
-      <div class="stack-icon">🖨️</div>
-      <h3>Printers</h3>
-      <p>Printer installation, configuration and troubleshooting.</p>
-    </div>
-
-    <div class="stack-card reveal">
-      <div class="stack-icon">🐙</div>
-      <h3>GitHub</h3>
-      <p>Project hosting, version control and portfolio deployment.</p>
-    </div>
-
-    <div class="stack-card reveal">
-      <div class="stack-icon">🐳</div>
-      <h3>Docker</h3>
-      <p>Learning containerization and modern deployment workflows.</p>
-    </div>
-
-    <div class="stack-card reveal">
-      <div class="stack-icon">⚙️</div>
-      <h3>DevOps</h3>
-      <p>Exploring CI/CD, automation and modern infrastructure tools.</p>
-    </div>
-
-  </div>
+<p>
+Technologies and tools I work with or am continuously learning.
+</p>
 
 </div>
+
+
+<div class="tech-grid">
+
+<div class="tech reveal">
+<div class="tech-icon">🪟</div>
+<h3>Windows</h3>
+<p>Installation, configuration and troubleshooting.</p>
+</div>
+
+<div class="tech reveal">
+<div class="tech-icon">💻</div>
+<h3>Hardware</h3>
+<p>Desktop, laptop and peripheral support.</p>
+</div>
+
+<div class="tech reveal">
+<div class="tech-icon">🌐</div>
+<h3>Networking</h3>
+<p>LAN, IP and connectivity troubleshooting.</p>
+</div>
+
+<div class="tech reveal">
+<div class="tech-icon">📧</div>
+<h3>Microsoft Outlook</h3>
+<p>Email configuration and support.</p>
+</div>
+
+<div class="tech reveal">
+<div class="tech-icon">🐙</div>
+<h3>GitHub</h3>
+<p>Repositories and project deployment.</p>
+</div>
+
+<div class="tech reveal">
+<div class="tech-icon">🐳</div>
+<h3>Docker</h3>
+<p>Learning containerization.</p>
+</div>
+
+<div class="tech reveal">
+<div class="tech-icon">⚙️</div>
+<h3>DevOps</h3>
+<p>CI/CD and automation concepts.</p>
+</div>
+
+<div class="tech reveal">
+<div class="tech-icon">☁️</div>
+<h3>Cloud</h3>
+<p>Exploring modern cloud technologies.</p>
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 
-<!-- WHY HIRE -->
-<section>
-<div class="container">
+<!-- ================= PROJECTS ================= -->
 
-  <div class="section-head reveal">
-    <div class="eyebrow">Why Me</div>
-    <h2>Why <span class="gradient-text">Hire Me?</span></h2>
-    <p>A practical mindset focused on solving real technical problems.</p>
-  </div>
-
-  <div class="why-grid">
-
-    <div class="why-card reveal">
-      <div class="why-number">01</div>
-      <h3>Problem Solver</h3>
-      <p>
-        I approach technical issues systematically and focus on
-        finding practical solutions instead of temporary fixes.
-      </p>
-    </div>
-
-    <div class="why-card reveal">
-      <div class="why-number">02</div>
-      <h3>User Focused</h3>
-      <p>
-        Technical support is not only about systems. I also focus
-        on making sure users can work comfortably and efficiently.
-      </p>
-    </div>
-
-    <div class="why-card reveal">
-      <div class="why-number">03</div>
-      <h3>Always Learning</h3>
-      <p>
-        I continuously explore new technologies and improve my
-        skills in IT, networking, cloud and DevOps.
-      </p>
-    </div>
-
-  </div>
-
-</div>
-</section>
-
-
-<!-- PROJECTS -->
 <section id="projects">
+
 <div class="container">
 
-  <div class="section-head reveal">
-    <div class="eyebrow">My Work</div>
-    <h2>Featured <span class="gradient-text">Projects.</span></h2>
-    <p>Some of the projects I have built while improving my technical skills.</p>
-  </div>
+<div class="section-title reveal">
 
-  <div class="project-grid">
+<div class="eyebrow">MY WORK</div>
 
-    <div class="project-card reveal">
+<h2>
+Featured
+<span class="gradient">Projects.</span>
+</h2>
 
-      <div class="project-top">
-        <div class="project-number">01</div>
-        <div class="project-type">WEB APP</div>
-      </div>
-
-      <h3>Smart Calculator</h3>
-
-      <p>
-        A clean responsive calculator application designed
-        with a simple and user-friendly interface.
-      </p>
-
-      <div class="project-tech">
-        <span>HTML5</span>
-        <span>CSS3</span>
-        <span>JavaScript</span>
-        <span>Responsive</span>
-      </div>
-
-      <div class="project-links">
-        <a href="calculator.html">↗ Live Demo</a>
-        <a href="https://github.com/kuldeep17422" target="_blank">⌘ GitHub</a>
-      </div>
-
-    </div>
-
-
-    <div class="project-card reveal">
-
-      <div class="project-top">
-        <div class="project-number">02</div>
-        <div class="project-type">PORTFOLIO</div>
-      </div>
-
-      <h3>Professional Portfolio</h3>
-
-      <p>
-        A premium responsive personal portfolio showcasing
-        my IT skills, projects, experience and contact information.
-      </p>
-
-      <div class="project-tech">
-        <span>HTML5</span>
-        <span>CSS3</span>
-        <span>JavaScript</span>
-        <span>PWA</span>
-      </div>
-
-      <div class="project-links">
-        <a href="#home">↗ Live Website</a>
-        <a href="https://github.com/kuldeep17422" target="_blank">⌘ GitHub</a>
-      </div>
-
-    </div>
-
-
-    <div class="project-card reveal">
-
-      <div class="project-top">
-        <div class="project-number">03</div>
-        <div class="project-type">APPLICATION</div>
-      </div>
-
-      <h3>ADCOM Computer Technology</h3>
-
-      <p>
-        Application concept for attendance, authentication,
-        fees, activities, exams and management workflows.
-      </p>
-
-      <div class="project-tech">
-        <span>Android</span>
-        <span>Authentication</span>
-        <span>Attendance</span>
-        <span>Management</span>
-      </div>
-
-      <div class="project-links">
-        <a href="https://github.com/kuldeep17422" target="_blank">⌘ View Project</a>
-      </div>
-
-    </div>
-
-
-    <div class="project-card reveal">
-
-      <div class="project-top">
-        <div class="project-number">04</div>
-        <div class="project-type">IT SUPPORT</div>
-      </div>
-
-      <h3>IT Helpdesk & Ticket System</h3>
-
-      <p>
-        A responsive helpdesk interface for creating and managing
-        technical support tickets using browser-based storage.
-      </p>
-
-      <div class="project-tech">
-        <span>HTML5</span>
-        <span>CSS3</span>
-        <span>JavaScript</span>
-        <span>LocalStorage</span>
-      </div>
-
-      <div class="project-links">
-        <a href="ticket-system.html?v=3">↗ Live Demo</a>
-        <a href="https://github.com/kuldeep17422" target="_blank">⌘ GitHub</a>
-      </div>
-
-    </div>
-
-  </div>
+<p>
+Projects built while developing my technical and programming skills.
+</p>
 
 </div>
+
+
+<div class="project-grid">
+
+
+<div class="project reveal">
+
+<div class="project-top">
+<div class="project-no">01</div>
+<div class="project-type">WEB APP</div>
+</div>
+
+<h3>Smart Calculator</h3>
+
+<p>
+Responsive calculator application with a clean
+and user-friendly interface.
+</p>
+
+<div class="project-tech">
+<span>HTML5</span>
+<span>CSS3</span>
+<span>JavaScript</span>
+<span>Responsive</span>
+</div>
+
+<div class="project-links">
+<a href="calculator.html">↗ Live Demo</a>
+<a href="https://github.com/kuldeep17422" target="_blank">⌘ GitHub</a>
+</div>
+
+</div>
+
+
+<div class="project reveal">
+
+<div class="project-top">
+<div class="project-no">02</div>
+<div class="project-type">PORTFOLIO</div>
+</div>
+
+<h3>Professional Portfolio</h3>
+
+<p>
+Modern personal portfolio showcasing skills,
+projects, experience and professional contact information.
+</p>
+
+<div class="project-tech">
+<span>HTML5</span>
+<span>CSS3</span>
+<span>JavaScript</span>
+<span>PWA</span>
+</div>
+
+<div class="project-links">
+<a href="#home">↗ Live Website</a>
+<a href="https://github.com/kuldeep17422" target="_blank">⌘ GitHub</a>
+</div>
+
+</div>
+
+
+<div class="project reveal">
+
+<div class="project-top">
+<div class="project-no">03</div>
+<div class="project-type">APPLICATION</div>
+</div>
+
+<h3>ADCOM Computer Technology</h3>
+
+<p>
+Application concept for attendance, authentication,
+fees, activities, exams and management workflows.
+</p>
+
+<div class="project-tech">
+<span>Android</span>
+<span>Authentication</span>
+<span>Attendance</span>
+<span>Management</span>
+</div>
+
+<div class="project-links">
+<a href="https://github.com/kuldeep17422" target="_blank">⌘ View Project</a>
+</div>
+
+</div>
+
+
+<div class="project reveal">
+
+<div class="project-top">
+<div class="project-no">04</div>
+<div class="project-type">IT SUPPORT</div>
+</div>
+
+<h3>IT Helpdesk & Ticket System</h3>
+
+<p>
+Responsive helpdesk application for creating
+and managing technical support tickets.
+</p>
+
+<div class="project-tech">
+<span>HTML5</span>
+<span>CSS3</span>
+<span>JavaScript</span>
+<span>LocalStorage</span>
+</div>
+
+<div class="project-links">
+<a href="ticket-system.html?v=3">↗ Live Demo</a>
+<a href="https://github.com/kuldeep17422" target="_blank">⌘ GitHub</a>
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
 </section>
 
 
-<!-- CERTIFICATIONS -->
-<section id="certifications">
-<div class="container">
+<!-- ================= WHY HIRE ================= -->
 
-  <div class="section-head reveal">
-    <div class="eyebrow">Qualifications</div>
-    <h2>Certifications & <span class="gradient-text">Learning.</span></h2>
-    <p>Technical knowledge and areas of professional development.</p>
-  </div>
-
-  <div class="cert-grid">
-
-    <div class="cert-card reveal">
-      <div class="cert-icon">🎓</div>
-      <h3>Diploma in Computer Technology</h3>
-      <p>Qualification</p>
-    </div>
-
-    <div class="cert-card reveal">
-      <div class="cert-icon">🛠️</div>
-      <h3>IT Support & Troubleshooting</h3>
-      <p>Technical Skill</p>
-    </div>
-
-    <div class="cert-card reveal">
-      <div class="cert-icon">🌐</div>
-      <h3>Networking Fundamentals</h3>
-      <p>Technical Skill</p>
-    </div>
-
-  </div>
-
-</div>
-</section>
-
-
-<!-- RESUME CTA -->
 <section>
+
 <div class="container">
 
-  <div class="cta reveal">
+<div class="section-title reveal">
 
-    <div>
-      <div class="eyebrow">Let's Connect</div>
-      <h2>Ready to solve the next <span class="gradient-text">IT challenge?</span></h2>
-      <p>Download my resume and let's connect professionally.</p>
-    </div>
+<div class="eyebrow">WHY ME</div>
 
-    <a class="btn btn-primary" href="resume.pdf" target="_blank">
-      📄 Open Resume
-    </a>
+<h2>
+Why
+<span class="gradient">Hire Me?</span>
+</h2>
 
-  </div>
+<p>
+A practical mindset focused on solving real-world technical problems.
+</p>
 
 </div>
+
+
+<div class="why-grid">
+
+<div class="why reveal">
+<div class="why-number">01</div>
+<h3>Problem Solver</h3>
+<p>
+I approach technical problems systematically
+and focus on reliable solutions.
+</p>
+</div>
+
+<div class="why reveal">
+<div class="why-number">02</div>
+<h3>User Focused</h3>
+<p>
+I understand that successful IT support means
+helping users work efficiently.
+</p>
+</div>
+
+<div class="why reveal">
+<div class="why-number">03</div>
+<h3>Always Learning</h3>
+<p>
+I continuously learn networking, automation,
+cloud and DevOps technologies.
+</p>
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 
-<!-- CONTACT -->
-<section id="contact">
+<!-- ================= CERTIFICATIONS ================= -->
+
+<section id="certifications">
+
 <div class="container">
 
-  <div class="section-head reveal">
-    <div class="eyebrow">Contact</div>
-    <h2>Let's <span class="gradient-text">Connect.</span></h2>
-    <p>Feel free to contact me for IT opportunities, projects or professional discussions.</p>
-  </div>
+<div class="section-title reveal">
 
-  <div class="contact-grid">
+<div class="eyebrow">QUALIFICATIONS</div>
 
-    <div class="contact-card reveal">
-      <div class="contact-icon">📧</div>
-      <h3>Email</h3>
-      <p>kuldip8718@gmail.com</p>
-      <a href="mailto:kuldip8718@gmail.com">Send Email →</a>
-    </div>
+<h2>
+Certifications &
+<span class="gradient">Learning.</span>
+</h2>
 
-    <div class="contact-card reveal">
-      <div class="contact-icon">💬</div>
-      <h3>WhatsApp</h3>
-      <p>Available for direct contact</p>
-      <a href="https://wa.me/919752133011" target="_blank">Message Me →</a>
-    </div>
-
-    <div class="contact-card reveal">
-      <div class="contact-icon">🐙</div>
-      <h3>GitHub</h3>
-      <p>kuldeep17422</p>
-      <a href="https://github.com/kuldeep17422" target="_blank">View GitHub →</a>
-    </div>
-
-    <div class="contact-card reveal">
-      <div class="contact-icon">📸</div>
-      <h3>Instagram</h3>
-      <p>@kuldeep_singh._9</p>
-      <a href="https://www.instagram.com/kuldeep_singh._9/" target="_blank">Open Instagram →</a>
-    </div>
-
-  </div>
+<p>
+Technical knowledge and areas of professional development.
+</p>
 
 </div>
+
+
+<div class="cert-grid">
+
+<div class="cert reveal">
+<div class="cert-icon">🎓</div>
+<h3>Diploma in Computer Technology</h3>
+<p>Qualification</p>
+</div>
+
+<div class="cert reveal">
+<div class="cert-icon">🛠️</div>
+<h3>IT Support & Troubleshooting</h3>
+<p>Technical Skill</p>
+</div>
+
+<div class="cert reveal">
+<div class="cert-icon">🌐</div>
+<h3>Networking Fundamentals</h3>
+<p>Technical Skill</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section>
+
+<div class="container">
+
+<div class="cta reveal">
+
+<div>
+
+<div class="eyebrow">
+LET'S CONNECT
+</div>
+
+<h2>
+Ready for the next
+<span class="gradient">IT challenge?</span>
+</h2>
+
+<p>
+Let's connect for IT opportunities, projects and professional discussions.
+</p>
+
+</div>
+
+<a href="resume.pdf" target="_blank" class="btn btn-primary">
+📄 Open Resume
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="section-title reveal">
+
+<div class="eyebrow">CONTACT</div>
+
+<h2>
+Let's
+<span class="gradient">Connect.</span>
+</h2>
+
+<p>
+Have an opportunity or project? Let's talk.
+</p>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<div class="contact reveal">
+
+<div class="contact-icon">📧</div>
+
+<h3>Email</h3>
+
+<p>
+kuldip8718@gmail.com
+</p>
+
+<a href="mailto:kuldip8718@gmail.com">
+Send Email →
+</a>
+
+</div>
+
+
+<div class="contact reveal">
+
+<div class="contact-icon">💬</div>
+
+<h3>WhatsApp</h3>
+
+<p>
+Direct professional contact
+</p>
+
+<a href="https://wa.me/919752133011"
+target="_blank">
+Message Me →
+</a>
+
+</div>
+
+
+<div class="contact reveal">
+
+<div class="contact-icon">🐙</div>
+
+<h3>GitHub</h3>
+
+<p>
+kuldeep17422
+</p>
+
+<a href="https://github.com/kuldeep17422"
+target="_blank">
+View GitHub →
+</a>
+
+</div>
+
+
+<div class="contact reveal">
+
+<div class="contact-icon">📸</div>
+
+<h3>Instagram</h3>
+
+<p>
+@kuldeep_singh._9
+</p>
+
+<a href="https://www.instagram.com/kuldeep_singh._9/"
+target="_blank">
+Open Instagram →
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
 </section>
 
 </main>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
+
 <footer>
+
 <div class="container">
 
-  <p>
-    © <span id="year"></span>
-    <span class="footer-name">Kuldeep Borana</span>
-    · IT Support Professional
-  </p>
+<p>
+© <span id="year"></span>
+<strong>Kuldeep Borana</strong>
+· IT Support Professional
+</p>
 
-  <p style="margin-top:5px;">
-    Built with HTML, CSS & JavaScript ·
-    <a href="https://www.instagram.com/kuldeep_singh._9/" target="_blank">Instagram</a>
-  </p>
+<p style="margin-top:5px">
+Built with HTML, CSS & JavaScript
+</p>
 
 </div>
+
 </footer>
 
 
-<!-- FLOATING BUTTONS -->
+<!-- FLOATING BUTTON -->
 
-<button id="topBtn" aria-label="Back to top">↑</button>
+<button id="top">↑</button>
 
 <a
-  class="whatsapp-float"
-  href="https://wa.me/919752133011?text=Hello%20Kuldeep,%20I%20visited%20your%20portfolio."
-  target="_blank"
-  aria-label="WhatsApp">
-  💬
+class="whatsapp"
+href="https://wa.me/919752133011?text=Hello%20Kuldeep,%20I%20visited%20your%20portfolio."
+target="_blank">
+💬
 </a>
 
 
 <script>
 
-/* ================= LOADER ================= */
+/* =========================
+   LOADER
+========================= */
 
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    const loader = document.getElementById("loader");
+window.addEventListener("load",()=>{
 
-    loader.style.opacity = "0";
+  setTimeout(()=>{
 
-    setTimeout(() => {
-      loader.style.display = "none";
-    }, 600);
+    const loader=document.getElementById("loader");
 
-  }, 500);
+    loader.style.opacity="0";
+
+    setTimeout(()=>{
+      loader.style.display="none";
+    },700);
+
+  },700);
+
 });
 
 
-/* ================= HEADER ================= */
+/* =========================
+   HEADER
+========================= */
 
-const header = document.getElementById("header");
+const header=document.getElementById("header");
 
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll",()=>{
 
-  if(window.scrollY > 40){
+  if(window.scrollY>40){
     header.classList.add("scrolled");
   }else{
     header.classList.remove("scrolled");
@@ -1985,127 +2374,98 @@ window.addEventListener("scroll", () => {
 });
 
 
-/* ================= MOBILE MENU ================= */
+/* =========================
+   MOBILE MENU
+========================= */
 
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
+const menuBtn=document.getElementById("menuBtn");
+const navLinks=document.getElementById("navLinks");
 
-menuBtn.addEventListener("click", () => {
+menuBtn.addEventListener("click",()=>{
+
   navLinks.classList.toggle("open");
+
 });
 
-document.querySelectorAll(".nav-links a").forEach(link => {
+document.querySelectorAll(".nav-links a").forEach(link=>{
 
-  link.addEventListener("click", () => {
+  link.addEventListener("click",()=>{
     navLinks.classList.remove("open");
   });
 
 });
 
 
-/* ================= THEME ================= */
+/* =========================
+   CURSOR EFFECT
+========================= */
 
-const themeBtn = document.getElementById("themeBtn");
+const cursor=document.getElementById("cursorGlow");
 
-const savedTheme = localStorage.getItem("portfolio-theme");
+document.addEventListener("mousemove",(e)=>{
 
-if(savedTheme === "light"){
-  document.body.classList.add("light");
-  themeBtn.textContent = "☀";
-}
-
-themeBtn.addEventListener("click", () => {
-
-  document.body.classList.toggle("light");
-
-  const isLight = document.body.classList.contains("light");
-
-  themeBtn.textContent = isLight ? "☀" : "☾";
-
-  localStorage.setItem(
-    "portfolio-theme",
-    isLight ? "light" : "dark"
-  );
+  cursor.style.left=e.clientX+"px";
+  cursor.style.top=e.clientY+"px";
 
 });
 
 
-/* ================= REVEAL ANIMATION ================= */
+/* =========================
+   REVEAL
+========================= */
 
-const observer = new IntersectionObserver(
-  entries => {
+const observer=new IntersectionObserver((entries)=>{
 
-    entries.forEach(entry => {
+  entries.forEach(entry=>{
 
-      if(entry.isIntersecting){
+    if(entry.isIntersecting){
 
-        entry.target.classList.add("show");
+      entry.target.classList.add("show");
 
-        const progress = entry.target.querySelector(".progress span");
+      const bar=entry.target.querySelector(".progress span");
 
-        if(progress){
-          progress.style.width = progress.dataset.width;
-        }
-
+      if(bar){
+        bar.style.width=bar.dataset.width;
       }
 
-    });
-
-  },
-  {
-    threshold:.12
-  }
-);
-
-
-document.querySelectorAll(".reveal").forEach(el => {
-  observer.observe(el);
-});
-
-
-/* ================= PROGRESS BARS ================= */
-
-document.querySelectorAll(".progress span").forEach(bar => {
-
-  const parent = bar.closest(".reveal");
-
-  if(parent){
-    return;
-  }
-
-  const width = bar.dataset.width;
-
-  setTimeout(() => {
-    bar.style.width = width;
-  },500);
-
-});
-
-
-/* ================= ACTIVE NAV ================= */
-
-const sections = document.querySelectorAll("section[id]");
-const navItems = document.querySelectorAll(".nav-links a");
-
-window.addEventListener("scroll", () => {
-
-  let current = "";
-
-  sections.forEach(section => {
-
-    const top = section.offsetTop - 180;
-
-    if(window.scrollY >= top){
-      current = section.getAttribute("id");
     }
 
   });
 
-  navItems.forEach(link => {
+},{
+  threshold:.12
+});
+
+
+document.querySelectorAll(".reveal").forEach(el=>{
+  observer.observe(el);
+});
+
+
+/* =========================
+   ACTIVE NAV
+========================= */
+
+const sections=document.querySelectorAll("section[id]");
+const links=document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll",()=>{
+
+  let current="";
+
+  sections.forEach(section=>{
+
+    if(window.scrollY>=section.offsetTop-180){
+      current=section.id;
+    }
+
+  });
+
+  links.forEach(link=>{
 
     link.classList.remove("active");
 
-    if(link.getAttribute("href") === "#" + current){
+    if(link.getAttribute("href")==="#"+current){
       link.classList.add("active");
     }
 
@@ -2114,21 +2474,20 @@ window.addEventListener("scroll", () => {
 });
 
 
-/* ================= TOP BUTTON ================= */
+/* =========================
+   TOP BUTTON
+========================= */
 
-const topBtn = document.getElementById("topBtn");
+const topBtn=document.getElementById("top");
 
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll",()=>{
 
-  if(window.scrollY > 500){
-    topBtn.style.display = "grid";
-  }else{
-    topBtn.style.display = "none";
-  }
+  topBtn.style.display=
+    window.scrollY>500 ? "grid" : "none";
 
 });
 
-topBtn.addEventListener("click", () => {
+topBtn.addEventListener("click",()=>{
 
   window.scrollTo({
     top:0,
@@ -2138,25 +2497,29 @@ topBtn.addEventListener("click", () => {
 });
 
 
-/* ================= FOOTER YEAR ================= */
+/* =========================
+   YEAR
+========================= */
 
-document.getElementById("year").textContent =
-  new Date().getFullYear();
+document.getElementById("year").textContent=
+new Date().getFullYear();
 
 
-/* ================= PWA ================= */
+/* =========================
+   PWA
+========================= */
 
 if("serviceWorker" in navigator){
 
-  window.addEventListener("load", () => {
+  window.addEventListener("load",()=>{
 
     navigator.serviceWorker
       .register("./service-worker.js")
-      .then(() => {
-        console.log("Service Worker registered.");
+      .then(()=>{
+        console.log("Service Worker registered");
       })
-      .catch(error => {
-        console.log("Service Worker error:", error);
+      .catch(error=>{
+        console.log("Service Worker error:",error);
       });
 
   });
